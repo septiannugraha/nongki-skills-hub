@@ -5,6 +5,10 @@
 .idea/
 .vscode/
 
+# Python build noise
+__pycache__/
+*.pyc
+
 # Keep skills clean: generated outputs never belong in the hub
 *-summary.md
 *.aux
