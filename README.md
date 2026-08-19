@@ -13,6 +13,7 @@ This repo is the **source of truth** for the skills installed via `~/.claude/ski
 | [humanizer-indonesia](skills/humanizer-indonesia/) | Rewrite Indonesian text to sound natural, human, and contextually appropriate without changing original meaning | `indonesian` `humanizer` `naturalize` |
 | [pdf-comprehension](skills/pdf-comprehension/) | Deep PDF analysis: extracts pages as images, reads them visually, produces structured markdown summaries with visual highlights | `pdf` `analysis` `document` |
 | [study-guide-writing](skills/study-guide-writing/) | Manning/No Starch Press-style study guides from source materials — LaTeX to PDF + EPUB, with note/tip/warning boxes and war stories | `latex` `pdf` `epub` `education` |
+| [tsundere-code-style](skills/tsundere-code-style/) | Write code as if authored by a tsundere programmer — playful sentence-like names, booleans, functions, comments, and error messages that stay functional and understandable | `code-style` `fun` `naming` `humor` |
 | [image-generation](skills/image-generation/) | Generate images via any OpenAI-compatible Images API (OpenRouter, OmniRoute, LiteLLM, …) — env-configured endpoint/key/model, with hand-authored SVG fallback | `image-generation` `openai-compatible` `api` |
 | [vault-notetaking](skills/vault-notetaking/) | Capture durable learnings into an Obsidian second brain (PARA-style), configurable via `VAULT_DIR` | `obsidian` `second-brain` `knowledge-management` |
 
@@ -84,6 +85,8 @@ nongki-skills-hub/
     ├── pdf-comprehension/
     │   └── SKILL.md
     ├── study-guide-writing/
+    │   └── SKILL.md
+    ├── tsundere-code-style/
     │   └── SKILL.md
     └── vault-notetaking/
         └── SKILL.md
