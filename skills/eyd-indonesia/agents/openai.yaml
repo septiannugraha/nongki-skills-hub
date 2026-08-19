@@ -1,0 +1,4 @@
+interface:
+  display_name: "EYD Indonesia"
+  short_description: "Koreksi ejaan sesuai pedoman resmi EYD V"
+  default_prompt: "Gunakan $eyd-indonesia untuk menyunting ejaan teks bahasa Indonesia ini sesuai EYD V."

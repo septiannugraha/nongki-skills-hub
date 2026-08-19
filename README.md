@@ -9,6 +9,8 @@ This repo is the **source of truth** for the skills installed via `~/.claude/ski
 | Skill | Purpose | Tags |
 |---|---|---|
 | [changes-committing](skills/changes-committing/) | Secure git commits: credential scanning, file filtering, conventional commit messages, no secrets ever land in history | `git` `security` `conventional-commits` |
+| [eyd-indonesia](skills/eyd-indonesia/) | Indonesian proofreading & editing according to official EYD V (spelling, capitalization, punctuation, loanwords) | `indonesian` `eyd` `proofreading` |
+| [humanizer-indonesia](skills/humanizer-indonesia/) | Rewrite Indonesian text to sound natural, human, and contextually appropriate without changing original meaning | `indonesian` `humanizer` `naturalize` |
 | [pdf-comprehension](skills/pdf-comprehension/) | Deep PDF analysis: extracts pages as images, reads them visually, produces structured markdown summaries with visual highlights | `pdf` `analysis` `document` |
 | [study-guide-writing](skills/study-guide-writing/) | Manning/No Starch Press-style study guides from source materials — LaTeX to PDF + EPUB, with note/tip/warning boxes and war stories | `latex` `pdf` `epub` `education` |
 | [image-generation](skills/image-generation/) | Generate images via any OpenAI-compatible Images API (OpenRouter, OmniRoute, LiteLLM, …) — env-configured endpoint/key/model, with hand-authored SVG fallback | `image-generation` `openai-compatible` `api` |
@@ -68,6 +70,14 @@ nongki-skills-hub/
 └── skills/
     ├── changes-committing/
     │   └── SKILL.md
+    ├── eyd-indonesia/
+    │   ├── SKILL.md
+    │   ├── agents/
+    │   └── references/
+    ├── humanizer-indonesia/
+    │   ├── SKILL.md
+    │   ├── agents/
+    │   └── references/
     ├── image-generation/
     │   ├── SKILL.md
     │   └── generate_image.py

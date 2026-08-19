@@ -1,0 +1,4 @@
+interface:
+  display_name: "Humanizer Indonesia"
+  short_description: "Meluweskan tulisan Indonesia tanpa mengubah makna"
+  default_prompt: "Gunakan $humanizer-indonesia untuk membuat teks ini terdengar alami dalam bahasa Indonesia."
