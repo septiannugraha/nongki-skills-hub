@@ -1,0 +1,16 @@
+# Editor/OS noise
+.DS_Store
+*.swp
+*~
+.idea/
+.vscode/
+
+# Keep skills clean: generated outputs never belong in the hub
+*-summary.md
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.epub
