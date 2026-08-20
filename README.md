@@ -11,6 +11,7 @@ This repo is the **source of truth** for the skills installed via `~/.claude/ski
 | [changes-committing](skills/changes-committing/) | Secure git commits: credential scanning, file filtering, conventional commit messages, no secrets ever land in history | `git` `security` `conventional-commits` |
 | [eyd-indonesia](skills/eyd-indonesia/) | Indonesian proofreading & editing according to official EYD V (spelling, capitalization, punctuation, loanwords) | `indonesian` `eyd` `proofreading` |
 | [humanizer-indonesia](skills/humanizer-indonesia/) | Rewrite Indonesian text to sound natural, human, and contextually appropriate without changing original meaning | `indonesian` `humanizer` `naturalize` |
+| [laporan-pengawasan-bpkp](skills/laporan-pengawasan-bpkp/) | Draft, edit, and review BPKP internal audit reports (LHP/LHE/LHR) following BPKP format and IIA Global Standards | `bpkp` `audit` `laporan` `iia` |
 | [pdf-comprehension](skills/pdf-comprehension/) | Deep PDF analysis: extracts pages as images, reads them visually, produces structured markdown summaries with visual highlights | `pdf` `analysis` `document` |
 | [study-guide-writing](skills/study-guide-writing/) | Manning/No Starch Press-style study guides from source materials — LaTeX to PDF + EPUB, with note/tip/warning boxes and war stories | `latex` `pdf` `epub` `education` |
 | [image-generation](skills/image-generation/) | Generate images via any OpenAI-compatible Images API (OpenRouter, OmniRoute, LiteLLM, …) — env-configured endpoint/key/model, with hand-authored SVG fallback | `image-generation` `openai-compatible` `api` |
@@ -81,6 +82,9 @@ nongki-skills-hub/
     ├── image-generation/
     │   ├── SKILL.md
     │   └── generate_image.py
+    ├── laporan-pengawasan-bpkp/
+    │   ├── SKILL.md
+    │   └── references/
     ├── pdf-comprehension/
     │   └── SKILL.md
     ├── study-guide-writing/
