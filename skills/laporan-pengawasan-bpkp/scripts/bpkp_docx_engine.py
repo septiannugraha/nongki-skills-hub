@@ -35,6 +35,7 @@ __all__ = [
     "new_bab_context", "new_topic_context",
     "add_p", "add_run", "_apply_font",
     "add_heading_1", "add_heading_2", "add_heading_3",
+    "add_heading_4",
     "add_section_heading", "add_topic_heading",
     "add_numbered_item", "add_simple_numbered",
     "add_subheading", "add_body_sub", "add_locus", "add_detail_item",
@@ -332,7 +333,7 @@ def setup_heading_styles(doc: _Doc) -> None:
     - Spasi before 12pt, after 6pt, line 1.15
     - Outline level untuk panel navigasi Word
     """
-    for level, style_name in [(1, 'Heading 1'), (2, 'Heading 2'), (3, 'Heading 3')]:
+    for level, style_name in [(1, 'Heading 1'), (2, 'Heading 2'), (3, 'Heading 3'), (4, 'Heading 4')]:
         try:
             style = doc.styles[style_name]
         except KeyError:
@@ -470,6 +471,21 @@ def add_heading_3(doc, text, num_id=None):
     p.alignment = WD_ALIGN_PARAGRAPH.LEFT
     if num_id is not None:
         _attach_numbering(p, num_id, 1)
+    r = p.add_run(text)
+    _apply_font(r, bold=True, size=Pt(12))
+    return p
+
+
+def add_heading_4(doc, text, num_id=None):
+    """
+    Heading 4 - sub-temuan atau rincian poin spesifik seperti 'a. Pemenuhan Kuota...'.
+    Memakai style 'Heading 4' -> muncul di Navigation Panel / Document Outline Word & Docs.
+    Format baku: Arial 12 pt, Bold, Hitam (#000000).
+    """
+    p = doc.add_paragraph(style='Heading 4')
+    p.alignment = WD_ALIGN_PARAGRAPH.LEFT
+    if num_id is not None:
+        _attach_numbering(p, num_id, 2)
     r = p.add_run(text)
     _apply_font(r, bold=True, size=Pt(12))
     return p
