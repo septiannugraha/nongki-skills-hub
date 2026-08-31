@@ -22,8 +22,8 @@ import docx
 from docx import Document
 from docx.document import Document as _Doc
 from docx.shared import Inches, Pt, RGBColor, Cm
-from docx.enum.text import WD_ALIGN_PARAGRAPH
-from docx.enum.table import WD_TABLE_ALIGNMENT
+from docx.enum.text import WD_ALIGN_PARAGRAPH, WD_BREAK
+from docx.enum.table import WD_TABLE_ALIGNMENT, WD_ALIGN_VERTICAL
 from docx.oxml import OxmlElement, parse_xml
 from docx.oxml.ns import nsdecls, qn
 
@@ -42,6 +42,10 @@ __all__ = [
     "clean_cell_p", "set_cell_margins", "set_cell_shading",
     "set_cell_bottom_border", "set_table_borders", "add_table_bordered",
     "add_signature_block",
+    "add_cover_page",
+    "add_daftar_isi",
+    "add_page_break",
+    "add_table_with_subheader",
     "_attach_numbering", "_LEVEL_FMT",
 ]
 
@@ -966,3 +970,217 @@ def new_topic_context(doc, topic_label):
     """
     _state['current_topic'] = topic_label
     return _state.get('current_bab_num_id')
+
+
+# =====================================================================
+# COVER PAGE BUILDER
+# =====================================================================
+
+def add_page_break(doc):
+    """Tambahkan page break ke dokumen."""
+    doc.add_page_break()
+
+
+def add_cover_page(doc, logo_path: str = "",
+                    lembaga: str = "BADAN PENGAWASAN KEUANGAN DAN PEMBANGUNAN",
+                    unit_kerja: str = "PERWAKILAN PROVINSI PAPUA TENGAH",
+                    judul: str = "LAPORAN HASIL EVALUASI",
+                    subjudul: str = "ATAS TATA KELOLA KETAHANAN PANGAN",
+                    tahun: str = "TAHUN 2026",
+                    nomor: str = "", tanggal: str = ""):
+    """
+    Bangun halaman cover (sampul) laporan BPKP standar.
+
+    Layout:
+      - Logo BPKP (center, 4.2 cm)
+      - Nama Lembaga (bold 14pt, center)
+      - Unit Kerja (bold 14pt, center)
+      - Spasi tengah (3x paragraf kosong)
+      - Judul laporan (bold 13pt, center)
+      - Subjudul (bold 13pt, center)
+      - Tahun (bold 13pt, center)
+      - Spasi bawah (4x paragraf kosong)
+      - Tabel Nomor/Tanggal (borderless, 2 baris x 3 kolom):
+          [Label | : | Nilai]  (bold 11pt)
+      - Page break
+    """
+    import os
+
+    # Logo BPKP Center
+    if logo_path and os.path.exists(logo_path):
+        p_logo = doc.add_paragraph()
+        p_logo.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        p_logo.paragraph_format.space_before = Pt(24)
+        p_logo.paragraph_format.space_after = Pt(12)
+        r_logo = p_logo.add_run()
+        r_logo.add_picture(logo_path, width=Cm(4.2))
+
+    # Header Nama Instansi
+    add_p(doc, lembaga, space_before=Pt(0), space_after=Pt(2),
+          align=WD_ALIGN_PARAGRAPH.CENTER, bold=True, size=Pt(14))
+    add_p(doc, unit_kerja, space_before=Pt(0), space_after=Pt(48),
+          align=WD_ALIGN_PARAGRAPH.CENTER, bold=True, size=Pt(14))
+
+    # Spasi Tengah
+    for _ in range(3):
+        add_p(doc, "", space_after=Pt(12), align=WD_ALIGN_PARAGRAPH.CENTER)
+
+    # Judul Utama Laporan
+    add_p(doc, judul, space_before=Pt(0), space_after=Pt(4),
+          align=WD_ALIGN_PARAGRAPH.CENTER, bold=True, size=Pt(13))
+    add_p(doc, subjudul, space_before=Pt(0), space_after=Pt(4),
+          align=WD_ALIGN_PARAGRAPH.CENTER, bold=True, size=Pt(13))
+    add_p(doc, tahun, space_before=Pt(0), space_after=Pt(48),
+          align=WD_ALIGN_PARAGRAPH.CENTER, bold=True, size=Pt(13))
+
+    # Spasi Bawah
+    for _ in range(4):
+        add_p(doc, "", space_after=Pt(12), align=WD_ALIGN_PARAGRAPH.CENTER)
+
+    # Tabel NOMOR dan TANGGAL (borderless)
+    if nomor or tanggal:
+        tbl = doc.add_table(rows=2, cols=3)
+        tbl.alignment = WD_TABLE_ALIGNMENT.CENTER
+        tbl.autofit = False
+
+        tblPr = tbl._tbl.tblPr
+        borders = parse_xml(
+            f'<w:tblBorders {nsdecls("w")}>'
+            f'<w:top w:val="none"/><w:left w:val="none"/>'
+            f'<w:right w:val="none"/><w:bottom w:val="none"/>'
+            f'<w:insideH w:val="none"/><w:insideV w:val="none"/>'
+            f'</w:tblBorders>'
+        )
+        tblPr.append(borders)
+
+        col_w = [Cm(3.0), Cm(0.5), Cm(8.0)]
+        data_rows = [
+            ("NOMOR", ":", nomor),
+            ("TANGGAL", ":", tanggal),
+        ]
+        for r_idx, row_vals in enumerate(data_rows):
+            row_cells = tbl.rows[r_idx].cells
+            for c_idx, val in enumerate(row_vals):
+                row_cells[c_idx].width = col_w[c_idx]
+                set_cell_margins(row_cells[c_idx], top=20, bottom=20, left=10, right=10)
+                p = row_cells[c_idx].paragraphs[0]
+                p.paragraph_format.space_before = Pt(0)
+                p.paragraph_format.space_after = Pt(0)
+                p.paragraph_format.line_spacing = 1.15
+                p.alignment = WD_ALIGN_PARAGRAPH.LEFT
+                clean_cell_p(p)
+                add_run(p, val, bold=True, size=Pt(11))
+
+    doc.add_page_break()
+
+
+# =====================================================================
+# DAFTAR ISI BUILDER (dengan Dot Leaders)
+# =====================================================================
+
+def add_daftar_isi(doc, items: list):
+    """
+    Bangun Daftar Isi dengan dot leaders.
+
+    items: list of (title, page) tuples.
+      - Jika title mengandung 'BAB' atau 'RINGKASAN', cetak bold.
+      - Page break setelah selesai.
+
+    Contoh items:
+      [("RINGKASAN EKSEKUTIF", "i"), ("BAB I  SIMPULAN DAN REKOMENDASI", "1"),
+       ("   A.  Simpulan", "1"), ...]
+    """
+    add_heading_1(doc, "DAFTAR ISI")
+    add_p(doc, "Halaman", space_after=Pt(12),
+          align=WD_ALIGN_PARAGRAPH.RIGHT, italic=True)
+
+    for title, page in items:
+        p = doc.add_paragraph()
+        p.paragraph_format.space_before = Pt(0)
+        p.paragraph_format.space_after = Pt(4)
+        p.paragraph_format.line_spacing = 1.15
+        p.alignment = WD_ALIGN_PARAGRAPH.LEFT
+        is_bold = ('BAB' in title or 'RINGKASAN' in title)
+        add_run(p, title, bold=is_bold)
+        dots_len = max(5, 75 - len(title) - len(page))
+        add_run(p, " " + "." * dots_len + " ")
+        add_run(p, page, bold=is_bold)
+
+    doc.add_page_break()
+
+
+# =====================================================================
+# TABEL DENGAN SUB-HEADER ROW
+# =====================================================================
+
+def add_table_with_subheader(doc, headers: list, sub_headers: list,
+                              data_rows: list, col_widths=None,
+                              header_size=Pt(10), sub_header_size=Pt(9),
+                              body_size=Pt(10), border_color="B0B0B0"):
+    """
+    Bangun tabel dengan baris header utama + baris sub-header (mis. a/b/c/d/e).
+
+    Layout (borderless-BPKP style, header shading abu-abu):
+      Row 0: Header utama (bold, 10pt, center, shading EAEAEA)
+      Row 1: Sub-header (italic, 9pt, center, shading F5F5F5)
+      Row 2+: Data (regular, 10pt, left/center/right)
+
+    headers     : list[str] - nama kolom header utama
+    sub_headers : list[str] - sub-label kolom (mis. ["a", "b", "c", "d", "e = (c-d)"])
+    data_rows   : list[list[str]] - data per baris
+    col_widths  : list[Cm] - lebar tiap kolom
+    """
+    n_cols = len(headers)
+    n_rows = 2 + len(data_rows)
+    table = doc.add_table(rows=n_rows, cols=n_cols)
+    table.alignment = WD_TABLE_ALIGNMENT.CENTER
+    table.autofit = False
+    set_table_borders(table, color=border_color)
+
+    if col_widths:
+        for i, w in enumerate(col_widths):
+            for row in table.rows:
+                row.cells[i].width = w
+
+    # Row 0: Header utama
+    hdr_cells = table.rows[0].cells
+    for i, h in enumerate(headers):
+        set_cell_margins(hdr_cells[i], top=120, bottom=120, left=100, right=100)
+        set_cell_shading(hdr_cells[i], "EAEAEA")
+        p = hdr_cells[i].paragraphs[0]
+        p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        p.paragraph_format.space_before = Pt(0)
+        p.paragraph_format.space_after = Pt(0)
+        clean_cell_p(p)
+        add_run(p, h, bold=True, size=header_size)
+
+    # Row 1: Sub-header
+    sub_cells = table.rows[1].cells
+    for i, s in enumerate(sub_headers):
+        set_cell_margins(sub_cells[i], top=60, bottom=60, left=100, right=100)
+        set_cell_shading(sub_cells[i], "F5F5F5")
+        p = sub_cells[i].paragraphs[0]
+        p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        p.paragraph_format.space_before = Pt(0)
+        p.paragraph_format.space_after = Pt(0)
+        clean_cell_p(p)
+        add_run(p, s, italic=True, size=sub_header_size)
+
+    # Row 2+: Data
+    for r_idx, row_vals in enumerate(data_rows, 2):
+        row_cells = table.rows[r_idx].cells
+        for c_idx, val in enumerate(row_vals):
+            set_cell_margins(row_cells[c_idx], top=60, bottom=60, left=100, right=100)
+            p = row_cells[c_idx].paragraphs[0]
+            p.paragraph_format.space_before = Pt(0)
+            p.paragraph_format.space_after = Pt(0)
+            clean_cell_p(p)
+            if c_idx == 0:
+                p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+            elif c_idx == 1:
+                p.alignment = WD_ALIGN_PARAGRAPH.LEFT
+            else:
+                p.alignment = WD_ALIGN_PARAGRAPH.RIGHT
+            add_run(p, val, size=body_size)
+
+    return table

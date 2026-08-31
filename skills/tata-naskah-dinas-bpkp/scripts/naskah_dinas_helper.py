@@ -16,6 +16,7 @@ from __future__ import annotations
 
 from typing import Optional, List
 
+import os
 from docx.shared import Pt, Inches, Cm, RGBColor
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.enum.table import WD_TABLE_ALIGNMENT
@@ -42,13 +43,15 @@ except ImportError:
     if _engine_dir not in _sys.path:
         _sys.path.insert(0, _engine_dir)
     from bpkp_docx_engine import (
-        _apply_font, FONT_NAME, BLACK, add_p, add_run,
+        _apply_font, FONT_NAME, BLACK, RED, add_p, add_run,
         clean_cell_p, set_cell_margins, set_cell_shading,
-        set_table_borders, add_table_bordered,
+        set_cell_bottom_border, set_table_borders, add_table_bordered,
     )
 
 __all__ = [
     "add_kop_surat",
+    "add_kop_surat_table",
+    "add_surat_pengantar_metadata",
     "add_nota_dinas_header",
     "add_surat_tugas_header",
     "add_lembar_pengesahan",
@@ -66,13 +69,16 @@ def add_kop_surat(doc, unit_kerja: str, alamat: str = "", telepon: str = "",
                   email: str = "", website: str = "",
                   kode_pos: str = "", lembaga: str = "BADAN PENGAWASAN KEUANGAN DAN PEMBANGUNAN"):
     """
-    Tambahkan kop surat (letterhead) BPKP standar di bagian atas dokumen.
+    Tambahkan kop surat (letterhead) BPKP versi paragraf sederhana.
+
+    Untuk kop surat resmi dengan logo dan garis bawah tebal, gunakan
+    fungsi ``add_kop_surat_table``.
 
     Layout:
-      Baris 1: LEMBAGA (huruf besar, bold, tengah)
-      Baris 2: UNIT KERJA (huruf besar, bold, tengah)
-      Baris 3: Alamat lengkap (italic, tengah, 10pt)
-      Garis pembatas tebal
+      Baris 1: LEMBAGA (huruf besar, bold 14pt, tengah)
+      Baris 2: UNIT KERJA (huruf besar, bold 12pt, tengah)
+      Baris 3: Alamat lengkap (italic 10pt, tengah)
+      Garis pembatas tebal (bottom border sz=18)
     """
     # Baris 1: Nama Lembaga
     p1 = doc.add_paragraph()
@@ -122,6 +128,185 @@ def add_kop_surat(doc, unit_kerja: str, alamat: str = "", telepon: str = "",
         f'</w:pBdr>'
     )
     pPr.append(pBdr)
+
+
+# =====================================================================
+# KOP SURAT TABLE (dengan Logo + Garis Bawah)
+# =====================================================================
+
+def add_kop_surat_table(doc, logo_path: str = "",
+                        lembaga: str = "BADAN PENGAWASAN KEUANGAN DAN PEMBANGUNAN",
+                        unit_kerja: str = "PERWAKILAN PROVINSI PAPUA TENGAH",
+                        alamat: str = "Jalan Sam Ratulangi, Kelurahan Oyehe, Distrik Nabire",
+                        wilayah: str = "Kabupaten Nabire, Provinsi Papua Tengah, Kode Pos: 98816",
+                        kontak: str = "Email: papua.tengah@bpkp.go.id, Website: www.bpkp.go.id/papua.tengah"):
+    """
+    Tambahkan kop surat (letterhead) BPKP versi tabel resmi dengan logo.
+
+    Layout (tabel 1 baris x 2 kolom, borderless, dengan border bawah tebal):
+      Kolom kiri  (3.2 cm): Logo BPKP (center)
+      Kolom kanan (12.8 cm): 5 baris teks instansi
+        - Baris 1: NAMA LEMBAGA       (bold 12pt, center, line 1.0)
+        - Baris 2: UNIT KERJA          (bold 12pt, center, line 1.0)
+        - Baris 3: Alamat jalan        (regular 10pt, center, line 1.0)
+        - Baris 4: Wilayah + kode pos  (regular 10pt, center, line 1.0)
+        - Baris 5: Email + Website     (regular 10pt, center, line 1.0)
+      Garis bawah solid tebal (sz=18, hitam) pada kedua sel.
+    """
+    table = doc.add_table(rows=1, cols=2)
+    table.alignment = WD_TABLE_ALIGNMENT.CENTER
+    table.autofit = False
+
+    # Borderless tabel, kecuali bottom border tebal di level tabel
+    tblPr = table._tbl.tblPr
+    borders = parse_xml(
+        f'<w:tblBorders {nsdecls("w")}>'
+        f'<w:top w:val="none"/>'
+        f'<w:left w:val="none"/>'
+        f'<w:right w:val="none"/>'
+        f'<w:bottom w:val="single" w:sz="18" w:space="0" w:color="000000"/>'
+        f'<w:insideH w:val="none"/>'
+        f'<w:insideV w:val="none"/>'
+        f'</w:tblBorders>'
+    )
+    tblPr.append(borders)
+
+    # Kolom kiri: Logo
+    cell_logo = table.cell(0, 0)
+    cell_logo.width = Cm(3.2)
+    set_cell_margins(cell_logo, top=40, bottom=80, left=40, right=40)
+    set_cell_bottom_border(cell_logo, color="000000", sz="18")
+
+    p_klogo = cell_logo.paragraphs[0]
+    p_klogo.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    p_klogo.paragraph_format.space_before = Pt(0)
+    p_klogo.paragraph_format.space_after = Pt(2)
+    clean_cell_p(p_klogo)
+    if logo_path and os.path.exists(logo_path):
+        r_klogo = p_klogo.add_run()
+        r_klogo.add_picture(logo_path, width=Cm(2.9))
+
+    # Kolom kanan: Teks instansi
+    cell_ktxt = table.cell(0, 1)
+    cell_ktxt.width = Cm(12.8)
+    set_cell_margins(cell_ktxt, top=30, bottom=80, left=40, right=40)
+    set_cell_bottom_border(cell_ktxt, color="000000", sz="18")
+
+    lines = [
+        {"text": lembaga, "bold": True, "size": 12, "sa": 1},
+        {"text": unit_kerja, "bold": True, "size": 12, "sa": 3},
+        {"text": alamat, "bold": False, "size": 10, "sa": 1},
+        {"text": wilayah, "bold": False, "size": 10, "sa": 1},
+        {"text": kontak, "bold": False, "size": 10, "sa": 4},
+    ]
+    for i, line in enumerate(lines):
+        if i == 0:
+            p = cell_ktxt.paragraphs[0]
+        else:
+            p = cell_ktxt.add_paragraph()
+        p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        p.paragraph_format.space_before = Pt(0)
+        p.paragraph_format.space_after = Pt(line["sa"])
+        p.paragraph_format.line_spacing = 1.0
+        clean_cell_p(p)
+        add_run(p, line["text"], bold=line["bold"], size=Pt(line["size"]))
+
+    # Ultra-thin separator paragraph
+    p_sep = doc.add_paragraph()
+    p_sep.paragraph_format.space_before = Pt(0)
+    p_sep.paragraph_format.space_after = Pt(4)
+    pPr_sep = p_sep._p.get_or_add_pPr()
+    pPr_sep.append(parse_xml(
+        f'<w:spacing {nsdecls("w")} w:before="0" w:after="80" w:line="40" w:lineRule="exact"/>'
+    ))
+    r_sep = p_sep.add_run()
+    rPr_sep = r_sep._r.get_or_add_rPr()
+    rPr_sep.append(parse_xml(f'<w:sz {nsdecls("w")} w:val="2"/>'))
+    rPr_sep.append(parse_xml(f'<w:szCs {nsdecls("w")} w:val="2"/>'))
+
+
+# =====================================================================
+# TABEL METADATA SURAT PENGANTAR (4 Kolom)
+# =====================================================================
+
+def add_surat_pengantar_metadata(doc, nomor: str, lampiran: str, hal: str,
+                                 tanggal: str = ""):
+    """
+    Tambahkan tabel metadata surat pengantar (4 kolom) standar BPKP.
+
+    Layout (tabel 3 baris x 4 kolom, borderless):
+      Kolom 1 (2.43 cm): Label (Nomor, Lampiran, Hal)      — left, 11pt
+      Kolom 2 (0.63 cm): Separator ':'                      — center, 11pt
+      Kolom 3 (8.39 cm): Isi teks                            — justified, 11pt
+      Kolom 4 (4.58 cm): Tanggal (hanya baris pertama)       — right, 11pt
+
+    Aturan: Tanggal ditempatkan pada kolom ke-4 mandiri agar judul
+    laporan pada baris 'Hal' tidak mengalami hanging indent.
+    """
+    table = doc.add_table(rows=3, cols=4)
+    table.alignment = WD_TABLE_ALIGNMENT.CENTER
+    table.autofit = False
+
+    # Borderless
+    tblPr = table._tbl.tblPr
+    borders = parse_xml(
+        f'<w:tblBorders {nsdecls("w")}>'
+        f'<w:top w:val="none"/><w:left w:val="none"/>'
+        f'<w:right w:val="none"/><w:bottom w:val="none"/>'
+        f'<w:insideH w:val="none"/><w:insideV w:val="none"/>'
+        f'</w:tblBorders>'
+    )
+    tblPr.append(borders)
+
+    meta_w = [Cm(2.43), Cm(0.63), Cm(8.39), Cm(4.58)]
+    meta_rows = [
+        ("Nomor", ":", nomor, tanggal),
+        ("Lampiran", ":", lampiran, ""),
+        ("Hal", ":", hal, ""),
+    ]
+
+    for r_idx, (label, sep, content, date_val) in enumerate(meta_rows):
+        cells = table.rows[r_idx].cells
+        for c_idx, w in enumerate(meta_w):
+            cells[c_idx].width = w
+            set_cell_margins(cells[c_idx], top=20, bottom=20, left=10, right=10)
+
+        # Col 0: Label
+        p0 = cells[0].paragraphs[0]
+        p0.paragraph_format.space_before = Pt(0)
+        p0.paragraph_format.space_after = Pt(2)
+        p0.paragraph_format.line_spacing = 1.15
+        p0.alignment = WD_ALIGN_PARAGRAPH.LEFT
+        clean_cell_p(p0)
+        add_run(p0, label, bold=False, size=Pt(11))
+
+        # Col 1: Separator ':'
+        p1 = cells[1].paragraphs[0]
+        p1.paragraph_format.space_before = Pt(0)
+        p1.paragraph_format.space_after = Pt(2)
+        p1.paragraph_format.line_spacing = 1.15
+        p1.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        clean_cell_p(p1)
+        add_run(p1, sep, bold=False, size=Pt(11))
+
+        # Col 2: Content
+        p2 = cells[2].paragraphs[0]
+        p2.paragraph_format.space_before = Pt(0)
+        p2.paragraph_format.space_after = Pt(2)
+        p2.paragraph_format.line_spacing = 1.15
+        p2.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
+        clean_cell_p(p2)
+        add_run(p2, content, bold=False, size=Pt(11))
+
+        # Col 3: Tanggal (kanan)
+        p3 = cells[3].paragraphs[0]
+        p3.paragraph_format.space_before = Pt(0)
+        p3.paragraph_format.space_after = Pt(2)
+        p3.paragraph_format.line_spacing = 1.15
+        p3.alignment = WD_ALIGN_PARAGRAPH.RIGHT
+        clean_cell_p(p3)
+        if date_val:
+            add_run(p3, date_val, bold=False, size=Pt(11))
 
 
 # =====================================================================
