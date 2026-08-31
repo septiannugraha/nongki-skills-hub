@@ -1,236 +1,208 @@
-# Contoh Struktur Laporan Pengawasan BPKP
+# Format Standar Struktur Dokumen Laporan Pengawasan (LHE/LHP) BPKP
 
-> **CATATAN**: Dokumen ini adalah **contoh** struktur dari satu jenis laporan (Laporan Hasil Evaluasi/LHE), bukan format baku yang berlaku untuk semua jenis laporan BPKP. Struktur laporan BPKP bervariasi tergantung jenis penugasan, pedoman teknis, dan arahan pimpinan. Gunakan sebagai referensi awal, lalu sesuaikan dengan kebutuhan penugasan yang sedang dikerjakan. Jika pengguna sudah menyediakan template, ikuti template tersebut.
+> **CATATAN**: Dokumen ini menyajikan format terstruktur laporan hasil pengawasan (Laporan Hasil Evaluasi/LHE atau Laporan Hasil Pengawasan/LHP) berdasarkan praktik penyusunan laporan komprehensif BPKP (seperti evaluasi ketahanan pangan multi-lokus). Gunakan panduan ini bersama ketentuan Tata Naskah Dinas BPKP (Perban 4/2022) dan sesuaikan dengan kekhususan penugasan/template unit kerja.
 
-Referensi ini diekstrak dari contoh Laporan Hasil Evaluasi (LHE) Program Ketahanan Pangan BPKP Perwakilan Provinsi Papua.
+---
 
-## Bagian 1: Surat Pengantar
-
-```
-BADAN PENGAWASAN KEUANGAN DAN PEMBANGUNAN
-PERWAKILAN PROVINSI [NAMA PROVINSI]
-[Alamat lengkap]
-[Telepon, Email]
-[Website]
-
-Nomor    : [Kode Unit]/SP-[Nomor]/[Kode Perwakilan]/[Tahun]    [Tanggal]
-Lampiran : [Jumlah] Laporan
-Hal      : [Judul Laporan]
-
-Yth. [Jabatan Penerima]
-di [Lokasi]
-
-Terlampir kami sampaikan [Judul Laporan] dengan Nomor [Nomor LHP/LHE/LHR]
-tanggal [Tanggal] sebagaimana terlampir.
-
-Pokok-pokok simpulan hasil [evaluasi/pemeriksaan/reviu] adalah sebagai berikut:
-
-A. Simpulan
-[Ringkasan butir-butir simpulan per tema/topik]
-
-B. Rekomendasi
-[Ringkasan butir-butir rekomendasi per tema/topik]
-
-Laporan ini terbatas ditujukan kepada [Jabatan Penerima] untuk dapat
-digunakan sebagai salah satu bahan pertimbangan atau rekomendasi dalam
-pengambilan keputusan atas permasalahan yang terjadi.
-
-Atas perhatian dan kerja sama yang baik, kami ucapkan terima kasih.
-
-                                        [Tanda tangan]
-                                        [Nama Kepala Perwakilan]
-
-Tembusan Yth.:
-1. [Deputi Kepala BPKP Bidang ...]
-2. [Pejabat lain sesuai kebutuhan]
-
-Layanan Pengaduan/Hotline:
-Apabila Pegawai BPKP menerima/meminta gratifikasi dan suap, dapat
-dilaporkan melalui mekanisme penyampaian pengaduan pada wbs.bpkp.go.id.
-atau menghubungi [nomor hotline].
-```
-
-## Bagian 2: Halaman Judul
+## 1. Halaman Sampul (Cover Page)
 
 ```
-BADAN PENGAWASAN KEUANGAN DAN PEMBANGUNAN
-PERWAKILAN PROVINSI [NAMA PROVINSI]
+                       [Logo BPKP Berwarna 3,4 cm x 1,7 cm]
+                               (Simetris Tengah)
 
-LAPORAN HASIL [EVALUASI/PEMERIKSAAN/REVIU]
-[JUDUL OBJEK PENGAWASAN]
-[PERIODE]
+            BADAN PENGAWASAN KEUANGAN DAN PEMBANGUNAN
+               PERWAKILAN PROVINSI [NAMA PROVINSI]
+                 (Arial 13 pt Bold & Arial 12 pt Bold)
 
-NOMOR   : [Nomor Laporan]
-TANGGAL : [Tanggal Laporan]
+                      LAPORAN HASIL EVALUASI
+                       (Arial 16 pt Bold)
+
+     ATAS TATA KELOLA [OBJEK PENGAWASAN] PADA [ENTITAS/LOKUS EVALUASI]
+                            TAHUN [TAHUN]
+                       (Arial 14 pt Bold)
+
+
+                   Nomor   : [Kode Klasifikasi]/LHP-[No]/[Kode Unit]/[Tahun]
+                   Tanggal : [Tanggal Penetapan Laporan]
+                       (Arial 12 pt Bold)
+
+
+               BADAN PENGAWASAN KEUANGAN DAN PEMBANGUNAN
+                  PERWAKILAN PROVINSI [NAMA PROVINSI]
+                                [KOTA]
+                                [TAHUN]
 ```
 
-## Bagian 3: Daftar Isi
+---
+
+## 2. Format Daftar Isi (Table of Contents)
 
 ```
 DAFTAR ISI
-
-BAB I   SIMPULAN DAN REKOMENDASI .................. [halaman]
-        A. SIMPULAN ................................. [halaman]
-        B. REKOMENDASI .............................. [halaman]
-
-BAB II  INFORMASI UMUM ............................. [halaman]
-        A. DASAR EVALUASI ........................... [halaman]
-        B. TUJUAN, RUANG LINGKUP DAN BATASAN
-           TANGGUNG JAWAB ........................... [halaman]
-           1. Tujuan Evaluasi ....................... [halaman]
-           2. Ruang Lingkup ......................... [halaman]
-           3. Batasan Tanggung Jawab ................ [halaman]
-        C. METODE EVALUASI .......................... [halaman]
-        D. PERNYATAAN PEMENUHAN NORMA ............... [halaman]
-        E. HAMBATAN EVALUASI ........................ [halaman]
-        F. DATA UMUM OBJEK PENGAWASAN ............... [halaman]
-        G. INFORMASI HASIL PENGAWASAN (INSILWAS) .... [halaman]
-
-BAB III URAIAN HASIL EVALUASI ...................... [halaman]
-        A. GAMBARAN UMUM ............................ [halaman]
-        B. HASIL PENGAWASAN ......................... [halaman]
-           [Sub-topik diuraikan sesuai tema]
+                                                                   Halaman
+RINGKASAN EKSEKUTIF / SURAT PENGANTAR ..............................   i
+BAB I   SIMPULAN DAN REKOMENDASI ...................................   1
+        A. Simpulan ................................................   1
+        B. Rekomendasi .............................................   5
+BAB II  URAIAN HASIL EVALUASI ......................................   8
+        A. Dasar Pelaksanaan .......................................   8
+        B. Tujuan ..................................................   8
+        C. Sasaran .................................................   9
+        D. Ruang Lingkup ...........................................   9
+        E. Batasan dan Tanggung Jawab ..............................  10
+        F. Pernyataan Pemenuhan Norma ..............................  10
+        G. Metode Evaluasi .........................................  10
+        H. Waktu Pelaksanaan dan Hambatan ..........................  11
+        I. Informasi Umum ..........................................  11
+        J. Hasil Evaluasi ..........................................  15
+           1. [Topik 1: Permasalahan Utama] ........................  15
+           2. [Topik 2: Permasalahan Utama] ........................  24
+           3. [Topik 3: Permasalahan Utama] ........................  30
+           ...
+           10. Tanggapan Mitra Evaluasi dan Rencana Aksi ...........  71
+DAFTAR TABEL .......................................................  73
+DAFTAR LAMPIRAN ....................................................  74
 ```
 
-## Bagian 4: BAB I -- Simpulan dan Rekomendasi
+---
+
+## 3. Format Surat Pengantar / Ringkasan Eksekutif
+
+```
++-------------------------------------------------------------------------------+
+| [LOGO BPKP] | BADAN PENGAWASAN KEUANGAN DAN PEMBANGUNAN                       |
+|             | PERWAKILAN PROVINSI [NAMA PROVINSI]                             |
+|             | [Alamat Lengkap Kantor Perwakilan BPKP]                         |
+|             | Telepon: [No. Telp], Email: [Alamat Email], Web: [Website Resmi]|
++-------------------------------------------------------------------------------+
+—————————————————————————————————————————————————————————————————————————————————
+
+Nomor    : [Kode Keamanan]/[Klasifikasi]/LHP-[No]/[Kode Unit]/[Tahun]    [Kota], [Tanggal]
+Lampiran : Satu Berkas
+Hal      : Laporan Hasil Evaluasi atas [Objek Pengawasan] pada [Entitas] Tahun [Tahun]
+
+Yth.
+1. [Gubernur / Pj. Gubernur Provinsi ...]
+2. [Bupati / Walikota ...]
+di Tempat
+
+Terlampir kami sampaikan Laporan Hasil Evaluasi atas Tata Kelola [Objek Pengawasan] pada [Entitas Wilayah] Tahun [Tahun] Nomor [Nomor Laporan] tanggal [Tanggal Laporan].
+
+Pokok-pokok simpulan dan rekomendasi hasil evaluasi adalah sebagai berikut:
+
+A. Simpulan
+[Ringkasan eksekutif poin-poin temuan utama per topik]
+
+B. Rekomendasi
+[Ringkasan eksekutif rekomendasi strategis pimpinan daerah dan taktis OPD]
+
+Laporan ini terbatas ditujukan kepada [Jabatan Penerima] untuk dapat digunakan sebagai salah satu bahan pertimbangan atau rekomendasi dalam pengambilan keputusan atas permasalahan yang terjadi.
+
+Atas perhatian dan kerja sama yang baik, kami ucapkan terima kasih.
+
+                                        Kepala Perwakilan,
+
+                                        [Tanda Tangan Digital / Basah]
+
+                                        [Nama Lengkap Kepala Perwakilan]
+                                        NIP [Nomor Induk Pegawai]
+
+Tembusan Yth.:
+1. Deputi Kepala BPKP Bidang [Pengawasan Terkait];
+2. [Pejabat Terkait Lainnya].
+```
+
+---
+
+## 4. Format BAB I -- Simpulan dan Rekomendasi
 
 ### A. Simpulan
-Format penyajian:
 ```
-Hasil [Evaluasi/Pemeriksaan/Reviu] [Objek] [Periode], dapat disimpulkan
-sebagai berikut:
-
-1. [Tema/Topik 1]
-   a) [Butir simpulan 1a]
-   b) [Butir simpulan 1b]
-   ...
-
-2. [Tema/Topik 2]
-   a) [Butir simpulan 2a]
-   ...
+Berdasarkan hasil evaluasi atas tata kelola [objek pengawasan] pada [wilayah entitas], dapat disimpulkan hal-hal sebagai berikut:
+1. [Topik 1]: [Simpulan substansi kondisi makro dan risiko].
+2. [Topik 2]: [Simpulan substansi kondisi makro dan risiko].
+...
 ```
 
 ### B. Rekomendasi
-Format penyajian:
 ```
-Sehubungan hasil [evaluasi/pemeriksaan/reviu] atas [objek pengawasan],
-kami merekomendasikan kepada [Jabatan Penerima], agar:
+Atas permasalahan yang diuraikan pada simpulan di atas, direkomendasikan kepada [Kepala Daerah] agar:
+1. [Rekomendasi Strategis Level Kepala Daerah];
+2. Menginstruksikan Kepala [OPD Teknis Terkait] untuk:
+   a. [Rekomendasi Operasional 1];
+   b. [Rekomendasi Operasional 2].
+```
 
-1. [Tema/Topik 1]
-   a) [Rekomendasi strategis]
-   b) Menginstruksikan [Kepala OPD] agar:
-      1) [Rekomendasi taktis]
-      2) [Rekomendasi taktis]
+---
+
+## 5. Format BAB II -- Uraian Hasil Evaluasi
+
+### A s.d. I: Dasar, Metodologi, & Profil Umum
+- **A. Dasar Pelaksanaan**: Daftar regulasi acuan dan Surat Tugas (`Surat Tugas Nomor PE.09.02/ST-...`).
+- **B. Tujuan**: Menilai efektivitas tata kelola dan memberikan *insight* serta *foresight*.
+- **C. Sasaran**: Sasaran per tema dan topik evaluasi.
+- **D. Ruang Lingkup**: Cakupan wilayah (Provinsi, Kab/Kota) dan tahun anggaran yang dievaluasi.
+- **E. Batasan dan Tanggung Jawab**: Klausul batas tanggung jawab auditor intern.
+- **F. Pernyataan Pemenuhan Norma**: Conformance statement sesuai SAIPI dan Peraturan BPKP tentang Standar Kerja Pengawasan Intern.
+- **G. Metode Evaluasi**: Pengumpulan dokumen, telaah regulasi, analisis KKE, wawancara, dan observasi fisik lapangan.
+- **H. Waktu Pelaksanaan dan Hambatan**: Jangka waktu pelaksanaan (jumlah hari kerja) dan keterangan kendala/hambatan di lapangan.
+- **I. Informasi Umum**: Data profil demografi, geografis, komoditas, dan anggaran objek pengawasan.
+
+---
+
+## 6. Format Hasil Pengawasan & Uraian Temuan 5C Multi-Lokus (Bagian J)
+
+Setiap topik temuan disusun dengan struktur hierarki baku:
+
+```
+[Heading 3] 1. [Judul Topik Utama] (misal: Lahan Pertanian Belum Terkelola dengan Efektif)
+
+[Paragraf Simpulan Umum Topik]
+[Gambaran makro kondisi topik secara menyeluruh di seluruh wilayah pengawasan].
+
+a. [Sub-Heading Temuan Spesifik a] (Bold 11pt)
+   Kondisi di tingkat wilayah pengawasan diuraikan sebagai berikut:
+   1) Provinsi [Nama]: [Fakta kondisi terverifikasi dari KKE dan data pendukung].
+   2) Kabupaten [Nama A]: [Fakta kondisi terverifikasi dari KKE dan data pendukung].
+   3) Kabupaten [Nama B]: [Fakta kondisi terverifikasi dari KKE dan data pendukung].
+
+   (.)  <-- Kriteria merah bila draft/unverified atau kutipan pasal regulasi definitif (Hitam).
+
+   Kondisi tersebut disebabkan oleh [akar masalah sistemik].
+
+   Akibatnya, [dampak negatif riil atau potensi risiko kegagalan program].
+
+   Atas permasalahan tersebut, direkomendasikan agar:
+   1) [Rekomendasi perbaikan untuk entitas Provinsi];
+   2) [Rekomendasi perbaikan untuk entitas Kabupaten].
+
+b. [Sub-Heading Temuan Spesifik b]
    ...
 
-Tindak lanjut atas rekomendasi yang diberikan harap disampaikan pada
-kesempatan pertama ke Perwakilan BPKP [Nama Provinsi].
-
-Laporan ini terbatas ditujukan kepada [Jabatan Penerima] untuk dapat
-digunakan sebagai salah satu bahan pertimbangan atau rekomendasi dalam
-pengambilan keputusan atas permasalahan yang terjadi.
+[Bagian Penutup Topik]
+Tanggapan Mitra Evaluasi dan Rencana Aksi
+Atas hasil evaluasi yang telah disampaikan, pihak [Pemerintah Daerah / OPD terkait] menyatakan sependapat dan berkomitmen menyusun rencana aksi penyelesaian tindak lanjut dengan rincian:
+1) [Uraian komitmen rencana aksi 1] paling lambat [Waktu target];
+2) [Uraian komitmen rencana aksi 2] paling lambat [Waktu target].
 ```
 
-## Bagian 5: BAB II -- Informasi Umum
+---
 
-### A. Dasar Evaluasi
-Daftar berurutan regulasi dan surat tugas:
+## 7. Format Standar Penyajian Tabel Data BPKP (Open Table)
+
 ```
-1. [Peraturan Pemerintah / Undang-Undang];
-2. [Peraturan Presiden];
-3. [Peraturan Kepala BPKP / Peraturan BPKP];
-4. [SAIPI];
-5. [Keputusan Kepala BPKP tentang Agenda Prioritas];
-6. [Surat Kepala Perwakilan perihal penugasan];
-7. [Surat Tugas];
-```
+Tabel 1: Realisasi dan Target Alokasi [Objek] Tahun [Tahun]
++----+-----------------------------+--------+-----------+-------------+------------+
+| No |          Indikator          | Satuan |  Target   |  Realisasi  | Capaian (%)|
++----+-----------------------------+--------+-----------+-------------+------------+
+| 1  | Target Lahan Baku Sawah     |   Ha   |   1.200   |     850     |   70,83%   |
+| 2  | Produktivitas Padi          | Ton/Ha |    4,50   |    3,20     |   71,11%   |
++----+-----------------------------+--------+-----------+-------------+------------+
+Sumber: Dinas Pertanian Kabupaten [Nama] diolah, 2026
 
-### B. Tujuan, Ruang Lingkup, dan Batasan Tanggung Jawab
-```
-1. Tujuan [Evaluasi/Pemeriksaan]
-   Tujuan umum ... adalah untuk [tujuan].
-   Nilai tambah yang diberikan berbentuk:
-   a. Pengungkapan fakta (hindsight);
-   b. Identifikasi dan analisis risiko (foresight); dan
-   c. Pemberian wawasan mendalam (insight).
-
-   Sasaran [evaluasi/pemeriksaan] terbagi menjadi [jumlah] tema
-   dan [jumlah] topik, yaitu:
-   a. [Tema 1], yaitu:
-      1) [Topik 1.1];
-      2) [Topik 1.2];
-   ...
-
-2. Ruang Lingkup
-   [Uraian cakupan area dan periode]
-
-3. Batasan Tanggung Jawab
-   Tanggung jawab auditor terbatas pada simpulan hasil [evaluasi/
-   pemeriksaan] yang disusun berdasarkan prosedur [evaluasi/pemeriksaan]
-   yang mengakumulasi bukti yang cukup, handal, relevan dan bermanfaat
-   yang diperoleh selama proses [evaluasi/pemeriksaan].
-```
-
-### C. Metode Evaluasi
-```
-Metodologi yang digunakan dalam [evaluasi/pemeriksaan], yaitu:
-1. Pengumpulan informasi dan data;
-2. Penelaahan regulasi dan dokumen lainnya;
-3. Analisis terhadap data dan informasi;
-4. Diskusi, wawancara dan konfirmasi kepada pihak terkait;
-5. Observasi lapangan;
-6. Pembuatan simpulan dan pemberian saran/rekomendasi.
-```
-
-### D. Pernyataan Pemenuhan Norma
-```
-Pengawasan ini telah dilakukan sesuai Standar Audit Intern Pemerintah
-Indonesia yang diterbitkan Asosiasi Auditor Intern Pemerintah Indonesia
-(AAIPI) dan Peraturan BPKP Nomor [X] Tahun [XXXX] tentang Standar
-Kerja Pengawasan Intern BPKP.
-```
-
-### E. Hambatan
-```
-[Tidak terdapat hambatan dalam pelaksanaan evaluasi.]
--- ATAU --
-[Uraikan hambatan jika ada]
-```
-
-## Bagian 6: BAB III -- Uraian Hasil (Pola Temuan 5C)
-
-### Pola per Sub-Topik
-```
-[Judul Permasalahan]
-
-[Uraian kondisi/fakta di lapangan -- CONDITION]
-[Data pendukung: tabel, angka, grafik jika ada]
-
-Kondisi ini tidak sesuai dengan [Nama Regulasi] Nomor [X] Tahun [XXXX]
-tentang [Perihal] pasal [X] [ayat (X)] yang menyatakan bahwa:
-(1) [Kutipan pasal/ayat]; dan
-(2) [Kutipan pasal/ayat].
--- CRITERIA
-
-Hal ini disebabkan [akar masalah/root cause].
--- CAUSE
-
-Akibatnya [dampak negatif / risiko yang timbul].
--- CONSEQUENCE
-```
-
-### Pola Penutup per Topik
-```
-[Nomor]) Risiko yang dapat terjadi dan belum termitigasi terhadap
-[nama topik], antara lain:
-a) [Nama Risiko]
-   Risiko ini [dapat terjadi / muncul] karena [penyebab ringkas].
-b) ...
-
-[Nomor]) Terhadap permasalahan tersebut direkomendasikan kepada
-[Jabatan Penerima] agar:
-a) [Rekomendasi strategis]
-b) Menginstruksikan [Kepala OPD] untuk:
-   (1) [Rekomendasi taktis 1]
-   (2) [Rekomendasi taktis 2]
+*Catatan Format:*
+- Hanya menggunakan garis horizontal (Top, Bottom, Header border sz="4"), tanpa border vertikal.
+- Shading header abu-abu lembut (#F2F2F2), teks bold rata tengah/kiri.
+- Teks angka rata kanan, teks deskripsi rata kiri/justified, nomor rata tengah.
+- Sumber dicantumkan di bawah tabel dengan huruf miring (Italic 9 pt).
 ```
