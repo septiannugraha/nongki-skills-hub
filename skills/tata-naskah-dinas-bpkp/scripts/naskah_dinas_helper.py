@@ -17,6 +17,7 @@ from __future__ import annotations
 from typing import Optional, List
 
 import os
+import sys
 from docx.shared import Pt, Inches, Cm, RGBColor
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.enum.table import WD_TABLE_ALIGNMENT
@@ -25,23 +26,21 @@ from docx.oxml.ns import nsdecls
 
 # Impor engine inti - relatif jika dipanggil sebagai paket, absolut jika mandiri.
 # Engine bpkp_docx_engine berada di skill laporan-pengawasan-bpkp.
-import os as _os
-import sys as _sys
 
 try:
     from .bpkp_docx_engine import (
-        _apply_font, FONT_NAME, BLACK, add_p, add_run,
+        _apply_font, FONT_NAME, BLACK, RED, add_p, add_run,
         clean_cell_p, set_cell_margins, set_cell_shading,
-        set_table_borders, add_table_bordered,
+        set_cell_bottom_border, set_table_borders, add_table_bordered,
     )
 except ImportError:
     # Cari engine di skill laporan-pengawasan-bpkp (sibling directory)
-    _here = _os.path.dirname(_os.path.abspath(__file__))
-    _engine_dir = _os.path.normpath(
-        _os.path.join(_here, '..', '..', 'laporan-pengawasan-bpkp', 'scripts')
+    _here = os.path.dirname(os.path.abspath(__file__))
+    _engine_dir = os.path.normpath(
+        os.path.join(_here, '..', '..', 'laporan-pengawasan-bpkp', 'scripts')
     )
-    if _engine_dir not in _sys.path:
-        _sys.path.insert(0, _engine_dir)
+    if _engine_dir not in sys.path:
+        sys.path.insert(0, _engine_dir)
     from bpkp_docx_engine import (
         _apply_font, FONT_NAME, BLACK, RED, add_p, add_run,
         clean_cell_p, set_cell_margins, set_cell_shading,
@@ -59,7 +58,32 @@ __all__ = [
     "add_table_bordered",
     "add_p",
     "add_run",
+    "get_default_logo",
 ]
+
+# =====================================================================
+# HELPER PATH ASET (LOGO BPKP)
+# =====================================================================
+
+def get_default_logo(variant: str = "png") -> str:
+    """
+    Kembalikan path absolut ke file logo BPKP yang dibundel di folder
+    ``assets/`` skill ini.
+
+    variant:
+      "png" -> logo_bpkp.png  (untuk cover page, transparan)
+      "jpg" -> logo_bpkp_kop.jpg (untuk kop surat tabel)
+
+    Mengembalikan string kosong jika file tidak ditemukan.
+    """
+    _here = os.path.dirname(os.path.abspath(__file__))
+    if variant == "jpg":
+        path = os.path.join(_here, "..", "assets", "logo_bpkp_kop.jpg")
+    else:
+        path = os.path.join(_here, "..", "assets", "logo_bpkp.png")
+    path = os.path.normpath(path)
+    return path if os.path.exists(path) else ""
+
 
 # =====================================================================
 # KOP SURAT (LETTERHEAD) BPKP
@@ -182,6 +206,9 @@ def add_kop_surat_table(doc, logo_path: str = "",
     p_klogo.paragraph_format.space_before = Pt(0)
     p_klogo.paragraph_format.space_after = Pt(2)
     clean_cell_p(p_klogo)
+    # Gunakan logo default jika tidak diberikan
+    if not logo_path:
+        logo_path = get_default_logo(variant="jpg")
     if logo_path and os.path.exists(logo_path):
         r_klogo = p_klogo.add_run()
         r_klogo.add_picture(logo_path, width=Cm(2.9))

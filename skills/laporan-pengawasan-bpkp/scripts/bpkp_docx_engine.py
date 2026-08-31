@@ -16,6 +16,7 @@ audit investigasi, dll.) cukup mengimpor fungsi-fungsi di sini.
 
 from __future__ import annotations
 
+import os
 from typing import Optional, List, Tuple
 
 import docx
@@ -973,6 +974,30 @@ def new_topic_context(doc, topic_label):
 
 
 # =====================================================================
+# HELPER PATH ASET (LOGO BPKP)
+# =====================================================================
+
+def get_default_logo(variant: str = "png") -> str:
+    """
+    Kembalikan path absolut ke file logo BPKP yang dibundel di folder
+    ``assets/`` skill ini.
+
+    variant:
+      "png" -> logo_bpkp.png  (untuk cover page, transparan)
+      "jpg" -> logo_bpkp_kop.jpg (untuk kop surat tabel)
+
+    Mengembalikan string kosong jika file tidak ditemukan.
+    """
+    _here = os.path.dirname(os.path.abspath(__file__))
+    if variant == "jpg":
+        path = os.path.join(_here, "..", "assets", "logo_bpkp_kop.jpg")
+    else:
+        path = os.path.join(_here, "..", "assets", "logo_bpkp.png")
+    path = os.path.normpath(path)
+    return path if os.path.exists(path) else ""
+
+
+# =====================================================================
 # COVER PAGE BUILDER
 # =====================================================================
 
@@ -1005,6 +1030,10 @@ def add_cover_page(doc, logo_path: str = "",
       - Page break
     """
     import os
+
+    # Gunakan logo default jika tidak diberikan
+    if not logo_path:
+        logo_path = get_default_logo(variant="png")
 
     # Logo BPKP Center
     if logo_path and os.path.exists(logo_path):
