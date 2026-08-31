@@ -1213,3 +1213,88 @@ def add_table_with_subheader(doc, headers: list, sub_headers: list,
             add_run(p, val, size=body_size)
 
     return table
+
+
+# =====================================================================
+# KOP SURAT (LETTERHEAD) TABEL RESMI BPKP
+# =====================================================================
+
+def add_kop_surat_table(doc, logo_path: str = "",
+                        lembaga: str = "BADAN PENGAWASAN KEUANGAN DAN PEMBANGUNAN",
+                        unit_kerja: str = "PERWAKILAN PROVINSI PAPUA TENGAH",
+                        alamat: str = "Jalan Sam Ratulangi, Kelurahan Oyehe, Distrik Nabire",
+                        wilayah: str = "Kabupaten Nabire, Provinsi Papua Tengah, Kode Pos: 98816",
+                        kontak: str = "Email: papua.tengah@bpkp.go.id, Website: www.bpkp.go.id/papua.tengah"):
+    """
+    Tambahkan kop surat (letterhead) BPKP versi tabel resmi dengan logo.
+
+    Format Standar:
+      Tabel 1 baris x 2 kolom, borderless kecuali garis bawah tebal 2.25 pt (sz=18):
+        - Kolom kiri  (3.06 cm / 86.8 pt): Logo BPKP resmi (Center, lebar 2.9 cm)
+        - Kolom kanan (13.34 cm / 378.2 pt): 5 baris teks instansi
+            1. NAMA LEMBAGA      (Arial 12pt Bold, center, line 1.0, spaceBelow 1pt)
+            2. UNIT KERJA         (Arial 12pt Bold, center, line 1.0, spaceBelow 3pt)
+            3. Alamat jalan       (Arial 10pt Regular, center, line 1.0, spaceBelow 1pt)
+            4. Wilayah + kode pos (Arial 10pt Regular, center, line 1.0, spaceBelow 1pt)
+            5. Email + Website    (Arial 10pt Regular, center, line 1.0, spaceBelow 4pt)
+    """
+    table = doc.add_table(rows=1, cols=2)
+    table.alignment = WD_TABLE_ALIGNMENT.CENTER
+    table.autofit = False
+
+    # Borderless tabel, kecuali bottom border tebal di level tabel
+    tblPr = table._tbl.tblPr
+    borders = parse_xml(
+        f'<w:tblBorders {nsdecls("w")}>'
+        f'<w:top w:val="none"/>'
+        f'<w:left w:val="none"/>'
+        f'<w:right w:val="none"/>'
+        f'<w:bottom w:val="single" w:sz="18" w:space="0" w:color="000000"/>'
+        f'<w:insideH w:val="none"/>'
+        f'<w:insideV w:val="none"/>'
+        f'</w:tblBorders>'
+    )
+    tblPr.append(borders)
+
+    # Kolom kiri: Logo
+    cell_logo = table.cell(0, 0)
+    cell_logo.width = Cm(3.06)
+    set_cell_margins(cell_logo, top=30, bottom=80, left=40, right=40)
+    set_cell_bottom_border(cell_logo, color="000000", sz="18")
+
+    p_klogo = cell_logo.paragraphs[0]
+    p_klogo.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    p_klogo.paragraph_format.space_before = Pt(0)
+    p_klogo.paragraph_format.space_after = Pt(2)
+    clean_cell_p(p_klogo)
+    
+    if not logo_path:
+        logo_path = get_default_logo(variant="png") or get_default_logo(variant="jpg")
+    if logo_path and os.path.exists(logo_path):
+        r_klogo = p_klogo.add_run()
+        r_klogo.add_picture(logo_path, width=Cm(2.9))
+
+    # Kolom kanan: Teks instansi
+    cell_ktxt = table.cell(0, 1)
+    cell_ktxt.width = Cm(13.34)
+    set_cell_margins(cell_ktxt, top=30, bottom=80, left=40, right=40)
+    set_cell_bottom_border(cell_ktxt, color="000000", sz="18")
+
+    lines = [
+        {"text": lembaga, "bold": True, "size": 12, "sa": 1},
+        {"text": unit_kerja, "bold": True, "size": 12, "sa": 3},
+        {"text": alamat, "bold": False, "size": 10, "sa": 1},
+        {"text": wilayah, "bold": False, "size": 10, "sa": 1},
+        {"text": kontak, "bold": False, "size": 10, "sa": 4},
+    ]
+    for i, line in enumerate(lines):
+        if i == 0:
+            p = cell_ktxt.paragraphs[0]
+        else:
+            p = cell_ktxt.add_paragraph()
+        p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        p.paragraph_format.space_before = Pt(0)
+        p.paragraph_format.space_after = Pt(line["sa"])
+        p.paragraph_format.line_spacing = 1.0
+        clean_cell_p(p)
+        add_run(p, line["text"], bold=line["bold"], size=Pt(line["size"]))
