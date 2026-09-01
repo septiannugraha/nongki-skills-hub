@@ -1,12 +1,22 @@
 ---
 name: tata-naskah-dinas-bpkp
-description: Menyusun, mengedit, dan memvalidasi naskah dinas resmi di lingkungan BPKP (surat dinas, nota dinas, surat tugas, keputusan, berita acara, MoU, laporan, dll) sesuai Peraturan BPKP Nomor 4 Tahun 2022 tentang Pedoman Tata Naskah Dinas. Gunakan saat diminta membuat draf naskah/surat dinas, menentukan jenis naskah yang tepat, menyusun penomoran arsip, memilih pejabat penanda tangan, atau mengklasifikasikan derajat kerahasiaan naskah.
-tags: [bpkp, tata-naskah-dinas, tnd, naskah-dinas, surat-dinas, nota-dinas, surat-tugas, perban-4-2022, penomoran, penanda-tangan]
+description: Menyusun, mengedit, dan memvalidasi naskah dinas resmi di lingkungan BPKP (surat dinas, nota dinas, surat tugas, keputusan, berita acara, MoU, laporan, dll) sesuai Peraturan BPKP Nomor 4 Tahun 2026 tentang Tata Naskah Dinas (menggantikan Perban 4/2022). Gunakan saat diminta membuat draf naskah/surat dinas, menentukan jenis naskah yang tepat, menyusun penomoran arsip, memilih pejabat penanda tangan, atau mengklasifikasikan derajat kerahasiaan naskah.
+tags: [bpkp, tata-naskah-dinas, tnd, naskah-dinas, surat-dinas, nota-dinas, surat-tugas, peraturan-bpkp-4-2026, penomoran, penanda-tangan]
 ---
 
 # Tata Naskah Dinas BPKP
 
-Skill ini membantu menyusun naskah dinas resmi di lingkungan BPKP sesuai **Peraturan BPKP Nomor 4 Tahun 2022 tentang Pedoman Tata Naskah Dinas di Lingkungan BPKP** (Perban 4/2022), baik untuk unit pusat maupun perwakilan.
+Skill ini membantu menyusun naskah dinas resmi di lingkungan BPKP sesuai **Peraturan BPKP Nomor 4 Tahun 2026 tentang Tata Naskah Dinas di Lingkungan BPKP** (menggantikan Peraturan BPKP Nomor 4 Tahun 2022 sebagaimana diatur dalam Pasal 12 Pencabutan), baik untuk unit pusat maupun perwakilan.
+
+> [!important] Perubahan Struktural Utama (Perban 4/2022 → Peraturan 4/2026)
+> - **Judul**: "Pedoman Tata Naskah Dinas" → "Tata Naskah Dinas" (tanpa kata "Pedoman").
+> - **Struktur**: Lampiran I–VII (Perban 4/2022) → **BAB I–VI** (Peraturan 4/2026).
+> - **Pendahuluan** (Lampiran I) → **BAB I** (ditambah sub-bagian C. Sasaran dan D. Prinsip).
+> - **Penciptaan Naskah Dinas** (Lampiran III) → **BAB II: Pembuatan Naskah Dinas** (jeda spasi, margin, TTD/paraf/cap, kaidah penulisan, estetika & etika, rujukan, perubahan/ralat tergabung).
+> - **Penanda Tangan & TTE** (Lampiran IV) → **BAB III: Pejabat Penanda Tangan** (ditambah Tabel III.2 Matriks ke Instansi Luar BPKP).
+> - **Pengamanan & Pengendalian** (Lampiran V) → **BAB IV**.
+> - **Jenis, Susunan, Bentuk** (Lampiran II tersebar) → **BAB V** utuh dengan sub-bagian A (Arahan), B (Korespondensi), C (Khusus, 20 jenis).
+> - **Perubahan/Ralat/Penutup** (Lampiran VI–VII) → terintegrasi pada BAB II-M dan **BAB VI Penutup**.
 
 Baca file referensi sesuai kebutuhan:
 - [Jenis Naskah Dinas](references/jenis-naskah-dinas.md) -- taksonomi lengkap, definisi, dan sistematika tiap jenis.
@@ -21,20 +31,25 @@ Naskah dinas BPKP terbagi menjadi tiga kelompok besar:
 ```
 Naskah Dinas
 ├── Arahan
-│   ├── Pengaturan : peraturan, pedoman, juklak/juknis, instruksi,
-│   │                surat edaran, prosedur baku pelaksanaan kegiatan (SOP)
+│   ├── Pengaturan : peraturan, instruksi, surat edaran, prosedur baku
+│   │                pelaksanaan kegiatan (SOP)
 │   ├── Penetapan  : keputusan
 │   └── Penugasan  : surat perintah, surat tugas
 ├── Korespondensi
-│   ├── Internal   : nota dinas, memorandum, disposisi
-│   ├── Eksternal  : surat dinas
-│   └── Surat undangan (internal/eksternal)
-└── Khusus (19 jenis): laporan, notisi hasil pengawasan, BA pembahasan hasil
-    pengawasan, BATL, BA pemutakhiran data, BA TPTD, SPTJM, MoU, Perjanjian
-    Kerja Sama, berita acara, surat kuasa, surat keterangan, surat pengantar,
-    pengumuman, surat peringatan, surat izin, surat pernyataan, notula/risalah,
-    formulir
+│   ├── Internal   : nota dinas, memorandum, disposisi, undangan internal
+│   └── Eksternal  : surat dinas
+└── Khusus (20 jenis): dokumentasi pengawasan, pedoman, panduan teknis
+    pengawasan, petunjuk pelaksanaan/teknis, laporan, MoU, surat perjanjian,
+    berita acara, surat kuasa, surat keterangan, surat pengantar naskah/barang,
+    pengumuman, surat peringatan, surat pernyataan, notula/risalah, telaah staf,
+    sertifikat, piagam penghargaan, kerangka acuan kerja, formulir
 ```
+
+> [!note] Perubahan Komposisi Naskah Dinas Khusus (Perban 4/2022 → Peraturan 4/2026)
+> - **Pedoman, Petunjuk Pelaksanaan/Teknis** dipindahkan dari Naskah Dinas Arahan → Naskah Dinas Khusus.
+> - **Panduan Teknis Pengawasan** (baru), **Telaah Staf**, **Sertifikat**, **Piagam Penghargaan**, **Kerangka Acuan Kerja (KAK)** kini dikategorikan secara eksplisit sebagai Naskah Dinas Khusus.
+> - **Naskah Dinas Dokumentasi Pengawasan** (kategori baru) menggabungkan: Surat Permintaan Data, Notisi, Rencana Tindak Perbaikan (RTP), Pernyataan Kesanggupan Tindak Lanjut, BA Pembahasan Hasil Pengawasan, BATL, BA Pemutakhiran Data, BA TPTD, dan SPTJM.
+> - **Dihapus sebagai jenis mandiri**: Surat Izin (`SI`), Surat Pernyataan Melaksanakan Tugas (`SPMT`), Surat Pernyataan Menduduki Jabatan (`SPMJ`), Surat Pernyataan Pelantikan (`SPL`), Surat Pengukuhan Perintah Lisan (`SPPL`), Surat Perjalanan Dinas (`SPD` -- tunduk peraturan terpisah), BA Pengangkatan Sumpah (`BAPS`), Naskah Serah Terima Jabatan (`NST`).
 
 ### Panduan memilih jenis naskah
 
@@ -58,34 +73,41 @@ Rincian definisi, dasar pasal, dan sistematika tiap jenis ada di [Jenis Naskah D
 
 ## 2. Format Penomoran Naskah Dinas
 
-Format umum nomor naskah dinas:
+Peraturan 4/2026 membagi penomoran menjadi **dua format**:
 
+**Format 1 -- Tanpa kode jenis** (untuk Naskah Dinas arahan bersifat pengaturan: Peraturan, Instruksi, Surat Edaran). Hanya menyebutkan nomor dan tahun penetapan, tanpa kode jenis, penanda tangan, dan unit kerja konseptor.
 ```
-b   /   HO-XX.XX   /   ND   /   001   /   SU 01 1   /   2026
-│        │          │      │         │            │
-kode     kode       kode   nomor     kode         tahun
-keamanan klasifikasi jenis urut    konseptor    penciptaan
-arsip
+(Nama Jenis Naskah Dinas)
+(Nama Jabatan)
+NOMOR xxx TAHUN xxxx
+TENTANG
+(Judul Hal yang Diatur)
 ```
 
-Kode keamanan hanya untuk surat dinas: `SR` (Sangat Rahasia), `R` (Rahasia), `T` (Terbatas), `S` (Biasa, tanpa kode). Kode jenis utama: `KEP`, `SPRIN`, `ST`, `SPD`, `SPPL`, `ND`, `S`, `UND`, `PRJ`, `MoU`, `BA`, `BAPS`, `NST`, `KET`, `SP`, `PENG`, `PRT`, `SI`, `SPMT`, `SPMJ`, `SPL`, `LHP`, `LPP`.
+**Format 2 -- Dengan kode jenis** (untuk naskah dinas selain di atas):
+```
+[kode keamanan] / [kode klasifikasi arsip] / [kode jenis] - [nomor urut] / [kode unit penanda tangan] / [kode konseptor] / [tahun]
+```
 
-**Pengecualian**: penomoran peraturan hanya mencantumkan nomor dan tahun penetapan tanpa kode jenis, penanda tangan, dan konseptor.
+Kode keamanan hanya untuk surat dinas: `SR` (Sangat Rahasia), `R` (Rahasia), `T` (Terbatas), `S` (Biasa, tanpa kode). Kode jenis utama (Peraturan 4/2026): `KEP`, `SPRIN`, `ST`, `ND`, `MO`, `UND`, `S`, `LHP`, `LPP`, `MoU`, `PRJ`, `BA`, `KS`, `KET`, `SP`, `PENG`, `PRT`, `SPT`, `NOTULA`, `SERT`, `PI`.
 
-Nomor urut agenda dimulai dari 1 setiap awal tahun. Detail elemen, daftar kode lengkap, serta ketentuan kop/kertas/spasi/margin ada di [Penomoran dan Format](references/penomoran-dan-format.md).
+**Naskah Dinas tanpa penomoran** (tidak dibubuhi nomor; mengikuti kebijakan unit kerja): disposisi, dokumentasi pengawasan, pedoman, panduan teknis pengawasan, petunjuk pelaksanaan/teknis, telaah staf, kerangka acuan kerja, dan formulir.
+
+Nomor urut agenda elektronik dimulai dari 1 setiap awal tahun, dikelompokkan per jenis naskah, dan **tidak diperkenankan ditambahkan kode, huruf, angka romawi, maupun penanda lainnya** yang mengubah format penomoran. Detail elemen, daftar kode lengkap, serta ketentuan kop/kertas/spasi/margin ada di [Penomoran dan Format](references/penomoran-dan-format.md).
 
 ## 3. Wewenang Penanda Tangan
 
-Aturan kunci:
-- Naskah bersifat **kebijakan/keputusan/arahan** kepada pihak luar BPKP: ditandatangani **Kepala BPKP**, dapat dilimpahkan ke **JPT Madya**.
-- **Instruksi**: hanya Kepala BPKP.
-- **Pedoman/Juklak**: Kepala BPKP atau JPT Madya.
-- **Keputusan/Surat Edaran**: Kepala BPKP, JPT Madya, atau JPT Pratama.
-- **Nota dinas/disposisi/memorandum**: semua jenjang sampai administrator.
-- **MoU/Perjanjian Kerja Sama luar negeri**: hanya Kepala BPKP.
+Aturan kunci (Peraturan 4/2026, BAB III):
+- Naskah bersifat **kebijakan/keputusan/arahan** kepada pihak luar BPKP: ditandatangani **Kepala BPKP**, dapat didelegasikan/dilimpahkan ke **JPT Madya**.
+- **Peraturan/Instruksi**: hanya Kepala BPKP.
+- **Surat Edaran/Keputusan**: Kepala BPKP, JPT Madya, atau JPT Pratama.
+- **SOP**: hanya JPT Pratama.
+- **Nota dinas/disposisi/memorandum/undangan internal/surat dinas**: semua jenjang sampai administrator/koordinator/pengawas.
+- **MoU/Perjanjian Kerja Sama luar negeri**: Kepala BPKP atau JPT Madya (tidak lagi hanya Kepala BPKP).
 - **Laporan hasil pengawasan**: Kepala BPKP, JPT Madya, JPT Pratama.
+- **Dokumentasi Pengawasan**: JPT Pratama, Administrator/Koordinator, atau Staf/Jabatan Fungsional (tanpa kop dan cap unit kerja).
 
-Pelimpahan wewenang melalui **delegasi** (tanggung jawab pindah; tidak pakai a.n.) atau **mandat** (tanggung jawab tetap pada pejabat definitif; pakai a.n./u.b./Plt./Plh.). Matriks lengkap 32 jenis naskah ada di [Matriks Penanda Tangan](references/matriks-penanda-tangan.md).
+Pelimpahan wewenang melalui **delegasi** (tanggung jawab pindah; tidak pakai a.n.) atau **mandat** (tanggung jawab tetap pada pejabat definitif; pakai a.n./u.b./Plt./Plh.). Matriks lengkap 32 jenis naskah + Tabel III.2 (ke instansi luar BPKP) ada di [Matriks Penanda Tangan](references/matriks-penanda-tangan.md).
 
 ## 4. Alur Kerja (Workflow)
 
@@ -124,8 +146,8 @@ Terapkan prinsip humanisasi dan pemeriksaan EYD V sebagaimana diuraikan pada ski
 - Jika pengguna hanya menyebut "buatkan surat" tanpa detail, tentukan sendiri jenis yang paling tepat berdasarkan konteks, lalu konfirmasi singkat sebelum finalisasi.
 - Jika pejabat penanda tangan yang diminta tidak berwenang menurut matriks, jelaskan dan tawarkan pejabat yang berwenang atau skema delegasi/mandat.
 - Jika diminta mengedit naskah yang sudah ada, pertahankan substansi dan fakta; fokus pada kesesuaian format TND, struktur, dan bahasa.
-- Jika pengguna memberikan template unit kerja yang berbeda dari Perban 4/2022, ikuti template tersebut dan beri catatan jika ada penyimpangan material.
-- Skill ini tidak menggantikan peraturan teknis lain (misal pedoman SPD atau pengadaan barang/jasa); rujuk peraturan khusus bila formatnya diatur terpisah.
+- Jika pengguna memberikan template unit kerja yang berbeda dari Peraturan 4/2026, ikuti template tersebut dan beri catatan jika ada penyimpangan material.
+- Skill ini tidak menggantikan peraturan teknis lain (misal pengadaan barang/jasa atau SPD yang kini diatur peraturan terpisah); rujuk peraturan khusus bila formatnya diatur terpisah.
 
 ---
 
@@ -270,7 +292,7 @@ Saat dokumen dirender atau dimanipulasi pada Google Docs melalui Google Workspac
 
 ## 7. Modul Python Bawaan (Scripts) — Helper Naskah Dinas
 
-Skill ini membundel modul Python siap pakai di folder `scripts/` untuk menyusun komponen naskah dinas (kop surat, nota dinas, surat tugas, lembar pengesahan) yang sesuai Perban 4/2022. Modul ini mengimpor engine inti dari skill `laporan-pengawasan-bpkp` untuk konsistensi format.
+Skill ini membundel modul Python siap pakai di folder `scripts/` untuk menyusun komponen naskah dinas (kop surat, nota dinas, surat tugas, lembar pengesahan) yang sesuai Peraturan BPKP 4/2026. Modul ini mengimpor engine inti dari skill `laporan-pengawasan-bpkp` untuk konsistensi format.
 
 ### 7.1 Paket & File
 

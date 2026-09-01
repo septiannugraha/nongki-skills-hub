@@ -1,26 +1,32 @@
 # Jenis Naskah Dinas BPKP
 
-Referensi taksonomi, definisi, dan sistematika jenis naskah dinas sesuai Perban 4/2022 (Pasal 3 s.d. Pasal 35 dan Lampiran BAB II).
+Referensi taksonomi, definisi, dan sistematika jenis naskah dinas sesuai **Peraturan BPKP Nomor 4 Tahun 2026** (BAB II, BAB V; menggantikan Perban 4/2022 Lampiran BAB II).
 
-## 1. Naskah Dinas Arahan
+> [!important] Catatan Perubahan Struktural
+> - **Pengaturan** tidak lagi memuat Pedoman dan Petunjuk Pelaksanaan/Teknis secara terpisah (keduanya dipindahkan ke Naskah Dinas Khusus).
+> - **Naskah Dinas Khusus** diperluas dari 19 → **20 jenis**, dengan pengelompokan baru: **Naskah Dinas Dokumentasi Pengawasan** menggabungkan Notisi, BA Pembahasan Hasil Pengawasan, BATL, BA Pemutakhiran Data, BA TPTD, SPTJM, RTP, dan Surat Permintaan Data.
+> - **Surat Izin**, **SPMT/SPMJ/SPL**, **SPPL**, **BAPS**, **NST** tidak lagi berdiri sebagai jenis mandiri.
+> - **Surat Perjalanan Dinas (SPD)** tidak lagi diatur sebagai jenis naskah dinas; tunduk pada Peraturan Menteri Keuangan secara terpisah.
 
-### 1.1 Pengaturan
+## 1. Naskah Dinas Arahan (BAB V-A)
 
-| Jenis | Definisi | Ditetapkan oleh | Dasar |
+Naskah Dinas arahan = naskah dinas yang memuat kebijakan pokok/pelaksanaan yang harus dipedomani dan dilaksanakan dalam penyelenggaraan tugas dan kegiatan setiap lembaga, bersifat pengaturan, penetapan, dan penugasan.
+
+### 1.1 Pengaturan (BAB V-A.1)
+
+| Jenis | Definisi | Dasar | Kode |
 |---|---|---|---|
-| **Peraturan** | Mengatur, memuat kebijakan pokok, mengikat umum, berlaku seluruh unit kerja BPKP/instansi luar sesuai perundang-undangan; dasar penyusunan naskah dinas lain. | Sesuai Perban tentang Pembentukan dan Publikasi Peraturan | Ps. 4 |
-| **Pedoman** | Memuat acuan bersifat umum; disusun dalam bentuk Peraturan. | Kepala BPKP atau JPT Madya | Ps. 5 |
-| **Petunjuk pelaksanaan/teknis (juklak/juknis)** | Memuat cara pelaksanaan/teknis kegiatan, urutan, wewenang, prosedur; bentuk Peraturan. | Kepala BPKP atau JPT Madya | Ps. 6 |
-| **Instruksi** | Perintah berupa petunjuk/arahan pelaksanaan kebijakan UU/peraturan. | Kepala BPKP (tetapkan dan tanda tangan) | Ps. 7 |
-| **Surat Edaran (SE)** | Pemberitahuan hal tertentu yang penting dan mendesak. | Kepala BPKP/JPT Madya/JPT Pratama | Ps. 8 |
-| **Prosedur baku pelaksanaan kegiatan (SOP)** | Serangkaian instruksi tertulis/langkah baku menyelesaikan pekerjaan agar hasil maksimal, efisien, ekonomis, efektif. | Sesuai Perban Pedoman Penyusunan SOP | Ps. 9 |
+| **Peraturan** | Mengatur, memuat kebijakan pokok, mengikat umum, berlaku seluruh unit kerja BPKP/instansi luar sesuai perundang-undangan; dasar penyusunan naskah dinas lain. | BAB II & V | Tanpa kode |
+| **Instruksi** | Perintah berupa petunjuk/arahan pelaksanaan kebijakan UU/peraturan. Ditandatangani Kepala BPKP. | BAB V-A.1.b | Tanpa kode |
+| **Surat Edaran (SE)** | Pemberitahuan hal tertentu yang penting dan mendesak. Kepala BPKP/JPT Madya/JPT Pratama. | BAB V-A.1.c | Tanpa kode |
+| **Prosedur Baku Pelaksanaan Kegiatan (SOP)** | Serangkaian instruksi tertulis/langkah baku menyelesaikan pekerjaan agar hasil maksimal, efisien, ekonomis, efektif. Ditandatangani JPT Pratama. | BAB V-A.1.d | Tanpa kode |
 
-### 1.2 Penetapan
+### 1.2 Penetapan (BAB V-A.2)
 
-**Keputusan**: memuat kebijakan bersifat menetapkan (bukan mengatur), merupakan pelaksanaan kegiatan. Ditetapkan dan ditandatangani oleh Kepala BPKP, JPT Madya, atau JPT Pratama (Ps. 10).
+**Keputusan (KEP)**: memuat kebijakan bersifat menetapkan (bukan mengatur), merupakan pelaksanaan kegiatan. Ditetapkan/ditandatangani oleh Kepala BPKP, JPT Madya, atau JPT Pratama.
 
 Sistematika keputusan:
-1. Kop naskah dinas
+1. Kop naskah dinas jabatan Kepala/wakil kepala
 2. Nomor dan judul ("KEPUTUSAN KEPALA BADAN PENGAWASAN KEUANGAN DAN PEMBANGUNAN NOMOR ... TENTANG ...")
 3. Menimbang (a, b, c)
 4. Mengingat (daftar dasar hukum bernomor lengkap)
@@ -28,80 +34,64 @@ Sistematika keputusan:
    - Menetapkan: pembukaan
    - KETENTUAN (pasal-pasal isi keputusan)
    - Ketentuan penutup (tanggal penetapan, penanda tangan)
+6. Pengabsahan: nama jabatan, tanda tangan/nama lengkap, dan (bila TTE) kalimat "Ditandatangani secara elektronik oleh" + kode QR
 
-### 1.3 Penugasan
+### 1.3 Penugasan (BAB V-A.3)
 
-| Jenis | Definisi | Dasar |
+| Jenis | Definisi | Kode |
 |---|---|---|
-| **Surat Perintah (SPRIN)** | Naskah dari atasan/pejabat berwenang kepada bawahan, berisi perintah melaksanakan pekerjaan tertentu. | Ps. 11 |
-| **Surat Tugas (ST)** | Naskah dari atasan/pejabat berwenang kepada bawahan, berisi penugasan melaksanakan pekerjaan sesuai tugas dan fungsi. | Ps. 11 |
+| **Surat Perintah (SPRIN)** | Naskah dari atasan/pejabat berwenang kepada bawahan, berisi perintah melaksanakan pekerjaan tertentu. | `SPRIN` |
+| **Surat Tugas (ST)** | Naskah dari atasan/pejabat berwenang kepada bawahan, berisi penugasan melaksanakan pekerjaan sesuai tugas dan fungsi. | `ST` |
 
-Sistematika surat tugas: kop, nomor, lampiran, hal, tujuan surat, isi (dasar penugasan, nama/NIP/jabatan pelaksana, uraian tugas, waktu, tempat, pembebanan anggaran), penutup, tanggal dan tanda tangan, tembusan.
+Sistematika surat perintah/surat tugas: kop, nomor, lampiran, hal, tujuan surat, isi (dasar penugasan, nama/NIP/jabatan pelaksana, uraian tugas, waktu, tempat, pembebanan anggaran), penutup, tanggal dan tanda tangan, tembusan.
 
-## 2. Naskah Dinas Korespondensi
+## 2. Naskah Dinas Korespondensi (BAB V-B)
 
-### 2.1 Internal (Ps. 13)
+### 2.1 Internal (BAB V-B.1)
 
-| Jenis | Fungsi |
-|---|---|
-| **Nota Dinas (ND)** | Sarana komunikasi resmi internal antar unit kerja/pejabat dalam satu lingkungan BPKP; dibuat pejabat sesuai tugas, wewenang, tanggung jawab. |
-| **Memorandum** | Komunikasi internal yang lebih ringkas/informal daripada nota dinas. |
-| **Disposisi** | Instruksi/tindakan pimpinan atas suatu naskah masuk. |
+| Jenis | Kode | Fungsi |
+|---|---|---|
+| **Nota Dinas (ND)** | `ND` | Sarana komunikasi resmi internal antar unit kerja/pejabat dalam satu lingkungan BPKP; dibuat pejabat sesuai tugas, wewenang, tanggung jawab. |
+| **Memorandum (MO)** | `MO` | Komunikasi internal yang lebih ringkas/informal daripada nota dinas. |
+| **Disposisi** | tanpa kode | Instruksi/tindakan pimpinan atas suatu naskah masuk. Tidak dibubuhi penomoran. |
+| **Undangan Internal (UND)** | `UND` | Undangan untuk peserta internal BPKP. |
 
-Struktur nota dinas: kop, nomor ND, tanggal, kepada (Yth.), dari, subjek/perihal, isi (pembuka -- inti -- penutup), tanda tangan, tembusan (bila ada).
-
-### 2.2 Eksternal (Ps. 14)
+### 2.2 Eksternal (BAB V-B.2)
 
 **Surat Dinas (S)**: menyampaikan informasi kedinasan dari pejabat BPKP ke unit kerja/organisasi/instansi lain. Wajib mencantumkan kode klasifikasi keamanan pada nomor (SR/R/T/S).
 
-Struktur surat dinas: kop, nomor, klasifikasi keamanan, lampiran, hal, tanggal, alamat tujuan (Yth. ... di Tempat), salam pembuka, isi (pembuka -- inti -- penutup), salam penutup, tanda tangan (nama jabatan, nama pejabat, pangkat/NIP), tembusan.
+> [!note] Perubahan
+> **Surat Undangan Eksternal** tidak lagi berdiri sebagai jenis mandiri (kode `UND` dihapus); undangan eksternal menggunakan **Surat Dinas**. Kode `UND` hanya berlaku untuk Undangan Internal.
 
-### 2.3 Surat Undangan (Ps. 15)
+## 3. Naskah Dinas Khusus (BAB V-C) -- 20 Jenis
 
-Mencakup undangan internal maupun eksternal; ditandatangani pejabat sesuai tugas, fungsi, wewenang, tanggung jawabnya. Memuat: hari/tanggal/waktu/tempat acara, agenda, pihak yang mengundang.
+| No | Jenis | Kode | Catatan |
+|---|---|---|---|
+| 1 | **Naskah Dinas Dokumentasi Pengawasan** | tanpa kode | BARU. Menggabungkan: Surat Permintaan Data, Notisi, RTP, Pernyataan Kesanggupan Tindak Lanjut, BA Pembahasan Hasil Pengawasan, BATL, BA Pemutakhiran Data, BA TPTD, SPTJM. Tidak dibubuhi nomor. |
+| 2 | **Pedoman** | tanpa kode | Memuat acuan bersifat umum; disahkan dalam bentuk Peraturan atau Keputusan. Lampiran yang menyertai penetapnya. |
+| 3 | **Panduan Teknis Pengawasan** | tanpa kode | BARU sebagai jenis mandiri. |
+| 4 | **Petunjuk Pelaksanaan/Teknis** | tanpa kode | Dipindahkan dari Naskah Dinas Arahan. |
+| 5 | **Laporan** | `LHP`/`LPP` | Laporan Hasil Pengawasan (`LHP`) & Laporan Penunjang Pengawasan (`LPP`). |
+| 6 | **Nota Kesepahaman/MoU** | `MoU` | Kerja sama antarinstansi; dalam/luar negeri. |
+| 7 | **Surat Perjanjian** | `PRJ` | |
+| 8 | **Berita Acara** | `BA` | |
+| 9 | **Surat Kuasa** | `KS` | Kode berubah (sebelumnya tanpa kode eksplisit). |
+| 10 | **Surat Keterangan** | `KET` | |
+| 11 | **Surat Pengantar Naskah/Barang** | `SP` | |
+| 12 | **Pengumuman** | `PENG` | |
+| 13 | **Surat Peringatan** | `PRT` | |
+| 14 | **Surat Pernyataan** | `SPT` | Kode berubah dari `SPMJ`/`SPMT`/`SPL`. |
+| 15 | **Notula/Risalah** | `NOTULA` | |
+| 16 | **Telaah Staf** | tanpa kode | Kini eksplisit sebagai jenis mandiri. |
+| 17 | **Sertifikat** | `SERT` | |
+| 18 | **Piagam Penghargaan** | `PI` | |
+| 19 | **Kerangka Acuan Kerja (KAK)** | tanpa kode | |
+| 20 | **Formulir** | tanpa kode | Tidak dibubuhi nomor. |
 
-## 3. Naskah Dinas Khusus (Ps. 16)
+## 4. Unsur Umum Naskah Dinas (BAB II)
 
-19 jenis sesuai Pasal 16:
+Unsur pembuatan Naskah Dinas (Pasal 5): kop, penomoran, penggunaan kertas/amplop/tinta, jarak spasi/jenis dan ukuran huruf/kata penyambung, batas/ruang tepi, nomor halaman, tembusan, lampiran, tanda tangan/paraf/cap, kaidah penulisan, estetika dan etika, rujukan, serta perubahan/pencabutan/pembatalan/ralat.
 
-1. **Laporan** -- terbagi: laporan hasil pengawasan dan laporan penunjang pengawasan; ditandatangani kepala unit kerja/Pejabat Berwenang (Ps. 17).
-2. **Notisi Hasil Pengawasan** -- permintaan data/penjelasan/hasil pengawasan sementara; disampaikan dan dibahas tim audit dengan auditan; ditandatangani tim audit dan pimpinan auditan (Ps. 18).
-3. **BA Pembahasan Hasil Pengawasan** -- hasil pembahasan notisi audit; memuat kesanggupan/ketidaksanggupan auditan menindaklanjuti rekomendasi; ditandatangani tim audit dan pimpinan auditan (Ps. 19).
-4. **BA Tindak Lanjut Hasil Pengawasan (BATL)** -- kesepakatan auditor-auditan atas tindak lanjut rekomendasi yang disetujui (Ps. 20).
-5. **BA Pemutakhiran Data Hasil Pengawasan** -- kesepakatan data hasil pengawasan dalam forum pemutakhiran tindak lanjut (Ps. 21).
-6. **BA Pembahasan Temuan TPTD** -- temuan pengawasan tidak dapat ditindaklanjuti (Ps. 22).
-7. **SPTJM (Surat Pernyataan Tanggung Jawab Mutlak)** (Ps. 23).
-8. **MoU / Nota Kesepahaman** -- kerja sama antarinstansi; lingkup meliputi kerja sama antarinstansi pemerintah/nonpemerintah, dalam/luar negeri (Ps. 25).
-9. **Perjanjian Kerja Sama** (Ps. 26).
-10. **Berita Acara (BA)** -- dokumentasi resmi peristiwa/rapat/keputusan (Ps. 27).
-11. **Surat Kuasa** -- pemberian kuasa; sistematika dan format tercantum dalam Lampiran Perban (Ps. 28).
-12. **Surat Keterangan** (Ps. 29).
-13. **Surat Pengantar** (Ps. 30).
-14. **Pengumuman** (internal/eksternal) (Ps. 31).
-15. **Surat Peringatan** (Ps. 32).
-16. **Surat Izin** -- termasuk izin cuti tahunan, izin datang terlambat, izin tidak masuk kerja (Ps. 33-34).
-17. **Surat Pernyataan** (Ps. 35).
-18. **Notula/Risalah**.
-19. **Formulir**.
+Setiap Naskah Dinas memiliki struktur: **kepala** (kop, nomor, lampiran, hal, tujuan), **batang tubuh** (isi: pembuka--inti--penutup), dan **kaki** (tanggal, nama jabatan penanda tangan, tanda tangan, cap, tembusan, nomor halaman, lampiran).
 
-## 4. Unsur Umum Naskah Dinas (Lampiran BAB III, Bagian A)
-
-Bagian pokok naskah dinas BPKP:
-1. Kop naskah dinas
-2. Nomor naskah dinas
-3. Lampiran (jumlah)
-4. Hal/perihal
-5. Tanggal naskah dinas
-6. Alamat tujuan
-7. Salam pembuka
-8. Isi (pembuka, inti, penutup)
-9. Salam penutup
-10. Nama jabatan penanda tangan
-11. Nama pejabat penanda tangan
-12. Pangkat dan NIP
-13. Tembusan (bila ada)
-14. Tanda tangan dan nama terang
-15. Nomor halaman
-16. Lampiran
-
-Prinsip penciptaan (Pasal 36-38): memperhatikan prinsip kejelasan, kebenaran, keringkasan, ketepatan, keamanan, dan tanggung jawab; menggunakan aplikasi persuratan yang ditetapkan; naskah yang belum terakomodasi aplikasi tetap dapat dibuat dengan memperhatikan pedoman ini.
+Prinsip pembuatan (Pasal 3): diciptakan pihak berwenang; bahasa formal, logis, efektif, singkat, padat, lengkap; dilakukan pengamanan sesuai klasifikasi; didokumentasikan sesuai peraturan.

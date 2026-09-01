@@ -1,6 +1,6 @@
 # Penomoran dan Format Naskah Dinas BPKP
 
-Referensi format penomoran, kode jenis naskah, kop, kertas, spasi, margin, dan tabel sesuai Lampiran BAB III Perban 4/2022 serta praktik penugasan pengawasan BPKP.
+Referensi format penomoran, kode jenis naskah, kop, kertas, spasi, margin, dan tabel sesuai **BAB II Pembuatan Naskah Dinas** Peraturan BPKP Nomor 4 Tahun 2026 (menggantikan Lampiran BAB III Perban 4/2022).
 
 ---
 
@@ -8,10 +8,22 @@ Referensi format penomoran, kode jenis naskah, kop, kertas, spasi, margin, dan t
 
 Nomor naskah dinas adalah segmen penting kearsipan; susunannya harus memudahkan penyimpanan, penemuan kembali, dan penilaian arsip. Setiap unit kerja wajib menggunakan penomoran sesuai ketentuan.
 
-### Elemen nomor naskah dinas (urutan)
+Peraturan 4/2026 membagi penomoran menjadi **dua format**:
 
+### Format 1: Tanpa Kode Jenis (Naskah Dinas Arahan Pengaturan)
+Digunakan untuk Peraturan, Instruksi, dan Surat Edaran. Hanya menyebutkan nomor dan tahun penetapan, tanpa kode jenis, penanda tangan, dan unit kerja konseptor.
 ```
-[kode keamanan] / [kode klasifikasi arsip] / [kode jenis] - [nomor urut] / [kode unit/perwakilan] / [kode bidang] / [tahun]
+(Nama Jenis Naskah Dinas)
+(Nama Jabatan)
+NOMOR xxx TAHUN xxxx
+TENTANG
+(Judul Hal yang Diatur)
+```
+
+### Format 2: Dengan Kode Jenis (Umum)
+Untuk naskah dinas selain Peraturan/Instruksi/Surat Edaran:
+```
+[kode keamanan] / [kode klasifikasi arsip] / [kode jenis] - [nomor urut] / [kode unit penanda tangan] / [kode konseptor] / [tahun]
 ```
 
 Contoh riil naskah pengawasan BPKP di lapangan:
@@ -30,60 +42,78 @@ Contoh riil naskah pengawasan BPKP di lapangan:
 - `T`  : Terbatas
 - `S`  : Biasa (tanpa kode di nomor surat)
 
-### Pengecualian Penomoran Peraturan
-Penomoran peraturan hanya mencantumkan **nomor dan tahun penetapan** tanpa kode jenis, penanda tangan, dan konseptor. Contoh: `Peraturan BPKP Nomor 4 Tahun 2022`.
+### Pengecualian Penomoran
+- **Tanpa kode jenis**: Peraturan, Instruksi, Surat Edaran (Format 1).
+- **Tidak dibubuhi penomoran sama sekali**: Disposisi, Dokumentasi Pengawasan, Pedoman, Panduan Teknis Pengawasan, Petunjuk Pelaksanaan/Teknis, Telaah Staf, Kerangka Acuan Kerja, dan Formulir. Tata cara penomorannya tidak mengikuti format di Peraturan Badan ini; mengikuti kebijakan unit kerja.
+
+### Aturan Nomor Urut
+Nomor urut adalah nomor agenda elektronik unit kerja dalam 1 (satu) tahun takwim/kalender, menggunakan angka arab berurutan. Setiap awal tahun, per kelompok buku agenda elektronik, dimulai dari nomor urut 1. Pengelompokan per jenis Naskah Dinas (tidak digabung). **DILARANG** menambahkan kode, huruf, angka romawi, atau penanda lain yang mengubah format.
+
+### Kode Konseptor
+Kode unit/jabatan/konseptor menunjukkan siapa pejabat yang menandatangani Naskah Dinas dan unit kerja konseptor asal. Dipisahkan dengan garis miring (`/`) antara kode penanda tangan dan konseptor. Pencantuman kode konseptor hanya sampai satu tingkat di bawah pejabat penanda tangan. Daftar kode ditetapkan oleh Kepala (melalui petunjuk teknis terpisah).
+
+### Kode Perwakilan & Akronim Unit Kerja
+Peraturan 4/2026 menambahkan penggunaan **kode konseptor, kode perwakilan, dan akronim unit kerja** di lingkungan BPKP. Petunjuk teknisnya ditetapkan oleh Kepala.
 
 ---
 
-## 2. Kode Jenis Naskah Dinas
+## 2. Kode Jenis Naskah Dinas (Peraturan BPKP 4/2026)
 
 ### a. Naskah Dinas Arahan
 | Naskah | Kode |
 |---|---|
-| Peraturan | Tanpa kode |
-| Instruksi | Tanpa kode |
+| Peraturan | Tanpa kode (Format 1) |
+| Instruksi | Tanpa kode (Format 1) |
+| Surat Edaran | Tanpa kode (Format 1) |
 | Standar Operasional Prosedur (SOP) | Tanpa kode |
 | Keputusan | `KEP` |
 | Surat Perintah | `SPRIN` |
 | Surat Tugas | `ST` |
-| Surat Perjalanan Dinas | `SPD` |
-| Surat Pengukuhan Perintah Lisan | `SPPL` |
 
 ### b. Naskah Dinas Korespondensi
 | Naskah | Kode |
 |---|---|
 | Nota Dinas | `ND` |
+| Memorandum | `MO` |
+| Disposisi | Tanpa kode, tanpa nomor |
+| Undangan Internal | `UND` |
 | Surat Dinas | `S` |
-| Surat Undangan | `UND` |
 
 ### c. Naskah Dinas Khusus
 | Naskah | Kode |
 |---|---|
-| Surat Perjanjian | `PRJ` |
-| Memorandum of Understanding | `MoU` |
-| Berita Acara | `BA` |
-| Berita Acara Pengangkatan Sumpah | `BAPS` |
-| Naskah Serah Terima Jabatan | `NST` |
-| Surat Keterangan | `KET` |
-| Surat Pengantar | `SP` |
-| Pengumuman | `PENG` |
-| Surat Peringatan | `PRT` |
-| Surat Izin | `SI` |
-| Surat Pernyataan Melaksanakan Tugas | `SPMT` |
-| Surat Pernyataan Menduduki Jabatan | `SPMJ` |
-| Surat Pernyataan Pelantikan | `SPL` |
-
-### d. Laporan
-| Naskah | Kode |
-|---|---|
+| Dokumentasi Pengawasan | Tanpa kode, tanpa nomor |
+| Pedoman | Tanpa kode, tanpa nomor |
+| Panduan Teknis Pengawasan | Tanpa kode, tanpa nomor |
+| Petunjuk Pelaksanaan/Teknis | Tanpa kode |
 | Laporan Hasil Pengawasan | `LHP` |
 | Laporan Penunjang Pengawasan | `LPP` |
+| Nota Kesepahaman/MoU | `MoU` |
+| Surat Perjanjian | `PRJ` |
+| Berita Acara | `BA` |
+| Surat Kuasa | `KS` |
+| Surat Keterangan | `KET` |
+| Surat Pengantar Naskah/Barang | `SP` |
+| Pengumuman | `PENG` |
+| Surat Peringatan | `PRT` |
+| Surat Pernyataan | `SPT` |
+| Notula/Risalah | `NOTULA` |
+| Telaah Staf | Tanpa kode, tanpa nomor |
+| Sertifikat | `SERT` |
+| Piagam Penghargaan | `PI` |
+| Kerangka Acuan Kerja | Tanpa kode, tanpa nomor |
+| Formulir | Tanpa kode, tanpa nomor |
+
+> [!note] Perubahan Kode Jenis (Perban 4/2022 → Peraturan 4/2026)
+> - **Dihapus**: `SPD` (Surat Perjalanan Dinas -- kini peraturan terpisah), `SPPL` (Surat Pengukuhan Perintah Lisan), `BAPS` (BA Pengangkatan Sumpah), `NST` (Naskah Serah Terima Jabatan), `SI` (Surat Izin), `SPMT`/`SPMJ`/`SPL` (diganti `SPT`).
+> - **Kode berubah**: Surat Kuasa dari tanpa kode → `KS`; Surat Pernyataan dari gabungan `SPMT`/`SPMJ`/`SPL` → `SPT`; Memorandum kini eksplisit `MO`.
+> - **Kode baru**: `NOTULA`, `SERT`, `PI`.
 
 ---
 
 ## 3. Buku Agenda & Penomoran Awal Tahun
 
-Pencatatan naskah dalam buku agenda dikelompokkan sesuai kebutuhan unit kerja (Agenda ST, Agenda LHP, Agenda ND, Agenda Surat Dinas, dll.). Setiap awal tahun kalender, penomoran pada seluruh buku agenda dimulai kembali dari nomor urut 1.
+Pencatatan naskah dalam buku agenda elektronik dikelompokkan per jenis Naskah Dinas (tidak digabung beberapa jenis). Setiap awal tahun kalender, penomoran pada seluruh buku agenda dimulai kembali dari nomor urut 1.
 
 ---
 

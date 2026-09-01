@@ -1,13 +1,13 @@
 # Format Standar Struktur Dokumen Laporan Pengawasan (LHE/LHP) BPKP
 
-> **CATATAN**: Dokumen ini menyajikan format terstruktur laporan hasil pengawasan (Laporan Hasil Evaluasi/LHE atau Laporan Hasil Pengawasan/LHP) berdasarkan praktik penyusunan laporan komprehensif BPKP (seperti evaluasi ketahanan pangan multi-lokus). Gunakan panduan ini bersama ketentuan Tata Naskah Dinas BPKP (Perban 4/2022) dan sesuaikan dengan kekhususan penugasan/template unit kerja.
+> **CATATAN**: Dokumen ini menyajikan format terstruktur laporan hasil pengawasan (Laporan Hasil Evaluasi/LHE atau Laporan Hasil Pengawasan/LHP) berdasarkan praktik penyusunan laporan komprehensif BPKP (seperti evaluasi ketahanan pangan multi-lokus). Gunakan panduan ini bersama ketentuan Tata Naskah Dinas BPKP (**Peraturan BPKP Nomor 4 Tahun 2026**, BAB V-C.5) dan sesuaikan dengan kekhususan penugasan/template unit kerja.
 
 ---
 
 ## 1. Halaman Sampul (Cover Page)
 
 ```
-                       [Logo BPKP Berwarna 3,4 cm x 1,7 cm]
+                       [Logo BPKP Berwarna 34 mm x 17 mm]
                                (Simetris Tengah)
 
             BADAN PENGAWASAN KEUANGAN DAN PEMBANGUNAN

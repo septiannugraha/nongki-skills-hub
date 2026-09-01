@@ -4,7 +4,7 @@ Naskah Dinas Helper - BPKP
 ==========================
 
 Modul pembantu untuk menyusun komponen Tata Naskah Dinas BPKP sesuai
-Peraturan BPKP Nomor 4 Tahun 2022. Mencakup: kop surat, nota dinas,
+Peraturan BPKP Nomor 4 Tahun 2026 (menggantikan Perban 4/2022). Mencakup: kop surat, nota dinas,
 surat tugas, dan lembar pengesahan.
 
 Modul ini mengimpor engine inti (``bpkp_docx_engine``) untuk konsistensi

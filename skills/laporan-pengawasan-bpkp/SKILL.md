@@ -1,12 +1,15 @@
 ---
 name: laporan-pengawasan-bpkp
-description: Menyusun dan mengedit laporan hasil pengawasan internal di lingkungan BPKP (LHP, LHE, LHR) berdasarkan Global Internal Audit Standards (IIA Standard 15.1), termasuk kerangka temuan 5C (kondisi, kriteria, sebab, akibat, rekomendasi), prinsip kualitas komunikasi IIA, conformance statement, dan distribusi laporan. Gunakan saat diminta membuat draf laporan hasil pemeriksaan/evaluasi/reviu, menyusun atau memperbaiki bab temuan dan rekomendasi, atau mengisi template laporan dari kertas kerja.
-tags: [bpkp, laporan-pengawasan, lhp, lhe, lhr, temuan-audit, 5c, iia, audit-internal]
+description: Menyusun dan mengedit laporan hasil pengawasan internal di lingkungan BPKP (LHP, LHE, LHR) berdasarkan Global Internal Audit Standards (IIA Standard 15.1), termasuk kerangka temuan 5C (kondisi, kriteria, sebab, akibat, rekomendasi), prinsip kualitas komunikasi IIA, conformance statement, dan distribusi laporan. Gunakan saat diminta membuat draf laporan hasil pemeriksaan/evaluasi/reviu, menyusun atau memperbaiki bab temuan dan rekomendasi, atau mengisi template laporan dari kertas kerja. Acuan Tata Naskah Dinas kini berbasis Peraturan BPKP Nomor 4 Tahun 2026 (menggantikan Perban 4/2022).
+tags: [bpkp, laporan-pengawasan, lhp, lhe, lhr, temuan-audit, 5c, iia, audit-internal, peraturan-bpkp-4-2026]
 ---
 
 # Laporan Pengawasan BPKP
 
 Skill ini membantu menyusun laporan hasil pengawasan internal (Laporan Hasil Pemeriksaan/LHP, Laporan Hasil Evaluasi/LHE, Laporan Hasil Reviu/LHR) sesuai prinsip Global Internal Audit Standards (IIA Standard 15.1) yang diadaptasi ke dalam konteks BPKP.
+
+> [!important] Acuan Tata Naskah Dinas: Peraturan BPKP 4/2026
+> Skill ini mengacu pada **Peraturan BPKP Nomor 4 Tahun 2026 tentang Tata Naskah Dinas** (BAB V-C.5 Laporan, BAB IV Pengamanan, BAB III Pejabat Penanda Tangan), yang menggantikan Peraturan BPKP Nomor 4 Tahun 2022. Detail lihat Bagian 11.
 
 Baca [Panduan Standar IIA](references/standar-iia.md) untuk kerangka struktural dan prinsip kualitas komunikasi. Baca [Contoh Struktur Laporan](references/template-format.md) sebagai salah satu contoh format -- bukan format baku (lihat Bagian 2).
 
@@ -367,45 +370,34 @@ Setelah substansi final, lakukan dua tahap secara berurutan:
 
 ---
 
-## 11. Ketentuan Tata Naskah Dinas untuk Laporan (Perban 4/2022)
+## 11. Ketentuan Tata Naskah Dinas untuk Laporan (Peraturan BPKP 4/2026)
 
-Bagian ini built-in dari Peraturan BPKP Nomor 4 Tahun 2022 tentang Pedoman Tata Naskah Dinas (Lampiran BAB II bagian Laporan dan BAB III). Berlaku untuk semua laporan yang dihasilkan dalam penugasan pengawasan.
+Bagian ini built-in dari **Peraturan BPKP Nomor 4 Tahun 2026 tentang Tata Naskah Dinas** (BAB V-C.5 Laporan, BAB III Pejabat Penanda Tangan, BAB IV Pengamanan, BAB II Pembuatan). Menggantikan ketentuan lama dari Perban 4/2022 (dicabut pada saat Peraturan 4/2026 mulai berlaku). Berlaku untuk semua laporan yang dihasilkan dalam penugasan pengawasan.
+
+> [!note] Perubahan Pokok pada Laporan (Perban 4/2022 → Peraturan 4/2026)
+> - **Struktur**: Laporan kini diatur di **BAB V-C.5** (bukan Lampiran BAB II), tergabung dalam Naskah Dinas Khusus.
+> - **Klasifikasi Laporan Hasil Pengawasan disederhanakan** dari 18 jenis → **4 kategori umum**: (a) asurans, (b) konsultansi, (c) lainnya, (d) laporan eksekutif. Susunan batang tubuh mengacu Peraturan BPKP tentang Manajemen Penugasan Pengawasan.
+> - **Laporan Penunjang Pengawasan disederhanakan** dari 12 jenis → **contoh umum**: (a) monitoring tindak lanjut, (b) pengelolaan BMN, (c) progres penugasan, (d) pelaksanaan kegiatan.
+> - **Ketentuan baru**: Laporan hasil penugasan Pengawasan yang distribusikan kepada klien/entitas mitra **wajib disertai surat dinas** yang ditandatangani pejabat berwenang.
+> - **Ketentuan baru**: Pada halaman terakhir laporan hasil pengawasan wajib ditambahkan **catatan kaki** mengenai diksi/kalimat yang menunjukkan tugas dilakukan tanpa melanggar peraturan, serta layanan pengaduan gratifikasi dan suap.
+> - **Cover laporan**: Spesifikasi logo BPKP dinyatakan dalam satuan **mm** (34 mm x 17 mm) bukan cm (sebelumnya 3,4 cm).
 
 ### 11.1 Pengelompokan Laporan
 
-**a. Laporan hasil pengawasan**, antara lain:
-1) Laporan Audit Operasional
-2) Laporan Audit Kinerja
-3) Laporan Audit Untuk Tujuan Tertentu
-4) Laporan Audit Investigatif
-5) Laporan Audit Penghitungan Kerugian Keuangan Negara
-6) Laporan Keterangan Ahli
-7) Laporan Evaluasi Hambatan Kelancaran Pembangunan
-8) Laporan Reviu
-9) Laporan Pemantauan/Monitoring
-10) Laporan Bimtek/Asistensi
-11) Laporan Sosialisasi
-12) Laporan Hasil Kajian
-13) Laporan Pembinaan Penyelenggaraan SPIP
-14) Laporan Manajemen Risiko/Penilaian Risiko
-15) Laporan Kegiatan Good Corporate Governance (GCG)
-16) Laporan Pembinaan Peningkatan Kapabilitas APIP
-17) Laporan Pembinaan Jabatan Fungsional Auditor
-18) Laporan Hasil Pengawasan dan Pembinaan (Presiden/Menteri/Gubernur/Bupati/Walikota)
+**a. Laporan hasil pengawasan** (BAB V-C.5.a.1)) pada umumnya merupakan laporan yang dihasilkan dari penugasan pengawasan dan disampaikan kepada klien/entitas mitra. Susunan batang tubuh memuat materi komunikasi hasil pengawasan sesuai **Peraturan BPKP tentang Manajemen Penugasan Pengawasan**. Antara lain:
+1) Laporan hasil pengawasan asurans;
+2) Laporan hasil pengawasan konsultansi;
+3) Laporan hasil pengawasan lainnya; dan
+4) Laporan eksekutif.
 
-**b. Laporan penunjang pengawasan**, antara lain:
-1) Laporan Monitoring Tindak Lanjut Pengawasan
-2) Laporan Kinerja
-3) Laporan Realisasi Anggaran
-4) Laporan Pelatihan di Kantor Sendiri
-5) Laporan Gerakan Disiplin Nasional
-6) Laporan SABMN
-7) Laporan Penghematan Energi
-8) Laporan Kehumasan
-9) Laporan Reformasi Birokrasi
-10) Laporan Penyelenggaraan SPIP
-11) Laporan Budaya Kerja
-12) Laporan Pelaksanaan Kegiatan
+> [!note] Perubahan
+> Perban 4/2022 sebelumnya mengelompokkan 18 jenis laporan hasil pengawasan spesifik (Audit Operasional, Audit Kinerja, dll.). Peraturan 4/2026 menyederhanakan menjadi 4 kategori umum. Daftar laporan spesifik sebelumnya (Audit Operasional, Audit Investigatif, Laporan Keterangan Ahli, Evaluasi Hambatan, Reviu, Bimtek, Sosialisasi, Hasil Kajian, Pembinaan SPIP, Manajemen Risiko, GCG, Pembinaan APIP, Pembinaan JFA, Pengawasan dan Pembinaan) dapat tetap dipakai sebagai panduan non-normatif sepanjang relevan, tetapi rujukan formal mengikuti 4 kategori di atas.
+
+**b. Laporan penunjang pengawasan** (BAB V-C.5.a.2)) merupakan laporan yang dihasilkan untuk menunjang pelaksanaan penugasan pengawasan. Contohnya:
+1) Laporan monitoring tindak lanjut pengawasan;
+2) Laporan pengelolaan BMN;
+3) Laporan progres penugasan; dan
+4) Laporan pelaksanaan kegiatan.
 
 ### 11.2 Wewenang Penciptaan dan Penandatanganan
 
@@ -416,8 +408,15 @@ Bagian ini built-in dari Peraturan BPKP Nomor 4 Tahun 2022 tentang Pedoman Tata 
 
 ### 11.3 Bentuk dan Susunan
 
-- Laporan hasil pengawasan maupun penunjang pengawasan dapat disusun **dalam bentuk surat maupun bentuk bab** sesuai kebutuhan.
-- Susunan rinci laporan diatur dalam **pedoman khusus unit kerja teknis terkait**, sepanjang belum diatur oleh unit kerja yang lebih tinggi kedudukannya -- konsisten dengan prinsip "struktur tidak baku" pada Bagian 2 skill ini.
+- Laporan dapat disampaikan dalam **bentuk panjang** (laporan disampaikan secara rinci dalam bentuk BAB) ataupun **bentuk pendek** (laporan disampaikan secara ringkas dalam bentuk surat) sesuai kebutuhan.
+- Susunan laporan hasil pengawasan dan laporan penunjang pengawasan diatur dalam **pedoman/petunjuk teknis** yang diterbitkan secara khusus oleh unit kerja terkait. Contoh susunan dan bentuk laporan dalam Peraturan Badan ini dapat menjadi acuan, namun dapat disesuaikan dengan kebutuhan sepanjang tetap berpedoman pada standar dan ketentuan peraturan perundang-undangan -- konsisten dengan prinsip "struktur tidak baku" pada Bagian 2 skill ini.
+
+**Struktur Laporan Bentuk Surat (Pendek)** — terdiri atas kepala, batang tubuh, dan kaki:
+- **Kepala**: kop Naskah Dinas jabatan Kepala/wakil kepala, atau kop Naskah Dinas instansi (dengan alamat) untuk yang ditandatangani selain Kepala/wakil kepala; nomor, lampiran, dan hal di kiri bawah kop; tanggal penciptaan di kanan atas sejajar nomor; kata "Yth." di bawah "Hal" diikuti nama jabatan tujuan; alamat surat (nama kota tujuan) di bawah "Yth.".
+- **Batang tubuh**: pendahuluan (penjelasan umum, maksud-tujuan, ruang lingkup, sistematika); materi laporan (kegiatan, faktor, hasil, hambatan, hal lain); simpulan dan saran; penutup (harapan/permintaan arahan/ucapan terima kasih).
+- **Kaki**: tanggal pembuatan laporan; nama jabatan (kapital awal kata, diakhiri koma, rata kiri); tanda tangan pejabat (atau "Ditandatangani secara elektronik oleh" + kode QR bila TTE); nama lengkap pejabat (kapital awal kata, tanpa gelar dan NIP); cap dinas hanya untuk tanda tangan basah; tembusan (jika ada).
+
+**Struktur Laporan Bentuk Bab (Panjang)** — mengikuti sistematika BAB yang diatur dalam pedoman/petunjuk teknis unit kerja.
 
 ### 11.4 Penomoran Laporan
 
@@ -430,24 +429,34 @@ Format nomor mengikuti pola umum TND: `[kode keamanan]/[kode klasifikasi arsip]/
 ### 11.5 Distribusi Laporan
 
 - Laporan didistribusikan kepada **pihak yang berkepentingan** dan dapat berupa softcopy yang **disertai surat pengantar**.
+- **Ketentuan baru (Peraturan 4/2026)**: Laporan hasil penugasan Pengawasan yang distribusikan kepada klien/entitas mitra **wajib disertai dengan surat dinas** yang ditandatangani oleh pejabat yang berwenang.
 - Distribusi tetap tunduk pada prinsip distribusi terbatas (Bagian 4) dan klasifikasi keamanan: Sangat Rahasia (`SR`), Rahasia (`R`), Terbatas (`T`), Biasa (tanpa kode).
+
+### 11.5a Catatan Kaki Etika & Layanan Pengaduan (BARU)
+
+**Ketentuan baru (Peraturan 4/2026, BAB V-C.5.c.5))**: Dalam laporan hasil pengawasan ditambahkan pada **halaman terakhir bagian catatan kaki** mengenai:
+1. Diksi/kata atau kalimat yang menunjukkan bahwa tugas yang diemban dilakukan dengan **tidak melanggar ketentuan peraturan perundang-undangan**;
+2. Layanan pengaduan apabila terdapat pegawai BPKP dalam melaksanakan tugas menerima/meminta **gratifikasi dan suap**.
 
 ### 11.6 Sampul/Cover Laporan
 
 1. Kertas hard cover jenis **buffalo** atau kertas lain dengan spesifikasi lebih tinggi sesuai keperluan.
-2. Margin cover mengikuti aturan penyusunan naskah dinas dan estetika.
-3. Susunan cover:
-   a. **Logo BPKP berwarna** di bagian atas secara simetris; ukuran panjang **3,4 cm**, tinggi **1,7 cm** (proporsi 2:1);
-   b. Tulisan **"BADAN PENGAWASAN KEUANGAN DAN PEMBANGUNAN"** (font **Arial 13-bold**) simetris di bawah logo;
-   c. **Nama unit kerja** seluruhnya huruf kapital (**Arial 12-bold**) simetris di bawah tulisan lembaga;
-   d. **Judul laporan** bebas menggunakan huruf kapital, kursif, font, ukuran, dan warna yang mendukung estetika;
-   e. **Nomor dan tanggal laporan** juga boleh divariasikan untuk estetika.
+2. Batas/ruang tepi atas, bawah, kiri, dan kanan cover laporan mengikuti aturan penyusunan Naskah Dinas dengan memperhatikan estetika.
+3. Susunan cover (BAB V-C.5.b.1)):
+   a. **Logo BPKP berwarna** diletakkan di bagian atas secara simetris; ukuran panjang **34 mm** dan tinggi **17 mm**, dengan proporsi panjang dan tinggi **2:1**;
+   b. Tulisan **"BADAN PENGAWASAN KEUANGAN DAN PEMBANGUNAN"** (jenis huruf **Arial ukuran 13 dicetak tebal**) dan diletakkan secara simetris di bawah logo BPKP;
+   c. **Nama unit kerja** ditulis seluruhnya dengan huruf kapital (jenis huruf **Arial ukuran 12 dicetak tebal**) dan diletakkan secara simetris di bawah tulisan "BADAN PENGAWASAN KEUANGAN DAN PEMBANGUNAN";
+   d. **Judul laporan** dapat ditulis dengan penggunaan huruf kapital, kursif, font, ukuran, dan warna yang beragam untuk mendukung estetika;
+   e. **Nomor dan tanggal laporan** dapat ditulis dengan penggunaan huruf kapital, kursif, font, ukuran, dan warna yang beragam untuk mendukung estetika.
+
+> [!note] Perubahan Satuan Logo
+> Peraturan 4/2026 menyatakan ukuran logo dalam satuan **mm** (34 mm × 17 mm) bukan cm (3,4 cm × 1,7 cm). Nilai numeriknya setara; satuan resmi kini mm.
 
 ### 11.7 Media Penyajian Visual
 
-1. Untuk stakeholder dengan tujuan tertentu, laporan boleh disajikan dengan media visual (desain grafis, infografis) dalam format berbeda dari tata naskah dinas.
-2. Format berbeda tersebut **tetap wajib** memuat: logo dan nama BPKP, nomor naskah dinas, dan pejabat penanda tangan, dengan memperhatikan estetika dan etika.
-3. Warna sampul, gambar, dan infografis ditentukan masing-masing unit kerja dengan tetap memperhatikan etika penyajian informasi.
+1. Untuk stakeholder dengan pertimbangan tertentu, laporan boleh disajikan dengan media informasi yang disajikan secara visual (desain grafis, infografis, dan sebagainya) dalam format berbeda dengan Tata Naskah Dinas.
+2. Format berbeda tersebut **tetap wajib** memuat: logo dan nama BPKP, nomor Naskah Dinas, dan pejabat penanda tangan, dengan memperhatikan estetika dan etika.
+3. Pengaturan warna sampul laporan, gambar, dan infografis yang dapat mendukung estetika serta informasi yang disajikan dapat ditentukan oleh masing-masing unit kerja dengan tetap memperhatikan etika penyajian informasi/gambar/infografis yang berlaku.
 
 ### 11.8 Unsur Pokok Naskah Dinas (untuk laporan bentuk surat)
 
