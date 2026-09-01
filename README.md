@@ -11,8 +11,8 @@ This repo is the **source of truth** for the skills installed via `~/.claude/ski
 | [changes-committing](skills/changes-committing/) | Secure git commits: credential scanning, file filtering, conventional commit messages, no secrets ever land in history | `git` `security` `conventional-commits` |
 | [eyd-indonesia](skills/eyd-indonesia/) | Indonesian proofreading & editing according to official EYD V (spelling, capitalization, punctuation, loanwords) | `indonesian` `eyd` `proofreading` |
 | [humanizer-indonesia](skills/humanizer-indonesia/) | Rewrite Indonesian text to sound natural, human, and contextually appropriate without changing original meaning | `indonesian` `humanizer` `naturalize` |
-| [laporan-pengawasan-bpkp](skills/laporan-pengawasan-bpkp/) | Draft, edit, and review BPKP internal audit reports (LHP/LHE/LHR) following BPKP format and IIA Global Standards; includes Python engine for automated Word (.docx) generation | `bpkp` `audit` `laporan` `iia` `docx` |
-| [tata-naskah-dinas-bpkp](skills/tata-naskah-dinas-bpkp/) | Compose, edit, and validate BPKP official naskah dinas (surat dinas, nota dinas, surat tugas, etc.) per Perban 4/2022; includes Python helpers for kop surat, nota dinas, and lembar pengesahan | `bpkp` `tata-naskah-dinas` `naskah-dinas` `perban-4-2022` `docx` |
+| [laporan-pengawasan-bpkp](skills/laporan-pengawasan-bpkp/) | Draft, edit, and review BPKP internal audit reports (LHP/LHE/LHR) following Peraturan BPKP No. 4/2026 and IIA Global Standards; includes Python engine for automated Word (.docx) generation with multilevel numbering cascade (`A. → 1. → a. → 1)`), native Heading styles (Arial 12pt bold), 3/2/2/2 cm margins, hanging indents, and 1.15 line pitch | `bpkp` `audit` `laporan` `5c` `iia` `peraturan-bpkp-4-2026` `docx` |
+| [tata-naskah-dinas-bpkp](skills/tata-naskah-dinas-bpkp/) | Compose, edit, and validate BPKP official naskah dinas (surat dinas, nota dinas, surat tugas, etc.) per Peraturan BPKP No. 4/2026; includes Python helpers for kop surat, nota dinas, surat tugas, lembar pengesahan, heading styles, and TTE | `bpkp` `tata-naskah-dinas` `naskah-dinas` `peraturan-bpkp-4-2026` `docx` |
 | [pdf-comprehension](skills/pdf-comprehension/) | Deep PDF analysis: extracts pages as images, reads them visually, produces structured markdown summaries with visual highlights | `pdf` `analysis` `document` |
 | [study-guide-writing](skills/study-guide-writing/) | Manning/No Starch Press-style study guides from source materials — LaTeX to PDF + EPUB, with note/tip/warning boxes and war stories | `latex` `pdf` `epub` `education` |
 | [tsundere-code-style](skills/tsundere-code-style/) | Write code as if authored by a tsundere programmer — playful sentence-like names, booleans, functions, comments, and error messages that stay functional and understandable | `code-style` `fun` `naming` `humor` |
@@ -42,6 +42,12 @@ git clone git@github.com:septiannugraha/nongki-skills-hub.git ~/code/nongki-skil
 mkdir -p ~/.claude/skills
 for skill in ~/code/nongki-skills-hub/skills/*/; do
   ln -sfn "$skill" ~/.claude/skills/"$(basename "$skill")"
+done
+
+# Antigravity / Agents
+mkdir -p ~/.agents/skills
+for skill in ~/code/nongki-skills-hub/skills/*/; do
+  ln -sfn "$skill" ~/.agents/skills/"$(basename "$skill")"
 done
 
 # opencode
@@ -108,7 +114,7 @@ nongki-skills-hub/
 
 Skills in this hub are curated — battle-tested, generic enough to be useful across projects, and documented. Skills that are personal, machine-specific, or "creative" stay in `~/.claude/skills/` directly, outside this repo.
 
-One hub serves both **Claude Code** (`~/.claude/skills/`) and **opencode** (`~/.config/opencode/skills/`) via symlinks, so a skill improvement lands in both tools at once.
+One hub serves **Claude Code** (`~/.claude/skills/`), **Antigravity** (`~/.agents/skills/`), and **opencode** (`~/.config/opencode/skills/`) via symlinks, so a skill improvement lands in all tools at once.
 
 ## License
 
