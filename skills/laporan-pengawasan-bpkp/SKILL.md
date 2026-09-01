@@ -531,15 +531,17 @@ Sistem indentasi menggunakan prinsip **cascade**: posisi nomor setiap level berh
 |---|---|---|---|---|---|
 | **Topik Utama (`Heading 3`)** | 1 | `0,50"` (720 dxa) | `-0,25"` (-360 dxa) | `720 dxa` | Left, Arial 12 pt Bold |
 | **Simpulan Topik** (paragraf pembuka) | — | `0,50"` (720 dxa) | `0,00"` | — | Justified, Arial 12 pt Regular |
-| **Sub-Heading Temuan** (`a.`, `b.`) | 2 | `0,75"` (1080 dxa) | `-0,25"` (-360 dxa) | `1080 dxa` | Justified, Arial 12 pt **Bold** |
-| **Pengantar Kondisi** ("Kondisi di tingkat...") | — | `0,75"` (1080 dxa) | `0,00"` | — | Justified, Arial 12 pt Regular |
-| **Rincian Lokus** (`1)`, `2)`) | 3 | `1,00"` (1440 dxa) | `-0,25"` (-360 dxa) | `1440 dxa` | Justified, Arial 12 pt Regular |
+| **Sub-Heading Temuan** (`a.`, `b.`) | 2 | `0,75"` (1080 dxa) | `-0,25"` (-360 dxa) | `1440 dxa` | Justified, Arial 12 pt **Bold** |
+| **Pengantar Kondisi** ("Kondisi di tingkat...") | — | `1,00"` (1440 dxa) | `0,00"` | — | Justified, Arial 12 pt Regular |
+| **Rincian Lokus** (`1)`, `2)`) | 3 | `1,25"` (1800 dxa) | `-0,25"` (-360 dxa) | `1800 dxa` | Justified, Arial 12 pt Regular |
 | **Detail Item** (`a)`, `b)`) | 4 | `1,25"` (1800 dxa) | `-0,25"` (-360 dxa) | `1800 dxa` | Justified, Arial 12 pt Regular |
 | **Kriteria / Penyebab / Akibat / Rekomendasi** | — | `1,25"` (1800 dxa) | `0,00"` | — | Justified, Arial 12 pt Regular |
 
+> **Catatan notasi:** Tabel *Formula Cascade* di atas menggunakan notasi numbering.xml `w:ind left` (posisi teks), sedangkan kolom "Nomor di" di tabel formula adalah posisi awal nomor. Tabel *Penempatan Level* di bawah menggunakan notasi paragraf manual (`Left Indent` = posisi teks; `First Line` = hanging). Kedua tabel ini ekuivalen dan saling konsisten.
+
 #### Body Paragraf di Bawah Level Bernomor
 Paragraf narasi 5C (Kriteria, Penyebab, Akibat, Rekomendasi) menggunakan **Left Indent = posisi teks level 3** (`1,25"` / 1800 dxa), **bukan** level 2. Ini sejajar dengan posisi teks rincian lokus (`1)`), karena dalam implementasi kode, fungsi `add_criteria()`, `add_cause()`, `add_effect()` menerima parameter `ilvl=3` dan mengambil `left` dari `_LEVEL_FMT[3]` yang bernilai 1800 dxa. Dengan demikian:
-- Paragraf pengantar kondisi ("Kondisi di tingkat...") → Left `0,75"` (1080 dxa), sejajar dengan teks sub-heading `a.` (dari `add_body_sub` dengan `ilvl=2`)
+- Paragraf pengantar kondisi ("Kondisi di tingkat...") → Left `1,00"` (1440 dxa), sejajar dengan teks sub-heading `a.` (dari `add_body_sub` dengan `ilvl=2`)
 - Paragraf Kriteria, Penyebab, Akibat, Rekomendasi → Left `1,25"` (1800 dxa), sejajar dengan teks rincian lokus `1)` (dari `add_criteria`/`add_cause`/`add_effect` dengan `ilvl=3`)
 
 #### Rincian Lokus: Dua-Paragraf Terpisah (Mode Numbering Otomatis)

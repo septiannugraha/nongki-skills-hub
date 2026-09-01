@@ -48,7 +48,8 @@ __all__ = [
     "add_daftar_isi",
     "add_page_break",
     "add_table_with_subheader",
-    "_attach_numbering", "_LEVEL_FMT",
+    "_attach_numbering", "_ensure_style_font", "_set_style_spacing",
+    "_LEVEL_FMT",
 ]
 
 # =====================================================================
@@ -301,6 +302,10 @@ def _ensure_style_font(style) -> None:
             )
             rPr.append(rFonts)
         else:
+            # Hapus atribut theme agar tidak konflik dengan font eksplisit
+            for theme_attr in ('asciiTheme', 'hAnsiTheme', 'eastAsiaTheme', 'cstheme'):
+                if rFonts.get(qn(f'w:{theme_attr}')) is not None:
+                    del rFonts.attrib[qn(f'w:{theme_attr}')]
             rFonts.set(qn('w:ascii'), FONT_NAME)
             rFonts.set(qn('w:hAnsi'), FONT_NAME)
             rFonts.set(qn('w:cs'), FONT_NAME)
@@ -353,6 +358,70 @@ def setup_heading_styles(doc: _Doc) -> None:
 
 
 # =====================================================================
+# THEME & STYLES WITH EFFECTS — perbaikan font theme (Calibri → Arial)
+# =====================================================================
+
+def _fix_theme_fonts(doc: _Doc) -> None:
+    """
+    Ubah theme majorFont dan minorFont ke Arial.
+
+    Beberapa versi Microsoft Word dan konverter membaca atribut
+    ``asciiTheme``/``hAnsiTheme`` dari styles.xml atau stylesWithEffects.xml,
+    yang men-resolve ke font theme (Calibri/Cambria). Fungsi ini mengubah
+    ``<a:latin typeface=...>`` di theme1.xml menjadi Arial agar konsisten.
+    """
+    try:
+        from lxml import etree
+        package = doc.part.package
+        a_ns = '{http://schemas.openxmlformats.org/drawingml/2006/main}'
+        for part in package.parts:
+            if 'theme' in str(part.partname).lower():
+                tree = etree.fromstring(part.blob)
+                changed = False
+                for latin in tree.iter(f'{a_ns}latin'):
+                    typeface = latin.get('typeface', '')
+                    if typeface and typeface != FONT_NAME:
+                        latin.set('typeface', FONT_NAME)
+                        changed = True
+                if changed:
+                    new_blob = etree.tostring(
+                        tree, xml_declaration=True,
+                        encoding='UTF-8', standalone=True
+                    )
+                    part._blob = new_blob
+                break
+    except Exception:
+        pass
+
+
+def _sync_styles_with_effects(doc: _Doc) -> None:
+    """
+    Sinkronkan stylesWithEffects.xml dengan styles.xml.
+
+    Beberapa versi Microsoft Word membaca stylesWithEffects.xml bukan
+    styles.xml. Tanpa sinkronisasi, file tersebut masih memuat font theme
+    (Calibri 14pt untuk heading) yang menimpa pengaturan Arial 12pt.
+    Fungsi ini menimpa konten stylesWithEffects.xml dengan isi styles.xml.
+    """
+    try:
+        package = doc.part.package
+        styles_blob = doc.styles.element.xml
+        for part in package.parts:
+            if 'stylesWithEffects' in str(part.partname):
+                # python-docx Part memakai _blob untuk menyimpan konten
+                from lxml import etree
+                tree = etree.fromstring(styles_blob.encode('utf-8'))
+                new_blob = etree.tostring(
+                    tree, xml_declaration=True,
+                    encoding='UTF-8', standalone=True
+                )
+                part._blob = new_blob
+                break
+    except Exception:
+        pass
+
+
+# =====================================================================
 # CORE: create_document
 # =====================================================================
 
@@ -384,6 +453,8 @@ def create_document() -> _Doc:
 
     setup_heading_styles(doc)
     setup_numbering_infrastructure(doc)
+    _fix_theme_fonts(doc)
+    _sync_styles_with_effects(doc)
     return doc
 
 
@@ -394,12 +465,14 @@ def create_document() -> _Doc:
 def add_p(doc, text="", space_before=Pt(0), space_after=Pt(6), line_spacing=1.15,
           align=WD_ALIGN_PARAGRAPH.JUSTIFY, left_indent=None, hanging_indent=None,
           tab_pos_dxa=None, bold=False, italic=False, color=BLACK, size=Pt(12),
-          num_id=None, ilvl=None):
+          num_id=None, ilvl=None, attach_num=False):
     """
-    Tambahkan paragraf biasa dengan opsi penomoran multilevel.
+    Tambahkan paragraf biasa dengan opsi indentasi dan penomoran multilevel.
 
     Jika num_id & ilvl diberikan, indentasi otomatis mengikuti posisi
-    teks dari level induk.
+    teks dari level induk. Secara default, paragraf TIDAK bernomor
+    (hanya sejajar indentasi dengan level induk). Untuk membuat paragraf
+    bernomor, set attach_num=True agar numPr terpasang.
     """
     p = doc.add_paragraph()
     p.paragraph_format.space_before = space_before
@@ -407,6 +480,8 @@ def add_p(doc, text="", space_before=Pt(0), space_after=Pt(6), line_spacing=1.15
     p.paragraph_format.line_spacing = line_spacing
     p.alignment = align
     if num_id is not None and ilvl is not None:
+        if attach_num:
+            _attach_numbering(p, num_id, ilvl)
         fmt_data = _LEVEL_FMT[ilvl]
         left_inch = fmt_data[1] / 1440.0
         p.paragraph_format.left_indent = Inches(left_inch)

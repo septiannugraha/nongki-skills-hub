@@ -32,6 +32,7 @@ try:
         _apply_font, FONT_NAME, BLACK, RED, add_p, add_run,
         clean_cell_p, set_cell_margins, set_cell_shading,
         set_cell_bottom_border, set_table_borders, add_table_bordered,
+        _attach_numbering, _ensure_style_font, _set_style_spacing,
     )
 except ImportError:
     # Cari engine di skill laporan-pengawasan-bpkp (sibling directory)
@@ -45,6 +46,7 @@ except ImportError:
         _apply_font, FONT_NAME, BLACK, RED, add_p, add_run,
         clean_cell_p, set_cell_margins, set_cell_shading,
         set_cell_bottom_border, set_table_borders, add_table_bordered,
+        _attach_numbering, _ensure_style_font, _set_style_spacing,
     )
 
 __all__ = [
@@ -59,6 +61,11 @@ __all__ = [
     "add_p",
     "add_run",
     "get_default_logo",
+    "setup_heading_styles",
+    "add_heading_1",
+    "add_heading_2",
+    "add_heading_3",
+    "add_heading_4",
 ]
 
 # =====================================================================
@@ -590,6 +597,33 @@ print("naskah_dinas_helper.py loaded - BPKP Tata Naskah Dinas helper ready.")
 # =====================================================================
 # STANDAR STYLE HEADINGS (ARIAL 12 PT BOLD HITAM) & NAVIGASI PANEL
 # =====================================================================
+#
+# Catatan: versi engine (bpkp_docx_engine.py) sudah menyediakan
+# setup_heading_styles, add_heading_1, add_heading_2, add_heading_3,
+# add_heading_4 yang lengkap dan teruji. Sebaiknya gunakan versi
+# engine tersebut secara langsung.
+#
+# Berikut re-export agar helper tetap self-contained untuk pengguna
+# yang mengimpor dari naskah_dinas_helper.
+# =====================================================================
+
+try:
+    from .bpkp_docx_engine import (
+        setup_heading_styles as _engine_setup_heading_styles,
+        add_heading_1 as _engine_add_heading_1,
+        add_heading_2 as _engine_add_heading_2,
+        add_heading_3 as _engine_add_heading_3,
+        add_heading_4 as _engine_add_heading_4,
+    )
+except ImportError:
+    from bpkp_docx_engine import (
+        setup_heading_styles as _engine_setup_heading_styles,
+        add_heading_1 as _engine_add_heading_1,
+        add_heading_2 as _engine_add_heading_2,
+        add_heading_3 as _engine_add_heading_3,
+        add_heading_4 as _engine_add_heading_4,
+    )
+
 
 def setup_heading_styles(doc) -> None:
     """
@@ -597,63 +631,28 @@ def setup_heading_styles(doc) -> None:
     - Font Arial 12pt Bold Hitam (#000000)
     - Spasi before 12pt, after 6pt, line 1.15
     - Outline level untuk Navigation Panel / Document Outline
+
+    Mendelegasikan ke engine inti (``bpkp_docx_engine.setup_heading_styles``)
+    agar konsisten dengan skill laporan-pengawasan-bpkp.
     """
-    for level, style_name in [(1, 'Heading 1'), (2, 'Heading 2'), (3, 'Heading 3'), (4, 'Heading 4')]:
-        try:
-            style = doc.styles[style_name]
-        except KeyError:
-            style = doc.styles.add_style(style_name, docx.enum.style.WD_STYLE_TYPE.PARAGRAPH)
-        _ensure_style_font(style)
-        _set_style_spacing(style, before=240, after=120, line=1.15)
-        style.font.bold = True
-        style.font.size = Pt(12)
-        style.font.color.rgb = BLACK
-        pPr = style.element.get_or_add_pPr()
-        outline = pPr.find(qn('w:outlineLvl'))
-        if outline is None:
-            outline = parse_xml(f'<w:outlineLvl {nsdecls("w")} w:val="{level - 1}"/>')
-            pPr.append(outline)
-        else:
-            outline.set(qn('w:val'), str(level - 1))
+    _engine_setup_heading_styles(doc)
 
 
 def add_heading_1(doc, text: str):
     """Heading 1 - judul BAB / Bagian Pokok. Muncul di Navigation Panel (Arial 12pt Bold Hitam, Center)."""
-    p = doc.add_paragraph(style='Heading 1')
-    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    r = p.add_run(text)
-    _apply_font(r, bold=True, size=Pt(12))
-    return p
+    return _engine_add_heading_1(doc, text)
 
 
 def add_heading_2(doc, text: str, num_id=None):
     """Heading 2 - Bagian / Kategori (mis. A. Simpulan, Proses Bisnis). Muncul di Navigation Panel (Arial 12pt Bold Hitam, Left)."""
-    p = doc.add_paragraph(style='Heading 2')
-    p.alignment = WD_ALIGN_PARAGRAPH.LEFT
-    if num_id is not None and '_attach_numbering' in globals():
-        _attach_numbering(p, num_id, 0)
-    r = p.add_run(text)
-    _apply_font(r, bold=True, size=Pt(12))
-    return p
+    return _engine_add_heading_2(doc, text, num_id=num_id)
 
 
 def add_heading_3(doc, text: str, num_id=None):
     """Heading 3 - Topik Utama / Area Fokus Temuan. Muncul di Navigation Panel (Arial 12pt Bold Hitam, Left)."""
-    p = doc.add_paragraph(style='Heading 3')
-    p.alignment = WD_ALIGN_PARAGRAPH.LEFT
-    if num_id is not None and '_attach_numbering' in globals():
-        _attach_numbering(p, num_id, 1)
-    r = p.add_run(text)
-    _apply_font(r, bold=True, size=Pt(12))
-    return p
+    return _engine_add_heading_3(doc, text, num_id=num_id)
 
 
 def add_heading_4(doc, text: str, num_id=None):
     """Heading 4 - Sub-Temuan / Poin Spesifik. Muncul di Navigation Panel (Arial 12pt Bold Hitam, Left)."""
-    p = doc.add_paragraph(style='Heading 4')
-    p.alignment = WD_ALIGN_PARAGRAPH.LEFT
-    if num_id is not None and '_attach_numbering' in globals():
-        _attach_numbering(p, num_id, 2)
-    r = p.add_run(text)
-    _apply_font(r, bold=True, size=Pt(12))
-    return p
+    return _engine_add_heading_4(doc, text, num_id=num_id)

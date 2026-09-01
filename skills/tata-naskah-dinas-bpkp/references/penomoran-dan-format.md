@@ -146,10 +146,10 @@ Kop surat naskah dinas resmi memuat lambang negara/logo BPKP dan identitas unit 
 
 ### C. Hierarki Indentasi & Tab Stops (Anti-Bocor / Hanging Indent)
 - **Level 1 (Topik/Bab):** Left `0.00"`, First Line `0.00"`, Bold 12 pt.
-- **Level 2 (Sub-Heading `a.`, `b.`):** Left `0.35"` (504 dxa), First Line `-0.35"` (-504 dxa), Tab Stop di `504 dxa` (`0.35"`), Bold 11 pt.
-- **Level 2 Body (Narasi Pengantar):** Left `0.35"`, First Line `0.00"`, Regular 11 pt, Justified.
-- **Level 3 (Rincian Lokus `1)`, `2)`):** Left `0.65"` (936 dxa), First Line `-0.30"` (-432 dxa), Tab Stop di `936 dxa` (`0.65"`), Justified, Nama Lokus Bold.
-- **Level 4 (Detail Item `a)`, `b)`):** Left `0.95"` (1368 dxa), First Line `-0.30"` (-432 dxa), Tab Stop di `1368 dxa` (`0.95"`), Justified.
+- **Level 2 (Sub-Heading `a.`, `b.`):** Left `0.75"` (1080 dxa), First Line `-0.25"` (-360 dxa), Tab Stop di `1440 dxa` (`1.00"`), Bold 12 pt.
+- **Level 2 Body (Narasi Pengantar):** Left `1.00"` (1440 dxa), First Line `0.00"`, Regular 12 pt, Justified.
+- **Level 3 (Rincian Lokus `1)`, `2)`):** Left `1.25"` (1800 dxa), First Line `-0.25"` (-360 dxa), Tab Stop di `1800 dxa` (`1.25"`), Justified, Nama Lokus Regular.
+- **Level 4 (Detail Item `a)`, `b)`):** Left `1.50"` (2160 dxa), First Line `-0.25"` (-360 dxa), Tab Stop di `2160 dxa` (`1.50"`), Justified.
 
 ### D. Format Tabel BPKP (Clean Open-Table Style)
 - Garis border **hanya horizontal** (Top, Bottom, dan pemisah Header sz="4" abu-abu/hitam). **Tanpa border vertikal**.
