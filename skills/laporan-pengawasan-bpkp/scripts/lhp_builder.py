@@ -268,10 +268,16 @@ def build_laporan_bentuk_surat(doc,
       - Batang Tubuh: Paragraf pengantar, A. Simpulan, B. Rekomendasi, Paragraf penutup
       - Kaki: Blok tanda tangan (kanan bawah) & klausul pembagian terbatas / etika
     """
-    from .bpkp_docx_engine import (
-        add_kop_surat_table, add_surat_pengantar_metadata, add_p, add_run,
-        add_heading_2, add_topic_heading, add_numbered_item, add_signature_block
-    )
+    try:
+        from .bpkp_docx_engine import (
+            add_kop_surat_table, add_surat_pengantar_metadata, add_p, add_run,
+            add_heading_2, add_topic_heading, add_numbered_item, add_signature_block
+        )
+    except ImportError:
+        from bpkp_docx_engine import (
+            add_kop_surat_table, add_surat_pengantar_metadata, add_p, add_run,
+            add_heading_2, add_topic_heading, add_numbered_item, add_signature_block
+        )
 
     if include_kop:
         add_kop_surat_table(doc, unit_kerja=unit_kerja)
@@ -314,5 +320,5 @@ def build_laporan_bentuk_surat(doc,
               space_before=Pt(6), space_after=Pt(12))
 
     # Blok Tanda Tangan
-    add_signature_block(doc, tanggal=tanggal or "Nabire, ................. 2026",
-                        jabatan=pejabat_jabatan, nama=pejabat_nama, tte=True)
+    add_signature_block(doc, date_text=tanggal or "Nabire, ................. 2026",
+                        title=pejabat_jabatan, name=pejabat_nama)
