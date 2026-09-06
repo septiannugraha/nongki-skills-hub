@@ -64,6 +64,7 @@ __all__ = [
     "build_bab_ii_template",
     "build_bab_iii_temuan",
     "build_temuan_5c",
+    "build_laporan_bentuk_surat",
 ]
 
 
@@ -236,3 +237,82 @@ def build_temuan_5c(doc, temuan: dict, num_id: int):
 
 
 print("lhp_builder.py loaded - BPKP LHP/LHE builder template ready.")
+
+
+# =====================================================================
+# LAPORAN BENTUK SURAT (FORMAT PENDEK) - PERATURAN BPKP 4/2026
+# =====================================================================
+
+def build_laporan_bentuk_surat(doc,
+                               nomor: str = "",
+                               tanggal: str = "",
+                               lampiran: str = "1 (satu) berkas",
+                               hal: str = "",
+                               tujuan_jabatan: str = "Bupati Nabire",
+                               tujuan_kota: str = "Nabire",
+                               pembuka_text: str = "",
+                               simpulan_list: List[Tuple[str, str]] = None,
+                               rekomendasi_list: List[str] = None,
+                               penutup_text: str = "",
+                               pejabat_jabatan: str = "Kepala Perwakilan,",
+                               pejabat_nama: str = "",
+                               unit_kerja: str = "PERWAKILAN PROVINSI PAPUA TENGAH",
+                               include_kop: bool = True):
+    """
+    Bangun Laporan Pengawasan BPKP Bentuk Surat (Pendek) sesuai
+    Peraturan BPKP Nomor 4 Tahun 2026 BAB V-C.5.
+
+    Struktur:
+      - Kepala: Kop surat dinas BPKP + tabel metadata (Nomor, Lampiran, Hal, Tanggal)
+      - Tujuan: Yth. [Jabatan] di [Kota]
+      - Batang Tubuh: Paragraf pengantar, A. Simpulan, B. Rekomendasi, Paragraf penutup
+      - Kaki: Blok tanda tangan (kanan bawah) & klausul pembagian terbatas / etika
+    """
+    from .bpkp_docx_engine import (
+        add_kop_surat_table, add_surat_pengantar_metadata, add_p, add_run,
+        add_heading_2, add_topic_heading, add_numbered_item, add_signature_block
+    )
+
+    if include_kop:
+        add_kop_surat_table(doc, unit_kerja=unit_kerja)
+        add_surat_pengantar_metadata(doc, nomor=nomor, lampiran=lampiran, hal=hal, tanggal=tanggal)
+
+    # Tujuan Surat
+    p_yth = doc.add_paragraph()
+    p_yth.paragraph_format.space_before = Pt(12)
+    p_yth.paragraph_format.space_after = Pt(2)
+    add_run(p_yth, f"Yth. {tujuan_jabatan}", bold=True)
+
+    p_kota = doc.add_paragraph()
+    p_kota.paragraph_format.space_before = Pt(0)
+    p_kota.paragraph_format.space_after = Pt(12)
+    add_run(p_kota, f"di {tujuan_kota}", bold=False)
+
+    # Pengantar
+    if pembuka_text:
+        add_p(doc, pembuka_text, space_after=Pt(6))
+    else:
+        add_p(doc, f"Bersama ini kami sampaikan {hal} sebagai berikut:", space_after=Pt(6))
+
+    # A. Simpulan
+    if simpulan_list:
+        add_p(doc, "A. Simpulan", bold=True, space_before=Pt(6), space_after=Pt(4))
+        for judul, isi in simpulan_list:
+            add_p(doc, f"{judul}: {isi}" if judul else isi, space_after=Pt(4))
+
+    # B. Rekomendasi
+    if rekomendasi_list:
+        add_p(doc, "B. Rekomendasi", bold=True, space_before=Pt(6), space_after=Pt(4))
+        for rec in rekomendasi_list:
+            add_p(doc, rec, space_after=Pt(4))
+
+    # Penutup
+    if penutup_text:
+        add_p(doc, penutup_text, space_before=Pt(6), space_after=Pt(12))
+    else:
+        add_p(doc, "Demikian kami sampaikan. Atas perhatian dan kerja sama yang baik, kami ucapkan terima kasih.",
+              space_before=Pt(6), space_after=Pt(12))
+
+    # Blok Tanda Tangan
+    add_signature_block(doc, tanggal=tanggal or "Nabire, ................. 2026",
+                        jabatan=pejabat_jabatan, nama=pejabat_nama, tte=True)

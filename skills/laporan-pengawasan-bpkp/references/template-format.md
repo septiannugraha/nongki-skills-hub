@@ -1,11 +1,43 @@
-# Format Standar Struktur Dokumen Laporan Pengawasan (LHE/LHP) BPKP
+# Format & Struktur Dokumen Laporan Pengawasan BPKP
+(Berdasarkan Peraturan BPKP Nomor 4 Tahun 2026 tentang Tata Naskah Dinas, BAB V-C.5)
 
-> **CATATAN**: Dokumen ini menyajikan format terstruktur laporan hasil pengawasan (Laporan Hasil Evaluasi/LHE atau Laporan Hasil Pengawasan/LHP) berdasarkan praktik penyusunan laporan komprehensif BPKP (seperti evaluasi ketahanan pangan multi-lokus). Gunakan panduan ini bersama ketentuan Tata Naskah Dinas BPKP (**Peraturan BPKP Nomor 4 Tahun 2026**, BAB V-C.5) dan sesuaikan dengan kekhususan penugasan/template unit kerja.
+> [!important] PRINSIP KEUTAMAAN TEMPLATE PENGGUNA (PRIORITAS 1 - MUTLAK)
+> Format dan struktur laporan pengawasan di lingkungan BPKP **tidak seragam dan tidak kaku**. Setiap unit kerja dan penugasan pengawasan (evaluasi pembiayaan daerah, tata kelola ketahanan pangan, audit kinerja, audit kepatuhan, notisi hasil pengawasan, dll.) memiliki template dan petunjuk teknis masing-masing.
+>
+> 1. **Jika pengguna menyediakan template / draf dokumen**: **Wajib mematuhi format template pengguna 100%**. Jangan merombak susunan, jangan mengubah laporan bentuk surat menjadi bab panjang (atau sebaliknya), dan **DILARANG** memaksakan struktur Laporan Ketapang atau laporan terdahulu lainnya.
+> 2. **Jika pengguna TIDAK menyediakan template**: Tanyakan apakah yang dibutuhkan adalah **Bentuk Surat (Ringkas)** atau **Bentuk Bab (Panjang)**, lalu gunakan acuan format standar di bawah ini.
 
 ---
 
-## 1. Halaman Sampul (Cover Page)
+## 1. Bentuk 1: Laporan Bentuk Surat (Format Pendek / Ringkas)
 
+Sesuai Peraturan BPKP Nomor 4 Tahun 2026 BAB V-C.5.b.2), laporan bentuk surat digunakan untuk penyampaian laporan ringkas kepada pimpinan mitra/klien dan terdiri atas tiga bagian:
+
+### A. Kepala Laporan
+- **Kop Naskah Dinas**: Menggunakan kop surat instansi resmi BPKP (logo BPKP di kiri, teks instansi di kanan, garis bawah tebal 2.25 pt / sz=18).
+- **Metadata**: Terdiri dari baris `Nomor`, `Lampiran`, `Hal`, dan `Tanggal`.
+  - *Catatan Penting Pencegahan Duplikasi*: Jika kop surat template pengguna sudah memuat baris Nomor/Lampiran/Hal, perbarui nilainya secara *in-place*. Jangan menambahkan tabel metadata kedua!
+- **Tujuan Surat**: `Yth. [Nama Jabatan Mitra]` diikuti `di [Nama Kota]`.
+
+### B. Batang Tubuh Laporan
+- **Paragraf Pembuka**: Menguraikan dasar pelaksanaan pengawasan, surat tugas, objek pengawasan, dan maksud penyampaian laporan.
+- **Simpulan**: Poin-poin simpulan substansi pokok hasil pengawasan (kondisi makro dan permasalahan signifikan).
+- **Rekomendasi**: Butir-butir rekomendasi konkret yang ditujukan kepada pimpinan instansi auditan/mitra untuk perbaikan.
+- **Paragraf Penutup**: Permintaan arahan/tindak lanjut dan ucapan terima kasih atas kerja sama.
+
+### C. Kaki Laporan
+- **Penanggalan**: Nama kota dan tanggal pembuatan laporan (misal: `Nabire, [Tanggal] [Bulan] [Tahun]`).
+- **Jabatan & Tanda Tangan**: `Kepala Perwakilan,` diikuti tanda tangan digital (TTE) atau basah, nama lengkap pejabat tanpa gelar dan NIP (sesuai TND Peraturan 4/2026).
+- **Tembusan**: Ditujukan kepada pihak yang berhak menerima (misal: Deputi Kepala BPKP terkait).
+- **Catatan Kaki Etika & Layanan Pengaduan (Peraturan 4/2026 BAB V-C.5.c.5))**: Pernyataan bahwa tugas dilaksanakan tanpa melanggar aturan dan bebas dari gratifikasi/suap.
+
+---
+
+## 2. Bentuk 2: Laporan Bentuk Bab (Format Panjang / Komprehensif)
+
+Digunakan untuk laporan evaluasi komprehensif, audit kinerja, atau pemeriksaan multi-lokus berskala besar yang memerlukan uraian latar belakang, metodologi, dan bab temuan terpisah.
+
+### A. Sampul (Cover Page)
 ```
                        [Logo BPKP Berwarna 34 mm x 17 mm]
                                (Simetris Tengah)
@@ -33,176 +65,35 @@
                                 [TAHUN]
 ```
 
----
+### B. Daftar Isi (Table of Contents)
+Menggunakan *dot leaders* rapi dengan penegasan *Bold* untuk baris bab utama.
 
-## 2. Format Daftar Isi (Table of Contents)
+### C. Surat Pengantar / Ringkasan Eksekutif
+Disampaikan dengan kop surat resmi BPKP dan klausul distribusi terbatas kepada auditan.
 
-```
-DAFTAR ISI
-                                                                   Halaman
-RINGKASAN EKSEKUTIF / SURAT PENGANTAR ..............................   i
-BAB I   SIMPULAN DAN REKOMENDASI ...................................   1
-        A. Simpulan ................................................   1
-        B. Rekomendasi .............................................   5
-BAB II  URAIAN HASIL EVALUASI ......................................   8
-        A. Dasar Pelaksanaan .......................................   8
-        B. Tujuan ..................................................   8
-        C. Sasaran .................................................   9
-        D. Ruang Lingkup ...........................................   9
-        E. Batasan dan Tanggung Jawab ..............................  10
-        F. Pernyataan Pemenuhan Norma ..............................  10
-        G. Metode Evaluasi .........................................  10
-        H. Waktu Pelaksanaan dan Hambatan ..........................  11
-        I. Informasi Umum ..........................................  11
-        J. Hasil Evaluasi ..........................................  15
-           1. [Topik 1: Permasalahan Utama] ........................  15
-           2. [Topik 2: Permasalahan Utama] ........................  24
-           3. [Topik 3: Permasalahan Utama] ........................  30
-           ...
-           10. Tanggapan Mitra Evaluasi dan Rencana Aksi ...........  71
-DAFTAR TABEL .......................................................  73
-DAFTAR LAMPIRAN ....................................................  74
-```
+### D. BAB I: Simpulan dan Rekomendasi
+- **A. Simpulan**: Uraian ringkas simpulan eksekutif atas seluruh fokus pengawasan.
+- **B. Rekomendasi**: Rekomendasi berjenjang (strategis untuk Kepala Daerah, operasional untuk Kepala OPD).
+
+### E. BAB II: Uraian Umum / Pendahuluan
+- **A. Dasar Pelaksanaan**: Surat tugas dan peraturan yang mendasari.
+- **B. Tujuan & Sasaran**: Maksud dilakukannya evaluasi/pemeriksaan.
+- **C. Ruang Lingkup**: Batasan waktu dan entitas yang diawasi.
+- **D. Batasan dan Tanggung Jawab**: Tanggung jawab manajemen auditan vs auditor.
+- **E. Pernyataan Pemenuhan Norma (Conformance Statement)**: SAIPI & Standar Kerja Pengawasan BPKP.
+- **F. Metodologi & Informasi Umum**: Profil umum entitas dan data anggaran/program.
+
+### F. BAB III: Hasil Pengawasan (Kerangka Temuan 5C)
+Setiap temuan diuraikan secara runut:
+1. **Kondisi**: Fakta riil yang ditemukan di lapangan berbasis bukti KKE.
+2. **Kriteria**: Ketentuan perundang-undangan spesifik (UU, PP, Permen, Perda, Perbup). Ditandai warna merah `(.)` bila masih draf.
+3. **Sebab**: Akar masalah (*root cause*), diawali kalimat baku: `"Kondisi tersebut disebabkan oleh..."`.
+4. **Akibat**: Dampak negatif riil atau potensi risiko, diawali: `"Akibatnya, ..."`.
+5. **Rekomendasi**: Solusi perbaikan yang spesifik dan dapat ditindaklanjuti, diawali: `"Atas permasalahan tersebut, direkomendasikan agar: ..."`.
 
 ---
 
-## 3. Format Surat Pengantar / Ringkasan Eksekutif
-
-```
-+-------------------------------------------------------------------------------+
-| [LOGO BPKP] | BADAN PENGAWASAN KEUANGAN DAN PEMBANGUNAN                       |
-|             | PERWAKILAN PROVINSI [NAMA PROVINSI]                             |
-|             | [Alamat Lengkap Kantor Perwakilan BPKP]                         |
-|             | Telepon: [No. Telp], Email: [Alamat Email], Web: [Website Resmi]|
-+-------------------------------------------------------------------------------+
-—————————————————————————————————————————————————————————————————————————————————
-
-Nomor    : [Kode Keamanan]/[Klasifikasi]/LHP-[No]/[Kode Unit]/[Tahun]    [Kota], [Tanggal]
-Lampiran : Satu Berkas
-Hal      : Laporan Hasil Evaluasi atas [Objek Pengawasan] pada [Entitas] Tahun [Tahun]
-
-Yth.
-1. [Gubernur / Pj. Gubernur Provinsi ...]
-2. [Bupati / Walikota ...]
-di Tempat
-
-Terlampir kami sampaikan Laporan Hasil Evaluasi atas Tata Kelola [Objek Pengawasan] pada [Entitas Wilayah] Tahun [Tahun] Nomor [Nomor Laporan] tanggal [Tanggal Laporan].
-
-Pokok-pokok simpulan dan rekomendasi hasil evaluasi adalah sebagai berikut:
-
-A. Simpulan
-[Ringkasan eksekutif poin-poin temuan utama per topik]
-
-B. Rekomendasi
-[Ringkasan eksekutif rekomendasi strategis pimpinan daerah dan taktis OPD]
-
-Laporan ini terbatas ditujukan kepada [Jabatan Penerima] untuk dapat digunakan sebagai salah satu bahan pertimbangan atau rekomendasi dalam pengambilan keputusan atas permasalahan yang terjadi.
-
-Atas perhatian dan kerja sama yang baik, kami ucapkan terima kasih.
-
-                                        Kepala Perwakilan,
-
-                                        [Tanda Tangan Digital / Basah]
-
-                                        [Nama Lengkap Kepala Perwakilan]
-                                        NIP [Nomor Induk Pegawai]
-
-Tembusan Yth.:
-1. Deputi Kepala BPKP Bidang [Pengawasan Terkait];
-2. [Pejabat Terkait Lainnya].
-```
-
----
-
-## 4. Format BAB I -- Simpulan dan Rekomendasi
-
-### A. Simpulan
-```
-Berdasarkan hasil evaluasi atas tata kelola [objek pengawasan] pada [wilayah entitas], dapat disimpulkan hal-hal sebagai berikut:
-1. [Topik 1]: [Simpulan substansi kondisi makro dan risiko].
-2. [Topik 2]: [Simpulan substansi kondisi makro dan risiko].
-...
-```
-
-### B. Rekomendasi
-```
-Atas permasalahan yang diuraikan pada simpulan di atas, direkomendasikan kepada [Kepala Daerah] agar:
-1. [Rekomendasi Strategis Level Kepala Daerah];
-2. Menginstruksikan Kepala [OPD Teknis Terkait] untuk:
-   a. [Rekomendasi Operasional 1];
-   b. [Rekomendasi Operasional 2].
-```
-
----
-
-## 5. Format BAB II -- Uraian Hasil Evaluasi
-
-### A s.d. I: Dasar, Metodologi, & Profil Umum
-- **A. Dasar Pelaksanaan**: Daftar regulasi acuan dan Surat Tugas (`Surat Tugas Nomor PE.09.02/ST-...`).
-- **B. Tujuan**: Menilai efektivitas tata kelola dan memberikan *insight* serta *foresight*.
-- **C. Sasaran**: Sasaran per tema dan topik evaluasi.
-- **D. Ruang Lingkup**: Cakupan wilayah (Provinsi, Kab/Kota) dan tahun anggaran yang dievaluasi.
-- **E. Batasan dan Tanggung Jawab**: Klausul batas tanggung jawab auditor intern.
-- **F. Pernyataan Pemenuhan Norma**: Conformance statement sesuai SAIPI dan Peraturan BPKP tentang Standar Kerja Pengawasan Intern.
-- **G. Metode Evaluasi**: Pengumpulan dokumen, telaah regulasi, analisis KKE, wawancara, dan observasi fisik lapangan.
-- **H. Waktu Pelaksanaan dan Hambatan**: Jangka waktu pelaksanaan (jumlah hari kerja) dan keterangan kendala/hambatan di lapangan.
-- **I. Informasi Umum**: Data profil demografi, geografis, komoditas, dan anggaran objek pengawasan.
-
----
-
-## 6. Format Hasil Pengawasan & Uraian Temuan 5C Multi-Lokus (Bagian J)
-
-Setiap topik temuan disusun dengan struktur hierarki baku:
-
-```
-[Heading 3] 1. [Judul Topik Utama] (misal: Lahan Pertanian Belum Terkelola dengan Efektif)
-
-[Paragraf Simpulan Umum Topik]
-[Gambaran makro kondisi topik secara menyeluruh di seluruh wilayah pengawasan].
-
-a. [Sub-Heading Temuan Spesifik a] (Bold 11pt)
-   Kondisi di tingkat wilayah pengawasan diuraikan sebagai berikut:
-   1) Provinsi [Nama]: [Fakta kondisi terverifikasi dari KKE dan data pendukung].
-   2) Kabupaten [Nama A]: [Fakta kondisi terverifikasi dari KKE dan data pendukung].
-   3) Kabupaten [Nama B]: [Fakta kondisi terverifikasi dari KKE dan data pendukung].
-
-   (.)  <-- Kriteria merah bila draft/unverified atau kutipan pasal regulasi definitif (Hitam).
-
-   Kondisi tersebut disebabkan oleh [akar masalah sistemik].
-
-   Akibatnya, [dampak negatif riil atau potensi risiko kegagalan program].
-
-   Atas permasalahan tersebut, direkomendasikan agar:
-   1) [Rekomendasi perbaikan untuk entitas Provinsi];
-   2) [Rekomendasi perbaikan untuk entitas Kabupaten].
-
-b. [Sub-Heading Temuan Spesifik b]
-   ...
-
-[Bagian Penutup Topik]
-Tanggapan Mitra Evaluasi dan Rencana Aksi
-Atas hasil evaluasi yang telah disampaikan, pihak [Pemerintah Daerah / OPD terkait] menyatakan sependapat dan berkomitmen menyusun rencana aksi penyelesaian tindak lanjut dengan rincian:
-1) [Uraian komitmen rencana aksi 1] paling lambat [Waktu target];
-2) [Uraian komitmen rencana aksi 2] paling lambat [Waktu target].
-```
-
----
-
-## 7. Format Standar Penyajian Tabel Data BPKP (Open Table)
-
-```
-Tabel 1: Realisasi dan Target Alokasi [Objek] Tahun [Tahun]
-+----+-----------------------------+--------+-----------+-------------+------------+
-| No |          Indikator          | Satuan |  Target   |  Realisasi  | Capaian (%)|
-+----+-----------------------------+--------+-----------+-------------+------------+
-| 1  | Target Lahan Baku Sawah     |   Ha   |   1.200   |     850     |   70,83%   |
-| 2  | Produktivitas Padi          | Ton/Ha |    4,50   |    3,20     |   71,11%   |
-+----+-----------------------------+--------+-----------+-------------+------------+
-Sumber: Dinas Pertanian Kabupaten [Nama] diolah, 2026
-
-*Catatan Format:*
-- Hanya menggunakan garis horizontal (Top, Bottom, Header border sz="4"), tanpa border vertikal.
-- Shading header abu-abu lembut (#F2F2F2), teks bold rata tengah/kiri.
-- Teks angka rata kanan, teks deskripsi rata kiri/justified, nomor rata tengah.
-- Sumber dicantumkan di bawah tabel dengan huruf miring (Italic 9 pt).
-```
+## 3. Format Penyajian Tabel BPKP (Open Table)
+- Garis horizontal saja (Top, Header separator, Bottom); dilarang garis vertikal.
+- Shading header abu-abu lembut (`#EAEAEA` atau `#F2F2F2`), teks bold 10 pt.
+- Keterangan sumber dicantumkan di bawah tabel dengan huruf miring (*Italic 9 pt*): `Sumber: Dinas Pertanian Kabupaten [Nama], 2026`.

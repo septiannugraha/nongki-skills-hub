@@ -1,12 +1,26 @@
 ---
 name: laporan-pengawasan-bpkp
-description: Menyusun dan mengedit laporan hasil pengawasan internal di lingkungan BPKP (LHP, LHE, LHR) berdasarkan Global Internal Audit Standards (IIA Standard 15.1), termasuk kerangka temuan 5C (kondisi, kriteria, sebab, akibat, rekomendasi), prinsip kualitas komunikasi IIA, conformance statement, dan distribusi laporan. Gunakan saat diminta membuat draf laporan hasil pemeriksaan/evaluasi/reviu, menyusun atau memperbaiki bab temuan dan rekomendasi, atau mengisi template laporan dari kertas kerja. Acuan Tata Naskah Dinas kini berbasis Peraturan BPKP Nomor 4 Tahun 2026 (menggantikan Perban 4/2022).
-tags: [bpkp, laporan-pengawasan, lhp, lhe, lhr, temuan-audit, 5c, iia, audit-internal, peraturan-bpkp-4-2026]
+description: Menyusun, memperbaiki, dan mengisi laporan hasil pengawasan internal BPKP (LHP, LHE, LHR, Notisi Hasil Pengawasan) berbasis Global Internal Audit Standards (IIA 15.1) dan Peraturan BPKP Nomor 4 Tahun 2026. Skill ini merupakan MASTER SKILL yang secara mandiri telah mengintegrasikan secara penuh (built-in) kaidah Tata Naskah Dinas BPKP (tata-naskah-dinas-bpkp), penyuntingan bahasa alami auditor profesional (humanizer-indonesia), serta tata ejaan baku resmi EYD V (eyd-indonesia) tanpa perlu memanggil skill-skill tersebut secara terpisah.
+tags: [bpkp, laporan-pengawasan, lhp, lhe, lhr, notisi, temuan-audit, 5c, iia, audit-internal, eyd-indonesia, humanizer-indonesia, tata-naskah-dinas-bpkp, peraturan-bpkp-4-2026]
 ---
 
-# Laporan Pengawasan BPKP
+# Laporan Pengawasan BPKP (Master Integrated Skill)
 
-Skill ini membantu menyusun laporan hasil pengawasan internal (Laporan Hasil Pemeriksaan/LHP, Laporan Hasil Evaluasi/LHE, Laporan Hasil Reviu/LHR) sesuai prinsip Global Internal Audit Standards (IIA Standard 15.1) yang diadaptasi ke dalam konteks BPKP.
+Skill ini membantu menyusun laporan hasil pengawasan internal (Laporan Hasil Pemeriksaan/LHP, Laporan Hasil Evaluasi/LHE, Laporan Hasil Reviu/LHR, Notisi) sesuai prinsip Global Internal Audit Standards (IIA Standard 15.1) yang diadaptasi ke dalam konteks BPKP.
+
+> [!important] MASTER INTEGRATED SKILL (ALL-IN-ONE) — TIDAK PERLU PEMANGGILAN TERPISAH
+> Skill ini dirancang secara mandiri memuat seluruh kapabilitas:
+> 1. **Tata Naskah Dinas BPKP (Peraturan BPKP Nomor 4 Tahun 2026)**: Kop surat tabel resmi, penomoran, penanda tangan, etika WBS & anti-suap/gratifikasi.
+> 2. **Humanizer Indonesia (Gaya Auditor Profesional)**: Bahasa lugas, objektif, menghilangkan artefak bot, tidak mekanis.
+> 3. **Pemeriksaan EYD V**: Ejaan, huruf kapital, tanda baca, kata depan, partikel, serapan.
+> **Auditor/Asisten AI WAJIB menjalankan seluruh kaidah ini secara terpadu dalam satu siklus pengerjaan tanpa meminta pengguna memanggil skill eyd-indonesia, humanizer-indonesia, atau tata-naskah-dinas-bpkp secara terpisah.**
+
+---
+
+> [!caution] HIERARKI KEUTAMAAN FORMAT: TEMPLATE PENGGUNA ADALAH PRIORITAS 1 (MUTLAK)
+> 1. **Template-First Principle**: Jika pengguna menyediakan atau merujuk file template/draf laporan tertentu (misal: Evaluasi Pembiayaan Daerah, Notisi Pembahasan, LHP Kinerja, atau dokumen berformat surat pendek), **FORMAT DAN STRUKTUR TEMPLATE PENGGUNA TERSEBUT MENJADI ACUAN TERTINGGI**.
+> 2. **Dilarang Overfitting Contoh Ketapang**: Dokumen contoh (seperti Laporan Ketapang atau contoh di `references/template-format.md`) adalah **contoh kasus multi-lokus berskala besar**, BUKAN cetak biru wajib untuk semua laporan. **DILARANG** merombak atau memaksakan susunan dokumen pengguna menjadi bab-bab Ketapang jika pengguna sudah memiliki template sendiri!
+> 3. **Pencegahan Duplikasi Metadata (Nomor, Lampiran, Hal)**: Jika template dokumen pengguna sudah memiliki baris/tabel kop dan metadata `Nomor`, `Lampiran`, `Hal`, **LAKUKAN PENGISIAN / PERBAIKAN SECARA IN-PLACE**. Dilarang keras menyisipkan tabel metadata tambahan yang mengakibatkan penulisan Nomor, Lampiran, Hal tertulis dua kali!
 
 > [!important] Acuan Tata Naskah Dinas: Peraturan BPKP 4/2026
 > Skill ini mengacu pada **Peraturan BPKP Nomor 4 Tahun 2026 tentang Tata Naskah Dinas** (BAB V-C.5 Laporan, BAB IV Pengamanan, BAB III Pejabat Penanda Tangan), yang menggantikan Peraturan BPKP Nomor 4 Tahun 2022. Detail lihat Bagian 11.
@@ -655,26 +669,6 @@ Bold hanya digunakan untuk elemen struktural dan penanda, **bukan** untuk menonj
 - **Fallback Standar Penomoran & Indentasi:** Apabila draf/template laporan tidak memiliki hirarki *list level*, tabulasi, dan *indentation* bawaan, gunakan formula cascade hanging indent & tab stops Bagian 12.3 atau sistem multilevel numbering Bagian 6 (Penomoran Bertingkat).
 - **Larangan Penomoran Teks Ganda (*Double Numbering*):** DILARANG keras mengetik nomor manual teks (seperti `1. `, `a. `, `1) `) di dalam teks paragraf yang bertabrakan dengan penomoran otomatis Word (`w:numPr`). Jika paragraf sudah memiliki `w:numPr`, biarkan Word yang menghasilkan nomor. Jika menggunakan penomoran manual (legacy/fallback), jangan gunakan `w:numPr` pada paragraf yang sama.
 - **Format Nomor Manual (Fallback):** Bila terpaksa menggunakan penomoran manual teks (karena keterbatasan template), format: `[nomor]\t[teks]` dengan tab stop eksplisit pada posisi teks level tersebut. Jangan gunakan spasi sebagai pemisah antara nomor dan teks. Contoh yang benar: `a.\tJudul Temuan` (dengan tab stop di 1080 dxa). Contoh yang salah: `a. Judul Temuan` (spasi biasa, tidak menjamin perataan).
-
----
-
-### 12.9 Standar Kompatibilitas Google Workspace / Google Docs (GWS) & Tata Letak Tabel
-Saat dokumen laporan pengawasan dikonversi, disinkronkan, atau diedit pada Google Docs melalui Google Workspace API / MCP:
-1. **Pembersihan Indentasi dalam Sel Tabel (Anti-Loncatan Ruler):**
-   - Setiap paragraf di dalam sel tabel wajib dideklarasikan indentasi nol eksplisit: `<w:ind w:left="0" w:right="0" w:firstLine="0"/>` (`indentStart: 0, indentFirstLine: 0`).
-   - Paragraf di dalam sel dilarang mewarisi indentasi paragraf global agar penanda biru pada *ruler* Google Docs tidak bergeser ke tengah atau membuat *hanging indent* liar di kolom kedua/ketiga.
-2. **Struktur Tabel Metadata & Kop Surat:**
-   - **Tabel Nomor/Tanggal Cover (3 Kolom):** Kolom Label (`84 pt`), Kolom Separator `:` (`27.75 pt`), Kolom Nilai (`222.75 pt`). Paragraf sel berindentasi seragam (`14.17 pt`).
-   - **Tabel Kop Surat (2 Kolom):** Kolom Logo (`86.7 pt`), Kolom Teks Lembaga (`366.3 pt`). Teks instansi rata tengah murni (`alignment: CENTER`), spasi baris 1.0 tunggal, dan indentasi 0.
-   - **Tabel Metadata Surat Pengantar (4 Kolom Terpisah):**
-     - Kolom 1 (`69 pt` / `2.43 cm`): Label (`Nomor`, `Lampiran`, `Hal`)
-     - Kolom 2 (`18 pt` / `0.63 cm`): Pemisah `:`
-     - Kolom 3 (`237.75 pt` / `8.39 cm`): Isi teks nomor/lampiran/judul laporan (*Justified*, indentasi 0)
-     - Kolom 4 (`129.75 pt` / `4.58 cm`): Tanggal surat pada baris pertama (*Right-aligned*)
-     - *Kaidah Penting:* Tanggal wajib diletakkan pada kolom ke-4 mandiri (bukan *right tab stop* di dalam teks) agar judul laporan pada baris `Hal` tidak mengalami *hanging indent* saat *line wrapping*.
-3. **Penyelarasan Narasi di Bawah Sub-Heading Level 1 (`HEADING_3` / `1.`):**
-   - Tajuk sub-bagian bernomor (seperti `1. Anggaran Ketahanan Pangan Daerah` pada Informasi Umum) memiliki nomor di `36 pt` dan teks judul di `54 pt`.
-   - Paragraf narasi/isi di bawahnya wajib diset persis dengan **`indentStart: 54 pt` (0.75" / 1080 dxa) dan `indentFirstLine: 54 pt`**, sehingga seluruh baris narasi sejajar 100% dengan huruf pertama judul poinnya.
 
 
 ---

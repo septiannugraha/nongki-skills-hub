@@ -1074,18 +1074,39 @@ def get_default_logo(variant: str = "png") -> str:
     ``assets/`` skill ini.
 
     variant:
-      "png" -> logo_bpkp.png  (untuk cover page, transparan)
-      "jpg" -> logo_bpkp_kop.jpg (untuk kop surat tabel)
+      "png" -> logo_bpkp.png
+      "jpg" -> logo_bpkp_kop.jpg
 
-    Mengembalikan string kosong jika file tidak ditemukan.
+    Mengecek beberapa lokasi potensial untuk menjamin logo selalu ditemukan.
     """
     _here = os.path.dirname(os.path.abspath(__file__))
+    candidates = []
+
     if variant == "jpg":
-        path = os.path.join(_here, "..", "assets", "logo_bpkp_kop.jpg")
+        filenames = ["logo_bpkp_kop.jpg", "logo_bpkp.png", "logo_bpkp_kop.png"]
     else:
-        path = os.path.join(_here, "..", "assets", "logo_bpkp.png")
-    path = os.path.normpath(path)
-    return path if os.path.exists(path) else ""
+        filenames = ["logo_bpkp.png", "logo_bpkp_kop.jpg", "logo_bpkp_kop.png"]
+
+    # Relatif terhadap file engine
+    for fn in filenames:
+        candidates.append(os.path.join(_here, "..", "assets", fn))
+        candidates.append(os.path.join(_here, "assets", fn))
+
+    # Path direktori user / sistem
+    user_home = os.path.expanduser("~")
+    for fn in filenames:
+        candidates.append(os.path.join(user_home, ".agents", "skills", "laporan-pengawasan-bpkp", "assets", fn))
+        candidates.append(os.path.join(user_home, ".agents", "skills", "tata-naskah-dinas-bpkp", "assets", fn))
+        candidates.append(os.path.join(user_home, "code", "nongki-skills-hub", "skills", "laporan-pengawasan-bpkp", "assets", fn))
+        candidates.append(os.path.join(user_home, "code", "nongki-skills-hub", "skills", "tata-naskah-dinas-bpkp", "assets", fn))
+        candidates.append(os.path.join(user_home, fn))
+
+    for c in candidates:
+        norm = os.path.normpath(c)
+        if os.path.exists(norm) and os.path.getsize(norm) > 0:
+            return norm
+
+    return ""
 
 
 # =====================================================================
@@ -1389,3 +1410,89 @@ def add_kop_surat_table(doc, logo_path: str = "",
         p.paragraph_format.line_spacing = 1.0
         clean_cell_p(p)
         add_run(p, line["text"], bold=line["bold"], size=Pt(line["size"]))
+
+
+# =====================================================================
+# TABEL METADATA SURAT PENGANTAR (4 Kolom Terpisah)
+# =====================================================================
+
+def add_surat_pengantar_metadata(doc, nomor: str, lampiran: str, hal: str,
+                                 tanggal: str = ""):
+    """
+    Tambahkan tabel metadata surat pengantar (4 kolom) standar BPKP.
+
+    Layout (tabel 3 baris x 4 kolom, borderless):
+      Kolom 1 (2.43 cm): Label (Nomor, Lampiran, Hal)        — left, 11pt
+      Kolom 2 (0.63 cm): Separator ':'                        — center, 11pt
+      Kolom 3 (8.39 cm): Isi teks                              — justified, 11pt
+      Kolom 4 (4.58 cm): Tanggal (hanya baris pertama)         — right, 11pt
+
+    PENTING: Jangan panggil fungsi ini jika dokumen/template yang diproses
+    sudah memiliki tabel kop & metadata sendiri, agar tidak terjadi duplikasi.
+    """
+    table = doc.add_table(rows=3, cols=4)
+    table.alignment = WD_TABLE_ALIGNMENT.CENTER
+    table.autofit = False
+
+    # Borderless
+    tblPr = table._tbl.tblPr
+    borders = parse_xml(
+        f'<w:tblBorders {nsdecls("w")}>'
+        f'<w:top w:val="none"/><w:left w:val="none"/>'
+        f'<w:right w:val="none"/><w:bottom w:val="none"/>'
+        f'<w:insideH w:val="none"/><w:insideV w:val="none"/>'
+        f'</w:tblBorders>'
+    )
+    tblPr.append(borders)
+
+    meta_w = [Cm(2.43), Cm(0.63), Cm(8.39), Cm(4.58)]
+    meta_rows = [
+        ("Nomor", ":", nomor, tanggal),
+        ("Lampiran", ":", lampiran, ""),
+        ("Hal", ":", hal, ""),
+    ]
+
+    for r_idx, (label, sep, content, date_val) in enumerate(meta_rows):
+        cells = table.rows[r_idx].cells
+        for c_idx, w in enumerate(meta_w):
+            cells[c_idx].width = w
+            set_cell_margins(cells[c_idx], top=20, bottom=20, left=10, right=10)
+
+        # Col 0: Label
+        p0 = cells[0].paragraphs[0]
+        p0.paragraph_format.space_before = Pt(0)
+        p0.paragraph_format.space_after = Pt(2)
+        p0.paragraph_format.line_spacing = 1.15
+        p0.alignment = WD_ALIGN_PARAGRAPH.LEFT
+        clean_cell_p(p0)
+        add_run(p0, label, bold=False, size=Pt(11))
+
+        # Col 1: Separator ':'
+        p1 = cells[1].paragraphs[0]
+        p1.paragraph_format.space_before = Pt(0)
+        p1.paragraph_format.space_after = Pt(2)
+        p1.paragraph_format.line_spacing = 1.15
+        p1.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        clean_cell_p(p1)
+        add_run(p1, sep, bold=False, size=Pt(11))
+
+        # Col 2: Content
+        p2 = cells[2].paragraphs[0]
+        p2.paragraph_format.space_before = Pt(0)
+        p2.paragraph_format.space_after = Pt(2)
+        p2.paragraph_format.line_spacing = 1.15
+        p2.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
+        clean_cell_p(p2)
+        add_run(p2, content, bold=False, size=Pt(11))
+
+        # Col 3: Tanggal (kanan)
+        p3 = cells[3].paragraphs[0]
+        p3.paragraph_format.space_before = Pt(0)
+        p3.paragraph_format.space_after = Pt(2)
+        p3.paragraph_format.line_spacing = 1.15
+        p3.alignment = WD_ALIGN_PARAGRAPH.RIGHT
+        clean_cell_p(p3)
+        if date_val:
+            add_run(p3, date_val, bold=False, size=Pt(11))
+
+    return table
