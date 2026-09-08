@@ -21,6 +21,12 @@ Gunakan daftar ini sebagai alat diagnosis, bukan daftar kata terlarang.
 - Kalimat berpanjang hampir sama dan selalu memakai pola subjek–predikat–objek.
 - Penggunaan "selain itu", "lebih lanjut", "di sisi lain", dan "oleh karena itu" secara beruntun meski hubungan antarkalimat sudah jelas.
 - Konstruksi "bukan hanya ..., melainkan juga ..." yang dipakai sebagai hiasan.
+- **Tanda Pisah (Em Dash `—`)**: Sering muncul otomatis dari model bahasa asing untuk menyelipkan anak kalimat. Dalam teks dinas/audit formal, tanda pisah ini terasa canggung dan harus diganti dengan koma, kurung, atau kalimat aktif yang ditata ulang.
+- **Pleonasme & Kerancuan Konjungsi ("dan serta")**:
+  - Penggunaan *"dan serta"* secara bergandengan tanpa struktur jeda (misal: *"menyediakan bibit dan serta pupuk"*) merupakan pleonasme/artefak mekanis yang salah kaprah.
+  - Pengabaian distingsi makna antara *"dan"* (penambahan murni berbobot setara) dengan *"serta"* (penyertaan tokoh/dokumen/unsur pengikut atau pendamping).
+  - Kesalahan tanda koma: menambahkan koma sebelum konjungsi pada 2 unsur (*"ayah, dan ibu"* -> salah), atau justru menghilangkan koma sebelum unsur terakhir pada perincian $\ge 3$ unsur (*"buku, pena dan pensil"* -> salah EYD V, harus *"buku, pena, dan pensil"*).
+
 
 ## Perbaikan yang aman
 

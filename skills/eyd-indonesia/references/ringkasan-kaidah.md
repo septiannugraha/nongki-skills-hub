@@ -55,9 +55,34 @@ Daftar ringkas kaidah paling sering digunakan dan rawan kesalahan untuk rujukan 
 
 * **Tanda Koma (`,`)**:
   * Digunakan sebelum kata hubung pertentangan/konjungsi intrakalimat (*..., tetapi...*, *..., melainkan...*, *..., sedangkan...*).
-  * Digunakan dalam rincian 3 unsur atau lebih sebelum kata 'dan'/'atau' (* Oxford comma: *A, B, dan C*).
+  * Digunakan dalam rincian 3 unsur atau lebih sebelum kata 'dan', 'serta', atau 'atau' (*Oxford comma* versi EYD: *A, B, dan C*; *X, Y, serta Z*).
   * Digunakan di belakang kata transisi antarkalimat (*Oleh karena itu, ...*, *Namun, ...*, *Selain itu, ...*).
   * Anak kalimat yang mendahului induk kalimat menggunakan koma (*Jika hujan, saya tidak datang*). Jika induk kalimat mendahului anak kalimat, TIDAK menggunakan koma (*Saya tidak datang jika hujan*).
+
+* **Kaidah Khusus Konjungsi Koordinatif "Dan" vs "Serta"**:
+  * **Kata Hubung "Dan"**:
+    * **Fungsi**: Menghubungkan unsur-unsur yang setara secara umum (kata dengan kata, frasa dengan frasa, klausa dengan klausa).
+    * **Karakteristik**: Hubungan penambahan murni (*pure addition*), bobot kepentingan antarunsur setara/seimbang.
+    * **Contoh**: *"Ayah membeli meja dan kursi."* (2 unsur, tanpa koma); *"Siswa wajib membawa buku, pensil, dan penggaris."* (>2 unsur, wajib koma sebelum *dan*).
+  * **Kata Hubung "Serta"**:
+    * **Fungsi**: Menghubungkan unsur utama dengan unsur tambahan yang sifatnya menyertai atau mendampingi unsur utama (bermakna *beserta*, *ikut*, atau *turut*).
+    * **Karakteristik**: Unsur setelah kata *serta* diposisikan sebagai pengikut, pelengkap, atau lampiran pendamping dari subjek/objek utama.
+    * **Contoh**: *"Gubernur serta jajarannya meninjau lokasi bencana."* (Jajaran mendampingi Gubernur); *"Dokumen tersebut mencakup biodata, ijazah, serta surat pernyataan."* (>2 unsur, surat pernyataan sebagai pelengkap berkas utama).
+  * **Aturan Tanda Koma (,) Berdasarkan Jumlah Unsur**:
+    * **2 Unsur**: **TIDAK** menggunakan tanda koma sebelum konjungsi.
+      * *Benar*: *"Kakak dan adik pergi ke sekolah."* | *"Bupati serta wakilnya hadir tepat waktu."*
+      * *Salah*: *"Kakak, dan adik..."* | *"Bupati, serta wakilnya..."*
+    * **> 2 Unsur**: **WAJIB** menggunakan tanda koma sebelum konjungsi terakhir (*Oxford comma* versi EYD).
+      * *Benar*: *"Toko itu menjual baju, celana, serta sepatu."* | *"Mereka menanam padi, jagung, dan kedelai."*
+      * *Salah*: *"...baju, celana serta sepatu."* | *"...jagung dan kedelai."*
+  * **Penggabungan "Dan" + "Serta" dalam Kalimat Bertingkat (Hierarkis)**:
+    * Jika dalam satu kalimat terdapat perincian bertingkat (perincian di dalam perincian), gunakan **"dan"** untuk perincian tingkat pertama (kelompok utama yang setara) dan gunakan **"serta"** untuk perincian tingkat kedua (kelompok tambahan/pendamping).
+    * *Contoh*: *"Fakultas tersebut terdiri atas Departemen Matematika dan Departemen Fisika, serta Program Studi Astronomi."* (Matematika & Fisika adalah departemen utama yang setara, sedangkan Astronomi adalah program studi khusus/tambahan).
+  * **Larangan Redundansi / Pleonasme ("Dan Serta")**:
+    * **DILARANG KERAS** menggabungkan *"dan serta"* secara berdampingan tanpa jeda struktur yang jelas (*"...membeli buku dan serta pensil"* adalah **SALAH MUTLAK**; pilih salah satu: *"buku dan pensil"* atau sesuaikan maknanya).
+  * **Analisis Konteks Pendampingan**:
+    * Gunakan *"serta"* jika kalimat menekankan hubungan penyertaan tokoh utama dan pengikutnya, atau unsur pokok dan lampiran/kelengkapan tambahannya.
+
 
 * **Tanda Titik Dua (`:`)**:
   * Digunakan di akhir pernyataan lengkap yang diikuti rincian/penjelasan.

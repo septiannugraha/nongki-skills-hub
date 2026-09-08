@@ -1,6 +1,6 @@
 ---
 name: eyd-indonesia
-description: Use when editing, proofreading, or correcting Indonesian text spelling and punctuation according to official EYD V (Ejaan Bahasa Indonesia yang Disempurnakan Edisi V). Use for correcting capital letters, italics, bold, affixes, prepositions, particles, abbreviations, numbers, punctuation, and loanwords.
+description: Use when editing, proofreading, or correcting Indonesian text spelling, punctuation, and grammar according to official EYD V (Ejaan Bahasa Indonesia yang Disempurnakan Edisi V). Use for capital letters, italics, bold, affixes, prepositions, particles, abbreviations, numbers, coordinating conjunctions ("dan" vs "serta"), Oxford comma, punctuation, and loanwords.
 tags: [indonesian, eyd, eyd-v, proofreading, grammar, ejaan]
 ---
 
@@ -11,6 +11,7 @@ Skill ini menggunakan **Pendekatan Hibrida**: menggabungkan ringkasan kaidah kri
 ## 1. Pendekatan Hibrida & Rujukan
 
 * **Rujukan Cepat Internal**: Sebelum menyunting atau melakukan pemanggilan web, baca [Ringkasan Kaidah Kritis](references/ringkasan-kaidah.md) untuk memeriksa aturan rawan salah yang paling sering ditemukan.
+* **Kaidah Konjungsi "Dan" vs "Serta"**: Pelajari rujukan detail di [Panduan Penggunaan Kata "Dan" dan "Serta"](references/konjungsi-dan-serta.md) untuk memastikan ketepatan semantis, penempatan tanda koma (2 unsur vs >2 unsur/Oxford comma), perincian bertingkat, serta eliminasi pleonasme "dan serta".
 * **Verifikasi Online Presisi**: Jika aturan diragukan, memerlukan contoh spesifik, atau terdapat kata serapan asing yang berpotensi diperdebatkan, gunakan `webfetch` langsung ke URL spesifik dari [Peta Indeks Sumber Resmi](references/sumber-resmi.md).
 
 ## 2. Alur Kerja Penyuntingan
@@ -21,7 +22,15 @@ Skill ini menggunakan **Pendekatan Hibrida**: menggabungkan ringkasan kaidah kri
 2. **Pemeriksaan Berurutan**:
    - **Penggunaan Huruf**: Huruf kapital, miring, dan tebal.
    - **Penulisan Kata**: Kata berimbuhan, kata depan (`di`/`ke`), bentuk terikat (`pasca-`, `sub-`, `maha-`), partikel (`pun`), singkatan/akronim, serta angka & bilangan.
-   - **Penggunaan Tanda Baca**: Titik, koma (konjungsi pertentangan & Oxford comma), titik dua, tanda hubung, tanda pisah (`—`), elipsis, dan tanda petik.
+   - **Penggunaan Tanda Baca & Konjungsi Koordinatif**:
+     - Titik, titik dua, tanda hubung, tanda pisah (`—`), elipsis, dan tanda petik.
+     - Konjungsi Pertentangan: koma sebelum *tetapi*, *melainkan*, *sedangkan*.
+     - Konjungsi Koordinatif (*Dan* vs *Serta*):
+       - **2 Unsur**: Tanpa tanda koma (*"A dan B"*; *"X serta Y"*).
+       - **> 2 Unsur**: Wajib tanda koma sebelum konjungsi terakhir / Oxford comma (*"A, B, dan C"*; *"X, Y, serta Z"*).
+       - **Distingsi Makna**: Gunakan *dan* untuk relasi kesetaraan murni berbobot sama; gunakan *serta* untuk relasi penyertaan/pendampingan (makna *beserta*, pelengkap, atau pengikut).
+       - **Perincian Bertingkat**: Gunakan *dan* pada perincian kelompok utama, dan *serta* pada kelompok tambahan/sub-rincian (*"A dan B, serta C"*).
+       - **Eliminasi Pleonasme**: Larang keras gandeng kata *"dan serta"*.
    - **Unsur Serapan**: Penyesuaian akhiran asing dan konsonan ganda menjadi tunggal.
 3. **Penerapan Koreksi Minimal**:
    - Pertahankan struktur kalimat asli dan gaya penulis selama tidak melanggar kaidah EYD V.

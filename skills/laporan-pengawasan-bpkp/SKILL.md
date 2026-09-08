@@ -1,6 +1,6 @@
 ---
 name: laporan-pengawasan-bpkp
-description: Menyusun, memperbaiki, dan mengisi laporan hasil pengawasan internal BPKP (LHP, LHE, LHR, Notisi Hasil Pengawasan) berbasis Global Internal Audit Standards (IIA 15.1) dan Peraturan BPKP Nomor 4 Tahun 2026. Skill ini merupakan MASTER SKILL yang secara mandiri telah mengintegrasikan secara penuh (built-in) kaidah Tata Naskah Dinas BPKP (tata-naskah-dinas-bpkp), penyuntingan bahasa alami auditor profesional (humanizer-indonesia), serta tata ejaan baku resmi EYD V (eyd-indonesia) tanpa perlu memanggil skill-skill tersebut secara terpisah.
+description: Menyusun, memperbaiki, dan mengisi laporan hasil pengawasan internal BPKP (LHP, LHE, LHR, Notisi Hasil Pengawasan, serta Berita Acara Exit Meeting) berbasis Global Internal Audit Standards (IIA 15.1) dan Peraturan BPKP Nomor 4 Tahun 2026. Skill ini merupakan MASTER SKILL yang secara mandiri mengintegrasikan secara penuh (built-in) kaidah Tata Naskah Dinas BPKP (tata-naskah-dinas-bpkp), eliminasi tanda pisah (em dash), penyuntingan bahasa alami auditor profesional (humanizer-indonesia), serta tata ejaan baku resmi EYD V (eyd-indonesia).
 tags: [bpkp, laporan-pengawasan, lhp, lhe, lhr, notisi, temuan-audit, 5c, iia, audit-internal, eyd-indonesia, humanizer-indonesia, tata-naskah-dinas-bpkp, peraturan-bpkp-4-2026]
 ---
 
@@ -272,9 +272,16 @@ Setelah humanisasi, periksa ejaan sesuai kaidah EYD V (Ejaan Bahasa Indonesia ya
 
 #### C. Penggunaan Tanda Baca
 
-**Tanda Koma (`,`):**
+**Tanda Koma (`,`) & Kaidah Konjungsi Koordinatif:**
 - Sebelum konjungsi pertentangan (*..., tetapi...*, *..., melainkan...*, *..., sedangkan...*).
-- Dalam rincian 3+ unsur sebelum "dan"/"atau" (Oxford comma: *A, B, dan C*).
+- **Aturan Koma Perincian**:
+  - **2 Unsur**: **TIDAK** menggunakan koma sebelum konjungsi (*"Kepala Perwakilan dan Pengendali Teknis memimpin rapat"*, BUKAN *"..., dan Pengendali Teknis..."*).
+  - **> 2 Unsur (Perincian $\ge 3$)**: **WAJIB** menggunakan tanda koma sebelum konjungsi terakhir (*Oxford comma* versi EYD V: *"kriteria, penyebab, dan akibat"*; *"KPA, PPK, serta Bendahara Pengeluaran"*).
+- **Kaidah Pemilihan "Dan" vs "Serta"**:
+  - Gunakan **"dan"** untuk relasi penambahan murni yang setara secara kedudukan/bobot (*"Kondisi dan Kriteria"*, *"pemeriksaan fisik dan konfirmasi pihak ketiga"*).
+  - Gunakan **"serta"** untuk relasi penyertaan/pendampingan (bermakna *beserta*, *ikut*, *turut*, atau berkas/pihak pelengkap pendamping: *"Gubernur serta jajarannya"*, *"dokumen kontrak serta lampiran Berita Acara"*).
+  - **Perincian Bertingkat (Hierarkis)**: Gunakan **"dan"** untuk kelompok utama yang setara dan **"serta"** untuk kelompok pendamping/tambahan (*"Dinas Pertanian dan Dinas Ketahanan Pangan, serta perwakilan kelompok tani"*).
+- **Larangan Pleonasme**: **DILARANG KERAS** menggunakan gabungan *"dan serta"* secara berdampingan tanpa jeda struktur (*"peralatan dan serta bahan"* -> **SALAH**, perbaiki menjadi *"peralatan dan bahan"* atau perinci dengan koma).
 - Di belakang kata transisi antarkalimat (*Oleh karena itu, ...*, *Namun, ...*).
 - Anak kalimat mendahului induk kalimat: pakai koma (*Jika hujan, saya tidak datang*). Sebaliknya, tanpa koma.
 
@@ -285,9 +292,14 @@ Setelah humanisasi, periksa ejaan sesuai kaidah EYD V (Ejaan Bahasa Indonesia ya
 **Tanda Hubung (`-`):**
 - Kata ulang (*anak-anak*), `ke-` + angka (*ke-2*), angka + `-an` (*tahun 1990-an*), imbuhan + kata asing (*di-upgrading*).
 
-**Tanda Pisah (`--`):**
-- Mengapit penyisipan kata/kalimat penjelas.
-- Berarti "sampai dengan" di antara bilangan/tanggal.
+**Eliminasi Tanda Pisah (Em Dash `—` / `--`):**
+- **DILARANG KERAS** menggunakan tanda pisah (*em dash* `—` atau tanda hubung ganda `--`) dalam naskah dinas, laporan pengawasan, notisi, simpulan, maupun rekomendasi BPKP.
+- Tanda pisah merupakan artefak khas terjemahan mentah dan luaran model AI yang tidak lazim dalam ragam bahasa birokrasi/audit Indonesia formal.
+- **Substitusi Wajib**:
+  1. Gunakan tanda koma (`,`) untuk klausa selaan sederhana.
+  2. Gunakan tanda kurung (`(...)`) untuk rincian teknis pelengkap.
+  3. Gunakan kata "sampai dengan" (atau singkatan baku `s.d.`) untuk rentang angka/tanggal (*tahun 2024 s.d. 2026*, bukan *2024—2026*).
+  4. Restrukturisasi kalimat majemuk menjadi kalimat lugas aktif berurutan.
 
 **Tanda Petik (`"..."`):**
 - Mengapit petikan langsung. Titik/koma penutup di **dalam** tanda petik.
@@ -815,3 +827,58 @@ doc.save("LHP.docx")
 ```
 
 > **Catatan:** Modul ini hanya menyusun **kerangka struktur & format**. Isi/substansi temuan (Kondisi, Kriteria, Sebab, Akibat, Rekomendasi) harus diisi berdasarkan data penugasan aktual. Gunakan prinsip 5C di Bagian 3 dan kualitas komunikasi di Bagian 1 saat mengisi.
+
+---
+
+## 14. Dokumentasi Pengawasan: Notisi Pembahasan & Berita Acara Exit Meeting
+
+Sesuai **Peraturan BPKP Nomor 4 Tahun 2026 BAB V-C.1**, Dokumentasi Pengawasan (Notisi Hasil Pengawasan, Berita Acara Pembahasan/Exit Meeting, Rencana Tindak Perbaikan, Pernyataan Kesanggupan) merupakan kategori naskah dinas khusus yang **tidak menggunakan penomoran surat dinas biasa** (tanpa kode jenis nomor keluar biasa) dan dapat ditandatangani oleh Pengendali Teknis/Ketua Tim bersama pimpinan entitas auditan.
+
+### 14.1 Notisi Hasil Pengawasan (Notisi Pembahasan)
+
+Dokumentasi pengawasan lapangan resmi untuk mengomunikasikan simpulan evaluasi dan temuan 5C kepada pimpinan auditan (Gubernur, Bupati, Kepala OPD) sebelum LHP final diterbitkan:
+
+1. **Kepala Notisi & Kop**:
+   - Menggunakan logo resmi BPKP dan kop unit perwakilan/pusat.
+   - Judul: `NOTISI HASIL PENGAWASAN` (Semua huruf kapital, Bold 12 pt, Center).
+2. **Tabel Identitas Penugasan**:
+   - Program / Kegiatan Pengawasan (mis. Evaluasi Ketahanan Pangan, Tata Kelola Pendidikan).
+   - Sasaran / Sub-Topik (mis. On-Farm & Off-Farm, Revitalisasi Sekolah).
+   - Lokus Pengawasan (Provinsi dan/atau Kabupaten/Kota sasaran).
+   - Periode Pengawasan (Triwulan / Semester / Tahun Anggaran).
+   - Dasar Penugasan (Nomor dan Tanggal Surat Tugas BPKP).
+3. **Rekapitulasi Pokok Permasalahan (Status Keterbuktian)**:
+   - Tabel ringkas memuat Nomor, Topik Pengawasan, Simpulan Hasil, dan Status Simpulan.
+   - **Prinsip Validitas**: Hanya isu dengan status **Terbukti** (didukung Kertas Kerja Evaluasi/KKE dan bukti fisik tervalidasi) yang dituangkan ke dalam uraian rinci temuan. Isu yang tidak terbukti atau sudah diselesaikan auditan didokumentasikan sebagai catatan evaluasi non-temuan.
+4. **Uraian Rinci Temuan (Metode 5C Multi-Lokus)**:
+   - Terapkan struktur baku: **Kondisi** (perbandingan Provinsi vs Kabupaten), **Kriteria** (rujukan regulasi definitif), **Sebab** (akar masalah sistemik), **Akibat** (dampak operasional/finansial), dan **Rekomendasi Berjenjang**.
+5. **Rekomendasi Berjenjang (Strategic vs Operational)**:
+   - **Level Pimpinan Daerah (Gubernur / Sekda / Bupati)**: Bersifat kebijakan strategis, pengalokasian anggaran APBD, penetapan Keputusan Kepala Daerah (Perda/Pergub/Perbup/SK), dan instruksi koordinasi lintas OPD.
+   - **Level Kepala OPD / Teknis (Dinas Pertanian, Dinas Pendidikan, dsb.)**: Bersifat teknis operasional, penerbitan SOP petunjuk teknis pelaksanaan, validasi data penerima bantuan, pengawasan distribusi fisik barang, dan pemutakhiran berkala.
+6. **Tanggapan Mitra & Rencana Aksi (Action Plan)**:
+   - Memuat komitmen tindak lanjut dari OPD terkait, pejabat penanggung jawab (*Person in Charge* / PIC), dan target batas waktu penyelesaian (*deadline* bulan/tahun).
+7. **Tanda Tangan Pembahasan**:
+   - Ditandatangani bersama oleh Pengendali Teknis/Ketua Tim BPKP dan Pimpinan Instansi Mitra.
+
+---
+
+### 14.2 Berita Acara (BA) Pembahasan Hasil Pengawasan / Exit Meeting
+
+Berita Acara digunakan untuk mengikat kesepakatan formal antara Tim BPKP dan auditan atas simpulan serta rencana tindak lanjut hasil pembahasan:
+
+1. **Format Pembuka**:
+   - Menyebutkan hari, tanggal, bulan, tahun, dan tempat pelaksanaan pembahasan (*exit meeting*).
+   - Contoh: *"Pada hari ini [Hari], tanggal [Tanggal] bulan [Bulan] tahun [Tahun], bertempat di [Lokasi/Ruang Rapat], kami yang bertanda tangan di bawah ini:"*
+2. **Komparasi Pihak**:
+   - **Pihak Pertama (Tim Pengawas BPKP)**:
+     * Nama, NIP, Pangkat/Golongan, dan Jabatan dalam Tim (Pengendali Teknis / Ketua Tim).
+     * Dasar penugasan: Surat Tugas Kepala Perwakilan BPKP Nomor [ST-xxx] tanggal [Tanggal ST].
+   - **Pihak Kedua (Entitas Auditan / Pemda)**:
+     * Nama, NIP, Jabatan resmi pimpinan mitra kerja (Sekretaris Daerah, Asisten Sekda, Kepala Dinas, atau Inspektur Daerah).
+3. **Klausul Kesepakatan**:
+   - Pihak Pertama telah memaparkan dan menyerahkan Notisi Hasil Pengawasan kepada Pihak Kedua.
+   - Pihak Kedua telah membahas, memahami, dan menyepakati seluruh temuan dan rekomendasi yang tercantum dalam Notisi Hasil Pengawasan terlampir.
+   - Pihak Kedua berkomitmen menyelesaikan tindak lanjut perbaikan sesuai dengan rencana aksi (*action plan*) dan batas waktu yang disepakati.
+   - Notisi Hasil Pengawasan dan lembar tanggapan/rencana aksi merupakan bagian tidak terpisahkan dari Berita Acara ini.
+4. **Kolom Tanda Tangan Komparatif**:
+   - Disajikan dalam tabel 2 kolom (kiri: Pihak Pertama Tim BPKP, kanan: Pihak Kedua Pemerintah Daerah/Instansi Auditan) dilengkapi nama terang, NIP, dan jabatan.
