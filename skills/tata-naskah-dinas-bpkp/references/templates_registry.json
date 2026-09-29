@@ -1,0 +1,883 @@
+{
+  "berita_acara": {
+    "id": "berita_acara",
+    "title": "Berita Acara",
+    "filename": "Berita_Acara.docx",
+    "kategori": "Khusus",
+    "kode_naskah": "BA",
+    "has_unit_kop": true,
+    "placeholders_detected": [
+      "UNIT KERJA",
+      "alamat",
+      "nomor telepon",
+      "nomor faks",
+      "e-mail",
+      "nama lengkap dan rincian informasi lain yang dibutuhkan",
+      "nama lengkap"
+    ],
+    "tables_count": 1
+  },
+  "berita_acara_pembahasan1": {
+    "id": "berita_acara_pembahasan1",
+    "title": "Berita Acara Pembahasan",
+    "filename": "Berita_Acara_Pembahasan1.docx",
+    "kategori": "Khusus - Pengawasan",
+    "kode_naskah": "BA",
+    "has_unit_kop": true,
+    "placeholders_detected": [
+      "UNIT KERJA",
+      "nama lengkap",
+      "NIP dan jabatan",
+      "nama lengkap dari instansi auditan",
+      "nama lengkap menggunakan huruf kapital, tanpa gelar, dan NIP"
+    ],
+    "tables_count": 1
+  },
+  "instruksi_kepala": {
+    "id": "instruksi_kepala",
+    "title": "Instruksi Kepala BPKP",
+    "filename": "Instruksi_Kepala.docx",
+    "kategori": "Arahan - Pengaturan",
+    "kode_naskah": "INS",
+    "has_unit_kop": false,
+    "placeholders_detected": [
+      "nama tempat",
+      "tanggal, bulan, dan tahun",
+      "nama lengkap pejabat"
+    ],
+    "tables_count": 0
+  },
+  "keputusan_jpt_madya_dan_pratama": {
+    "id": "keputusan_jpt_madya_dan_pratama",
+    "title": "Keputusan JPT",
+    "filename": "Keputusan_JPT_Madya_dan_Pratama.docx",
+    "kategori": "Arahan - Penetapan",
+    "kode_naskah": "KEP",
+    "has_unit_kop": true,
+    "placeholders_detected": [
+      "UNIT KERJA",
+      "nama jabatan dengan menggunakan huruf kapital",
+      "kode klasifikasi arsip",
+      "nomor urut naskah dinas",
+      "kode unit atau jabatan",
+      "konseptor naskah dinas",
+      "tahun pembuatan",
+      "jabatan tanpa unit kerja",
+      "nama tempat",
+      "tanggal, bulan, dan tahun",
+      "nama lengkap pejabat"
+    ],
+    "tables_count": 0
+  },
+  "keputusan_kepala": {
+    "id": "keputusan_kepala",
+    "title": "Keputusan Kepala BPKP",
+    "filename": "Keputusan_Kepala.docx",
+    "kategori": "Arahan - Penetapan",
+    "kode_naskah": "KEP",
+    "has_unit_kop": false,
+    "placeholders_detected": [
+      "kode klasifikasi arsip",
+      "nomor urut naskah dinas",
+      "konseptor naskah dinas",
+      "tahun pembuatan",
+      "nama tempat",
+      "tanggal, bulan, dan tahun",
+      "nama lengkap pejabat"
+    ],
+    "tables_count": 0
+  },
+  "laporan_penunjang_pengawasan": {
+    "id": "laporan_penunjang_pengawasan",
+    "title": "Laporan Penunjang Pengawasan",
+    "filename": "Laporan_Penunjang_Pengawasan.docx",
+    "kategori": "Khusus - Laporan",
+    "kode_naskah": "LHP",
+    "has_unit_kop": true,
+    "placeholders_detected": [
+      "UNIT KERJA",
+      "alamat",
+      "no. telepon",
+      "no. faks",
+      "email",
+      "nama tempat",
+      "nama lengkap pejabat",
+      "kode klasifikasi arsip",
+      "nomor urut naskah dinas",
+      "kode unit atau jabatan",
+      "tahun pembuatan",
+      "tanggal, bulan, dan tahun"
+    ],
+    "tables_count": 1
+  },
+  "memorandum": {
+    "id": "memorandum",
+    "title": "Memorandum",
+    "filename": "Memorandum.docx",
+    "kategori": "Korespondensi - Internal",
+    "kode_naskah": "MO",
+    "has_unit_kop": true,
+    "placeholders_detected": [
+      "UNIT KERJA",
+      "alamat",
+      "nomor telepon",
+      "nomor faks",
+      "e-mail",
+      "kode klasifikasi arsip",
+      "nomor urut naskah dinas",
+      "kode unit atau jabatan",
+      "konseptor naskah dinas",
+      "tahun pembuatan",
+      "tanggal, bulan, dan tahun",
+      "nama lengkap pejabat"
+    ],
+    "tables_count": 0
+  },
+  "memorandum_kepala_dan_waka": {
+    "id": "memorandum_kepala_dan_waka",
+    "title": "Memorandum Kepala/Waka",
+    "filename": "Memorandum_Kepala_dan_Waka.docx",
+    "kategori": "Korespondensi - Internal",
+    "kode_naskah": "MO",
+    "has_unit_kop": false,
+    "placeholders_detected": [
+      "kode klasifikasi arsip",
+      "nomor urut naskah dinas",
+      "kode unit atau jabatan",
+      "konseptor naskah dinas",
+      "tahun pembuatan",
+      "narasi muatan/isi Memorandum",
+      "tanggal, bulan, dan tahun",
+      "nama lengkap pejabat"
+    ],
+    "tables_count": 0
+  },
+  "nota_dinas": {
+    "id": "nota_dinas",
+    "title": "Nota Dinas",
+    "filename": "Nota_Dinas.docx",
+    "kategori": "Korespondensi - Internal",
+    "kode_naskah": "ND",
+    "has_unit_kop": true,
+    "placeholders_detected": [
+      "UNIT KERJA",
+      "alamat",
+      "nomor telepon",
+      "nomor faks",
+      "e-mail",
+      "kode klasifikasi arsip",
+      "nomor urut naskah dinas",
+      "kode unit atau jabatan",
+      "konseptor naskah dinas",
+      "tahun pembuatan",
+      "tanggal, bulan, dan tahun",
+      "nama lengkap pejabat"
+    ],
+    "tables_count": 0
+  },
+  "nota_dinas_kepala_dan_waka": {
+    "id": "nota_dinas_kepala_dan_waka",
+    "title": "Nota Dinas Kepala/Waka",
+    "filename": "Nota_Dinas_Kepala_dan_Waka.docx",
+    "kategori": "Korespondensi - Internal",
+    "kode_naskah": "ND",
+    "has_unit_kop": false,
+    "placeholders_detected": [
+      "kode klasifikasi arsip",
+      "nomor urut naskah dinas",
+      "kode unit atau jabatan",
+      "konseptor naskah dinas",
+      "tahun pembuatan",
+      "narasi muatan/isi Nota Dinas",
+      "tanggal, bulan, dan tahun",
+      "nama lengkap pejabat"
+    ],
+    "tables_count": 0
+  },
+  "nota_kesepahaman_dalam_negeri_versi_rinci": {
+    "id": "nota_kesepahaman_dalam_negeri_versi_rinci",
+    "title": "Nota Kesepahaman (Versi Rinci)",
+    "filename": "Nota_Kesepahaman_Dalam_Negeri_Versi_Rinci.docx",
+    "kategori": "Khusus - Perjanjian",
+    "kode_naskah": "MOU",
+    "has_unit_kop": false,
+    "placeholders_detected": [],
+    "tables_count": 0
+  },
+  "nota_kesepahaman_versi_ringkas": {
+    "id": "nota_kesepahaman_versi_ringkas",
+    "title": "Nota Kesepahaman (Versi Ringkas)",
+    "filename": "Nota_Kesepahaman_Versi_Ringkas.docx",
+    "kategori": "Khusus - Perjanjian",
+    "kode_naskah": "MOU",
+    "has_unit_kop": false,
+    "placeholders_detected": [
+      "…"
+    ],
+    "tables_count": 0
+  },
+  "notisi_kedua_-_tim": {
+    "id": "notisi_kedua_-_tim",
+    "title": "Notisi Hasil Pengawasan Kedua",
+    "filename": "Notisi_Kedua_-_Tim.docx",
+    "kategori": "Khusus - Pengawasan",
+    "kode_naskah": "NOT",
+    "has_unit_kop": true,
+    "placeholders_detected": [
+      "UNIT KERJA",
+      "alamat",
+      "nomor telepon",
+      "nomor faks",
+      "e-mail",
+      "nama tempat",
+      "judul penugasan",
+      "judul notisi",
+      "nama pejabat",
+      "kode klasifikasi arsip",
+      "nomor urut naskah dinas",
+      "kode unit atau jabatan",
+      "tahun pembuatan",
+      "tanggal, bulan, dan tahun"
+    ],
+    "tables_count": 1
+  },
+  "notisi_pertama_-_tim": {
+    "id": "notisi_pertama_-_tim",
+    "title": "Notisi Hasil Pengawasan Pertama",
+    "filename": "Notisi_Pertama_-_Tim.docx",
+    "kategori": "Khusus - Pengawasan",
+    "kode_naskah": "NOT",
+    "has_unit_kop": false,
+    "placeholders_detected": [
+      "jenis pengawasan",
+      "judul penugasan",
+      "jabatan pimpinan unit kerja",
+      "judul notisi",
+      "unit kerja",
+      "nama lengkap"
+    ],
+    "tables_count": 1
+  },
+  "notula1": {
+    "id": "notula1",
+    "title": "Notula / Risalah Rapat",
+    "filename": "Notula1.docx",
+    "kategori": "Khusus",
+    "kode_naskah": "NOTU",
+    "has_unit_kop": true,
+    "placeholders_detected": [
+      "UNIT KERJA",
+      "alamat",
+      "nomor telepon",
+      "nomor faks",
+      "e-mail",
+      "kode klasifikasi arsip",
+      "nomor urut naskah dinas",
+      "kode unit atau jabatan",
+      "konseptor naskah dinas",
+      "tahun pembuatan",
+      "tanggal, bulan, dan tahun",
+      "nama lengkap"
+    ],
+    "tables_count": 1
+  },
+  "pengumuman1": {
+    "id": "pengumuman1",
+    "title": "Pengumuman",
+    "filename": "Pengumuman1.docx",
+    "kategori": "Khusus",
+    "kode_naskah": "PENG",
+    "has_unit_kop": true,
+    "placeholders_detected": [
+      "UNIT KERJA",
+      "alamat",
+      "nomor  telepon",
+      "nomor faks",
+      "alamat e-mail",
+      "kode klasifikasi arsip",
+      "nomor urut naskah dinas",
+      "kode unit atau jabatan",
+      "konseptor naskah dinas",
+      "tahun pembuatan",
+      "tempat",
+      "tanggal, bulan, dan tahun",
+      "nama lengkap pejabat"
+    ],
+    "tables_count": 0
+  },
+  "perjanjian_kerja_sama_dalam_negeri1": {
+    "id": "perjanjian_kerja_sama_dalam_negeri1",
+    "title": "Perjanjian Kerja Sama Dalam Negeri",
+    "filename": "Perjanjian_Kerja_Sama_Dalam_Negeri1.docx",
+    "kategori": "Khusus - Perjanjian",
+    "kode_naskah": "PKS",
+    "has_unit_kop": false,
+    "placeholders_detected": [],
+    "tables_count": 0
+  },
+  "perjanjian_kerja_sama_luar_negeri1": {
+    "id": "perjanjian_kerja_sama_luar_negeri1",
+    "title": "Agreement of Cooperation (Luar Negeri)",
+    "filename": "Perjanjian_Kerja_Sama_Luar_Negeri1.docx",
+    "kategori": "Khusus - Perjanjian",
+    "kode_naskah": "PKS",
+    "has_unit_kop": false,
+    "placeholders_detected": [],
+    "tables_count": 1
+  },
+  "piagam_penghargaan": {
+    "id": "piagam_penghargaan",
+    "title": "Piagam Penghargaan",
+    "filename": "Piagam_Penghargaan.docx",
+    "kategori": "Khusus",
+    "kode_naskah": "PGM",
+    "has_unit_kop": false,
+    "placeholders_detected": [
+      "Kode Klasifikasi Arsip",
+      "Nomor Urut Naskah Dinas",
+      "Kode Unit atau Jabatan",
+      "Konseptor Naskah Dinas",
+      "Tahun Pembuatan",
+      "unit kerja/perseorangan",
+      "tanggal, bulan, dan tahun",
+      "nama lengkap"
+    ],
+    "tables_count": 0
+  },
+  "rencana_tindak_perbaikan": {
+    "id": "rencana_tindak_perbaikan",
+    "title": "Rencana Tindak Perbaikan (RTP)",
+    "filename": "Rencana_Tindak_Perbaikan.docx",
+    "kategori": "Khusus - Pengawasan",
+    "kode_naskah": "RTP",
+    "has_unit_kop": false,
+    "placeholders_detected": [
+      "tanggal, bulan, dan tahun",
+      "nama pejabat"
+    ],
+    "tables_count": 2
+  },
+  "routing_slip": {
+    "id": "routing_slip",
+    "title": "Routing Slip / Lembar Disposisi",
+    "filename": "Routing_Slip.docx",
+    "kategori": "Khusus - Administrasi",
+    "kode_naskah": "RS",
+    "has_unit_kop": false,
+    "placeholders_detected": [],
+    "tables_count": 3
+  },
+  "sop": {
+    "id": "sop",
+    "title": "Standar Operasional Prosedur",
+    "filename": "SOP.docx",
+    "kategori": "Arahan - Pengaturan",
+    "kode_naskah": "SOP",
+    "has_unit_kop": false,
+    "placeholders_detected": [],
+    "tables_count": 2
+  },
+  "sertifikat1": {
+    "id": "sertifikat1",
+    "title": "Sertifikat Pelatihan / Kegiatan",
+    "filename": "Sertifikat1.docx",
+    "kategori": "Khusus",
+    "kode_naskah": "SRT",
+    "has_unit_kop": false,
+    "placeholders_detected": [],
+    "tables_count": 1
+  },
+  "surat_dinas": {
+    "id": "surat_dinas",
+    "title": "Surat Dinas",
+    "filename": "Surat_Dinas.docx",
+    "kategori": "Korespondensi - Eksternal",
+    "kode_naskah": "S",
+    "has_unit_kop": true,
+    "placeholders_detected": [
+      "UNIT KERJA",
+      "alamat",
+      "nomor telepon",
+      "nomor faks",
+      "e-mail",
+      "nama tempat",
+      "nama lengkap pejabat",
+      "kode klasifikasi arsip",
+      "kategori klasifikasi keamanan",
+      "nomor urut naskah dinas",
+      "kode unit atau jabatan",
+      "tahun pembuatan",
+      "tanggal, bulan, dan tahun"
+    ],
+    "tables_count": 1
+  },
+  "surat_dinas_-_notisi_kedua_ttd_pimpinan_unit_kerja": {
+    "id": "surat_dinas_-_notisi_kedua_ttd_pimpinan_unit_kerja",
+    "title": "Surat Dinas Notisi Kedua",
+    "filename": "Surat_Dinas_-_Notisi_Kedua_TTD_Pimpinan_Unit_Kerja.docx",
+    "kategori": "Korespondensi - Pengawasan",
+    "kode_naskah": "S",
+    "has_unit_kop": true,
+    "placeholders_detected": [
+      "UNIT KERJA",
+      "alamat",
+      "no.mor telepon",
+      "nomor faks",
+      "alamat e-mail",
+      "nama tempat",
+      "hal Surat Penyampaian Notisi Pertama",
+      "nama pejabat",
+      "kode klasifikasi arsip",
+      "nomor urut naskah dinas",
+      "kode unit atau jabatan",
+      "tahun pembuatan",
+      "tanggal, bulan, dan tahun",
+      "jika ada"
+    ],
+    "tables_count": 1
+  },
+  "surat_dinas_-_notisi_pertama": {
+    "id": "surat_dinas_-_notisi_pertama",
+    "title": "Surat Dinas Penyampaian Notisi Pertama",
+    "filename": "Surat_Dinas_-_Notisi_Pertama.docx",
+    "kategori": "Korespondensi - Pengawasan",
+    "kode_naskah": "S",
+    "has_unit_kop": true,
+    "placeholders_detected": [
+      "UNIT KERJA",
+      "alamat",
+      "nomor telepon",
+      "nomor faks E-mail ... (alamat e-mail",
+      "nama tempat",
+      "judul penugasan",
+      "klien dan/atau entitas mitra",
+      "nama lengkap pejabat",
+      "kode klasifikasi arsip",
+      "nomor urut naskah dinas",
+      "kode unit atau jabatan",
+      "tahun pembuatan",
+      "tanggal, bulan, dan tahun",
+      "jika ada"
+    ],
+    "tables_count": 1
+  },
+  "surat_dinas_kepala_dan_waka": {
+    "id": "surat_dinas_kepala_dan_waka",
+    "title": "Surat Dinas Kepala/Waka",
+    "filename": "Surat_Dinas_Kepala_dan_Waka.docx",
+    "kategori": "Korespondensi - Eksternal",
+    "kode_naskah": "S",
+    "has_unit_kop": false,
+    "placeholders_detected": [
+      "nama tempat",
+      "nama lengkap pejabat",
+      "kode klasifikasi arsip",
+      "nomor urut naskah dinas",
+      "kode unit atau jabatan",
+      "tahun pembuatan",
+      "tempat",
+      "tanggal, bulan, dan tahun"
+    ],
+    "tables_count": 1
+  },
+  "surat_edaran_jpt_madya_dan_pratama": {
+    "id": "surat_edaran_jpt_madya_dan_pratama",
+    "title": "Surat Edaran JPT",
+    "filename": "Surat_Edaran_JPT_Madya_dan_Pratama.docx",
+    "kategori": "Arahan - Pengaturan",
+    "kode_naskah": "SE",
+    "has_unit_kop": true,
+    "placeholders_detected": [
+      "UNIT KERJA",
+      "nama jabatan dengan menggunakan huruf kapital",
+      "nama tempat",
+      "tanggal, bulan, dan tahun",
+      "nama lengkap pejabat"
+    ],
+    "tables_count": 0
+  },
+  "surat_edaran_kepala": {
+    "id": "surat_edaran_kepala",
+    "title": "Surat Edaran Kepala BPKP",
+    "filename": "Surat_Edaran_Kepala.docx",
+    "kategori": "Arahan - Pengaturan",
+    "kode_naskah": "SE",
+    "has_unit_kop": false,
+    "placeholders_detected": [
+      "nama jabatan dengan menggunakan huruf kapital",
+      "nama tempat",
+      "tanggal, bulan, dan tahun",
+      "nama lengkap pejabat"
+    ],
+    "tables_count": 0
+  },
+  "surat_keterangan1": {
+    "id": "surat_keterangan1",
+    "title": "Surat Keterangan",
+    "filename": "Surat_Keterangan1.docx",
+    "kategori": "Khusus",
+    "kode_naskah": "SKET",
+    "has_unit_kop": true,
+    "placeholders_detected": [
+      "UNIT KERJA",
+      "alamat",
+      "nomor telepon",
+      "nomor faks",
+      "alamat e-mail",
+      "kode klasifikasi arsip",
+      "nomor urut naskah dinas",
+      "kode unit atau jabatan",
+      "konseptor naskah dinas",
+      "tahun pembuatan",
+      "tanggal, bulan, dan tahun",
+      "nama pejabat"
+    ],
+    "tables_count": 0
+  },
+  "surat_kuasa1": {
+    "id": "surat_kuasa1",
+    "title": "Surat Kuasa",
+    "filename": "Surat_Kuasa1.docx",
+    "kategori": "Khusus",
+    "kode_naskah": "SKU",
+    "has_unit_kop": true,
+    "placeholders_detected": [
+      "UNIT KERJA",
+      "alamat",
+      "nomor telepon",
+      "nomor faks",
+      "e-mail",
+      "kode klasifikasi arsip",
+      "nomor urut naskah dinas",
+      "kode unit atau jabatan",
+      "konseptor naskah dinas",
+      "tahun pembuatan",
+      "tanggal, bulan, dan tahun",
+      "nama lengkap"
+    ],
+    "tables_count": 1
+  },
+  "surat_pengantar_naskah_atau_barang1": {
+    "id": "surat_pengantar_naskah_atau_barang1",
+    "title": "Surat Pengantar Naskah atau Barang",
+    "filename": "Surat_Pengantar_Naskah_atau_Barang1.docx",
+    "kategori": "Khusus",
+    "kode_naskah": "SPENG",
+    "has_unit_kop": true,
+    "placeholders_detected": [
+      "UNIT KERJA",
+      "alamat",
+      "nomor telepon",
+      "nomor faks",
+      "e-mail",
+      "kode klasifikasi arsip",
+      "nomor urut naskah dinas",
+      "kode unit atau jabatan",
+      "konseptor naskah dinas",
+      "tahun pembuatan",
+      "nama pejabat",
+      "tanggal, bulan, dan tahun",
+      "nama tempat"
+    ],
+    "tables_count": 2
+  },
+  "surat_pengantar_penugasan1": {
+    "id": "surat_pengantar_penugasan1",
+    "title": "Surat Pengantar Penugasan",
+    "filename": "Surat_Pengantar_Penugasan1.docx",
+    "kategori": "Khusus",
+    "kode_naskah": "SPENG",
+    "has_unit_kop": true,
+    "placeholders_detected": [
+      "UNIT KERJA",
+      "alamat",
+      "nomor telepon",
+      "nomor  faks",
+      "e-mail",
+      "nama tempat",
+      "jenis penugasan",
+      ".......",
+      "tanggal, bulan, dan tahun",
+      "nama unit kerja",
+      "nama lengkap pejabat",
+      "kode klasifikasi arsip",
+      "kategori klasifikasi keamanan",
+      "nomor urut naskah dinas",
+      "kode unit atau jabatan",
+      "tahun pembuatan"
+    ],
+    "tables_count": 1
+  },
+  "surat_peringatan1": {
+    "id": "surat_peringatan1",
+    "title": "Surat Peringatan",
+    "filename": "Surat_Peringatan1.docx",
+    "kategori": "Khusus",
+    "kode_naskah": "SPG",
+    "has_unit_kop": true,
+    "placeholders_detected": [
+      "UNIT KERJA",
+      "alamat",
+      "nomor telepon",
+      "nomor faks",
+      "e-mail",
+      "nama tempat",
+      "kode klasifikasi arsip",
+      "nomor urut naskah dinas",
+      "kode unit atau jabatan",
+      "konseptor naskah dinas",
+      "tahun pembuatan",
+      "nama lengkap pejabat"
+    ],
+    "tables_count": 0
+  },
+  "surat_perintah": {
+    "id": "surat_perintah",
+    "title": "Surat Perintah",
+    "filename": "Surat_Perintah.docx",
+    "kategori": "Arahan - Penugasan",
+    "kode_naskah": "SPIN",
+    "has_unit_kop": true,
+    "placeholders_detected": [
+      "UNIT KERJA",
+      "alamat",
+      "nomor telepon",
+      "nomor faks",
+      "e-mail",
+      "kode klasifikasi arsip",
+      "nomor urut naskah dinas",
+      "kode unit atau jabatan",
+      "konseptor naskah dinas",
+      "tahun pembuatan",
+      "tanggal, bulan, dan tahun",
+      "jabatan",
+      "nama lengkap pejabat"
+    ],
+    "tables_count": 0
+  },
+  "surat_perintah_kepala_dan_waka": {
+    "id": "surat_perintah_kepala_dan_waka",
+    "title": "Surat Perintah Kepala/Waka",
+    "filename": "Surat_Perintah_Kepala_dan_Waka.docx",
+    "kategori": "Arahan - Penugasan",
+    "kode_naskah": "SPIN",
+    "has_unit_kop": false,
+    "placeholders_detected": [
+      "kode klasifikasi arsip",
+      "nomor urut naskah dinas",
+      "kode unit atau jabatan",
+      "konseptor naskah dinas",
+      "tahun pembuatan",
+      "tanggal, bulan, dan tahun",
+      "Kepala/Wakil Kepala BPKP",
+      "nama lengkap pejabat"
+    ],
+    "tables_count": 0
+  },
+  "surat_perjalanan_dinas": {
+    "id": "surat_perjalanan_dinas",
+    "title": "Surat Perjalanan Dinas (SPD)",
+    "filename": "Surat_Perjalanan_Dinas.docx",
+    "kategori": "Khusus - Keuangan",
+    "kode_naskah": "SPD",
+    "has_unit_kop": true,
+    "placeholders_detected": [
+      "UNIT KERJA",
+      "alamat",
+      "nomor telepon",
+      "nomor faks",
+      "e-mail",
+      "kode klasifikasi arsip",
+      "nomor urut naskah dinas",
+      "kode unit atau jabatan",
+      "konseptor naskah dinas",
+      "tahun pembuatan",
+      "nama tempat",
+      "tanggal, bulan, dan tahun",
+      "nama pejabat"
+    ],
+    "tables_count": 2
+  },
+  "surat_permintaan_data": {
+    "id": "surat_permintaan_data",
+    "title": "Surat Permintaan Data Pengawasan",
+    "filename": "Surat_Permintaan_Data.docx",
+    "kategori": "Khusus - Pengawasan",
+    "kode_naskah": "S",
+    "has_unit_kop": true,
+    "placeholders_detected": [
+      "UNIT KERJA",
+      "alamat",
+      "nomor telepon",
+      "nomor faks",
+      "e-mail",
+      "nama tempat",
+      "pimpinan unit kerja",
+      "nama penugasan",
+      "nama pejabat Lampiran  Surat ... Nomor ... Tanggal ... (tanggal, bulan, dan tahun",
+      "kode klasifikasi arsip",
+      "nomor urut naskah dinas",
+      "kode unit atau jabatan",
+      "tahun pembuatan",
+      "tanggal, bulan, dan tahun"
+    ],
+    "tables_count": 2
+  },
+  "surat_pernyataan1": {
+    "id": "surat_pernyataan1",
+    "title": "Surat Pernyataan",
+    "filename": "Surat_Pernyataan1.docx",
+    "kategori": "Khusus",
+    "kode_naskah": "SPN",
+    "has_unit_kop": true,
+    "placeholders_detected": [
+      "UNIT KERJA",
+      "alamat",
+      "nomor telepon",
+      "nomor faks",
+      "e-mail",
+      "kode klasifikasi arsip",
+      "nomor urut naskah dinas",
+      "kode unit atau jabatan",
+      "konseptor naskah dinas",
+      "tahun pembuatan",
+      "tanggal, bulan, dan tahun",
+      "nama lengkap pejabat"
+    ],
+    "tables_count": 0
+  },
+  "surat_pernyataan_kesanggupan_tindak_lanjut1": {
+    "id": "surat_pernyataan_kesanggupan_tindak_lanjut1",
+    "title": "Surat Pernyataan Kesanggupan Tindak Lanjut",
+    "filename": "Surat_Pernyataan_Kesanggupan_Tindak_Lanjut1.docx",
+    "kategori": "Khusus - Pengawasan",
+    "kode_naskah": "SPN",
+    "has_unit_kop": false,
+    "placeholders_detected": [
+      "tanggal, bulan, dan tahun",
+      "nama lengkap"
+    ],
+    "tables_count": 0
+  },
+  "surat_tugas": {
+    "id": "surat_tugas",
+    "title": "Surat Tugas",
+    "filename": "Surat_Tugas.docx",
+    "kategori": "Arahan - Penugasan",
+    "kode_naskah": "ST",
+    "has_unit_kop": true,
+    "placeholders_detected": [
+      "UNIT KERJA",
+      "alamat",
+      "nomor telepon",
+      "nomor faks",
+      "e-mail",
+      "kode klasifikasi arsip",
+      "nomor urut naskah dinas",
+      "kode unit atau jabatan",
+      "konseptor naskah dinas",
+      "tahun pembuatan",
+      "pimpinan unit kerja",
+      "unit kerja",
+      "tanggal, bulan, dan tahun",
+      "jabatan",
+      "nama lengkap pejabat"
+    ],
+    "tables_count": 1
+  },
+  "surat_tugas_penugasan_pengawasan": {
+    "id": "surat_tugas_penugasan_pengawasan",
+    "title": "Surat Tugas Penugasan Pengawasan",
+    "filename": "Surat_Tugas_Penugasan_Pengawasan.docx",
+    "kategori": "Arahan - Penugasan",
+    "kode_naskah": "ST",
+    "has_unit_kop": true,
+    "placeholders_detected": [
+      "UNIT KERJA",
+      "alamat",
+      "nomor  telepon",
+      "nomor faks",
+      "e-mail",
+      "kode klasifikasi arsip",
+      "nomor urut naskah dinas",
+      "kode unit atau jabatan",
+      "konseptor naskah dinas",
+      "tahun pembuatan",
+      "pimpinan unit kerja",
+      "unit kerja",
+      "tanggal, bulan, dan tahun",
+      "jabatan",
+      "nama lengkap pejabat"
+    ],
+    "tables_count": 1
+  },
+  "surat_undangan1": {
+    "id": "surat_undangan1",
+    "title": "Surat Undangan",
+    "filename": "Surat_Undangan1.docx",
+    "kategori": "Korespondensi - Internal / Eksternal",
+    "kode_naskah": "UND",
+    "has_unit_kop": true,
+    "placeholders_detected": [
+      "UNIT KERJA",
+      "alamat",
+      "nomor telepon",
+      "nomor faks",
+      "e-mail",
+      "nama tempat",
+      "nama lengkap pejabat",
+      "kode klasifikasi arsip",
+      "nomor urut naskah dinas",
+      "kode unit atau jabatan",
+      "tahun pembuatan",
+      "tanggal, bulan, dan tahun"
+    ],
+    "tables_count": 1
+  },
+  "surat_undangan_kepala_dan_waka1": {
+    "id": "surat_undangan_kepala_dan_waka1",
+    "title": "Surat Undangan Kepala/Waka",
+    "filename": "Surat_Undangan_Kepala_dan_Waka1.docx",
+    "kategori": "Korespondensi - Internal / Eksternal",
+    "kode_naskah": "UND",
+    "has_unit_kop": false,
+    "placeholders_detected": [
+      "nama tempat",
+      "nama lengkap pejabat",
+      "kode klasifikasi arsip",
+      "nomor urut naskah dinas",
+      "kode unit atau jabatan",
+      "tahun pembuatan",
+      "tempat",
+      "tanggal, bulan, dan tahun"
+    ],
+    "tables_count": 1
+  },
+  "telaah_staf1": {
+    "id": "telaah_staf1",
+    "title": "Telaah Staf",
+    "filename": "Telaah_Staf1.docx",
+    "kategori": "Khusus",
+    "kode_naskah": "TS",
+    "has_unit_kop": false,
+    "placeholders_detected": [
+      "uraian singkat permasalahan",
+      "tempat",
+      "nama lengkap"
+    ],
+    "tables_count": 1
+  },
+  "verbal_konsep_naskah_dinas": {
+    "id": "verbal_konsep_naskah_dinas",
+    "title": "Verbal Konsep Naskah Dinas",
+    "filename": "Verbal_Konsep_Naskah_Dinas.docx",
+    "kategori": "Khusus - Administrasi",
+    "kode_naskah": "VK",
+    "has_unit_kop": true,
+    "placeholders_detected": [
+      "UNIT KERJA",
+      "nama pejabat"
+    ],
+    "tables_count": 3
+  }
+}

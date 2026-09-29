@@ -135,17 +135,13 @@ def get_default_logo(variant: str = "png") -> str:
     Kembalikan path absolut ke file logo BPKP yang dibundel di folder
     ``assets/`` skill ini.
 
-    variant:
-      "png" -> logo_bpkp.png  (untuk cover page, transparan)
-      "jpg" -> logo_bpkp_kop.jpg (untuk kop surat tabel)
+    Semua varian menggunakan master logo PNG transparan (assets/logo_bpkp.png)
+    untuk kualitas render terbaik di kop surat dan cover page.
 
     Mengembalikan string kosong jika file tidak ditemukan.
     """
     _here = os.path.dirname(os.path.abspath(__file__))
-    if variant == "jpg":
-        path = os.path.join(_here, "..", "assets", "logo_bpkp_kop.jpg")
-    else:
-        path = os.path.join(_here, "..", "assets", "logo_bpkp.png")
+    path = os.path.join(_here, "..", "assets", "logo_bpkp.png")
     path = os.path.normpath(path)
     return path if os.path.exists(path) else ""
 

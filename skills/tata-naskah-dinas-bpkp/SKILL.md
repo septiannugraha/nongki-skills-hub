@@ -19,6 +19,8 @@ Skill ini membantu menyusun naskah dinas resmi di lingkungan BPKP sesuai **Perat
 > - **Perubahan/Ralat/Penutup** (Lampiran VI–VII) → terintegrasi pada BAB II-M dan **BAB VI Penutup**.
 
 Baca file referensi sesuai kebutuhan:
+- [Katalog Master Template](references/templates_registry.json) -- katalog 46 template naskah dinas resmi Word (.docx) beserta daftar placeholder.
+- [Profil Unit Kerja & Kop](assets/unit_profiles.json) -- konfigurasi identitas kop surat resmi perwakilan (Papua Tengah, Kalsel, Papua, Jatim, DKI, dll).
 - [Jenis Naskah Dinas](references/jenis-naskah-dinas.md) -- taksonomi lengkap, definisi, dan sistematika tiap jenis.
 - [Penomoran dan Format](references/penomoran-dan-format.md) -- format nomor, kode jenis naskah, kop, kertas, spasi, margin.
 - [Matriks Penanda Tangan](references/matriks-penanda-tangan.md) -- wewenang penandatanganan per jenis naskah, pelimpahan wewenang (a.n., u.b., Plt., Plh.), TTE.
@@ -423,4 +425,44 @@ Untuk menyematkan tanda tangan basah hasil scan ke dokumen naskah dinas (DOCX/XL
 2. **Penyisipan ke Dokumen TND (Word / Excel):**
    - Pada Word (`python-docx`), sisipkan tanda tangan langsung ke sel tabel penandatangan dengan lebar proporsional (`width = Cm(2.5)` s.d. `Cm(3.0)`).
    - Pastikan paragraf sel tabel memiliki indentasi 0 dan spasi before/after 0 agar posisi tanda tangan tidak menggeser batas baris tabel dan tidak menabrak baris NIP.
+
+---
+
+## 9. Master Template Library & Unified Generator Engine
+
+Skill ini dilengkapi dengan **46 Master Template Microsoft Word (.docx)** resmi sesuai Peraturan BPKP Nomor 4 Tahun 2026 di direktori `assets/templates/` dan mesin generator tunggal `scripts/generate_naskah.py`.
+
+### 9.1 Mekanisme Kop Surat Perwakilan Terpusat (`assets/unit_profiles.json`)
+Kop surat untuk unit perwakilan dan pusat dikonfigurasi secara modular. Profil mencakup nama instansi, alamat, nomor telepon/faks, email, website, kota kedudukan, serta kode unit naskah dinas:
+- **`papua_tengah`**: Perwakilan BPKP Provinsi Papua Tengah di Nabire (Kode Unit: `PW34`)
+- **`kalsel`**: Perwakilan BPKP Provinsi Kalimantan Selatan di Banjarbaru (Kode Unit: `PW16`)
+- **`papua`**: Perwakilan BPKP Provinsi Papua di Jayapura (Kode Unit: `PW26`)
+- **`papua_barat`**: Perwakilan BPKP Provinsi Papua Barat di Manokwari (Kode Unit: `PW33`)
+- **`dki`, `jabar`, `jateng`, `jatim`, `sulsel`, `sumut`, `pusat_utama`**, dll.
+
+Untuk menambah unit kerja baru, cukup tambahkan entri JSON pada `assets/unit_profiles.json`.
+
+### 9.2 Cara Menjalankan Generator Naskah Dinas
+
+1. **Melihat Daftar 46 Template yang Tersedia:**
+   ```bash
+   python scripts/generate_naskah.py --list
+   ```
+
+2. **Melihat Daftar Profil Unit Kerja / Kop Surat:**
+   ```bash
+   python scripts/generate_naskah.py --list-profiles
+   ```
+
+3. **Menyusun Dokumen (Contoh: Surat Tugas Papua Tengah):**
+   ```bash
+   python scripts/generate_naskah.py --jenis surat_tugas --unit papua_tengah --data payload.json --output Surat_Tugas_PT.docx
+   ```
+
+4. **Menyusun Dokumen yang Sama untuk Perwakilan Lain (Contoh: Kalsel):**
+   ```bash
+   python scripts/generate_naskah.py --jenis surat_tugas --unit kalsel --data payload.json --output Surat_Tugas_Kalsel.docx
+   ```
+   *Secara otomatis kop surat tabel logo BPKP, nomor naskah (PW16 vs PW34), dan kota penandatanganan akan beralih ke Kalimantan Selatan tanpa mengubah kode generator.*
+
 
