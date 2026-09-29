@@ -14,6 +14,17 @@ Gunakan daftar ini sebagai alat diagnosis, bukan daftar kata terlarang.
 - Kata evaluatif seperti "sangat penting", "komprehensif", "inovatif", atau "strategis" tanpa ukuran atau bukti.
 - Atribusi kabur: "para ahli mengatakan", "banyak pihak menilai", atau "berbagai penelitian" tanpa sumber.
 
+### Klaim evaluatif menggantung (ragam laporan dinas)
+
+Klaim berderajat tanpa ukuran atau fakta pendamping sering muncul dalam laporan telaah/audit dan merupakan artefak AI yang halus:
+
+- **"belum berjalan optimal"** tanpa disebutkan optimal seperti apa atau jumlah pastinya.
+  - *Perbaikan*: ikat klaim ke fakta. "Dukungan administratif pemerintah daerah belum optimal" -> "Dari delapan kabupaten, baru dua yang menetapkan SK Satgas MBG".
+- **"berjalan cukup pesat"**, "menunjukkan kemajuan signifikan", "berpotensi memengaruhi ketepatan pelaksanaan" tanpa angka pembanding.
+  - *Perbaikan*: sebutkan angka atau hapus derajatnya. "Berjalan cukup pesat" -> cukup "berjalan dengan dukungan X, Y, dan Z" bila tidak ada ukuran kecepatan.
+- **Aposisi menggantung / meta-komentar**: kalimat yang menilai relevansi tulisannya sendiri, misalnya "..., kondisi yang relevan untuk ditelaah pada aspek kesesuaian antara A dan B".
+  - *Perbaikan*: ubah menjadi isi nyata, misalnya mengutip pertanyaan pengawasan yang dijawab: "... berkaitan langsung dengan pertanyaan pengawasan, yaitu apakah seluruh SPPG yang menerima pencairan telah memberikan layanan".
+
 ## Struktur mekanis
 
 - Paragraf dengan pola pembuka–tiga butir–kesimpulan yang berulang.
@@ -27,6 +38,37 @@ Gunakan daftar ini sebagai alat diagnosis, bukan daftar kata terlarang.
   - Pengabaian distingsi makna antara *"dan"* (penambahan murni berbobot setara) dengan *"serta"* (penyertaan tokoh/dokumen/unsur pengikut atau pendamping).
   - Kesalahan tanda koma: menambahkan koma sebelum konjungsi pada 2 unsur (*"ayah, dan ibu"* -> salah), atau justru menghilangkan koma sebelum unsur terakhir pada perincian $\ge 3$ unsur (*"buku, pena dan pensil"* -> salah EYD V, harus *"buku, pena, dan pensil"*).
 
+### Pola naskah laporan formal (telaah, laporan pengawasan, laporan hasil evaluasi)
+
+Pola berikut muncul khas pada laporan formal AI dan paling sering lolos pemeriksaan karena bahasanya sudah baku. Periksa satu per satu:
+
+1. **Pembuka dengan keterangan menumpuk sebelum subjek.**
+   - *Ciri AI*: "Berdasarkan hasil pembahasan dengan Kepala Regional BGN, Program MBG telah dilaksanakan dengan terbangunnya 36 SPPG." / "Sejauh pengumpulan informasi awal di Kabupaten Nabire, capaian penyaluran MBG menunjukkan bahwa ..."
+   - *Perbaikan*: dahulukan subjek, keterangan menyusul sebagai penjelas. "Program MBG telah berjalan dengan terbangunnya 36 SPPG berdasarkan pembahasan dengan Kepala Regional BGN." Kalimat aktif juga memungkinkan: "Koordinator Wilayah BGN mengidentifikasi kendala pada 8 SPPG" menggantikan "Berdasarkan hasil pemantauan ..., teridentifikasi sejumlah kendala ...".
+2. **Pembingkaian evaluatif.** Kalimat pembuka simpulan yang merangkum nilai keseluruhan sebelum mengatakan apa pun.
+   - *Ciri AI*: "Secara keseluruhan, informasi dari A, B, dan C memperlihatkan dua sisi pelaksanaan program."
+   - *Perbaikan*: langsung ke isi. "Dari informasi yang terkumpul, pembangunan SPPG berjalan dengan dukungan ..."
+3. **Kalimat rujukan-diri (kalimat pengisi).** Kalimat yang isinya hanya menegaskan kesesuaian dengan bagian lain dokumen tanpa menambah informasi.
+   - *Ciri AI*: "Pengumpulan informasi awal tersebut sejalan dengan penugasan insilwas sebagaimana diuraikan pada bagian sebelumnya."
+   - *Perbaikan*: hapus; nyatakan status yang belum dikatakan, misalnya mana pertanyaan yang sudah terjawab dan mana yang menunggu data.
+4. **Simpulan yang menyalin bagian isi.** Rangkuman yang mengulang angka atau daftar verifikasi secara kata per kata.
+   - *Perbaikan*: simpulan memberi penilaian atau arah, bukan menyalin. Jika perlu merujuk, cukup sekali dan singkat ("sesuai penugasan pada bagian sebelumnya").
+5. **Transisi ritual beruntun.** "Adapun ...", "Di samping itu ...", "Selain itu ... Sementara itu ...", "Untuk memenuhi X tersebut, ...", "Secara ringkas, ..." dipakai berurutan sebagai jeda hafalan.
+   - *Perbaikan*: variasikan atau hilangkan; banyak kalimat justru lebih kuat tanpa penghubung.
+6. **Penutup formulaik yang menilai nilai laporan itu sendiri.**
+   - *Ciri AI*: "Hasil telaah ini selanjutnya menjadi dasar pertimbangan pimpinan dalam menentukan kegiatan pengawasan pada triwulan berikutnya."
+   - *Perbaikan*: beri fungsi nyata pada objeknya. "Indikasi mark-up menjadi bahan pengujian kewajaran harga pada kegiatan pengawasan triwulan berikutnya."
+7. **Kausalitas formulaik dengan abstraksi berlapis.**
+   - *Ciri AI*: "Ketiadaan Satgas ini berdampak pada rendahnya peningkatan dan pemerataan cakupan realisasi program."
+   - *Perbaikan*: tunjukkan mekanismenya. "Tanpa Satgas, koordinasi dan dukungan daerah sulit berjalan sehingga cakupan program terhambat."
+8. **Padatan pasif berlapis.**
+   - *Ciri AI*: "Terdapat indikasi pembelanjaan ... yang berpotensi menimbulkan ... serta membuka ruang terjadinya ..."
+   - *Perbaikan*: aktifkan subjek dan rapat padatannya. "Pembelanjaan diarahkan ke koperasi internal (self-dealing), yang berpotensi menimbulkan benturan kepentingan dan penggelembungan harga."
+9. **Fakta beruntun dalam kalimat terpisah yang polanya sama.** "X telah selesai ... dan menunggu ... serta telah berlangsung ... " lalu "Selain itu, ... telah dibangun ..." lalu "Sementara itu, ... juga terdapat ...".
+   - *Perbaikan*: gunakan kontras ("sementara", "sedangkan") atau titik koma untuk menggabung fakta sejenis; kalimat pendek penutup tanpa penghubung sering terdengar paling manusiawi.
+10. **Pengulangan kata yang sama dalam satu kalimat.** "Terdapat indikasi ... (indikasi self-dealing)", "Mengacu pada ... penugasan mengacu pada ...".
+    - *Perbaikan*: hapus salah satu; koreksi ini aman karena tidak menyentuh makna.
+
 
 ## Perbaikan yang aman
 
@@ -34,4 +76,16 @@ Gunakan daftar ini sebagai alat diagnosis, bukan daftar kata terlarang.
 - Gabungkan kalimat yang mengulang; pecah kalimat yang menanggung terlalu banyak gagasan.
 - Pakai kata "adalah", "ialah", "punya", atau verba langsung ketika lebih alami untuk ragam yang dipilih.
 - Pertahankan istilah resmi dan teknis. Jangan mengarang contoh, statistik, pengalaman, atau sikap penulis.
+- Ikat setiap klaim evaluatif (optimal, pesat, merata, signifikan) ke angka, jumlah, atau fakta pendamping; jika tidak ada ukurannya, turunkan derajat klaim.
 - Dalam teks akademik dan dinas, manusiawi berarti jernih dan tidak mekanis, bukan percakapan santai.
+
+## Daftar periksa audit cepat naskah laporan formal
+
+1. Pembuka paragraf: apakah subjek muncul sebelum keterangan panjang?
+2. Apakah ada kalimat yang isinya hanya merujuk bagian lain dokumen tanpa informasi baru?
+3. Apakah simpulan menyalin angka/daftar dari bagian isi kata per kata?
+4. Apakah setiap klaim evaluatif punya angka atau fakta pendamping?
+5. Apakah transisi (Adapun/Di samping itu/Selain itu/Untuk memenuhi X tersebut) muncul beruntun?
+6. Apakah ada kalimat penutup yang menilai nilai laporan itu sendiri ("menjadi dasar pertimbangan pimpinan ...")?
+7. Apakah sebab-akibat menunjukkan mekanisme, bukan sekadar "X berdampak pada rendahnya Y"?
+8. Apakah ada kata yang sama berulang dalam satu kalimat (di luar istilah teknis)?

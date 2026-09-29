@@ -1,7 +1,6 @@
 ---
 name: humanizer-indonesia
-description: Rewrite Indonesian text to sound natural, human, specific, and contextually appropriate without changing the original meaning (humanize/naturalization).
-tags: [indonesian, humanizer, naturalize, writing, copywriting]
+description: Tulis ulang teks bahasa Indonesia agar alami, manusiawi, spesifik, sesuai konteks tanpa mengubah makna (humanize/naturalisasi), bebas artefak AI, serta bersih dari tanda pisah (em dash).
 ---
 
 # Humanizer Indonesia
@@ -15,12 +14,32 @@ Baca [pola dan padanan Indonesia](references/pola-bahasa-indonesia.md) sebelum m
 ## Alur kerja
 
 1. Kenali jenis teks, audiens, hubungan penulis–pembaca, nada, dan batas panjang.
-2. Tandai ciri mekanis: pembuka generik, klaim besar tanpa bukti, abstraksi berlebihan, daftar tiga serangkai yang dipaksakan, sinonim bergilir, pengulangan kesimpulan, transisi kaku, dan kalimat dengan irama seragam.
+2. Tandai ciri mekanis: pembuka generik, klaim besar tanpa bukti, abstraksi berlebihan, daftar tiga serangkai yang dipaksakan, sinonim bergilir, pengulangan kesimpulan, transisi kaku, kalimat dengan irama seragam, serta penggunaan tanda pisah (em dash `—`) yang merupakan artefak bawaan terjemahan/AI kaku. Untuk naskah laporan formal (telaah, laporan pengawasan, hasil evaluasi), gunakan pula daftar periksa khusus ragam laporan pada referensi pola bahasa.
 3. Tulis ulang hanya bagian yang membutuhkan perubahan. Gunakan kata konkret, subjek yang jelas, verba langsung, dan detail yang tersedia dalam sumber.
 4. Variasikan panjang serta bentuk kalimat secara wajar. Jangan sengaja menambahkan kesalahan, slang, humor, opini, atau pengalaman pribadi yang tidak berasal dari penulis.
 5. Baca keras secara mental. Hapus kalimat yang terdengar seperti slogan, presentasi korporat, atau respons chatbot.
-6. Lakukan audit makna: angka, nama, negasi, tingkat kepastian, hubungan sebab-akibat, dan kutipan harus tetap sama.
-7. Jika pengguna juga meminta ejaan baku, jalankan pemeriksaan dengan skill `eyd-indonesia` setelah humanisasi.
+6. Eliminasi seluruh tanda pisah (em dash `—`): ubah menjadi tanda koma, tanda kurung, atau restrukturisasi susunan kalimat menjadi lugas dan formal.
+7. Untuk naskah laporan formal, jalankan daftar periksa audit cepat di bagian akhir referensi pola bahasa sebelum menyatakan selesai.
+8. Lakukan audit makna: angka, nama, negasi, tingkat kepastian, hubungan sebab-akibat, dan kutipan harus tetap sama.
+9. Jika pengguna juga meminta ejaan baku, jalankan pemeriksaan dengan skill `eyd-indonesia` setelah humanisasi.
+
+## Eliminasi Tanda Pisah (Em Dash `—`)
+
+Dalam ragam formal bahasa Indonesia (terutama naskah dinas, laporan pengawasan/audit, dan karya akademik), penggunaan tanda pisah panjang (*em dash* `—`) merupakan salah satu indikasi paling kuat dari luaran AI mentah atau terjemahan harfiah bahasa Inggris.
+
+### Pedoman Penggantian Em Dash:
+1. **Gunakan Tanda Koma (`,`)**: Apabila tanda pisah dipakai untuk aposisi atau klausa selaan sederhana.
+   - *Ciri AI*: "Pemerintah daerah—melalui Dinas Pertanian—belum menetapkan target produksi."
+   - *Alami & Baku*: "Pemerintah daerah, melalui Dinas Pertanian, belum menetapkan target produksi."
+2. **Gunakan Tanda Kurung (`(...)`)**: Apabila keterangan sela bersifat penjelasan teknis pelengkap atau rincian opsional.
+   - *Ciri AI*: "Penyaluran bantuan pupuk—khususnya NPK dan urea—tidak tepat waktu."
+   - *Alami & Baku*: "Penyaluran bantuan pupuk (khususnya NPK dan urea) tidak tepat waktu."
+3. **Restrukturisasi Kalimat**: Pecah kalimat yang terlalu berbelit atau ganti menjadi konstruksi aktif langsung tanpa tanda pisah.
+   - *Ciri AI*: "Strategi ini diterapkan untuk mendorong pertumbuhan ekonomi—suatu target yang telah dicanangkan sejak tahun lalu."
+   - *Alami & Baku*: "Strategi ini diterapkan guna mendorong pertumbuhan ekonomi sesuai target yang dicanangkan sejak tahun lalu."
+4. **Rentang Nilai atau Waktu**: Dalam naskah dinas dan pelaporan audit formal, gunakan kata "sampai dengan" (atau singkatan baku `s.d.`) daripada tanda pisah.
+   - *Ciri AI*: "Periode pelaksanaan tahun 2024—2026."
+   - *Alami & Baku*: "Periode pelaksanaan tahun 2024 s.d. 2026."
 
 ## Pilihan keluaran
 
