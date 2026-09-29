@@ -1,6 +1,6 @@
 ---
 name: humanizer-indonesia
-description: Tulis ulang teks bahasa Indonesia agar alami, manusiawi, spesifik, sesuai konteks tanpa mengubah makna (humanize/naturalisasi), bebas artefak AI, serta bersih dari tanda pisah (em dash).
+description: Tulis ulang teks bahasa Indonesia agar alami, manusiawi, spesifik, sesuai konteks tanpa mengubah makna (humanize/naturalisasi), bebas artefak AI, serta bersih dari tanda pisah (em dash). Termasuk audit deterministik penanda AI pada naskah panjang dan konversi penanda miring markdown ke run italic asli pada DOCX/Google Docs.
 ---
 
 # Humanizer Indonesia
@@ -50,3 +50,30 @@ Dalam ragam formal bahasa Indonesia (terutama naskah dinas, laporan pengawasan/a
 ## Mode DOCX
 
 Gunakan bersama skill `docx` atau `editor-docx-indonesia`. Pertahankan format dokumen dan ubah hanya isi yang disetujui. Jangan mengubah kutipan, bibliografi, tabel data, rumus, kode, atau metadata secara otomatis.
+
+### Konversi Penanda Miring Markdown ke Run Italic Asli (Kebocoran Asterisk)
+
+Output sub-agent LLM sering memakai penanda markdown `*kata*` atau `_kata_`. Jika teks semacam itu ditanam langsung ke docx/Google Docs sebagai string, asterisknya tercetak literal (contoh nyata yang lolos dua puturan pemolesan: "data kebutuhan riil perumahan (*backlog*)").
+
+**Aturan baku:**
+1. Sebelum menulis ke docx, pecah teks menjadi segmen dan buat *run* terpisah dengan properti `run.italic = True` — jangan pernah menanam karakter `*` ke dalam dokumen.
+2. Jika frasa yang akan diganti terpecah antar-*run* (karena di dalamnya ada istilah italic), penggantian string satu *run* akan gagal diam-diam. Solusi terverifikasi: hapus seluruh *run* paragraf, lalu susun ulang dari daftar segmen `(teks, is_italic)`.
+3. Selalu verifikasi pasca-rakit: jumlah karakter `*` di seluruh dokumen wajib 0.
+
+```python
+def add_runs_with_italic(p, text):
+    """Teks memakai <i>...</i>; sisanya regular. Font diset per run."""
+    import re
+    for part in re.split(r'(<i>.*?</i>)', text):
+        if not part:
+            continue
+        if part.startswith('<i>') and part.endswith('</i>'):
+            r = p.add_run(part[3:-4]); r.italic = True
+        else:
+            r = p.add_run(part)
+        r.font.name = 'Arial'; r.font.size = Pt(12)
+```
+
+### Audit Deterministik Wajib (Bukan Opsional)
+
+Pemolesan oleh sub-agent `editor` secara berulang terbukti masih meloloskan kosakata penanda AI. Sebelum menyatakan naskah selesai, jalankan pemindaian *regex* deterministik atas teks penuh (lihat daftar kosakata pada `references/pola-bahasa-indonesia.md`), lalu perbaiki temuan secara manual terarah. Pemindaian juga menghitung: jumlah `—`/`–` (wajib 0), jumlah `*` (wajib 0), dan panjang kalimat (>60 kata = kandidat pemecahan, kecuali deret angka wajib ala tabel-narasi).

@@ -89,3 +89,22 @@ Pola berikut muncul khas pada laporan formal AI dan paling sering lolos pemeriks
 6. Apakah ada kalimat penutup yang menilai nilai laporan itu sendiri ("menjadi dasar pertimbangan pimpinan ...")?
 7. Apakah sebab-akibat menunjukkan mekanisme, bukan sekadar "X berdampak pada rendahnya Y"?
 8. Apakah ada kata yang sama berulang dalam satu kalimat (di luar istilah teknis)?
+
+## Kosakata Penanda AI yang Sering Lolos Pemolesan (Terverifikasi Lapangan)
+
+Daftar berikut dikumpulkan dari temuan nyata yang lolos beberapa putaran pemolesan sub-agent dan baru tertangkap mata manusia. Gunakan sebagai pola regex pada audit deterministik.
+
+| Penanda | Contoh keluaran | Perbaikan |
+| :--- | :--- | :--- |
+| `turut + verba` | "kendala ... turut menyulitkan tim survei", "literasi ... turut menghambat pengumpulan nota" | Hapus "turut", pakai verba langsung: "menyulitkan", "menghambat" |
+| `nyaris tidak` | "KPB nyaris tidak memiliki pilihan rekanan" | "hampir tidak punya pilihan" |
+| `tercermin dari` | "kondisi ini tercerci dari data portal" | Pecah kalimat: "sering terlambat. Portal masih mencatat ..." |
+| `telah terpetakan` | "jumlah unit ... telah terpetakan" | "sudah terjawab dari data yang terkumpul" / "telah terhimpun" |
+| `menyimpan risiko` | "menyimpan risiko sengketa tanah" | "berisiko menimbulkan sengketa tanah" (risiko bukan benda yang disimpan) |
+| `perlu diwaspadai` | "beberapa risiko ... perlu diwaspadai" | "risiko yang perlu diuji lebih lanjut" |
+| `perlu dilakukan` | "Langkah selanjutnya yang perlu dilakukan X adalah" | "Langkah selanjutnya bagi X adalah" |
+| Kata ganda satu klausa | "Sebagian pertanyaan ... telah terjawab sebagian" | Pecah kontras: "X sudah terjawab. Y belum: ..." |
+| Kolon dramatis | "berjalan lambat: 77,17% unit masih ..." | "belum berjalan sesuai rencana. Hambatan yang menonjol adalah ..." |
+| Keterangan menumpuk sebelum subjek | "Berdasarkan KAP ..., unit kerja ... bertugas melaksanakan" | "Sesuai KAP ..., unit kerja hanya membawa ..." |
+
+Kata baku yang **jangan** ditandai sebagai AI (muncul di naskah dinas resmi): "merupakan", "menunjukkan", "bertujuan", "guna memastikan". Ketikanya baku, bukan penanda mesin.

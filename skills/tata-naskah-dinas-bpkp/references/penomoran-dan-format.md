@@ -162,3 +162,26 @@ Kop surat naskah dinas resmi memuat lambang negara/logo BPKP dan identitas unit 
 - **Indeks Kolom Tabel:** Setiap paragraf di dalam sel tabel wajib dideklarasikan `<w:ind w:left="0" w:right="0" w:firstLine="0"/>` (`indentStart: 0, indentFirstLine: 0`) agar *marker ruler* Google Docs tidak bergeser ke tengah.
 - **Narasi Sub-Heading Level 1 (`HEADING_3`):** Paragraf narasi diset dengan `indentStart: 54 pt` (0.75" / 1080 dxa) dan `indentFirstLine: 54 pt` agar sejajar 100% dengan huruf pertama judul sub-heading.
 
+### F. Resep Lengkap Numbering Multi-Level untuk Google Docs (XML)
+
+Untuk daftar bertingkat `A. → 1. → a.` yang merender benar di Google Docs, bangun `word/numbering.xml` dengan definisi `abstractNum` berikut (terverifikasi):
+
+```xml
+<abstractNum abstractNumId="1">
+  <lvl ilvl="0"> <numFmt w:val="upperLetter"/> <lvlText w:val="%1."/> <lvlJc w:val="left"/> <pPr><ind w:left="720"  w:hanging="360"/></pPr> </lvl>
+  <lvl ilvl="1"> <numFmt w:val="decimal"/>    <lvlText w:val="%2."/> <lvlJc w:val="left"/> <pPr><ind w:left="1080" w:hanging="360"/></pPr> </lvl>
+  <lvl ilvl="2"> <numFmt w:val="lowerLetter"/> <lvlText w:val="%3."/> <lvlJc w:val="left"/> <pPr><ind w:left="1440" w:hanging="360"/></pPr> </lvl>
+  <lvl ilvl="3"> <numFmt w:val="decimal"/>    <lvlText w:val="%4)"/> <lvlJc w:val="left"/> <pPr><ind w:left="1800" w:hanging="360"/></pPr> </lvl>
+  <lvl ilvl="4"> <numFmt w:val="lowerLetter"/> <lvlText w:val="%5)"/> <lvlJc w:val="left"/> <pPr><ind w:left="2160" w:hanging="360"/></pPr> </lvl>
+</abstractNum>
+<num numId="1"><abstractNumId w:val="1"/></num>
+```
+
+Pemakaian pada paragraf: `<w:numPr><w:ilvl w:val="N"/><w:numId w:val="1"/></w:numPr>` dengan `w:ind` identik nilai `left` dan `hanging` pada level terkait.
+
+**Teknik tercekat (metode salin-referensi):** membangun `numbering.xml`/`styles.xml` dari nol berulang kali gagal render di Google Docs. Metode yang selalu berhasil: **salin docx referensi berformat benar → kosongkan seluruh paragraf dan tabelnya (`p._p.getparent().remove(p._p)`) → tulis ulang konten**. Numbering, styles, dan section properties terwarisi utuh.
+
+**Peringatan nilai piksel vs dxa:** jangan gunakan konversi piksel (708/1068/1428). Nilai baku wajib kelipatan grid 360 dxa: `720/1080/1440`. Selisih 12 dxa tidak kasat mata tetapi membuat *marker ruler* Google Docs tidak jatuh pada grid 0,5"/0,75"/1,0".
+
+**Penyelarasan tabel dengan teks:** agar garis tepi kiri tabel rata sejajar teks narasi di atasnya (bukan menonjol keluar), setel `w:tblPr` dengan `<w:jc w:val="left"/>`, `<w:tblInd w:w="720" w:type="dxa"/>` (identik `w:ind w:left` paragraf), dan `<w:tblW w:w="8318" w:type="dxa"/>` (lebar efektif = lebar halaman minus kedua margin minus indent). Isi `w:tcW` tiap sel dengan jumlah yang sama persis.
+
