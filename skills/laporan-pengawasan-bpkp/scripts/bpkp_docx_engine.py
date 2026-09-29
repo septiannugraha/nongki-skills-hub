@@ -1416,8 +1416,8 @@ def add_kop_surat_table(doc, logo_path: str = "",
 # TABEL METADATA SURAT PENGANTAR (4 Kolom Terpisah)
 # =====================================================================
 
-def add_surat_pengantar_metadata(doc, nomor: str, lampiran: str, hal: str,
-                                 tanggal: str = ""):
+def add_surat_pengantar_metadata(doc, nomor: str = "   ", lampiran: str = "1 (satu) berkas", hal: str = "",
+                                 tanggal: str = "   "):
     """
     Tambahkan tabel metadata surat pengantar (4 kolom) standar BPKP.
 

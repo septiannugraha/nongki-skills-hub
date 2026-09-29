@@ -279,9 +279,13 @@ def build_laporan_bentuk_surat(doc,
             add_heading_2, add_topic_heading, add_numbered_item, add_signature_block
         )
 
+    # Invarian Draf BPKP: Nomor dan Tanggal jangan diisi angka/tanggal definitif, gunakan placeholder "   " (tripel spasi, penomoran oleh sekretaris)
+    nomor_val = nomor if nomor else "   "
+    tanggal_val = tanggal if tanggal else "   "
+
     if include_kop:
         add_kop_surat_table(doc, unit_kerja=unit_kerja)
-        add_surat_pengantar_metadata(doc, nomor=nomor, lampiran=lampiran, hal=hal, tanggal=tanggal)
+        add_surat_pengantar_metadata(doc, nomor=nomor_val, lampiran=lampiran, hal=hal, tanggal=tanggal_val)
 
     # Tujuan Surat
     p_yth = doc.add_paragraph()
@@ -319,6 +323,6 @@ def build_laporan_bentuk_surat(doc,
         add_p(doc, "Demikian kami sampaikan. Atas perhatian dan kerja sama yang baik, kami ucapkan terima kasih.",
               space_before=Pt(6), space_after=Pt(12))
 
-    # Blok Tanda Tangan
-    add_signature_block(doc, date_text=tanggal or "Nabire, ................. 2026",
+    # Blok Tanda Tangan (pada draf, tanggal cukup placeholder "   " karena diisi sekretaris)
+    add_signature_block(doc, date_text=tanggal or "   ",
                         title=pejabat_jabatan, name=pejabat_nama)

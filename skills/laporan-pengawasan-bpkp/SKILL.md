@@ -21,6 +21,7 @@ Skill ini membantu menyusun laporan hasil pengawasan internal (Laporan Hasil Pem
 > 1. **Template-First Principle**: Jika pengguna menyediakan atau merujuk file template/draf laporan tertentu (misal: Evaluasi Pembiayaan Daerah, Notisi Pembahasan, LHP Kinerja, atau dokumen berformat surat pendek), **FORMAT DAN STRUKTUR TEMPLATE PENGGUNA TERSEBUT MENJADI ACUAN TERTINGGI**.
 > 2. **Dilarang Overfitting Contoh Ketapang**: Dokumen contoh (seperti Laporan Ketapang atau contoh di `references/template-format.md`) adalah **contoh kasus multi-lokus berskala besar**, BUKAN cetak biru wajib untuk semua laporan. **DILARANG** merombak atau memaksakan susunan dokumen pengguna menjadi bab-bab Ketapang jika pengguna sudah memiliki template sendiri!
 > 3. **Pencegahan Duplikasi Metadata (Nomor, Lampiran, Hal)**: Jika template dokumen pengguna sudah memiliki baris/tabel kop dan metadata `Nomor`, `Lampiran`, `Hal`, **LAKUKAN PENGISIAN / PERBAIKAN SECARA IN-PLACE**. Dilarang keras menyisipkan tabel metadata tambahan yang mengakibatkan penulisan Nomor, Lampiran, Hal tertulis dua kali!
+> 4. **Invarian Nomor dan Tanggal Laporan (Draf)**: Saat membuat laporan atau draf laporan hasil pengawasan, **nomor laporan dan tanggal laporan JANGAN DIISI**. Cukup diisi placeholder `"   "` (tripel spasi kosong) saja, baik pada cover, metadata surat pengantar, maupun kaki/tanda tangan, karena penomoran agenda keluar dan penanggalan resmi dilakukan oleh sekretaris/tata usaha.
 
 > [!important] Acuan Tata Naskah Dinas: Peraturan BPKP 4/2026
 > Skill ini mengacu pada **Peraturan BPKP Nomor 4 Tahun 2026 tentang Tata Naskah Dinas** (BAB V-C.5 Laporan, BAB IV Pengamanan, BAB III Pejabat Penanda Tangan), yang menggantikan Peraturan BPKP Nomor 4 Tahun 2022. Detail lihat Bagian 11.
@@ -452,6 +453,17 @@ Laporan menggunakan kode jenis naskah dinas pada nomor:
 
 Format nomor mengikuti pola umum TND: `[kode keamanan]/[kode klasifikasi arsip]/[LHP|LPP]/[nomor urut]/[kode konseptor]/[tahun]`. Nomor urut agenda dimulai dari 1 setiap awal tahun. Khusus naskah peraturan tidak memakai pola ini, tetapi laporan tetap memakai pola lengkap.
 
+### 11.4a Ketentuan Pengisian Nomor dan Tanggal pada Draf Laporan
+
+> [!important] Invarian Wajib: Jangan Isi Nomor & Tanggal Laporan (Cukup Placeholder `"   "`)
+> - Ketika membuat laporan atau draf laporan hasil pengawasan (LHP, LHE, LHR, maupun laporan bentuk surat pendek), **nomor laporan dan tanggal laporan JANGAN DIISI** (dilarang mengarang nomor, menebak nomor agenda, atau mencantumkan tanggal saat ini/asumsi).
+> - Cukup diisi dengan placeholder `"   "` (tripel spasi kosong) saja.
+> - **Alasan Operasional**: Penomoran buku agenda naskah dinas keluar dan penetapan tanggal resmi penandatanganan sepenuhnya merupakan wewenang dan dilakukan oleh **sekretaris / unit tata usaha persuratan** saat naskah siap ditandatangani dan didistribusikan.
+> - Ketentuan ini berlaku konsisten pada seluruh komponen laporan:
+>   1. **Sampul / Cover Laporan**: Bagian nomor dan tanggal laporan cukup diisi placeholder `"   "`.
+>   2. **Metadata Surat Pengantar**: Baris `Nomor    :` diisi `"   "`, dan kolom tanggal surat pengantar diisi `"   "`.
+>   3. **Kaki Laporan / Blok Tanda Tangan**: Baris tanggal penandatanganan cukup diisi `"   "` (atau nama kota saja tanpa tanggal definitif, mis. `Nabire,              2026` atau `"   "`).
+
 ### 11.5 Distribusi Laporan
 
 - Laporan didistribusikan kepada **pihak yang berkepentingan** dan dapat berupa softcopy yang **disertai surat pengantar**.
@@ -473,7 +485,7 @@ Format nomor mengikuti pola umum TND: `[kode keamanan]/[kode klasifikasi arsip]/
    b. Tulisan **"BADAN PENGAWASAN KEUANGAN DAN PEMBANGUNAN"** (jenis huruf **Arial ukuran 13 dicetak tebal**) dan diletakkan secara simetris di bawah logo BPKP;
    c. **Nama unit kerja** ditulis seluruhnya dengan huruf kapital (jenis huruf **Arial ukuran 12 dicetak tebal**) dan diletakkan secara simetris di bawah tulisan "BADAN PENGAWASAN KEUANGAN DAN PEMBANGUNAN";
    d. **Judul laporan** dapat ditulis dengan penggunaan huruf kapital, kursif, font, ukuran, dan warna yang beragam untuk mendukung estetika;
-   e. **Nomor dan tanggal laporan** dapat ditulis dengan penggunaan huruf kapital, kursif, font, ukuran, dan warna yang beragam untuk mendukung estetika.
+   e. **Nomor dan tanggal laporan**: Pada pembuatan draf laporan, nomor dan tanggal laporan **jangan diisi**, cukup diisi placeholder `"   "` (tripel spasi kosong) karena penomoran dilakukan oleh sekretaris. Dapat diformat dengan penggunaan huruf kapital, kursif, font, ukuran, dan warna yang beragam untuk mendukung estetika saat nomor definitif diisi nantinya.
 
 > [!note] Perubahan Satuan Logo
 > Peraturan 4/2026 menyatakan ukuran logo dalam satuan **mm** (34 mm × 17 mm) bukan cm (3,4 cm × 1,7 cm). Nilai numeriknya setara; satuan resmi kini mm.
@@ -610,10 +622,11 @@ Tanda titik dua (`:`) memiliki tiga konteks penggunaan utama dalam laporan penga
 #### A. Titik Dua pada Metadata Kop Surat
 Pada blok metadata surat pengantar (Nomor, Lampiran, Hal, Tanggal), titik dua **diletakkan tepat setelah label** tanpa spasi sebelum, lalu **satu spasi** sebelum nilai:
 ```
-Nomor    : PE.09.03/LHP-314/PW36/2/2026
+Nomor    :   
 Lampiran : Satu Berkas
 Hal      : Laporan Hasil Evaluasi atas Tata Kelola...
 ```
+*(Catatan wajib: Nilai Nomor dan Tanggal pada draf laporan **jangan diisi**, cukup diisi placeholder `"   "` (tripel spasi kosong) karena penomoran dan penetapan tanggal dilakukan oleh sekretaris).*
 Label rata kiri dengan padding tetap (mis. `Nomor` + spasi = 10 karakter), lalu `:`, lalu spasi, lalu nilai. Titik dua pada baris tanggal tidak digunakan (tanggal ditulis langsung).
 
 #### B. Titik Dua pada Pengantar Daftar Bernomor
