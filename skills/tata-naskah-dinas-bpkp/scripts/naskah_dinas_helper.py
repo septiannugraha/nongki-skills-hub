@@ -29,10 +29,30 @@ from docx.oxml.ns import nsdecls
 
 try:
     from .bpkp_docx_engine import (
-        _apply_font, FONT_NAME, BLACK, RED, add_p, add_run,
+        # Engine core: document & style
+        create_document, setup_heading_styles, setup_numbering_infrastructure,
+        _fix_theme_fonts, _sync_styles_with_effects,
+        reset_numbering_state, get_new_numbering_instance,
+        new_bab_context, new_topic_context,
+        # Constants & font helpers
+        _apply_font, FONT_NAME, BLACK, RED,
+        _ensure_style_font, _set_style_spacing,
+        # Paragraph & run builders
+        add_p, add_run, add_heading_1, add_heading_2, add_heading_3,
+        add_heading_4, add_section_heading, add_topic_heading,
+        add_numbered_item, add_simple_numbered,
+        add_subheading, add_body_sub, add_locus, add_detail_item,
+        add_criteria, add_cause, add_effect,
+        add_recommendation, add_recommendation_block,
+        # Numbering attachment
+        _attach_numbering,
+        # Cell & table helpers
         clean_cell_p, set_cell_margins, set_cell_shading,
         set_cell_bottom_border, set_table_borders, add_table_bordered,
-        _attach_numbering, _ensure_style_font, _set_style_spacing,
+        add_table_with_subheader,
+        # Other builders
+        add_signature_block, add_cover_page, add_daftar_isi, add_page_break,
+        _LEVEL_FMT,
     )
 except ImportError:
     # Cari engine di skill laporan-pengawasan-bpkp (sibling directory)
@@ -43,13 +63,56 @@ except ImportError:
     if _engine_dir not in sys.path:
         sys.path.insert(0, _engine_dir)
     from bpkp_docx_engine import (
-        _apply_font, FONT_NAME, BLACK, RED, add_p, add_run,
+        # Engine core: document & style
+        create_document, setup_heading_styles, setup_numbering_infrastructure,
+        _fix_theme_fonts, _sync_styles_with_effects,
+        reset_numbering_state, get_new_numbering_instance,
+        new_bab_context, new_topic_context,
+        # Constants & font helpers
+        _apply_font, FONT_NAME, BLACK, RED,
+        _ensure_style_font, _set_style_spacing,
+        # Paragraph & run builders
+        add_p, add_run, add_heading_1, add_heading_2, add_heading_3,
+        add_heading_4, add_section_heading, add_topic_heading,
+        add_numbered_item, add_simple_numbered,
+        add_subheading, add_body_sub, add_locus, add_detail_item,
+        add_criteria, add_cause, add_effect,
+        add_recommendation, add_recommendation_block,
+        # Numbering attachment
+        _attach_numbering,
+        # Cell & table helpers
         clean_cell_p, set_cell_margins, set_cell_shading,
         set_cell_bottom_border, set_table_borders, add_table_bordered,
-        _attach_numbering, _ensure_style_font, _set_style_spacing,
+        add_table_with_subheader,
+        # Other builders
+        add_signature_block, add_cover_page, add_daftar_isi, add_page_break,
+        _LEVEL_FMT,
     )
 
 __all__ = [
+    # Engine core (re-export agar helper self-contained)
+    "create_document", "setup_heading_styles", "setup_numbering_infrastructure",
+    "reset_numbering_state", "get_new_numbering_instance",
+    "new_bab_context", "new_topic_context",
+    # Constants & font helpers
+    "FONT_NAME", "BLACK", "RED", "_apply_font",
+    "_ensure_style_font", "_set_style_spacing", "_LEVEL_FMT",
+    # Paragraph & run builders (re-export)
+    "add_p", "add_run",
+    "add_heading_1", "add_heading_2", "add_heading_3", "add_heading_4",
+    "add_section_heading", "add_topic_heading",
+    "add_numbered_item", "add_simple_numbered",
+    "add_subheading", "add_body_sub", "add_locus", "add_detail_item",
+    "add_criteria", "add_cause", "add_effect",
+    "add_recommendation", "add_recommendation_block",
+    "_attach_numbering",
+    # Cell & table helpers (re-export)
+    "clean_cell_p", "set_cell_margins", "set_cell_shading",
+    "set_cell_bottom_border", "set_table_borders", "add_table_bordered",
+    "add_table_with_subheader",
+    # Other builders (re-export)
+    "add_signature_block", "add_cover_page", "add_daftar_isi", "add_page_break",
+    # Helper khusus naskah dinas
     "add_kop_surat",
     "add_kop_surat_table",
     "add_surat_pengantar_metadata",
@@ -57,15 +120,10 @@ __all__ = [
     "add_surat_tugas_header",
     "add_lembar_pengesahan",
     "add_tte_marker",
-    "add_table_bordered",
-    "add_p",
-    "add_run",
     "get_default_logo",
-    "setup_heading_styles",
-    "add_heading_1",
-    "add_heading_2",
-    "add_heading_3",
-    "add_heading_4",
+    # Builder notisi pembahasan
+    "build_notisi_pembahasan",
+    "build_notisi_temuan_5c",
 ]
 
 # =====================================================================
@@ -591,6 +649,251 @@ def add_tte_marker(doc):
     _apply_font(r, italic=True, color=RGBColor(89, 89, 89), size=Pt(10))
 
 
+# =====================================================================
+# BUILDER NOTISI PEMBAHASAN
+# =====================================================================
+#
+# Notisi Pembahasan adalah Naskah Dinas Khusus (Dokumentasi Pengawasan)
+# tanpa nomor, tanpa kode jenis. Berisi hasil pembahasan evaluasi dengan
+# struktur: Kepala (kop + tanggal + pembehasan) -> Batang Tubuh
+# (A. Hasil Laporan Evaluasi -> butir-butir temuan) -> Kaki (tanda tangan).
+#
+# Butir temuan memakai multilevel numbering native Word:
+#   - Heading 2 level 0: A.  (seksi utama)
+#   - Heading 3 level 1: 1.  (butir temuan -- judul)
+#   - Paragraf narasi 5C sejajar indent level 1 (1,25" / 1800 dxa)
+# =====================================================================
+
+from docx.shared import Inches as _Inches
+from docx.shared import Pt as _Pt
+from docx.enum.text import WD_ALIGN_PARAGRAPH as _WAP
+
+
+def build_notisi_pembahasan(
+    doc,
+    judul_utama: str,
+    opening_text: str,
+    temuan_list,
+    closing_text: str,
+    signature_left: list = None,
+    signature_right: list = None,
+    tanggal: str = "",
+    sections: list = None,
+):
+    """
+    Bangun Notisi Pembahasan hasil evaluasi standar BPKP.
+
+    Parameter
+    ---------
+    doc : Document (hasil create_document())
+    judul_utama : str  -- judul notisi (mis. "NOTISI PEMBAHASAN")
+    opening_text : str  -- paragraf pembuka (tanggal & dasar surat tugas)
+    temuan_list : list[dict]
+        Setiap dict dengan keys:
+          - title : str  -- judul butir temuan (TANPA nomor manual)
+          - kondisi : str
+          - sebab : str
+          - akibat : str
+          - rekomendasi : str
+          - table : dict | None  (headers, rows, widths)
+    closing_text : str
+    signature_left / signature_right : list[(text, opts)]
+    tanggal : str  -- tempat & tanggal notisi (mis. "Nabire, 7 September 2026")
+    sections : list[(str, list[dict])] | None
+        Jika diberikan, akan membuat beberapa Heading 2 bersesuaian
+        (mis. [("Cadangan Pangan", [...]), ("Stabilisasi Harga", [...])]).
+        Setiap elemen: (judul_seksi, daftar_temuan).
+        Jika None, pakai temuan_list dengan heading "Hasil Laporan Evaluasi".
+    """
+    # Heading 2 untuk seksi A (restart numbering semua level)
+    nid = new_bab_context(doc, "NOTISI")
+
+    # --- Kepala Notisi ---
+    if judul_utama:
+        add_p(doc, judul_utama, space_before=_Pt(0), space_after=_Pt(6),
+              align=_WAP.CENTER, bold=True)
+
+    add_p(doc, opening_text, space_before=_Pt(0), space_after=_Pt(12),
+          align=_WAP.JUSTIFY)
+
+    if sections:
+        # --- Multi-section mode (A. ..., B. ...) ---
+        for sec_title, sec_temuan in sections:
+            add_heading_2(doc, sec_title, num_id=nid)
+            for f in sec_temuan:
+                build_notisi_temuan_5c(doc, f, num_id=nid)
+    else:
+        # --- Seksi A. Hasil Laporan Evaluasi (Heading 2 + numbering level 0) ---
+        add_heading_2(doc, "Hasil Laporan Evaluasi", num_id=nid)
+
+        # --- Butir-butir temuan (Heading 3 + numbering level 1) ---
+        for f in temuan_list:
+            build_notisi_temuan_5c(doc, f, num_id=nid)
+
+    # --- Kaki / Penutup ---
+    add_p(doc, "", space_after=_Pt(4))
+    add_p(doc, closing_text, space_after=_Pt(24), align=_WAP.JUSTIFY)
+
+    # --- Blok tanda tangan ---
+    _add_signature_grid(doc, signature_left, signature_right, tanggal)
+
+
+def build_notisi_temuan_5c(doc, temuan: dict, num_id: int):
+    """
+    Bangun satu butir temuan pada Notisi Pembahasan.
+
+    Struktur per butir (auto-numbering 1., 2., ...):
+      [Heading 3 + num_id level 1] <judul temuan>
+      [paragraf kondisi]  -- sejajar indent level 1 (1,25" / 1800 dxa)
+      [tabel data bila ada]
+      [paragraf sebab]
+      [paragraf akibat]
+      [paragraf rekomendasi]
+    """
+    judul = temuan.get("title", "")
+    kondisi = temuan.get("kondisi", "")
+    sebab = temuan.get("sebab", "")
+    akibat = temuan.get("akibat", "")
+    rekom = temuan.get("rekom", "")
+    table_data = temuan.get("table")
+
+    # Judul butir temuan: Heading 3 + numbering level 1 (1.)
+    # Word akan men-generate "1.", "2.", ... secara otomatis.
+    add_topic_heading(doc, judul, num_id=num_id, ilvl=1)
+
+    # Paragraf Kondisi (sejajar indent teks level 1)
+    add_body_sub(doc, kondisi, num_id=num_id, ilvl=1)
+
+    # Tabel pendukung bila ada
+    if table_data:
+        headers = table_data.get("headers", [])
+        rows = table_data.get("rows", [])
+        widths = table_data.get("widths", [])
+        col_widths = [Cm(w) for w in widths] if widths else None
+        _add_data_table(doc, headers, rows, col_widths)
+        add_p(doc, "", space_after=_Pt(2))
+
+    # Paragraf Sebab (sejajar indent level 1)
+    # Data temuan sudah memuat awalan "Hal ini disebabkan oleh", jadi pakai add_p
+    # biasa (bukan add_cause yang menambah awalan baku) untuk menghindari duplikasi.
+    add_p(doc, sebab, space_after=_Pt(6), num_id=num_id, ilvl=1,
+          align=_WAP.JUSTIFY)
+
+    # Paragraf Akibat
+    # Data temuan sudah memuat awalan "Akibatnya,".
+    add_p(doc, akibat, space_after=_Pt(6), num_id=num_id, ilvl=1,
+          align=_WAP.JUSTIFY)
+
+    # Paragraf Rekomendasi
+    add_p(doc, rekom, space_after=_Pt(6), num_id=num_id, ilvl=1,
+          align=_WAP.JUSTIFY)
+
+    # Baris Tanggapan (placeholder untuk Mitra Evaluasi)
+    add_p(doc, "Tanggapan :", space_before=_Pt(2), space_after=_Pt(2),
+          num_id=num_id, ilvl=1, bold=True, align=_WAP.LEFT)
+    add_p(
+        doc,
+        "\u2026" * 120,
+        space_after=_Pt(10),
+        num_id=num_id,
+        ilvl=1,
+        align=_WAP.LEFT,
+    )
+
+
+def _add_data_table(doc, headers, rows, col_widths):
+    """Bungkus add_table_bordered untuk data table notisi.
+
+    Tabel diindentasi sejajar dengan hanging indent level 1 (1080 dxa = 0.75").
+    """
+    from docx.oxml import parse_xml as _parse_xml
+    from docx.oxml.ns import nsdecls as _nsdecls
+
+    n_cols = len(headers)
+    n_rows = 1 + len(rows)
+    table, rows_data = add_table_bordered(
+        doc, rows=n_rows, cols=n_cols,
+        col_widths=col_widths, header_rows=1,
+        shade_header="EAEAEA", border_color="B0B0B0"
+    )
+    # Set table indent to align with hanging indent level 1 (1080 dxa)
+    tbl = table._tbl
+    tblPr = tbl.tblPr
+    tblInd = _parse_xml(
+        f'<w:tblInd {_nsdecls("w")} w:w="1080" w:type="dxa"/>'
+    )
+    tblPr.append(tblInd)
+    # Isi header (bold, center)
+    for i, h in enumerate(headers):
+        cell = rows_data[0][i]
+        p = cell.paragraphs[0]
+        p.alignment = _WAP.CENTER
+        add_run(p, h, bold=True, size=_Pt(10))
+    # Isi data
+    for r_idx, row_vals in enumerate(rows, 1):
+        for c_idx, val in enumerate(row_vals):
+            cell = rows_data[r_idx][c_idx]
+            p = cell.paragraphs[0]
+            if c_idx == 0:
+                p.alignment = _WAP.CENTER
+            else:
+                p.alignment = _WAP.LEFT
+            add_run(p, str(val), size=_Pt(10))
+
+
+def _add_signature_grid(doc, left_lines, right_lines, tanggal=""):
+    """
+    Tambahkan grid tanda tangan dua kolom (borderless) di akhir notisi.
+    left_lines / right_lines : list of (text, opts_dict)
+    """
+    from docx.enum.table import WD_TABLE_ALIGNMENT as _WDTA
+    from docx.oxml import parse_xml as _parse_xml
+    from docx.oxml.ns import nsdecls as _nsdecls
+
+    if not left_lines and not right_lines:
+        return
+
+    table = doc.add_table(rows=1, cols=2)
+    table.alignment = _WDTA.CENTER
+    left, right = table.rows[0].cells
+    left.width = Cm(8.5)
+    right.width = Cm(8.5)
+
+    for cell, lines in ((left, left_lines or []), (right, right_lines or [])):
+        cell.text = ""
+        first = True
+        for text, opts in lines:
+            p = cell.paragraphs[0] if first else cell.add_paragraph()
+            first = False
+            p.alignment = _WAP.CENTER
+            p.paragraph_format.space_after = _Pt(0)
+            p.paragraph_format.space_before = _Pt(0)
+            p.paragraph_format.line_spacing = 1.15
+            # add_run engine tidak mendukung underline; terapkan manual
+            r = p.add_run(text)
+            _apply_font(
+                r,
+                bold=opts.get("bold", False),
+                italic=opts.get("italic", False),
+                color=opts.get("color", BLACK),
+                size=opts.get("size", _Pt(12)),
+            )
+            if opts.get("underline", False):
+                r.font.underline = True
+
+    # Borderless
+    tbl = table._tbl
+    tblPr = tbl.tblPr
+    borders = _parse_xml(
+        f'<w:tblBorders {_nsdecls("w")}>'
+        f'<w:top w:val="none"/><w:left w:val="none"/>'
+        f'<w:bottom w:val="none"/><w:right w:val="none"/>'
+        f'<w:insideH w:val="none"/><w:insideV w:val="none"/>'
+        f'</w:tblBorders>'
+    )
+    tblPr.append(borders)
+
+
 print("naskah_dinas_helper.py loaded - BPKP Tata Naskah Dinas helper ready.")
 
 
@@ -598,61 +901,8 @@ print("naskah_dinas_helper.py loaded - BPKP Tata Naskah Dinas helper ready.")
 # STANDAR STYLE HEADINGS (ARIAL 12 PT BOLD HITAM) & NAVIGASI PANEL
 # =====================================================================
 #
-# Catatan: versi engine (bpkp_docx_engine.py) sudah menyediakan
-# setup_heading_styles, add_heading_1, add_heading_2, add_heading_3,
-# add_heading_4 yang lengkap dan teruji. Sebaiknya gunakan versi
-# engine tersebut secara langsung.
-#
-# Berikut re-export agar helper tetap self-contained untuk pengguna
-# yang mengimpor dari naskah_dinas_helper.
+# Fungsi setup_heading_styles, add_heading_1, add_heading_2,
+# add_heading_3, add_heading_4 sudah diimpor langsung dari
+# bpkp_docx_engine di blok atas dan ikut di-export via __all__.
+# Tidak perlu redefinisi/alias terpisah di sini.
 # =====================================================================
-
-try:
-    from .bpkp_docx_engine import (
-        setup_heading_styles as _engine_setup_heading_styles,
-        add_heading_1 as _engine_add_heading_1,
-        add_heading_2 as _engine_add_heading_2,
-        add_heading_3 as _engine_add_heading_3,
-        add_heading_4 as _engine_add_heading_4,
-    )
-except ImportError:
-    from bpkp_docx_engine import (
-        setup_heading_styles as _engine_setup_heading_styles,
-        add_heading_1 as _engine_add_heading_1,
-        add_heading_2 as _engine_add_heading_2,
-        add_heading_3 as _engine_add_heading_3,
-        add_heading_4 as _engine_add_heading_4,
-    )
-
-
-def setup_heading_styles(doc) -> None:
-    """
-    Konfigurasi style Heading 1, 2, 3, 4 bawaan Word & Google Docs:
-    - Font Arial 12pt Bold Hitam (#000000)
-    - Spasi before 12pt, after 6pt, line 1.15
-    - Outline level untuk Navigation Panel / Document Outline
-
-    Mendelegasikan ke engine inti (``bpkp_docx_engine.setup_heading_styles``)
-    agar konsisten dengan skill laporan-pengawasan-bpkp.
-    """
-    _engine_setup_heading_styles(doc)
-
-
-def add_heading_1(doc, text: str):
-    """Heading 1 - judul BAB / Bagian Pokok. Muncul di Navigation Panel (Arial 12pt Bold Hitam, Center)."""
-    return _engine_add_heading_1(doc, text)
-
-
-def add_heading_2(doc, text: str, num_id=None):
-    """Heading 2 - Bagian / Kategori (mis. A. Simpulan, Proses Bisnis). Muncul di Navigation Panel (Arial 12pt Bold Hitam, Left)."""
-    return _engine_add_heading_2(doc, text, num_id=num_id)
-
-
-def add_heading_3(doc, text: str, num_id=None):
-    """Heading 3 - Topik Utama / Area Fokus Temuan. Muncul di Navigation Panel (Arial 12pt Bold Hitam, Left)."""
-    return _engine_add_heading_3(doc, text, num_id=num_id)
-
-
-def add_heading_4(doc, text: str, num_id=None):
-    """Heading 4 - Sub-Temuan / Poin Spesifik. Muncul di Navigation Panel (Arial 12pt Bold Hitam, Left)."""
-    return _engine_add_heading_4(doc, text, num_id=num_id)

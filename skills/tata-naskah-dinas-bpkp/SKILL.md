@@ -364,3 +364,63 @@ add_nota_dinas_header(
 
 doc.save("NotaDinas.docx")
 ```
+
+---
+
+## 8. Naskah Penugasan & Kendali Mutu Pengawasan (Pakta Integritas & KM 4–6)
+
+Pada pelaksanaan pengawasan intern BPKP, Surat Tugas (ST) selalu disertai naskah pendukung penugasan yang wajib mematuhi standar format tata naskah dinas dan sistem kendali mutu pengawasan.
+
+### 8.1 Pakta Integritas Penugasan Pengawasan
+
+Pakta Integritas merupakan komitmen etika dan integritas tim sebelum melaksanakan penugasan pengawasan. Dokumen ini wajib dibuat dengan standar presisi:
+- **Ketentuan Format & Layout:**
+  - Kertas: A4 (21,0 cm x 29,7 cm), layout **tepat 1 halaman penuh (single page)**.
+  - Margin: Kiri 3,0 cm (ruang jilid/arsip), Kanan 2,0 cm, Atas 2,0 cm, Bawah 2,0 cm.
+  - Kop naskah dinas: BPKP Perwakilan / Unit Kerja eselon II terkait, garis pemisah kop tebal (`sz=18`).
+  - Tipografi: Arial konsisten (Judul 13pt bold, Subjudul/Isi 10.5–11pt spasi 1.15, Tabel TTD 10pt spasi 1.0).
+  - Poin Komitmen: 7 butir komitmen integritas menggunakan penomoran multilevel native Word (`<w:numPr>`) dengan *hanging indent* rapi.
+- **Tabel Penandatangan Tim (Struktur Berjenjang):**
+  - Menggunakan format tabel dinas tanpa garis vertikal (*clean table*, garis pembatas horizontal tipis).
+  - Memuat seluruh peran tim: Penanggung Jawab, Pengendali Mutu/Teknis (Dalnis), Ketua Tim, dan Anggota Tim lengkap dengan NIP.
+
+### 8.2 Formulir Kendali Mutu Pengawasan (Format KM 4, KM 5, KM 6)
+
+Kendali mutu penugasan pengawasan dituangkan ke dalam kertas kerja spreadsheet terintegrasi:
+- **Format KM 4 (Program Kerja Pengawasan / PKP):**
+  - Memuat rincian langkah kerja audit/evaluasi, tujuan pengujian, prosedur pemeriksaan, waktu alokasi rencana, pelaksana tugas, dan kolom paraf persetujuan Pengendali Teknis.
+- **Format KM 5 (Alokasi Rencana Jam Kerja / Mandays):**
+  - Rencana alokasi jam kerja efektif tim (PJ, Dalnis, KT, AT) yang dirinci menurut tahapan: Persiapan, Pelaksanaan Lapangan, dan Penyusunan Laporan Hasil Pengawasan.
+- **Format KM 6 (Realisasi Jam Kerja Pengawasan):**
+  - Pencatatan berkala/kumulatif realisasi jam kerja mandays per penugasan, link formula ke KM 5 untuk menghitung varians/selisih efisiensi jam kerja.
+- **Formula Keterkaitan Antar-Sheet (Inter-Sheet Automation):**
+  - **Sinkronisasi Metadata:** Seluruh sheet (KM 4, KM 5, KM 6) mereferensikan sel metadata utama (Nomor ST, Tanggal ST, Nama Penugasan, Objek Pengawasan, Periode Penugasan).
+  - **Kalkulasi Mandays Otomatis:** Perhitungan hari kerja menggunakan formula `=NETWORKDAYS(start_date, end_date, libur)` atau konversi jam kerja standar (1 Mandays = 7,5 jam kerja efektif BPKP).
+  - **Lookup Profil Tim:** Nama dan NIP tim diambil otomatis via formula `=VLOOKUP(...)` atau `=XLOOKUP(...)` dari master data pegawai.
+
+### 8.3 Ekstraksi dan Penanganan Tanda Tangan Transparan
+
+Untuk menyematkan tanda tangan basah hasil scan ke dokumen naskah dinas (DOCX/XLSX) tanpa merusak tampilan layout:
+1. **Penghapusan Latar Belakang (Alpha Thresholding):**
+   - Latar belakang putih/kusam wajib dikonversi menjadi transparansi (kanal Alpha / RGBA).
+   - Gunakan skrip Python Pillow:
+     ```python
+     from PIL import Image
+
+     def make_signature_transparent(input_path: str, output_path: str, threshold: int = 220):
+         img = Image.open(input_path).convert("RGBA")
+         datas = img.getdata()
+         new_data = []
+         for item in datas:
+             # Jika piksel mendekati putih, jadikan transparan
+             if item[0] > threshold and item[1] > threshold and item[2] > threshold:
+                 new_data.append((255, 255, 255, 0))
+             else:
+                 new_data.append(item)
+         img.putdata(new_data)
+         img.save(output_path, "PNG")
+     ```
+2. **Penyisipan ke Dokumen TND (Word / Excel):**
+   - Pada Word (`python-docx`), sisipkan tanda tangan langsung ke sel tabel penandatangan dengan lebar proporsional (`width = Cm(2.5)` s.d. `Cm(3.0)`).
+   - Pastikan paragraf sel tabel memiliki indentasi 0 dan spasi before/after 0 agar posisi tanda tangan tidak menggeser batas baris tabel dan tidak menabrak baris NIP.
+
