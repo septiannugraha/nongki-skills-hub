@@ -475,6 +475,14 @@ def main():
     parser.add_argument("--output", type=str, help="Path file Word .docx hasil generate")
     parser.add_argument("--kop-mode", type=str, choices=["table", "text"], default="table",
                         help="Mode kop surat: 'table' (resmi 2-kolom logo BPKP) atau 'text' (teks in-place)")
+    # Direct CLI flags untuk kemudahan eksekusi tanpa JSON manual
+    parser.add_argument("--hal", type=str, help="Perihal / Hal naskah dinas")
+    parser.add_argument("--tujuan", type=str, help="Pihak yang dituju (Yth.)")
+    parser.add_argument("--keperluan", type=str, help="Keperluan / nama penugasan / kegiatan")
+    parser.add_argument("--isi", type=str, help="Narasi atau isi utama naskah dinas")
+    parser.add_argument("--penandatangan", type=str, help="Nama lengkap pejabat penanda tangan")
+    parser.add_argument("--jabatan", type=str, help="Jabatan penanda tangan")
+    parser.add_argument("--nomor", type=str, help="Nomor lengkap naskah dinas (override otomatis)")
 
     args = parser.parse_args()
 
@@ -494,6 +502,30 @@ def main():
     if args.data and os.path.exists(args.data):
         with open(args.data, "r", encoding="utf-8") as f:
             payload = json.load(f)
+
+    # Injeksi argumen CLI jika disediakan langsung
+    if args.hal:
+        payload.setdefault("replacements", {})
+        payload["replacements"]["Hal\t:"] = f"Hal\t: {args.hal}"
+        payload["hal"] = args.hal
+    if args.tujuan:
+        payload.setdefault("replacements", {})
+        payload["replacements"]["Yth.\t:"] = f"Yth.\t: {args.tujuan}"
+        payload["replacements"]["Yth. \t"] = f"Yth. {args.tujuan}"
+        payload["tujuan"] = args.tujuan
+    if args.keperluan:
+        payload["keperluan"] = args.keperluan
+        payload["nama_penugasan"] = args.keperluan
+    if args.isi:
+        payload["isi"] = args.isi
+        payload["isi_surat"] = args.isi
+        payload["isi_nota_dinas"] = args.isi
+    if args.penandatangan:
+        payload["nama_penandatangan"] = args.penandatangan
+    if args.jabatan:
+        payload["jabatan_penandatangan"] = args.jabatan
+    if args.nomor:
+        payload["nomor_lengkap"] = args.nomor
 
     out_file = generate_document(
         template_key=args.jenis,
