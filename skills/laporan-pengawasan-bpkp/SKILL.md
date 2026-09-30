@@ -222,6 +222,44 @@ Hasilkan tulisan yang terasa ditulis seseorang untuk audiens tertentu. Pertahank
 - Baca keras secara mental. Hapus kalimat yang terdengar seperti slogan, presentasi korporat, atau respons chatbot.
 - Lakukan audit makna: angka, nama, negasi, tingkat kepastian, hubungan sebab-akibat, dan kutipan harus tetap sama.
 
+### 7.1 Kosakata Penanda AI Hasil Uji Lapangan Pengawasan (Terverifikasi)
+
+Daftar berikut dikumpulkan dari temuan nyata penugasan pengawasan lapangan yang sering lolos beberapa putaran pemolesan LLM dan baru tertangkap saat reviu pengendali teknis. Wajib dieliminasi atau disubstitusi:
+
+| Penanda AI | Contoh Keluaran Robotik | Perbaikan Standar Auditor BPKP |
+| :--- | :--- | :--- |
+| `turut + verba` | "kendala anggaran *turut menyulitkan* distribusi pupuk", "literasi *turut menghambat*" | Hapus "turut", gunakan verba langsung lugas: "menyulitkan", "menghambat" |
+| `nyaris tidak` | "Pemda *nyaris tidak memiliki* pilihan rekanan penyedia" | "hampir tidak memiliki pilihan rekanan" atau "terbatas dalam memilih rekanan" |
+| `tercermin dari` | "kondisi ini *tercermin dari* data realisasi serapan" | Hubungkan langsung: "fakta tersebut dibuktikan oleh data realisasi serapan" atau pecah kalimat |
+| `telah terpetakan` | "jumlah unit sasaran *telah terpetakan*" | "sudah teridentifikasi dalam data" atau "telah dihimpun" |
+| `menyimpan risiko` | "mekanisme ini *menyimpan risiko* penyimpangan" | "berisiko menimbulkan penyimpangan" (risiko bukan barang yang disimpan) |
+| `perlu diwaspadai` | "beberapa celah pengendalian *perlu diwaspadai*" | "merupakan celah pengendalian yang perlu diuji dan dimitigasi" |
+| `perlu dilakukan` | "Langkah selanjutnya yang *perlu dilakukan* Kepala Dinas adalah" | "Langkah perbaikan bagi Kepala Dinas adalah" atau gunakan kalimat aktif rekomendasi |
+| Kata ganda satu klausa | "Sebagian sasaran bantuan *telah terealisasi sebagian*" | Pecah kontras: "Sebanyak X sasaran telah terealisasi; sisanya Y sasaran belum: ..." |
+| Kolon dramatis | "berjalan lambat: 77,17% unit belum tuntas" | "belum berjalan sesuai jadwal. Hambatan utama ditunjukkan oleh 77,17% unit yang belum tuntas" |
+| Keterangan menumpuk sebelum subjek | "Berdasarkan KAP dan arahan pimpinan, unit kerja bertugas melaksanakan" | "Sesuai KAP, unit kerja bertugas melaksanakan..." |
+
+> [!tip] Kosakata Formal Kedinasan yang DILARANG Dihapus
+> Kata formal baku seperti **"merupakan"**, **"menunjukkan"**, **"bertujuan"**, dan **"guna memastikan"** adalah kosakata baku naskah dinas resmi dan pedoman pengawasan BPKP. **JANGAN PERNAH** menghapus atau mengganti kata-kata tersebut hanya karena dicurigai sebagai teks bot!
+
+### 7.2 Konversi Penanda Miring Markdown ke Run Italic Asli (Mencegah Kebocoran Asterisk)
+
+Output sub-agent LLM sering memakai penanda markdown `*kata*` atau `_kata_`. Jika teks tersebut ditanam langsung ke docx atau Google Docs sebagai string, tanda bintang/garis bawah tercetak mentah/literal (misalnya: `"kebutuhan riil perumahan (*backlog*)"` tercetak dengan karakter bintang).
+
+**Aturan Penanganan Mutlak:**
+1. Sebelum teks narasi ditanam ke docx, konversi penanda markdown menjadi run native OpenXML dengan properti `run.italic = True` (font Arial 12pt).
+2. Modul `bpkp_docx_engine.py` telah dilengkapi fitur otomatis: fungsi `add_p()` otomatis mendeteksi penanda `*`, `**`, `<i>`, atau `<b>` dan memecahnya menjadi run native tanpa tanda bintang mentah.
+3. Gunakan helper `add_runs_with_markdown()` atau `add_runs_with_italic()` saat mengisi teks secara manual per sel/paragraf.
+4. **Invarian Audit**: Jumlah karakter literal `*` pada seluruh teks dokumen hasil kompilasi **WAJIB 0**.
+
+### 7.3 Audit Deterministik Wajib Pra-Selesai (Invarian Mutlak)
+
+Sebelum menyatakan dokumen laporan (LHP, LHE, LHR, Notisi) selesai, jalankan fungsi audit deterministik `audit_docx_deterministic(doc)` atau `audit_text_deterministic(teks)`. Dokumen hanya dapat diserahkan jika memenuhi:
+- [ ] **Jumlah em dash / en dash (`—`, `–`, `--`) = 0**.
+- [ ] **Jumlah literal asterisk (`*`) = 0**.
+- [ ] **Temuan penanda AI lapangan = 0** (`turut + verba`, `nyaris`, `tercermin dari`, `telah terpetakan`, `menyimpan risiko`, `perlu diwaspadai`, `perlu dilakukan`).
+- [ ] **Panjang kalimat**: Kalimat dengan $>60$ kata dievaluasi untuk dipecah (kecuali kalimat tabel deret angka).
+
 ---
 
 ## 8. Pemeriksaan EYD V (Built-In)
@@ -600,6 +638,41 @@ Contoh struktur:
 
 ---
 
+### 12.3a Resep Multi-Level Numbering XML & Penyelarasan Tabel
+
+#### A. Definisi Multi-Level XML yang Valid di Word & Google Docs
+Untuk penomoran bertingkat `A. → 1. → a. → 1) → a)` yang stabil dan merender sempurna di Google Docs maupun Microsoft Word, definisi `abstractNum` wajib mematuhi formula berikut:
+
+```xml
+<abstractNum abstractNumId="1">
+  <lvl ilvl="0"> <numFmt w:val="upperLetter"/> <lvlText w:val="%1."/> <lvlJc w:val="left"/> <pPr><ind w:left="720"  w:hanging="360"/></pPr> </lvl>
+  <lvl ilvl="1"> <numFmt w:val="decimal"/>     <lvlText w:val="%2."/> <lvlJc w:val="left"/> <pPr><ind w:left="1080" w:hanging="360"/></pPr> </lvl>
+  <lvl ilvl="2"> <numFmt w:val="lowerLetter"/> <lvlText w:val="%3."/> <lvlJc w:val="left"/> <pPr><ind w:left="1440" w:hanging="360"/></pPr> </lvl>
+  <lvl ilvl="3"> <numFmt w:val="decimal"/>     <lvlText w:val="%4)"/> <lvlJc w:val="left"/> <pPr><ind w:left="1800" w:hanging="360"/></pPr> </lvl>
+  <lvl ilvl="4"> <numFmt w:val="lowerLetter"/> <lvlText w:val="%5)"/> <lvlJc w:val="left"/> <pPr><ind w:left="2160" w:hanging="360"/></pPr> </lvl>
+</abstractNum>
+<num numId="1"><abstractNumId w:val="1"/></num>
+```
+
+#### B. Peringatan Nilai Piksel vs DXA
+Hindari nilai pembulatan piksel hasil konversi kasar (seperti 708, 1068, 1428 dxa). Seluruh nilai indentasi naskah dinas dan laporan pengawasan BPKP wajib menggunakan **kelipatan grid 360 dxa (0,25")**: `720 / 1080 / 1440 / 1800 / 2160 dxa`.
+
+#### C. Teknik Salin-Referensi (Copy-Reference Technique)
+Membangun elemen XML `numbering.xml` dan `styles.xml` mentah dari nol melalui script python sering menghasilkan dokumen yang korup atau penomoran tidak muncul di Google Docs.
+**Metode Teruji dan Handal**:
+Gunakan fungsi `clone_from_template("template_referensi.docx")`:
+1. Salin berkas referensi DOCX yang memiliki konfigurasi style dan numbering yang valid.
+2. Hapus seluruh isi tabel dan paragraf menggunakan `p._p.getparent().remove(p._p)`.
+3. Tulis ulang konten laporan dengan mewarisi seluruh section properties, margins, numbering definitions, dan style heading asli.
+
+#### D. Penyelarasan Tabel dengan Teks (Table-Text Flush Alignment)
+Agar batas kiri tabel temuan sejajar lurus (*flush*) dengan indentasi teks narasi di atasnya (misal sejajar dengan sub-heading 720 dxa), terapkan helper `set_table_flush_alignment(table, left_dxa=720, total_width_dxa=8318)`. Ini menyetel:
+- `<w:jc w:val="left"/>`
+- `<w:tblInd w:w="720" w:type="dxa"/>` (sama persis dengan `w:ind w:left` paragraf)
+- `<w:tblW w:w="8318" w:type="dxa"/>` (lebar efektif halaman minus kedua margin minus indent)
+
+---
+
 ### 12.4 Standar Format Tabel BPKP (Clean Open-Table Style)
 
 Tabel dalam laporan BPKP disajikan secara bersih, rapi, dan profesional dengan kaidah:
@@ -769,7 +842,14 @@ from bpkp_docx_engine import create_document
 | `add_recommendation_block(doc, rec_list, num_id, ilvl)` | Blok rekomendasi (intro + item a) b) c)). |
 | `add_signature_block(doc, date, title, name)` | Blok tanda tangan dinas + TTE. |
 | `add_table_bordered(doc, rows, cols, col_widths)` | Tabel borderless-BPKP + header shading. Kembalikan (table, rows_data). |
-| `add_p(doc, text, ...)` | Paragraf biasa dengan opsi numbering, indent, align. |
+| `set_table_flush_alignment(table, left_dxa, total_w)` | Penyelarasan rata kiri tabel sejajar teks narasi (tblInd=720, tblW=8318). |
+| `add_runs_with_markdown(p, text, ...)` | Konversi `*miring*` dan `**tebal**` ke run native Word, cegah kebocoran asterisk. |
+| `add_runs_with_italic(p, text, ...)` | Helper kompatibilitas untuk memecah teks dengan penanda miring ke run italic. |
+| `clone_from_template(template_path)` | Copy-reference technique: kloning template valid dan bersihkan paragraf/tabel. |
+| `get_unit_profile(unit_key)` | Ambil data identitas unit kerja seluruh Indonesia dari `unit_profiles.json`. |
+| `audit_docx_deterministic(doc)` | Audit otomatis: pastikan em dash = 0, asterisk = 0, dan AI markers = 0. |
+| `audit_text_deterministic(text)` | Audit string teks atas em dash, asterisk, dan leksikon penanda AI. |
+| `add_p(doc, text, ...)` | Paragraf biasa dengan opsi numbering, indent, align, dan markdown parsing built-in. |
 | `add_run(p, text, bold, italic, color, size)` | Tambah run ke paragraf dengan font Arial. |
 
 ### 13.4 API Builder (`lhp_builder.py`)

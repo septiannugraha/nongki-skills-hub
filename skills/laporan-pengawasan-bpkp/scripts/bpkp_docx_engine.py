@@ -48,6 +48,9 @@ __all__ = [
     "add_daftar_isi",
     "add_page_break",
     "add_table_with_subheader",
+    "add_runs_with_markdown", "add_runs_with_italic",
+    "set_table_flush_alignment", "clone_from_template",
+    "get_unit_profile", "audit_text_deterministic", "audit_docx_deterministic",
     "_attach_numbering", "_ensure_style_font", "_set_style_spacing",
     "_LEVEL_FMT",
 ]
@@ -465,7 +468,7 @@ def create_document() -> _Doc:
 def add_p(doc, text="", space_before=Pt(0), space_after=Pt(6), line_spacing=1.15,
           align=WD_ALIGN_PARAGRAPH.JUSTIFY, left_indent=None, hanging_indent=None,
           tab_pos_dxa=None, bold=False, italic=False, color=BLACK, size=Pt(12),
-          num_id=None, ilvl=None, attach_num=False):
+          num_id=None, ilvl=None, attach_num=False, parse_markdown=True):
     """
     Tambahkan paragraf biasa dengan opsi indentasi dan penomoran multilevel.
 
@@ -496,9 +499,54 @@ def add_p(doc, text="", space_before=Pt(0), space_after=Pt(6), line_spacing=1.15
         tabs = parse_xml(f'<w:tabs {nsdecls("w")}><w:tab w:val="left" w:pos="{tab_pos_dxa}"/></w:tabs>')
         pPr.append(tabs)
     if text:
-        r = p.add_run(text)
-        _apply_font(r, bold=bold, italic=italic, color=color, size=size)
+        if parse_markdown and ('*' in text or '<i>' in text or '<b>' in text or '<em>' in text) and not bold and not italic:
+            add_runs_with_markdown(p, text, default_bold=bold, default_italic=italic, color=color, size=size)
+        else:
+            r = p.add_run(text)
+            _apply_font(r, bold=bold, italic=italic, color=color, size=size)
     return p
+
+
+def add_runs_with_markdown(p, text: str, default_bold: bool = False,
+                           default_italic: bool = False, color=BLACK, size=Pt(12)):
+    """
+    Konversi teks yang memuat penanda markdown (*miring*, **tebal**) atau tag HTML (<i>, <b>, <em>)
+    menjadi run OpenXML native dengan font Arial. Mencegah kebocoran tanda bintang (*asterisk leak*).
+    """
+    import re
+    pattern = re.compile(r'(\*\*.*?\*\*|\*.*?\*|<b>.*?</b>|<i>.*?</i>|<em>.*?</em>)')
+    tokens = pattern.split(text)
+    for token in tokens:
+        if not token:
+            continue
+        is_b = default_bold
+        is_i = default_italic
+        content = token
+        if token.startswith('**') and token.endswith('**') and len(token) >= 4:
+            content = token[2:-2]
+            is_b = True
+        elif token.startswith('<b>') and token.endswith('</b>'):
+            content = token[3:-4]
+            is_b = True
+        elif token.startswith('*') and token.endswith('*') and len(token) >= 2:
+            content = token[1:-1]
+            is_i = True
+        elif token.startswith('<i>') and token.endswith('</i>'):
+            content = token[3:-4]
+            is_i = True
+        elif token.startswith('<em>') and token.endswith('</em>'):
+            content = token[4:-5]
+            is_i = True
+        r = p.add_run(content)
+        _apply_font(r, bold=is_b, italic=is_i, color=color, size=size)
+
+
+def add_runs_with_italic(p, text: str, bold: bool = False, color=BLACK, size=Pt(12)):
+    """
+    Helper kompatibilitas: memecah teks dengan penanda miring (<i>...</i> atau *...*)
+    menjadi run italic Word asli berfont Arial 12pt.
+    """
+    add_runs_with_markdown(p, text, default_bold=bold, default_italic=False, color=color, size=size)
 
 
 def add_run(p, text, bold=False, italic=False, color=BLACK, size=Pt(12)):
@@ -934,6 +982,37 @@ def set_table_borders(table, color="B0B0B0", sz="4", val="single"):
         f'</w:tblBorders>'
     )
     tblPr.append(borders)
+
+
+def set_table_flush_alignment(table, left_dxa=720, total_width_dxa=8318):
+    """
+    Penyelarasan tabel dengan teks narasi (table-text flush alignment).
+    Menyetel tepi kiri tabel sejajar dengan indentasi teks di atasnya (mis. 720 dxa = 0.5")
+    dan total lebar tabel proporsional (default 8318 dxa = lebar halaman A4 minus margin minus indent).
+    """
+    tblPr = table._tbl.tblPr
+    jc = tblPr.find(qn('w:jc'))
+    if jc is None:
+        jc = parse_xml(f'<w:jc {nsdecls("w")} w:val="left"/>')
+        tblPr.append(jc)
+    else:
+        jc.set(qn('w:val'), 'left')
+
+    tblInd = tblPr.find(qn('w:tblInd'))
+    if tblInd is None:
+        tblInd = parse_xml(f'<w:tblInd {nsdecls("w")} w:w="{left_dxa}" w:type="dxa"/>')
+        tblPr.append(tblInd)
+    else:
+        tblInd.set(qn('w:w'), str(left_dxa))
+        tblInd.set(qn('w:type'), 'dxa')
+
+    tblW = tblPr.find(qn('w:tblW'))
+    if tblW is None:
+        tblW = parse_xml(f'<w:tblW {nsdecls("w")} w:w="{total_width_dxa}" w:type="dxa"/>')
+        tblPr.append(tblW)
+    else:
+        tblW.set(qn('w:w'), str(total_width_dxa))
+        tblW.set(qn('w:type'), 'dxa')
 
 
 def add_table_bordered(doc, rows, cols, col_widths=None, header_rows=1,
@@ -1496,3 +1575,143 @@ def add_surat_pengantar_metadata(doc, nomor: str = "   ", lampiran: str = "1 (sa
             add_run(p3, date_val, bold=False, size=Pt(11))
 
     return table
+
+
+# =====================================================================
+# TEMPLATE KLONING & PROFIL UNIT KERJA (BUILT-IN TND)
+# =====================================================================
+
+def clone_from_template(template_path: str) -> _Doc:
+    """
+    Metode salin-referensi (copy-reference technique):
+    Buka docx referensi yang sudah memiliki konfigurasi style, numbering.xml,
+    dan margin yang valid, lalu bersihkan seluruh paragraf dan tabelnya
+    sehingga siap diisi ulang tanpa merusak metadata styling Word/Google Docs.
+    """
+    doc = Document(template_path)
+    for table in list(doc.tables):
+        p_elem = table._tbl
+        p_elem.getparent().remove(p_elem)
+    for p in list(doc.paragraphs):
+        p_elem = p._p
+        p_elem.getparent().remove(p_elem)
+    return doc
+
+
+def get_unit_profile(unit_key: str = "pusat_utama") -> dict:
+    """
+    Ambil profil unit kerja dari assets/unit_profiles.json.
+    Mendukung seluruh unit Perwakilan BPKP provinsi, Deputi, maupun Pusat.
+    """
+    import json
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    candidates = [
+        os.path.join(current_dir, "..", "assets", "unit_profiles.json"),
+        os.path.join(current_dir, "assets", "unit_profiles.json"),
+        os.path.join(os.path.dirname(current_dir), "tata-naskah-dinas-bpkp", "assets", "unit_profiles.json"),
+    ]
+    for asset_path in candidates:
+        if os.path.exists(asset_path):
+            try:
+                with open(asset_path, "r", encoding="utf-8") as f:
+                    data = json.load(f)
+                    return data.get(unit_key, data.get("pusat_utama", {}))
+            except Exception:
+                pass
+
+    return {
+        "kode_unit": "K",
+        "nama_kantor": "BADAN PENGAWASAN KEUANGAN DAN PEMBANGUNAN",
+        "nama_kop_baris1": "BADAN PENGAWASAN KEUANGAN DAN PEMBANGUNAN",
+        "nama_kop_baris2": "",
+        "alamat": "Jalan Pramuka Nomor 33",
+        "wilayah_kodepos": "Jakarta Timur, Daerah Khusus Ibukota Jakarta, Kode Pos 13120",
+        "telepon": "(021) 85910031",
+        "faksimile": "(021) 85910209",
+        "email": "humas@bpkp.go.id",
+        "website": "www.bpkp.go.id",
+        "kota": "Jakarta",
+        "jabatan_kepala": "Kepala BPKP",
+        "unit_parent": "BPKP"
+    }
+
+
+# =====================================================================
+# AUDIT DETERMINISTIK (AI-MARKERS, EM DASH, ASTERISK LEAK)
+# =====================================================================
+
+def audit_text_deterministic(text: str) -> dict:
+    """
+    Audit deterministik penanda AI, tanda pisah (em dash), dan kebocoran asterisk (*).
+    Invarian mutlak naskah dinas/laporan pengawasan BPKP:
+    - em_dash_count == 0
+    - asterisk_count == 0
+    - ai_marker_count == 0
+    """
+    import re
+    em_dashes = re.findall(r'[—–]|--', text)
+    asterisks = re.findall(r'\*', text)
+
+    ai_patterns = {
+        'turut_verba': re.compile(r'\bturut\s+(?:mem|men|meng|meny|per|ber|di)\w+', re.IGNORECASE),
+        'nyaris': re.compile(r'\bnyaris\b', re.IGNORECASE),
+        'tercermin_dari': re.compile(r'\btercermin\s+dari\b', re.IGNORECASE),
+        'telah_terpetakan': re.compile(r'\btelah\s+terpetakan\b', re.IGNORECASE),
+        'menyimpan_risiko': re.compile(r'\bmenyimpan\s+risiko\b', re.IGNORECASE),
+        'perlu_diwaspadai': re.compile(r'\bperlu\s+diwaspadai\b', re.IGNORECASE),
+        'perlu_dilakukan': re.compile(r'\bperlu\s+dilakukan\b', re.IGNORECASE),
+    }
+
+    ai_findings = {}
+    for key, pat in ai_patterns.items():
+        matches = pat.findall(text)
+        if matches:
+            ai_findings[key] = matches
+
+    # Deteksi kalimat panjang (> 60 kata) di luar deret angka/tabel data
+    sentences = re.split(r'[.!?]+', text)
+    long_sentences = []
+    for s in sentences:
+        s_clean = s.strip()
+        words = s_clean.split()
+        if len(words) > 60:
+            num_count = sum(1 for w in words if any(c.isdigit() for c in w))
+            if len(words) > 0 and (num_count / len(words)) < 0.3:
+                long_sentences.append(s_clean[:120] + "...")
+
+    passed = (len(em_dashes) == 0 and len(asterisks) == 0 and len(ai_findings) == 0)
+
+    return {
+        'passed': passed,
+        'em_dash_count': len(em_dashes),
+        'em_dash_samples': em_dashes[:5],
+        'asterisk_count': len(asterisks),
+        'ai_marker_count': sum(len(v) for v in ai_findings.values()),
+        'ai_markers': ai_findings,
+        'long_sentences_count': len(long_sentences),
+        'long_sentences': long_sentences,
+    }
+
+
+def audit_docx_deterministic(doc_or_path) -> dict:
+    """
+    Ekstrak seluruh paragraf dan tabel dalam file .docx, lalu jalankan audit deterministik.
+    """
+    if isinstance(doc_or_path, str):
+        doc = Document(doc_or_path)
+    else:
+        doc = doc_or_path
+
+    full_text_parts = []
+    for p in doc.paragraphs:
+        if p.text:
+            full_text_parts.append(p.text)
+    for table in doc.tables:
+        for row in table.rows:
+            for cell in row.cells:
+                for p in cell.paragraphs:
+                    if p.text:
+                        full_text_parts.append(p.text)
+
+    full_text = "\n".join(full_text_parts)
+    return audit_text_deterministic(full_text)
