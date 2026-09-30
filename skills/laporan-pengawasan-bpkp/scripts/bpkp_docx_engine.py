@@ -51,6 +51,7 @@ __all__ = [
     "add_runs_with_markdown", "add_runs_with_italic",
     "set_table_flush_alignment", "clone_from_template",
     "get_unit_profile", "audit_text_deterministic", "audit_docx_deterministic",
+    "add_heading_bertingkat",
     "_attach_numbering", "_ensure_style_font", "_set_style_spacing",
     "_LEVEL_FMT",
 ]
@@ -138,10 +139,12 @@ def _build_abstract_num_xml(abstract_id: int) -> "OxmlElement":
         nf = _numfmt_name(i)
         lt = _numfmt(i)
         _, left, hang, tab = _LEVEL_FMT[i]
+        restart_tag = f'<w:lvlRestart w:val="{i}"/>' if i > 0 else ''
         xml += (
             f'<w:lvl w:ilvl="{i}">'
             f'<w:start w:val="1"/>'
             f'<w:numFmt w:val="{nf}"/>'
+            f'{restart_tag}'
             f'<w:lvlText w:val="{lt}"/>'
             f'<w:lvlJc w:val="left"/>'
             f'<w:pPr><w:tabs><w:tab w:val="left" w:pos="{tab}"/></w:tabs>'
@@ -614,6 +617,26 @@ def add_heading_4(doc, text, num_id=None):
     return p
 
 
+def add_heading_bertingkat(doc, level: int, text: str, num_id: Optional[int] = None):
+    """
+    Tambahkan heading bertingkat resmi BPKP (Level 1 s.d. 4) dengan Word Heading Style:
+    - Level 1: Heading 1 (BAB I / NOTISI HASIL PENGAWASAN / I. RINGKASAN EVALUASI) - Center
+    - Level 2: Heading 2 (A. Simpulan / B. Rekomendasi / A. Perencanaan) - Left (ilvl=0)
+    - Level 3: Heading 3 (1. Topik Pengawasan / 1. Pemenuhan Kuota) - Left (ilvl=1)
+    - Level 4: Heading 4 (a. Sub-Topik / a. Temuan Lapangan) - Left (ilvl=2)
+    """
+    if level == 1:
+        return add_heading_1(doc, text)
+    elif level == 2:
+        return add_heading_2(doc, text, num_id=num_id)
+    elif level == 3:
+        return add_heading_3(doc, text, num_id=num_id)
+    elif level == 4:
+        return add_heading_4(doc, text, num_id=num_id)
+    else:
+        return add_heading_4(doc, text, num_id=num_id)
+
+
 # =====================================================================
 # NUMBERING ATTACHMENT
 # =====================================================================
@@ -685,30 +708,32 @@ def add_simple_numbered(doc, text, num_id, ilvl=1, space_before=Pt(0), space_aft
 # LEGACY COMPATIBLE BUILDERS (dipertahankan untuk kompatibilitas API lama)
 # =====================================================================
 
-def add_subheading(doc, prefix, text, num_id=None, ilvl=2):
+def add_subheading(doc, prefix, text, num_id=None, ilvl=2, as_heading: bool = True):
     """
     Sub-temuan heading: 'a. Judul' (cetak tebal).
+    Secara default menggunakan style 'Heading 4' agar terdaftar di Navigation Panel / Document Outline.
     Jika num_id diberikan, gunakan multilevel numbering level 2.
     Jika tidak, fallback ke prefix manual (legacy).
     """
+    style_name = 'Heading 4' if as_heading else None
     if num_id is not None:
-        p = doc.add_paragraph()
+        p = doc.add_paragraph(style=style_name) if style_name else doc.add_paragraph()
         p.paragraph_format.space_before = Pt(8)
         p.paragraph_format.space_after = Pt(4)
         p.paragraph_format.line_spacing = 1.15
-        p.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
+        p.alignment = WD_ALIGN_PARAGRAPH.LEFT if as_heading else WD_ALIGN_PARAGRAPH.JUSTIFY
         _attach_numbering(p, num_id, ilvl)
         r = p.add_run(text)
         _apply_font(r, bold=True, size=Pt(12))
         return p
     else:
-        p = doc.add_paragraph()
+        p = doc.add_paragraph(style=style_name) if style_name else doc.add_paragraph()
         p.paragraph_format.space_before = Pt(8)
         p.paragraph_format.space_after = Pt(4)
         p.paragraph_format.line_spacing = 1.15
         p.paragraph_format.left_indent = Inches(0.35)
         p.paragraph_format.first_line_indent = Inches(-0.35)
-        p.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
+        p.alignment = WD_ALIGN_PARAGRAPH.LEFT if as_heading else WD_ALIGN_PARAGRAPH.JUSTIFY
         pPr = p._p.get_or_add_pPr()
         tabs = parse_xml(f'<w:tabs {nsdecls("w")}><w:tab w:val="left" w:pos="504"/></w:tabs>')
         pPr.append(tabs)

@@ -172,24 +172,61 @@ Berdasarkan implementasi standar naskah dinas dan laporan pengawasan BPKP pada M
   - Catatan Kaki, Keterangan Sumber Tabel, Alamat Kop: Arial 9 pt Regular / Italic
 - **Spasi & Perataan:** Line spacing **1,15 line pitch** (`w:line="276"`), Space After **6 pt** (`w:after="120"` dxa), Space Before **0 pt** (khusus sub-heading: Space Before **8 pt**). Perataan teks wajib **100% Justified (Rata Kiri-Kanan)**.
 
-### 6.2 Headings: Style Word vs Paragraf Biasa
+### 6.2 Headings Bertingkat: Style Word, Google Docs, & Markdown
 
-Pemisahan tajuk yang memakai *style Heading* bawaan Word versus tajuk berbentuk paragraf biasa Bold penting untuk mencegah pencemaran Daftar Isi dan Navigation Panel.
+Pemisahan dan penerapan *style Heading* bawaan Word / Google Docs (`Heading 1` s.d. `Heading 4`) sangat penting agar Navigation Panel (Pohon Navigasi) dan Daftar Isi (TOC) terbentuk otomatis dan utuh hingga level sub-temuan/sub-pokok naskah.
 
-| Elemen | Memakai Style Heading Word? | Style / Format | Ukuran | Muncul di Navigation Panel / TOC? |
+> [!important] KEHARUSAN PENERAPAN HEADING BERTINGKAT (MARKDOWN & DOKUMEN OFFICE)
+> AI Asisten dan penyusun naskah **WAJIB** menerapkan struktur heading bertingkat secara hierarkis dan konsisten pada setiap draf narasi, baik luaran teks/markdown maupun dokumen DOCX/Google Docs.
+> **DILARANG** menyajikan judul bab/bagian/topik hanya sebagai teks biasa yang ditebalkan (`**tebal**`) tanpa penanda heading!
+
+#### A. Dua Skema Hierarki Heading Resmi BPKP
+
+1. **Skema 1: Laporan Pengawasan Bab Panjang (LHP / LHE / LHR)**
+   - **Level 1 (`#` / `Heading 1` / `HEADING_1`)**: Judul BAB — Arial 12pt Bold, Center.
+     *Contoh:* `# BAB I SIMPULAN DAN REKOMENDASI` atau `# BAB III HASIL EVALUASI`
+   - **Level 2 (`##` / `Heading 2` / `HEADING_2`)**: Bagian BAB (Huruf Kapital) — Arial 12pt Bold, Left.
+     *Contoh:* `## A. Simpulan`, `## B. Rekomendasi`, `## A. Latar Belakang`
+   - **Level 3 (`###` / `Heading 3` / `HEADING_3`)**: Topik Temuan / Topik Evaluasi (Angka Desimal) — Arial 12pt Bold, Left.
+     *Contoh:* `### 1. Tata Kelola Lahan Pertanian Belum Tertata Optimal`
+   - **Level 4 (`####` / `Heading 4` / `HEADING_4`)**: Sub-Temuan / Aspek 5C (Huruf Kecil) — Arial 12pt Bold, Left.
+     *Contoh:* `#### a. Penetapan LP2B Belum Memiliki Regulasi Definitif`
+   - **Level 5 (`#####` / Normal `ilvl=3` / `HEADING_5`)**: Rincian Lokus / Entitas Uji Petik (`1)`) — Arial 12pt Regular, Indent 1,25".
+     *Contoh:* `##### 1) Pemerintah Provinsi Papua Tengah`
+   - **Level 6 (`######` / Normal `ilvl=4` / `HEADING_6`)**: Detail Butir Permasalahan (`a)`) — Arial 12pt Regular, Indent 1,50".
+     *Contoh:* `###### a) Rincian Realisasi Anggaran Bantuan`
+
+2. **Skema 2: Notisi Pembahasan & Naskah Dinas Khusus**
+   - **Level 1 (`#` / `Heading 1` / `HEADING_1`)**: Judul Dokumen / Angka Romawi Utama — Arial 12pt Bold, Center.
+     *Contoh:* `# NOTISI HASIL PENGAWASAN` atau `# I. RINGKASAN HASIL EVALUASI`
+   - **Level 2 (`##` / `Heading 2` / `HEADING_2`)**: Seksi Huruf Kapital atau Satuan Kerja — Arial 12pt Bold, Left.
+     *Contoh:* `## A. Perencanaan dan Prioritisasi Bantuan` atau `## 1. SMP Negeri 1 Mimika`
+   - **Level 3 (`###` / `Heading 3` / `HEADING_3`)**: Sub-Seksi Angka Desimal atau Sub-Topik — Arial 12pt Bold, Left.
+     *Contoh:* `### 1. Pemenuhan Kuota Usulan oleh Pemda` atau `### a. Bantuan Revitalisasi Sarana Fisik`
+   - **Level 4 (`####` / `Heading 4` / `HEADING_4`)**: Sub-Temuan / Uraian Masalah Lapangan — Arial 12pt Bold, Left.
+     *Contoh:* `#### a. Ruang Kelas Rusak Berat Belum Terdata`
+   - **Level 5 (`#####` / Normal `ilvl=3`)**: Rincian Fakta Lapangan (`1)`) — Arial 12pt Regular.
+   - **Level 6 (`######` / Normal `ilvl=4`)**: Butir Rekomendasi/Detail (`a)`) — Arial 12pt Regular.
+
+#### B. Pemetaan Style Word & Google Docs
+
+| Elemen Hierarki | Markdown | Style Word (docx) | Style Google Docs API | Muncul di Outline / Panel Navigasi? |
 |---|---|---|---|---|
-| **Judul BAB** (mis. `BAB I PENDAHULUAN`) | Ya — `Heading 1` | Bold | 12 pt | Ya |
-| **Bagian BAB** (mis. `A. Latar Belakang`, `B. Dasar Hukum`) | Ya — `Heading 2` | Bold | 12 pt | Ya |
-| **Sub-Bagian** (mis. `1. Ruang Lingkup`) | Ya — `Heading 3` | Bold | 12 pt | Ya |
-| **Butir Temuan/Pembahasan** (`a.`, `b.`) | **TIDAK** — paragraf biasa | Bold | 12 pt | **TIDAK** |
+| **Judul BAB / Dokumen** | `#` | `Heading 1` | `HEADING_1` | Ya (Level 1) |
+| **Bagian BAB / Seksi Romawi** | `##` | `Heading 2` | `HEADING_2` | Ya (Level 2) |
+| **Topik Utama / Sub-Seksi** | `###` | `Heading 3` | `HEADING_3` | Ya (Level 3) |
+| **Sub-Temuan / Butir 5C (`a.`)** | `####` | `Heading 4` | `HEADING_4` | Ya (Level 4) |
+| **Rincian Lokus (`1)`)** | `#####` | Normal (`ilvl=3`) / `Heading 5` | `HEADING_5` / `NORMAL_TEXT` | Opsional |
+| **Detail Butir (`a)`)** | `######` | Normal (`ilvl=4`) / `Heading 6` | `HEADING_6` / `NORMAL_TEXT` | Tidak (Body) |
 
-**Aturan Bold pada Heading & Sub-Heading:**
-- **Heading 1/2/3 (style Word):** Bold 12 pt — seluruh teks tajuk termasuk nomor otomatis adalah Bold.
-- **Sub-Heading Butir (`a.`, `b.`):** Bold 12 pt — seluruh teks pada paragraf tersebut (nomor + judul) adalah Bold. Jangan mencampur Bold dan Regular dalam satu baris sub-heading.
+**Aturan Bold & Font pada Heading & Sub-Heading:**
+- **Heading 1/2/3/4 (style Word & Docs):** Bold 12 pt — seluruh teks tajuk termasuk nomor otomatis adalah Bold Arial 12 pt Hitam (`#000000`).
+- **Line break pada Heading 1:** Judul bab dan nama bab disatukan dalam satu paragraf heading dengan line break (`\n`), misalnya: `BAB I\nSIMPULAN DAN REKOMENDASI`, agar di panel navigasi terbaca sebagai satu kesatuan tajuk.
+- **Sub-Heading Butir (`a.`, `b.`):** Gunakan `Heading 4` / `####`. Seluruh teks pada paragraf tersebut (nomor + judul) adalah Bold.
 - **Paragraf narasi/isi:** Regular 12 pt — tidak ada Bold kecuali judul butir pada detail item.
-- **Larangan:** DILARANG mem-BeBold kata atau frasa di tengah paragraf narasi untuk penekanan. Penekanan dalam naskah dinas dilakukan melalui diksi tegas, bukan format.
+- **Larangan:** DILARANG mem-Bold kata atau frasa di tengah paragraf narasi untuk penekanan. Penekanan dalam naskah dinas dilakukan melalui diksi tegas, bukan format.
 
-> **Catatan ukuran font:** Spesifikasi awal menetapkan teks isi 11 pt dan heading 12 pt. Namun dalam implementasi kode aktual proyek LHP Ketapang, seluruh teks (heading, sub-heading, body, narasi) diseragamkan menjadi **12 pt** untuk konsistensi. Hanya tabel (10 pt) dan catatan kaki/sumber (9 pt) yang berbeda.
+> **Catatan ukuran font:** Seluruh teks (heading, sub-heading, body, narasi) diseragamkan menjadi **12 pt** untuk konsistensi. Hanya tabel (10 pt) dan catatan kaki/sumber (9 pt) yang berbeda.
 
 ### 6.3 Sistem Numbering Multilevel Word (`numbering.xml` / `w:numPr`)
 

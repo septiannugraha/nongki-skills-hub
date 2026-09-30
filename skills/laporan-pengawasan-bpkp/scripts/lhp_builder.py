@@ -41,7 +41,8 @@ from docx.oxml.ns import nsdecls
 try:
     from .bpkp_docx_engine import (
         BLACK, RED, FONT_NAME, add_p, add_run, add_heading_1, add_heading_2,
-        add_heading_3, add_section_heading, add_topic_heading,
+        add_heading_3, add_heading_4, add_heading_bertingkat,
+        add_section_heading, add_topic_heading,
         add_numbered_item, add_simple_numbered, add_subheading,
         add_body_sub, add_locus, add_detail_item, add_criteria, add_cause,
         add_effect, add_recommendation, add_recommendation_block,
@@ -51,7 +52,8 @@ try:
 except ImportError:
     from bpkp_docx_engine import (
         BLACK, RED, FONT_NAME, add_p, add_run, add_heading_1, add_heading_2,
-        add_heading_3, add_section_heading, add_topic_heading,
+        add_heading_3, add_heading_4, add_heading_bertingkat,
+        add_section_heading, add_topic_heading,
         add_numbered_item, add_simple_numbered, add_subheading,
         add_body_sub, add_locus, add_detail_item, add_criteria, add_cause,
         add_effect, add_recommendation, add_recommendation_block,
@@ -65,6 +67,7 @@ __all__ = [
     "build_bab_iii_temuan",
     "build_temuan_5c",
     "build_laporan_bentuk_surat",
+    "add_heading_bertingkat",
 ]
 
 
@@ -86,8 +89,7 @@ def build_bab_i_template(doc, simpulan_list: List[Tuple[str, str]],
     """
     nid = new_bab_context(doc, "BAB I")
 
-    add_heading_1(doc, "BAB I")
-    add_heading_1(doc, "SIMPULAN DAN REKOMENDASI")
+    add_heading_1(doc, "BAB I\nSIMPULAN DAN REKOMENDASI")
 
     # A. SIMPULAN
     add_heading_2(doc, "Simpulan", num_id=nid)
@@ -135,8 +137,7 @@ def build_bab_ii_template(doc, latar_belakang: str = "",
     """
     nid = new_bab_context(doc, "BAB II")
 
-    add_heading_1(doc, "BAB II")
-    add_heading_1(doc, "UMUM")
+    add_heading_1(doc, "BAB II\nUMUM")
 
     # A. Latar Belakang
     add_heading_2(doc, "Latar Belakang", num_id=nid)
@@ -188,8 +189,7 @@ def build_bab_iii_temuan(doc, temuan_list: List[dict]):
     """
     nid = new_bab_context(doc, "BAB III")
 
-    add_heading_1(doc, "BAB III")
-    add_heading_1(doc, "HASIL EVALUASI")
+    add_heading_1(doc, "BAB III\nHASIL EVALUASI")
 
     for temuan in temuan_list:
         build_temuan_5c(doc, temuan, num_id=nid)

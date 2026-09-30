@@ -169,10 +169,10 @@ Untuk daftar bertingkat `A. → 1. → a.` yang merender benar di Google Docs, b
 ```xml
 <abstractNum abstractNumId="1">
   <lvl ilvl="0"> <numFmt w:val="upperLetter"/> <lvlText w:val="%1."/> <lvlJc w:val="left"/> <pPr><ind w:left="720"  w:hanging="360"/></pPr> </lvl>
-  <lvl ilvl="1"> <numFmt w:val="decimal"/>    <lvlText w:val="%2."/> <lvlJc w:val="left"/> <pPr><ind w:left="1080" w:hanging="360"/></pPr> </lvl>
-  <lvl ilvl="2"> <numFmt w:val="lowerLetter"/> <lvlText w:val="%3."/> <lvlJc w:val="left"/> <pPr><ind w:left="1440" w:hanging="360"/></pPr> </lvl>
-  <lvl ilvl="3"> <numFmt w:val="decimal"/>    <lvlText w:val="%4)"/> <lvlJc w:val="left"/> <pPr><ind w:left="1800" w:hanging="360"/></pPr> </lvl>
-  <lvl ilvl="4"> <numFmt w:val="lowerLetter"/> <lvlText w:val="%5)"/> <lvlJc w:val="left"/> <pPr><ind w:left="2160" w:hanging="360"/></pPr> </lvl>
+  <lvl ilvl="1"> <numFmt w:val="decimal"/>     <lvlRestart w:val="1"/> <lvlText w:val="%2."/> <lvlJc w:val="left"/> <pPr><ind w:left="1080" w:hanging="360"/></pPr> </lvl>
+  <lvl ilvl="2"> <numFmt w:val="lowerLetter"/> <lvlRestart w:val="2"/> <lvlText w:val="%3."/> <lvlJc w:val="left"/> <pPr><ind w:left="1440" w:hanging="360"/></pPr> </lvl>
+  <lvl ilvl="3"> <numFmt w:val="decimal"/>     <lvlRestart w:val="3"/> <lvlText w:val="%4)"/> <lvlJc w:val="left"/> <pPr><ind w:left="1800" w:hanging="360"/></pPr> </lvl>
+  <lvl ilvl="4"> <numFmt w:val="lowerLetter"/> <lvlRestart w:val="4"/> <lvlText w:val="%5)"/> <lvlJc w:val="left"/> <pPr><ind w:left="2160" w:hanging="360"/></pPr> </lvl>
 </abstractNum>
 <num numId="1"><abstractNumId w:val="1"/></num>
 ```

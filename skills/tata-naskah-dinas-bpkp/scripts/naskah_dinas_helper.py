@@ -39,19 +39,21 @@ try:
         _ensure_style_font, _set_style_spacing,
         # Paragraph & run builders
         add_p, add_run, add_heading_1, add_heading_2, add_heading_3,
-        add_heading_4, add_section_heading, add_topic_heading,
+        add_heading_4, add_heading_bertingkat, add_section_heading, add_topic_heading,
         add_numbered_item, add_simple_numbered,
         add_subheading, add_body_sub, add_locus, add_detail_item,
         add_criteria, add_cause, add_effect,
         add_recommendation, add_recommendation_block,
+        add_runs_with_markdown, add_runs_with_italic,
         # Numbering attachment
         _attach_numbering,
         # Cell & table helpers
         clean_cell_p, set_cell_margins, set_cell_shading,
         set_cell_bottom_border, set_table_borders, add_table_bordered,
-        add_table_with_subheader,
-        # Other builders
+        add_table_with_subheader, set_table_flush_alignment,
+        # Other builders & audits
         add_signature_block, add_cover_page, add_daftar_isi, add_page_break,
+        audit_text_deterministic, audit_docx_deterministic,
         _LEVEL_FMT,
     )
 except ImportError:
@@ -73,19 +75,21 @@ except ImportError:
         _ensure_style_font, _set_style_spacing,
         # Paragraph & run builders
         add_p, add_run, add_heading_1, add_heading_2, add_heading_3,
-        add_heading_4, add_section_heading, add_topic_heading,
+        add_heading_4, add_heading_bertingkat, add_section_heading, add_topic_heading,
         add_numbered_item, add_simple_numbered,
         add_subheading, add_body_sub, add_locus, add_detail_item,
         add_criteria, add_cause, add_effect,
         add_recommendation, add_recommendation_block,
+        add_runs_with_markdown, add_runs_with_italic,
         # Numbering attachment
         _attach_numbering,
         # Cell & table helpers
         clean_cell_p, set_cell_margins, set_cell_shading,
         set_cell_bottom_border, set_table_borders, add_table_bordered,
-        add_table_with_subheader,
-        # Other builders
+        add_table_with_subheader, set_table_flush_alignment,
+        # Other builders & audits
         add_signature_block, add_cover_page, add_daftar_isi, add_page_break,
+        audit_text_deterministic, audit_docx_deterministic,
         _LEVEL_FMT,
     )
 
@@ -100,18 +104,21 @@ __all__ = [
     # Paragraph & run builders (re-export)
     "add_p", "add_run",
     "add_heading_1", "add_heading_2", "add_heading_3", "add_heading_4",
+    "add_heading_bertingkat",
     "add_section_heading", "add_topic_heading",
     "add_numbered_item", "add_simple_numbered",
     "add_subheading", "add_body_sub", "add_locus", "add_detail_item",
     "add_criteria", "add_cause", "add_effect",
     "add_recommendation", "add_recommendation_block",
+    "add_runs_with_markdown", "add_runs_with_italic",
     "_attach_numbering",
     # Cell & table helpers (re-export)
     "clean_cell_p", "set_cell_margins", "set_cell_shading",
     "set_cell_bottom_border", "set_table_borders", "add_table_bordered",
-    "add_table_with_subheader",
-    # Other builders (re-export)
+    "add_table_with_subheader", "set_table_flush_alignment",
+    # Other builders & audits (re-export)
     "add_signature_block", "add_cover_page", "add_daftar_isi", "add_page_break",
+    "audit_text_deterministic", "audit_docx_deterministic",
     # Helper khusus naskah dinas
     "add_kop_surat",
     "add_kop_surat_table",
@@ -706,8 +713,7 @@ def build_notisi_pembahasan(
 
     # --- Kepala Notisi ---
     if judul_utama:
-        add_p(doc, judul_utama, space_before=_Pt(0), space_after=_Pt(6),
-              align=_WAP.CENTER, bold=True)
+        add_heading_1(doc, judul_utama)
 
     add_p(doc, opening_text, space_before=_Pt(0), space_after=_Pt(12),
           align=_WAP.JUSTIFY)
