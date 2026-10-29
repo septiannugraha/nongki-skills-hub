@@ -18,3 +18,9 @@ __pycache__/
 *.lof
 *.lot
 *.epub
+
+# Privacy: exclude spreadsheets containing personnel/operational data
+*.xlsx
+*.xlsm
+*.xls
+!skills/mpp-bpkp/assets/Isian_DATA_MPP_BPKP.xlsx

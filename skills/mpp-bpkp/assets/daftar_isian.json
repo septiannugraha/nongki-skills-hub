@@ -1,0 +1,3355 @@
+{
+  "schema_version": "1.0",
+  "unit": "PW36",
+  "syntax": "{{KEY}}",
+  "replacement_scope": "Nilai per berkas; gunakan nilai umum hanya jika memang sama.",
+  "applicability": {
+    "jenis_penugasan": [
+      "PIA",
+      "PENGAWASAN_BERIKUTNYA"
+    ],
+    "PIA": {
+      "laporan_pia_prasyarat_st": false,
+      "template_09": "Hasil setelah pelaksanaan PIA; tidak disyaratkan untuk penerbitan ST PIA."
+    },
+    "PENGAWASAN_BERIKUTNYA": {
+      "template_09": "Laporan hasil PIA yang dibuat manual menjadi dasar DPP."
+    },
+    "jalur_surat": {
+      "surat_pengantar": "manual DOCX",
+      "konsep_st": [
+        "SIMA-NG",
+        "manual DOCX"
+      ],
+      "km4_km5": {
+        "SIMA-NG": "boleh output SIMA-NG",
+        "manual DOCX": "boleh autoST"
+      }
+    },
+    "all_12_always_required": false
+  },
+  "role_aliases": {
+    "NAMA_KORWAS": "NAMA_1",
+    "NIP_KORWAS": "NIP_1",
+    "NAMA_DALNIS": "NAMA_2",
+    "NIP_DALNIS": "NIP_2",
+    "NAMA_KT": "NAMA_3",
+    "NIP_KT": "NIP_3"
+  },
+  "documents": [
+    {
+      "file": "01_Lembar_Rute_Perencanaan.docx",
+      "values": {
+        "ALAMAT_OBJEK": "",
+        "BIDANG": "",
+        "DASAR_PENUGASAN": "",
+        "NAMA_1": "",
+        "NAMA_10": "",
+        "NAMA_11": "",
+        "NAMA_12": "",
+        "NAMA_2": "",
+        "NAMA_3": "",
+        "NAMA_4": "",
+        "NAMA_5": "",
+        "NAMA_6": "",
+        "NAMA_7": "",
+        "NAMA_8": "",
+        "NAMA_9": "",
+        "NAMA_DALNIS": "",
+        "NAMA_KABAG_UMUM": "",
+        "NAMA_KAPER": "",
+        "NAMA_KEUANGAN": "",
+        "NAMA_KORWAS": "",
+        "NAMA_KT": "",
+        "NAMA_P3A": "",
+        "NAMA_PENERIMA_BIDANG": "",
+        "NAMA_PENUGASAN": "",
+        "NOMOR_KP": "",
+        "NOMOR_ST": "",
+        "PERIODE_OBJEK": "",
+        "RMP_PKPT": "",
+        "RPL_NON_PKPT": "",
+        "RPL_PKPT": "",
+        "SASARAN_PENGAWASAN": "",
+        "TANGGAL_ST": "",
+        "TGL_REVIU_DALNIS": "",
+        "TGL_REVIU_KORWAS": "",
+        "TGL_REVIU_KT": ""
+      },
+      "manual_blank_columns": [
+        "checklist/paraf/realisasi yang belum tersedia",
+        "HP pada KM 6"
+      ]
+    },
+    {
+      "file": "02_Checklist_SIMA_LAK_PIA_dan_Perencanaan.docx",
+      "values": {
+        "BIDANG": "",
+        "NAMA_DALNIS": "",
+        "NAMA_KORWAS": "",
+        "NIP_DALNIS": "",
+        "NIP_KORWAS": ""
+      },
+      "manual_blank_columns": [
+        "checklist/paraf/realisasi yang belum tersedia",
+        "HP pada KM 6"
+      ]
+    },
+    {
+      "file": "03_Checklist_Pemenuhan_MPP.docx",
+      "values": {
+        "BIDANG": "",
+        "BUKTI_ENTRY": "",
+        "BUKTI_EXIT": "",
+        "BUKTI_PERMINTAAN_DATA": "",
+        "G1": "",
+        "G10": "",
+        "G11": "",
+        "G12": "",
+        "G2": "",
+        "G3": "",
+        "G4": "",
+        "G5": "",
+        "G6": "",
+        "G7": "",
+        "G8": "",
+        "G9": "",
+        "NAMA_1": "",
+        "NAMA_10": "",
+        "NAMA_11": "",
+        "NAMA_12": "",
+        "NAMA_2": "",
+        "NAMA_3": "",
+        "NAMA_4": "",
+        "NAMA_5": "",
+        "NAMA_6": "",
+        "NAMA_7": "",
+        "NAMA_8": "",
+        "NAMA_9": "",
+        "NAMA_DALNIS": "",
+        "NAMA_KORWAS": "",
+        "NAMA_PENUGASAN": "",
+        "NIP_1": "",
+        "NIP_10": "",
+        "NIP_11": "",
+        "NIP_12": "",
+        "NIP_2": "",
+        "NIP_3": "",
+        "NIP_4": "",
+        "NIP_5": "",
+        "NIP_6": "",
+        "NIP_7": "",
+        "NIP_8": "",
+        "NIP_9": "",
+        "NIP_DALNIS": "",
+        "NIP_KORWAS": "",
+        "PEDOMAN_PENGAWASAN": "",
+        "PERIODE_UJI": "",
+        "PROSEDUR_LAIN": "",
+        "TGL_ANALISIS": "",
+        "TGL_DOKUMENTASI": "",
+        "TGL_ENTRY": "",
+        "TGL_EXIT": "",
+        "TGL_FINAL_KK": "",
+        "TGL_KIRIM_LAPORAN": "",
+        "TGL_KONSEP_LAPORAN": "",
+        "TGL_PROSEDUR_LAIN": "",
+        "TGL_RAPAT": "",
+        "TGL_TELAAH": "",
+        "TOPIK": ""
+      },
+      "manual_blank_columns": [
+        "checklist/paraf/realisasi yang belum tersedia",
+        "HP pada KM 6"
+      ]
+    },
+    {
+      "file": "04_Rencana_Penugasan.docx",
+      "values": {
+        "DAFTAR_OBJEK_PENGAWASAN": "",
+        "HARI_TERBILANG": "",
+        "IHP_1": "",
+        "IHP_10": "",
+        "IHP_11": "",
+        "IHP_2": "",
+        "IHP_3": "",
+        "IHP_4": "",
+        "IHP_5": "",
+        "IHP_6": "",
+        "IHP_7": "",
+        "IHP_8": "",
+        "IHP_9": "",
+        "JUMLAH_HARI": "",
+        "LATAR_BELAKANG": "",
+        "NAMA_1": "",
+        "NAMA_10": "",
+        "NAMA_11": "",
+        "NAMA_12": "",
+        "NAMA_2": "",
+        "NAMA_3": "",
+        "NAMA_4": "",
+        "NAMA_5": "",
+        "NAMA_6": "",
+        "NAMA_7": "",
+        "NAMA_8": "",
+        "NAMA_9": "",
+        "NAMA_PENUGASAN": "",
+        "RUANG_LINGKUP": "",
+        "SEKTOR": "",
+        "TANGGAL_MULAI": "",
+        "TANGGAL_SELESAI": "",
+        "TEMA": "",
+        "TOPIK": "",
+        "TUJUAN_1": "",
+        "TUJUAN_2": "",
+        "TUJUAN_3": ""
+      },
+      "manual_blank_columns": []
+    },
+    {
+      "file": "05_Surat_Pengantar_Penugasan.docx",
+      "values": {
+        "DASAR_HUKUM_RINGKAS": "",
+        "HAL_SURAT_PENGANTAR": "",
+        "HARI_TERBILANG": "",
+        "JABATAN_KAPER": "",
+        "JABATAN_PENERIMA": "",
+        "JUMLAH_LAMPIRAN_TERBILANG": "",
+        "KOTA_PENERIMA": "",
+        "NAMA_KAPER": "",
+        "NAMA_PENUGASAN": "",
+        "NOMOR_SURAT_PENGANTAR": "",
+        "RUANG_TTD_ATAU_TTE": "",
+        "SUMBER_PEMBIAYAAN": "",
+        "TANGGAL_MULAI": "",
+        "TANGGAL_SELESAI": "",
+        "TANGGAL_SURAT_PENGANTAR": "",
+        "TEMBUSAN_1": "",
+        "TEMBUSAN_2": "",
+        "TEMBUSAN_3": "",
+        "TEMBUSAN_4": "",
+        "TEMBUSAN_5": "",
+        "TEMBUSAN_6": "",
+        "TEMBUSAN_7": "",
+        "TEMBUSAN_8": ""
+      },
+      "manual_blank_columns": []
+    },
+    {
+      "file": "06_Konsep_Surat_Tugas_Manual.docx",
+      "values": {
+        "HARI_TERBILANG": "",
+        "JABATAN_KAPER": "",
+        "JUMLAH_HARI": "",
+        "NAMA_1": "",
+        "NAMA_10": "",
+        "NAMA_11": "",
+        "NAMA_12": "",
+        "NAMA_2": "",
+        "NAMA_3": "",
+        "NAMA_4": "",
+        "NAMA_5": "",
+        "NAMA_6": "",
+        "NAMA_7": "",
+        "NAMA_8": "",
+        "NAMA_9": "",
+        "NAMA_KAPER": "",
+        "NAMA_PENUGASAN": "",
+        "NIP_1": "",
+        "NIP_10": "",
+        "NIP_11": "",
+        "NIP_12": "",
+        "NIP_2": "",
+        "NIP_3": "",
+        "NIP_4": "",
+        "NIP_5": "",
+        "NIP_6": "",
+        "NIP_7": "",
+        "NIP_8": "",
+        "NIP_9": "",
+        "NOMOR_ST": "",
+        "RUANG_TTD_ATAU_TTE": "",
+        "SUMBER_PEMBIAYAAN": "",
+        "TANGGAL_MULAI": "",
+        "TANGGAL_SELESAI": "",
+        "TANGGAL_ST": ""
+      },
+      "manual_blank_columns": []
+    },
+    {
+      "file": "07_KM_4_Alokasi_Waktu_Pengawasan.docx",
+      "values": {
+        "AT1": "",
+        "AT2": "",
+        "AT3": "",
+        "ATT": "",
+        "BIDANG": "",
+        "JML1": "",
+        "JML2": "",
+        "JML3": "",
+        "JMT": "",
+        "KT1": "",
+        "KT2": "",
+        "KT3": "",
+        "KTT": "",
+        "LAKS_MULAI": "",
+        "LAKS_SELESAI": "",
+        "NAMA_KORWAS": "",
+        "NAMA_KT": "",
+        "NAMA_PENUGASAN": "",
+        "NIP_KORWAS": "",
+        "NIP_KT": "",
+        "NOMOR_KP": "",
+        "PEKERJAAN_1": "",
+        "PEKERJAAN_2": "",
+        "PEKERJAAN_3": "",
+        "PERS_MULAI": "",
+        "PERS_SELESAI": "",
+        "PM1": "",
+        "PM2": "",
+        "PM3": "",
+        "PMT": "",
+        "PT1": "",
+        "PT2": "",
+        "PT3": "",
+        "PTT": "",
+        "SASARAN_PENGAWASAN": "",
+        "SELESAI_AKHIR": "",
+        "SELESAI_MULAI": "",
+        "TANGGAL_PENGESAHAN": ""
+      },
+      "manual_blank_columns": []
+    },
+    {
+      "file": "08_KM_5_Kartu_Penugasan.docx",
+      "values": {
+        "ALAMAT_OBJEK": "",
+        "BIDANG": "",
+        "JABATAN_KAPER": "",
+        "JAM_1": "",
+        "JAM_10": "",
+        "JAM_11": "",
+        "JAM_12": "",
+        "JAM_2": "",
+        "JAM_3": "",
+        "JAM_4": "",
+        "JAM_5": "",
+        "JAM_6": "",
+        "JAM_7": "",
+        "JAM_8": "",
+        "JAM_9": "",
+        "NAMA_1": "",
+        "NAMA_10": "",
+        "NAMA_11": "",
+        "NAMA_12": "",
+        "NAMA_2": "",
+        "NAMA_3": "",
+        "NAMA_4": "",
+        "NAMA_5": "",
+        "NAMA_6": "",
+        "NAMA_7": "",
+        "NAMA_8": "",
+        "NAMA_9": "",
+        "NAMA_KAPER": "",
+        "NAMA_KORWAS": "",
+        "NAMA_KT": "",
+        "NAMA_PENUGASAN": "",
+        "NIP_KORWAS": "",
+        "NIP_KT": "",
+        "NOMOR_KP": "",
+        "NOMOR_RENCANA": "",
+        "NOMOR_ST": "",
+        "PENERIMA_LAPORAN": "",
+        "PM_SUP_1": "",
+        "PM_SUP_2": "",
+        "PM_SUP_3": "",
+        "PT_SUP_1": "",
+        "PT_SUP_2": "",
+        "PT_SUP_3": "",
+        "REAL_1": "",
+        "REAL_10": "",
+        "REAL_11": "",
+        "REAL_12": "",
+        "REAL_2": "",
+        "REAL_3": "",
+        "REAL_4": "",
+        "REAL_5": "",
+        "REAL_6": "",
+        "REAL_7": "",
+        "REAL_8": "",
+        "REAL_9": "",
+        "RMP": "",
+        "RPL": "",
+        "TANGGAL_MULAI": "",
+        "TANGGAL_PENGESAHAN": "",
+        "TANGGAL_SELESAI": "",
+        "TANGGAL_ST": "",
+        "TGL_KONSEP_LAPORAN": "",
+        "TINGKAT_RISIKO": "",
+        "TUJUAN_PENGAWASAN": ""
+      },
+      "manual_blank_columns": []
+    },
+    {
+      "file": "09_Nota_Dinas_dan_Laporan_Hasil_PIA.docx",
+      "values": {
+        "BATAS_TANGGUNG_JAWAB_PIA": "",
+        "BIDANG": "",
+        "BUKTI_PIA_1": "",
+        "BUKTI_PIA_2": "",
+        "BUKTI_PIA_3": "",
+        "DASAR_PIA_1": "",
+        "DASAR_PIA_2": "",
+        "GAMBARAN_UMUM_PIA": "",
+        "HARI_PIA_TERBILANG": "",
+        "HASIL_KONFIRMASI_PIA": "",
+        "HASIL_TELAAH_PIA": "",
+        "INDIKATOR_PIA_1": "",
+        "INDIKATOR_PIA_2": "",
+        "INDIKATOR_PIA_3": "",
+        "INDIKATOR_PIA_4": "",
+        "ISU_PIA_1": "",
+        "ISU_PIA_2": "",
+        "ISU_PIA_3": "",
+        "JABATAN_PENANDATANGAN_ND": "",
+        "JABATAN_PENERIMA_ND": "",
+        "KECUKUPAN_INFORMASI_PIA": "",
+        "KENDALA_DAN_PENANGANAN_PIA": "",
+        "LINGKUP_PIA": "",
+        "METODE_PIA_1": "",
+        "METODE_PIA_2": "",
+        "METODE_PIA_3": "",
+        "NAMA_KORWAS_PIA": "",
+        "NAMA_KT_PIA": "",
+        "NAMA_PENANDATANGAN_ND": "",
+        "NILAI_PIA_1": "",
+        "NILAI_PIA_2": "",
+        "NILAI_PIA_3": "",
+        "NILAI_PIA_4": "",
+        "NIP_KORWAS_PIA": "",
+        "NIP_KT_PIA": "",
+        "NOMOR_ND_PIA": "",
+        "NOMOR_ST_PIA": "",
+        "RUANG_TTD_ATAU_TTE": "",
+        "SIMPULAN_KELAYAKAN_PENGAWASAN": "",
+        "SIMPULAN_RINGKAS_PIA": "",
+        "SUMBER_PIA_1": "",
+        "SUMBER_PIA_2": "",
+        "SUMBER_PIA_3": "",
+        "SUMBER_PIA_4": "",
+        "SUMBER_TABEL_PIA": "",
+        "TANGGAL_MULAI_PIA": "",
+        "TANGGAL_ND_PIA": "",
+        "TANGGAL_PENGESAHAN": "",
+        "TANGGAL_SELESAI_PIA": "",
+        "TANGGAL_ST_PIA": "",
+        "TOPIK_PIA": "",
+        "TUJUAN_PIA": "",
+        "USULAN_KEPUTUSAN_PENGAWASAN": "",
+        "USUL_PIA_1": "",
+        "USUL_PIA_2": "",
+        "USUL_PIA_3": ""
+      },
+      "manual_blank_columns": []
+    },
+    {
+      "file": "10_Desain_Penugasan_Pengawasan.docx",
+      "values": {
+        "BATAS_TANGGUNG_JAWAB_PENUGASAN": "",
+        "BIDANG": "",
+        "FOKUS_PENGAWASAN": "",
+        "HARI_TERBILANG": "",
+        "IHP_1": "",
+        "IHP_2": "",
+        "IHP_3": "",
+        "IHP_4": "",
+        "IHP_5": "",
+        "IHP_6": "",
+        "IHP_7": "",
+        "JENIS_DAN_TINGKAT_KEYAKINAN": "",
+        "JUMLAH_AT": "",
+        "JUMLAH_HARI": "",
+        "JUMLAH_KT": "",
+        "JUMLAH_PM": "",
+        "JUMLAH_PT": "",
+        "LOKUS_DAN_DASAR_PEMILIHAN": "",
+        "METODOLOGI_TAMBAHAN": "",
+        "NAMA_KORWAS": "",
+        "NAMA_KT": "",
+        "NAMA_PENUGASAN": "",
+        "NIP_KORWAS": "",
+        "NIP_KT": "",
+        "PENGANTAR_RISIKO_KLIEN": "",
+        "PENGANTAR_RISIKO_PENUGASAN": "",
+        "PERIODE_OBJEK": "",
+        "PERTIMBANGAN_SUMBER_DAYA": "",
+        "PR1_AKTIVITAS": "",
+        "PR1_INPUT": "",
+        "PR1_OUTPUT": "",
+        "PR1_TUJUAN": "",
+        "PR2_AKTIVITAS": "",
+        "PR2_INPUT": "",
+        "PR2_OUTPUT": "",
+        "PR2_TUJUAN": "",
+        "PR3_AKTIVITAS": "",
+        "PR3_INPUT": "",
+        "PR3_OUTPUT": "",
+        "PR3_TUJUAN": "",
+        "PR4_AKTIVITAS": "",
+        "PR4_INPUT": "",
+        "PR4_OUTPUT": "",
+        "PR4_TUJUAN": "",
+        "PR5_AKTIVITAS": "",
+        "PR5_INPUT": "",
+        "PR5_OUTPUT": "",
+        "PR5_TUJUAN": "",
+        "PR6_AKTIVITAS": "",
+        "PR6_INPUT": "",
+        "PR6_OUTPUT": "",
+        "PR6_TUJUAN": "",
+        "RK1_DAMPAK": "",
+        "RK1_NAMA": "",
+        "RK1_URAIAN": "",
+        "RK2_DAMPAK": "",
+        "RK2_NAMA": "",
+        "RK2_URAIAN": "",
+        "RK3_DAMPAK": "",
+        "RK3_NAMA": "",
+        "RK3_URAIAN": "",
+        "RK4_DAMPAK": "",
+        "RK4_NAMA": "",
+        "RK4_URAIAN": "",
+        "RK5_DAMPAK": "",
+        "RK5_NAMA": "",
+        "RK5_URAIAN": "",
+        "RP1_DAMPAK": "",
+        "RP1_NAMA": "",
+        "RP1_PENGENDALIAN": "",
+        "RP2_DAMPAK": "",
+        "RP2_NAMA": "",
+        "RP2_PENGENDALIAN": "",
+        "RP3_DAMPAK": "",
+        "RP3_NAMA": "",
+        "RP3_PENGENDALIAN": "",
+        "RP4_DAMPAK": "",
+        "RP4_NAMA": "",
+        "RP4_PENGENDALIAN": "",
+        "STRATEGI_PENGAWASAN": "",
+        "TANGGAL_MULAI": "",
+        "TANGGAL_PENGESAHAN": "",
+        "TANGGAL_SELESAI": "",
+        "TUJUAN_PENGAWASAN": ""
+      },
+      "manual_blank_columns": []
+    },
+    {
+      "file": "11_KM_6_Program_Kerja_Pengawasan.docx",
+      "values": {
+        "BIDANG": "",
+        "J1": "",
+        "J2": "",
+        "J3": "",
+        "J4": "",
+        "J5": "",
+        "J6": "",
+        "JK": "",
+        "JL": "",
+        "JP": "",
+        "JS": "",
+        "JT": "",
+        "KK1": "",
+        "KK2": "",
+        "KK3": "",
+        "KK4": "",
+        "KK5": "",
+        "KK6": "",
+        "KODE_UJI_1": "",
+        "KODE_UJI_2": "",
+        "KODE_UJI_3": "",
+        "KODE_UJI_4": "",
+        "KODE_UJI_5": "",
+        "KODE_UJI_6": "",
+        "KS": "",
+        "LANGKAH_1_1": "",
+        "LANGKAH_1_2": "",
+        "LANGKAH_1_3": "",
+        "LANGKAH_2_1": "",
+        "LANGKAH_2_2": "",
+        "LANGKAH_2_3": "",
+        "LANGKAH_3_1": "",
+        "LANGKAH_3_2": "",
+        "LANGKAH_3_3": "",
+        "LANGKAH_4_1": "",
+        "LANGKAH_4_2": "",
+        "LANGKAH_4_3": "",
+        "LANGKAH_5_1": "",
+        "LANGKAH_5_2": "",
+        "LANGKAH_5_3": "",
+        "LANGKAH_6_1": "",
+        "LANGKAH_6_2": "",
+        "LANGKAH_6_3": "",
+        "LANGKAH_FINAL_KK": "",
+        "LANGKAH_LAPORAN": "",
+        "LANGKAH_PERSIAPAN": "",
+        "LANGKAH_SIMPULAN": "",
+        "NAMA_KORWAS": "",
+        "NAMA_KT": "",
+        "NAMA_PENUGASAN": "",
+        "NIP_KORWAS": "",
+        "NIP_KT": "",
+        "PELAKSANA_1": "",
+        "PELAKSANA_2": "",
+        "PELAKSANA_3": "",
+        "PELAKSANA_4": "",
+        "PELAKSANA_5": "",
+        "PELAKSANA_6": "",
+        "URAIAN_UJI_1": "",
+        "URAIAN_UJI_2": "",
+        "URAIAN_UJI_3": "",
+        "URAIAN_UJI_4": "",
+        "URAIAN_UJI_5": "",
+        "URAIAN_UJI_6": ""
+      },
+      "manual_blank_columns": [
+        "checklist/paraf/realisasi yang belum tersedia",
+        "HP pada KM 6"
+      ]
+    },
+    {
+      "file": "12_Pakta_Integritas.docx",
+      "values": {
+        "JABATAN_KAPER": "",
+        "NAMA_1": "",
+        "NAMA_10": "",
+        "NAMA_11": "",
+        "NAMA_12": "",
+        "NAMA_2": "",
+        "NAMA_3": "",
+        "NAMA_4": "",
+        "NAMA_5": "",
+        "NAMA_6": "",
+        "NAMA_7": "",
+        "NAMA_8": "",
+        "NAMA_9": "",
+        "NAMA_KAPER": "",
+        "NAMA_PENUGASAN": "",
+        "NIP_1": "",
+        "NIP_10": "",
+        "NIP_11": "",
+        "NIP_12": "",
+        "NIP_2": "",
+        "NIP_3": "",
+        "NIP_4": "",
+        "NIP_5": "",
+        "NIP_6": "",
+        "NIP_7": "",
+        "NIP_8": "",
+        "NIP_9": "",
+        "TANGGAL_PAKTA": ""
+      },
+      "manual_blank_columns": []
+    }
+  ],
+  "field_index": [
+    {
+      "key": "ALAMAT_OBJEK",
+      "description": "Alamat objek",
+      "used_in": [
+        "01_Lembar_Rute_Perencanaan.docx",
+        "08_KM_5_Kartu_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "AT1",
+      "description": "At1",
+      "used_in": [
+        "07_KM_4_Alokasi_Waktu_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "AT2",
+      "description": "At2",
+      "used_in": [
+        "07_KM_4_Alokasi_Waktu_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "AT3",
+      "description": "At3",
+      "used_in": [
+        "07_KM_4_Alokasi_Waktu_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "ATT",
+      "description": "Att",
+      "used_in": [
+        "07_KM_4_Alokasi_Waktu_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "BATAS_TANGGUNG_JAWAB_PENUGASAN",
+      "description": "Batas tanggung jawab penugasan",
+      "used_in": [
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "BATAS_TANGGUNG_JAWAB_PIA",
+      "description": "Batas tanggung jawab pia",
+      "used_in": [
+        "09_Nota_Dinas_dan_Laporan_Hasil_PIA.docx"
+      ]
+    },
+    {
+      "key": "BIDANG",
+      "description": "Bidang",
+      "used_in": [
+        "01_Lembar_Rute_Perencanaan.docx",
+        "02_Checklist_SIMA_LAK_PIA_dan_Perencanaan.docx",
+        "03_Checklist_Pemenuhan_MPP.docx",
+        "07_KM_4_Alokasi_Waktu_Pengawasan.docx",
+        "08_KM_5_Kartu_Penugasan.docx",
+        "09_Nota_Dinas_dan_Laporan_Hasil_PIA.docx",
+        "10_Desain_Penugasan_Pengawasan.docx",
+        "11_KM_6_Program_Kerja_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "BUKTI_ENTRY",
+      "description": "Bukti entry",
+      "used_in": [
+        "03_Checklist_Pemenuhan_MPP.docx"
+      ]
+    },
+    {
+      "key": "BUKTI_EXIT",
+      "description": "Bukti exit",
+      "used_in": [
+        "03_Checklist_Pemenuhan_MPP.docx"
+      ]
+    },
+    {
+      "key": "BUKTI_PERMINTAAN_DATA",
+      "description": "Bukti permintaan data",
+      "used_in": [
+        "03_Checklist_Pemenuhan_MPP.docx"
+      ]
+    },
+    {
+      "key": "BUKTI_PIA_1",
+      "description": "Bukti pia 1",
+      "used_in": [
+        "09_Nota_Dinas_dan_Laporan_Hasil_PIA.docx"
+      ]
+    },
+    {
+      "key": "BUKTI_PIA_2",
+      "description": "Bukti pia 2",
+      "used_in": [
+        "09_Nota_Dinas_dan_Laporan_Hasil_PIA.docx"
+      ]
+    },
+    {
+      "key": "BUKTI_PIA_3",
+      "description": "Bukti pia 3",
+      "used_in": [
+        "09_Nota_Dinas_dan_Laporan_Hasil_PIA.docx"
+      ]
+    },
+    {
+      "key": "DAFTAR_OBJEK_PENGAWASAN",
+      "description": "Daftar objek pengawasan",
+      "used_in": [
+        "04_Rencana_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "DASAR_HUKUM_RINGKAS",
+      "description": "Dasar hukum ringkas",
+      "used_in": [
+        "05_Surat_Pengantar_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "DASAR_PENUGASAN",
+      "description": "Dasar penugasan",
+      "used_in": [
+        "01_Lembar_Rute_Perencanaan.docx"
+      ]
+    },
+    {
+      "key": "DASAR_PIA_1",
+      "description": "Dasar pia 1",
+      "used_in": [
+        "09_Nota_Dinas_dan_Laporan_Hasil_PIA.docx"
+      ]
+    },
+    {
+      "key": "DASAR_PIA_2",
+      "description": "Dasar pia 2",
+      "used_in": [
+        "09_Nota_Dinas_dan_Laporan_Hasil_PIA.docx"
+      ]
+    },
+    {
+      "key": "FOKUS_PENGAWASAN",
+      "description": "Fokus pengawasan",
+      "used_in": [
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "G1",
+      "description": "Golongan personel nomor 1",
+      "used_in": [
+        "03_Checklist_Pemenuhan_MPP.docx"
+      ]
+    },
+    {
+      "key": "G10",
+      "description": "Golongan personel nomor 10",
+      "used_in": [
+        "03_Checklist_Pemenuhan_MPP.docx"
+      ]
+    },
+    {
+      "key": "G11",
+      "description": "Golongan personel nomor 11",
+      "used_in": [
+        "03_Checklist_Pemenuhan_MPP.docx"
+      ]
+    },
+    {
+      "key": "G12",
+      "description": "Golongan personel nomor 12",
+      "used_in": [
+        "03_Checklist_Pemenuhan_MPP.docx"
+      ]
+    },
+    {
+      "key": "G2",
+      "description": "Golongan personel nomor 2",
+      "used_in": [
+        "03_Checklist_Pemenuhan_MPP.docx"
+      ]
+    },
+    {
+      "key": "G3",
+      "description": "Golongan personel nomor 3",
+      "used_in": [
+        "03_Checklist_Pemenuhan_MPP.docx"
+      ]
+    },
+    {
+      "key": "G4",
+      "description": "Golongan personel nomor 4",
+      "used_in": [
+        "03_Checklist_Pemenuhan_MPP.docx"
+      ]
+    },
+    {
+      "key": "G5",
+      "description": "Golongan personel nomor 5",
+      "used_in": [
+        "03_Checklist_Pemenuhan_MPP.docx"
+      ]
+    },
+    {
+      "key": "G6",
+      "description": "Golongan personel nomor 6",
+      "used_in": [
+        "03_Checklist_Pemenuhan_MPP.docx"
+      ]
+    },
+    {
+      "key": "G7",
+      "description": "Golongan personel nomor 7",
+      "used_in": [
+        "03_Checklist_Pemenuhan_MPP.docx"
+      ]
+    },
+    {
+      "key": "G8",
+      "description": "Golongan personel nomor 8",
+      "used_in": [
+        "03_Checklist_Pemenuhan_MPP.docx"
+      ]
+    },
+    {
+      "key": "G9",
+      "description": "Golongan personel nomor 9",
+      "used_in": [
+        "03_Checklist_Pemenuhan_MPP.docx"
+      ]
+    },
+    {
+      "key": "GAMBARAN_UMUM_PIA",
+      "description": "Gambaran umum pia",
+      "used_in": [
+        "09_Nota_Dinas_dan_Laporan_Hasil_PIA.docx"
+      ]
+    },
+    {
+      "key": "HAL_SURAT_PENGANTAR",
+      "description": "Hal surat pengantar",
+      "used_in": [
+        "05_Surat_Pengantar_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "HARI_PIA_TERBILANG",
+      "description": "Hari pia terbilang",
+      "used_in": [
+        "09_Nota_Dinas_dan_Laporan_Hasil_PIA.docx"
+      ]
+    },
+    {
+      "key": "HARI_TERBILANG",
+      "description": "Hari terbilang",
+      "used_in": [
+        "04_Rencana_Penugasan.docx",
+        "05_Surat_Pengantar_Penugasan.docx",
+        "06_Konsep_Surat_Tugas_Manual.docx",
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "HASIL_KONFIRMASI_PIA",
+      "description": "Hasil konfirmasi pia",
+      "used_in": [
+        "09_Nota_Dinas_dan_Laporan_Hasil_PIA.docx"
+      ]
+    },
+    {
+      "key": "HASIL_TELAAH_PIA",
+      "description": "Hasil telaah pia",
+      "used_in": [
+        "09_Nota_Dinas_dan_Laporan_Hasil_PIA.docx"
+      ]
+    },
+    {
+      "key": "IHP_1",
+      "description": "Ihp 1",
+      "used_in": [
+        "04_Rencana_Penugasan.docx",
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "IHP_10",
+      "description": "Ihp 10",
+      "used_in": [
+        "04_Rencana_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "IHP_11",
+      "description": "Ihp 11",
+      "used_in": [
+        "04_Rencana_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "IHP_2",
+      "description": "Ihp 2",
+      "used_in": [
+        "04_Rencana_Penugasan.docx",
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "IHP_3",
+      "description": "Ihp 3",
+      "used_in": [
+        "04_Rencana_Penugasan.docx",
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "IHP_4",
+      "description": "Ihp 4",
+      "used_in": [
+        "04_Rencana_Penugasan.docx",
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "IHP_5",
+      "description": "Ihp 5",
+      "used_in": [
+        "04_Rencana_Penugasan.docx",
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "IHP_6",
+      "description": "Ihp 6",
+      "used_in": [
+        "04_Rencana_Penugasan.docx",
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "IHP_7",
+      "description": "Ihp 7",
+      "used_in": [
+        "04_Rencana_Penugasan.docx",
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "IHP_8",
+      "description": "Ihp 8",
+      "used_in": [
+        "04_Rencana_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "IHP_9",
+      "description": "Ihp 9",
+      "used_in": [
+        "04_Rencana_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "INDIKATOR_PIA_1",
+      "description": "Indikator pia 1",
+      "used_in": [
+        "09_Nota_Dinas_dan_Laporan_Hasil_PIA.docx"
+      ]
+    },
+    {
+      "key": "INDIKATOR_PIA_2",
+      "description": "Indikator pia 2",
+      "used_in": [
+        "09_Nota_Dinas_dan_Laporan_Hasil_PIA.docx"
+      ]
+    },
+    {
+      "key": "INDIKATOR_PIA_3",
+      "description": "Indikator pia 3",
+      "used_in": [
+        "09_Nota_Dinas_dan_Laporan_Hasil_PIA.docx"
+      ]
+    },
+    {
+      "key": "INDIKATOR_PIA_4",
+      "description": "Indikator pia 4",
+      "used_in": [
+        "09_Nota_Dinas_dan_Laporan_Hasil_PIA.docx"
+      ]
+    },
+    {
+      "key": "ISU_PIA_1",
+      "description": "Isu pia 1",
+      "used_in": [
+        "09_Nota_Dinas_dan_Laporan_Hasil_PIA.docx"
+      ]
+    },
+    {
+      "key": "ISU_PIA_2",
+      "description": "Isu pia 2",
+      "used_in": [
+        "09_Nota_Dinas_dan_Laporan_Hasil_PIA.docx"
+      ]
+    },
+    {
+      "key": "ISU_PIA_3",
+      "description": "Isu pia 3",
+      "used_in": [
+        "09_Nota_Dinas_dan_Laporan_Hasil_PIA.docx"
+      ]
+    },
+    {
+      "key": "J1",
+      "description": "J1",
+      "used_in": [
+        "11_KM_6_Program_Kerja_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "J2",
+      "description": "J2",
+      "used_in": [
+        "11_KM_6_Program_Kerja_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "J3",
+      "description": "J3",
+      "used_in": [
+        "11_KM_6_Program_Kerja_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "J4",
+      "description": "J4",
+      "used_in": [
+        "11_KM_6_Program_Kerja_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "J5",
+      "description": "J5",
+      "used_in": [
+        "11_KM_6_Program_Kerja_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "J6",
+      "description": "J6",
+      "used_in": [
+        "11_KM_6_Program_Kerja_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "JABATAN_KAPER",
+      "description": "Jabatan kaper",
+      "used_in": [
+        "05_Surat_Pengantar_Penugasan.docx",
+        "06_Konsep_Surat_Tugas_Manual.docx",
+        "08_KM_5_Kartu_Penugasan.docx",
+        "12_Pakta_Integritas.docx"
+      ]
+    },
+    {
+      "key": "JABATAN_PENANDATANGAN_ND",
+      "description": "Jabatan penandatangan nd",
+      "used_in": [
+        "09_Nota_Dinas_dan_Laporan_Hasil_PIA.docx"
+      ]
+    },
+    {
+      "key": "JABATAN_PENERIMA",
+      "description": "Jabatan penerima",
+      "used_in": [
+        "05_Surat_Pengantar_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "JABATAN_PENERIMA_ND",
+      "description": "Jabatan penerima nd",
+      "used_in": [
+        "09_Nota_Dinas_dan_Laporan_Hasil_PIA.docx"
+      ]
+    },
+    {
+      "key": "JAM_1",
+      "description": "Jam 1",
+      "used_in": [
+        "08_KM_5_Kartu_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "JAM_10",
+      "description": "Jam 10",
+      "used_in": [
+        "08_KM_5_Kartu_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "JAM_11",
+      "description": "Jam 11",
+      "used_in": [
+        "08_KM_5_Kartu_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "JAM_12",
+      "description": "Jam 12",
+      "used_in": [
+        "08_KM_5_Kartu_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "JAM_2",
+      "description": "Jam 2",
+      "used_in": [
+        "08_KM_5_Kartu_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "JAM_3",
+      "description": "Jam 3",
+      "used_in": [
+        "08_KM_5_Kartu_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "JAM_4",
+      "description": "Jam 4",
+      "used_in": [
+        "08_KM_5_Kartu_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "JAM_5",
+      "description": "Jam 5",
+      "used_in": [
+        "08_KM_5_Kartu_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "JAM_6",
+      "description": "Jam 6",
+      "used_in": [
+        "08_KM_5_Kartu_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "JAM_7",
+      "description": "Jam 7",
+      "used_in": [
+        "08_KM_5_Kartu_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "JAM_8",
+      "description": "Jam 8",
+      "used_in": [
+        "08_KM_5_Kartu_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "JAM_9",
+      "description": "Jam 9",
+      "used_in": [
+        "08_KM_5_Kartu_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "JENIS_DAN_TINGKAT_KEYAKINAN",
+      "description": "Jenis dan tingkat keyakinan",
+      "used_in": [
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "JK",
+      "description": "Jk",
+      "used_in": [
+        "11_KM_6_Program_Kerja_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "JL",
+      "description": "Jl",
+      "used_in": [
+        "11_KM_6_Program_Kerja_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "JML1",
+      "description": "Jml1",
+      "used_in": [
+        "07_KM_4_Alokasi_Waktu_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "JML2",
+      "description": "Jml2",
+      "used_in": [
+        "07_KM_4_Alokasi_Waktu_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "JML3",
+      "description": "Jml3",
+      "used_in": [
+        "07_KM_4_Alokasi_Waktu_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "JMT",
+      "description": "Jmt",
+      "used_in": [
+        "07_KM_4_Alokasi_Waktu_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "JP",
+      "description": "Jp",
+      "used_in": [
+        "11_KM_6_Program_Kerja_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "JS",
+      "description": "Js",
+      "used_in": [
+        "11_KM_6_Program_Kerja_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "JT",
+      "description": "Jt",
+      "used_in": [
+        "11_KM_6_Program_Kerja_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "JUMLAH_AT",
+      "description": "Jumlah at",
+      "used_in": [
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "JUMLAH_HARI",
+      "description": "Jumlah hari",
+      "used_in": [
+        "04_Rencana_Penugasan.docx",
+        "06_Konsep_Surat_Tugas_Manual.docx",
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "JUMLAH_KT",
+      "description": "Jumlah kt",
+      "used_in": [
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "JUMLAH_LAMPIRAN_TERBILANG",
+      "description": "Jumlah lampiran terbilang",
+      "used_in": [
+        "05_Surat_Pengantar_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "JUMLAH_PM",
+      "description": "Jumlah pm",
+      "used_in": [
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "JUMLAH_PT",
+      "description": "Jumlah pt",
+      "used_in": [
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "KECUKUPAN_INFORMASI_PIA",
+      "description": "Kecukupan informasi pia",
+      "used_in": [
+        "09_Nota_Dinas_dan_Laporan_Hasil_PIA.docx"
+      ]
+    },
+    {
+      "key": "KENDALA_DAN_PENANGANAN_PIA",
+      "description": "Kendala dan penanganan pia",
+      "used_in": [
+        "09_Nota_Dinas_dan_Laporan_Hasil_PIA.docx"
+      ]
+    },
+    {
+      "key": "KK1",
+      "description": "Kk1",
+      "used_in": [
+        "11_KM_6_Program_Kerja_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "KK2",
+      "description": "Kk2",
+      "used_in": [
+        "11_KM_6_Program_Kerja_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "KK3",
+      "description": "Kk3",
+      "used_in": [
+        "11_KM_6_Program_Kerja_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "KK4",
+      "description": "Kk4",
+      "used_in": [
+        "11_KM_6_Program_Kerja_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "KK5",
+      "description": "Kk5",
+      "used_in": [
+        "11_KM_6_Program_Kerja_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "KK6",
+      "description": "Kk6",
+      "used_in": [
+        "11_KM_6_Program_Kerja_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "KODE_UJI_1",
+      "description": "Kode uji 1",
+      "used_in": [
+        "11_KM_6_Program_Kerja_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "KODE_UJI_2",
+      "description": "Kode uji 2",
+      "used_in": [
+        "11_KM_6_Program_Kerja_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "KODE_UJI_3",
+      "description": "Kode uji 3",
+      "used_in": [
+        "11_KM_6_Program_Kerja_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "KODE_UJI_4",
+      "description": "Kode uji 4",
+      "used_in": [
+        "11_KM_6_Program_Kerja_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "KODE_UJI_5",
+      "description": "Kode uji 5",
+      "used_in": [
+        "11_KM_6_Program_Kerja_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "KODE_UJI_6",
+      "description": "Kode uji 6",
+      "used_in": [
+        "11_KM_6_Program_Kerja_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "KOTA_PENERIMA",
+      "description": "Kota penerima",
+      "used_in": [
+        "05_Surat_Pengantar_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "KS",
+      "description": "Ks",
+      "used_in": [
+        "11_KM_6_Program_Kerja_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "KT1",
+      "description": "Kt1",
+      "used_in": [
+        "07_KM_4_Alokasi_Waktu_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "KT2",
+      "description": "Kt2",
+      "used_in": [
+        "07_KM_4_Alokasi_Waktu_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "KT3",
+      "description": "Kt3",
+      "used_in": [
+        "07_KM_4_Alokasi_Waktu_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "KTT",
+      "description": "Ktt",
+      "used_in": [
+        "07_KM_4_Alokasi_Waktu_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "LAKS_MULAI",
+      "description": "Laks mulai",
+      "used_in": [
+        "07_KM_4_Alokasi_Waktu_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "LAKS_SELESAI",
+      "description": "Laks selesai",
+      "used_in": [
+        "07_KM_4_Alokasi_Waktu_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "LANGKAH_1_1",
+      "description": "Langkah 1 1",
+      "used_in": [
+        "11_KM_6_Program_Kerja_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "LANGKAH_1_2",
+      "description": "Langkah 1 2",
+      "used_in": [
+        "11_KM_6_Program_Kerja_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "LANGKAH_1_3",
+      "description": "Langkah 1 3",
+      "used_in": [
+        "11_KM_6_Program_Kerja_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "LANGKAH_2_1",
+      "description": "Langkah 2 1",
+      "used_in": [
+        "11_KM_6_Program_Kerja_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "LANGKAH_2_2",
+      "description": "Langkah 2 2",
+      "used_in": [
+        "11_KM_6_Program_Kerja_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "LANGKAH_2_3",
+      "description": "Langkah 2 3",
+      "used_in": [
+        "11_KM_6_Program_Kerja_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "LANGKAH_3_1",
+      "description": "Langkah 3 1",
+      "used_in": [
+        "11_KM_6_Program_Kerja_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "LANGKAH_3_2",
+      "description": "Langkah 3 2",
+      "used_in": [
+        "11_KM_6_Program_Kerja_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "LANGKAH_3_3",
+      "description": "Langkah 3 3",
+      "used_in": [
+        "11_KM_6_Program_Kerja_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "LANGKAH_4_1",
+      "description": "Langkah 4 1",
+      "used_in": [
+        "11_KM_6_Program_Kerja_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "LANGKAH_4_2",
+      "description": "Langkah 4 2",
+      "used_in": [
+        "11_KM_6_Program_Kerja_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "LANGKAH_4_3",
+      "description": "Langkah 4 3",
+      "used_in": [
+        "11_KM_6_Program_Kerja_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "LANGKAH_5_1",
+      "description": "Langkah 5 1",
+      "used_in": [
+        "11_KM_6_Program_Kerja_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "LANGKAH_5_2",
+      "description": "Langkah 5 2",
+      "used_in": [
+        "11_KM_6_Program_Kerja_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "LANGKAH_5_3",
+      "description": "Langkah 5 3",
+      "used_in": [
+        "11_KM_6_Program_Kerja_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "LANGKAH_6_1",
+      "description": "Langkah 6 1",
+      "used_in": [
+        "11_KM_6_Program_Kerja_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "LANGKAH_6_2",
+      "description": "Langkah 6 2",
+      "used_in": [
+        "11_KM_6_Program_Kerja_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "LANGKAH_6_3",
+      "description": "Langkah 6 3",
+      "used_in": [
+        "11_KM_6_Program_Kerja_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "LANGKAH_FINAL_KK",
+      "description": "Langkah final kk",
+      "used_in": [
+        "11_KM_6_Program_Kerja_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "LANGKAH_LAPORAN",
+      "description": "Langkah laporan",
+      "used_in": [
+        "11_KM_6_Program_Kerja_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "LANGKAH_PERSIAPAN",
+      "description": "Langkah persiapan",
+      "used_in": [
+        "11_KM_6_Program_Kerja_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "LANGKAH_SIMPULAN",
+      "description": "Langkah simpulan",
+      "used_in": [
+        "11_KM_6_Program_Kerja_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "LATAR_BELAKANG",
+      "description": "Latar belakang",
+      "used_in": [
+        "04_Rencana_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "LINGKUP_PIA",
+      "description": "Lingkup pia",
+      "used_in": [
+        "09_Nota_Dinas_dan_Laporan_Hasil_PIA.docx"
+      ]
+    },
+    {
+      "key": "LOKUS_DAN_DASAR_PEMILIHAN",
+      "description": "Lokus dan dasar pemilihan",
+      "used_in": [
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "METODE_PIA_1",
+      "description": "Metode pia 1",
+      "used_in": [
+        "09_Nota_Dinas_dan_Laporan_Hasil_PIA.docx"
+      ]
+    },
+    {
+      "key": "METODE_PIA_2",
+      "description": "Metode pia 2",
+      "used_in": [
+        "09_Nota_Dinas_dan_Laporan_Hasil_PIA.docx"
+      ]
+    },
+    {
+      "key": "METODE_PIA_3",
+      "description": "Metode pia 3",
+      "used_in": [
+        "09_Nota_Dinas_dan_Laporan_Hasil_PIA.docx"
+      ]
+    },
+    {
+      "key": "METODOLOGI_TAMBAHAN",
+      "description": "Metodologi tambahan",
+      "used_in": [
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "NAMA_1",
+      "description": "Nama 1",
+      "used_in": [
+        "01_Lembar_Rute_Perencanaan.docx",
+        "03_Checklist_Pemenuhan_MPP.docx",
+        "04_Rencana_Penugasan.docx",
+        "06_Konsep_Surat_Tugas_Manual.docx",
+        "08_KM_5_Kartu_Penugasan.docx",
+        "12_Pakta_Integritas.docx"
+      ]
+    },
+    {
+      "key": "NAMA_10",
+      "description": "Nama 10",
+      "used_in": [
+        "01_Lembar_Rute_Perencanaan.docx",
+        "03_Checklist_Pemenuhan_MPP.docx",
+        "04_Rencana_Penugasan.docx",
+        "06_Konsep_Surat_Tugas_Manual.docx",
+        "08_KM_5_Kartu_Penugasan.docx",
+        "12_Pakta_Integritas.docx"
+      ]
+    },
+    {
+      "key": "NAMA_11",
+      "description": "Nama 11",
+      "used_in": [
+        "01_Lembar_Rute_Perencanaan.docx",
+        "03_Checklist_Pemenuhan_MPP.docx",
+        "04_Rencana_Penugasan.docx",
+        "06_Konsep_Surat_Tugas_Manual.docx",
+        "08_KM_5_Kartu_Penugasan.docx",
+        "12_Pakta_Integritas.docx"
+      ]
+    },
+    {
+      "key": "NAMA_12",
+      "description": "Nama 12",
+      "used_in": [
+        "01_Lembar_Rute_Perencanaan.docx",
+        "03_Checklist_Pemenuhan_MPP.docx",
+        "04_Rencana_Penugasan.docx",
+        "06_Konsep_Surat_Tugas_Manual.docx",
+        "08_KM_5_Kartu_Penugasan.docx",
+        "12_Pakta_Integritas.docx"
+      ]
+    },
+    {
+      "key": "NAMA_2",
+      "description": "Nama 2",
+      "used_in": [
+        "01_Lembar_Rute_Perencanaan.docx",
+        "03_Checklist_Pemenuhan_MPP.docx",
+        "04_Rencana_Penugasan.docx",
+        "06_Konsep_Surat_Tugas_Manual.docx",
+        "08_KM_5_Kartu_Penugasan.docx",
+        "12_Pakta_Integritas.docx"
+      ]
+    },
+    {
+      "key": "NAMA_3",
+      "description": "Nama 3",
+      "used_in": [
+        "01_Lembar_Rute_Perencanaan.docx",
+        "03_Checklist_Pemenuhan_MPP.docx",
+        "04_Rencana_Penugasan.docx",
+        "06_Konsep_Surat_Tugas_Manual.docx",
+        "08_KM_5_Kartu_Penugasan.docx",
+        "12_Pakta_Integritas.docx"
+      ]
+    },
+    {
+      "key": "NAMA_4",
+      "description": "Nama 4",
+      "used_in": [
+        "01_Lembar_Rute_Perencanaan.docx",
+        "03_Checklist_Pemenuhan_MPP.docx",
+        "04_Rencana_Penugasan.docx",
+        "06_Konsep_Surat_Tugas_Manual.docx",
+        "08_KM_5_Kartu_Penugasan.docx",
+        "12_Pakta_Integritas.docx"
+      ]
+    },
+    {
+      "key": "NAMA_5",
+      "description": "Nama 5",
+      "used_in": [
+        "01_Lembar_Rute_Perencanaan.docx",
+        "03_Checklist_Pemenuhan_MPP.docx",
+        "04_Rencana_Penugasan.docx",
+        "06_Konsep_Surat_Tugas_Manual.docx",
+        "08_KM_5_Kartu_Penugasan.docx",
+        "12_Pakta_Integritas.docx"
+      ]
+    },
+    {
+      "key": "NAMA_6",
+      "description": "Nama 6",
+      "used_in": [
+        "01_Lembar_Rute_Perencanaan.docx",
+        "03_Checklist_Pemenuhan_MPP.docx",
+        "04_Rencana_Penugasan.docx",
+        "06_Konsep_Surat_Tugas_Manual.docx",
+        "08_KM_5_Kartu_Penugasan.docx",
+        "12_Pakta_Integritas.docx"
+      ]
+    },
+    {
+      "key": "NAMA_7",
+      "description": "Nama 7",
+      "used_in": [
+        "01_Lembar_Rute_Perencanaan.docx",
+        "03_Checklist_Pemenuhan_MPP.docx",
+        "04_Rencana_Penugasan.docx",
+        "06_Konsep_Surat_Tugas_Manual.docx",
+        "08_KM_5_Kartu_Penugasan.docx",
+        "12_Pakta_Integritas.docx"
+      ]
+    },
+    {
+      "key": "NAMA_8",
+      "description": "Nama 8",
+      "used_in": [
+        "01_Lembar_Rute_Perencanaan.docx",
+        "03_Checklist_Pemenuhan_MPP.docx",
+        "04_Rencana_Penugasan.docx",
+        "06_Konsep_Surat_Tugas_Manual.docx",
+        "08_KM_5_Kartu_Penugasan.docx",
+        "12_Pakta_Integritas.docx"
+      ]
+    },
+    {
+      "key": "NAMA_9",
+      "description": "Nama 9",
+      "used_in": [
+        "01_Lembar_Rute_Perencanaan.docx",
+        "03_Checklist_Pemenuhan_MPP.docx",
+        "04_Rencana_Penugasan.docx",
+        "06_Konsep_Surat_Tugas_Manual.docx",
+        "08_KM_5_Kartu_Penugasan.docx",
+        "12_Pakta_Integritas.docx"
+      ]
+    },
+    {
+      "key": "NAMA_DALNIS",
+      "description": "Nama dalnis",
+      "used_in": [
+        "01_Lembar_Rute_Perencanaan.docx",
+        "02_Checklist_SIMA_LAK_PIA_dan_Perencanaan.docx",
+        "03_Checklist_Pemenuhan_MPP.docx"
+      ]
+    },
+    {
+      "key": "NAMA_KABAG_UMUM",
+      "description": "Nama kabag umum",
+      "used_in": [
+        "01_Lembar_Rute_Perencanaan.docx"
+      ]
+    },
+    {
+      "key": "NAMA_KAPER",
+      "description": "Nama kaper",
+      "used_in": [
+        "01_Lembar_Rute_Perencanaan.docx",
+        "05_Surat_Pengantar_Penugasan.docx",
+        "06_Konsep_Surat_Tugas_Manual.docx",
+        "08_KM_5_Kartu_Penugasan.docx",
+        "12_Pakta_Integritas.docx"
+      ]
+    },
+    {
+      "key": "NAMA_KEUANGAN",
+      "description": "Nama keuangan",
+      "used_in": [
+        "01_Lembar_Rute_Perencanaan.docx"
+      ]
+    },
+    {
+      "key": "NAMA_KORWAS",
+      "description": "Nama korwas",
+      "used_in": [
+        "01_Lembar_Rute_Perencanaan.docx",
+        "02_Checklist_SIMA_LAK_PIA_dan_Perencanaan.docx",
+        "03_Checklist_Pemenuhan_MPP.docx",
+        "07_KM_4_Alokasi_Waktu_Pengawasan.docx",
+        "08_KM_5_Kartu_Penugasan.docx",
+        "10_Desain_Penugasan_Pengawasan.docx",
+        "11_KM_6_Program_Kerja_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "NAMA_KORWAS_PIA",
+      "description": "Nama korwas pia",
+      "used_in": [
+        "09_Nota_Dinas_dan_Laporan_Hasil_PIA.docx"
+      ]
+    },
+    {
+      "key": "NAMA_KT",
+      "description": "Nama kt",
+      "used_in": [
+        "01_Lembar_Rute_Perencanaan.docx",
+        "07_KM_4_Alokasi_Waktu_Pengawasan.docx",
+        "08_KM_5_Kartu_Penugasan.docx",
+        "10_Desain_Penugasan_Pengawasan.docx",
+        "11_KM_6_Program_Kerja_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "NAMA_KT_PIA",
+      "description": "Nama kt pia",
+      "used_in": [
+        "09_Nota_Dinas_dan_Laporan_Hasil_PIA.docx"
+      ]
+    },
+    {
+      "key": "NAMA_P3A",
+      "description": "Nama p3a",
+      "used_in": [
+        "01_Lembar_Rute_Perencanaan.docx"
+      ]
+    },
+    {
+      "key": "NAMA_PENANDATANGAN_ND",
+      "description": "Nama penandatangan nd",
+      "used_in": [
+        "09_Nota_Dinas_dan_Laporan_Hasil_PIA.docx"
+      ]
+    },
+    {
+      "key": "NAMA_PENERIMA_BIDANG",
+      "description": "Nama penerima bidang",
+      "used_in": [
+        "01_Lembar_Rute_Perencanaan.docx"
+      ]
+    },
+    {
+      "key": "NAMA_PENUGASAN",
+      "description": "Nama penugasan",
+      "used_in": [
+        "01_Lembar_Rute_Perencanaan.docx",
+        "03_Checklist_Pemenuhan_MPP.docx",
+        "04_Rencana_Penugasan.docx",
+        "05_Surat_Pengantar_Penugasan.docx",
+        "06_Konsep_Surat_Tugas_Manual.docx",
+        "07_KM_4_Alokasi_Waktu_Pengawasan.docx",
+        "08_KM_5_Kartu_Penugasan.docx",
+        "10_Desain_Penugasan_Pengawasan.docx",
+        "11_KM_6_Program_Kerja_Pengawasan.docx",
+        "12_Pakta_Integritas.docx"
+      ]
+    },
+    {
+      "key": "NILAI_PIA_1",
+      "description": "Nilai pia 1",
+      "used_in": [
+        "09_Nota_Dinas_dan_Laporan_Hasil_PIA.docx"
+      ]
+    },
+    {
+      "key": "NILAI_PIA_2",
+      "description": "Nilai pia 2",
+      "used_in": [
+        "09_Nota_Dinas_dan_Laporan_Hasil_PIA.docx"
+      ]
+    },
+    {
+      "key": "NILAI_PIA_3",
+      "description": "Nilai pia 3",
+      "used_in": [
+        "09_Nota_Dinas_dan_Laporan_Hasil_PIA.docx"
+      ]
+    },
+    {
+      "key": "NILAI_PIA_4",
+      "description": "Nilai pia 4",
+      "used_in": [
+        "09_Nota_Dinas_dan_Laporan_Hasil_PIA.docx"
+      ]
+    },
+    {
+      "key": "NIP_1",
+      "description": "Nip 1",
+      "used_in": [
+        "03_Checklist_Pemenuhan_MPP.docx",
+        "06_Konsep_Surat_Tugas_Manual.docx",
+        "12_Pakta_Integritas.docx"
+      ]
+    },
+    {
+      "key": "NIP_10",
+      "description": "Nip 10",
+      "used_in": [
+        "03_Checklist_Pemenuhan_MPP.docx",
+        "06_Konsep_Surat_Tugas_Manual.docx",
+        "12_Pakta_Integritas.docx"
+      ]
+    },
+    {
+      "key": "NIP_11",
+      "description": "Nip 11",
+      "used_in": [
+        "03_Checklist_Pemenuhan_MPP.docx",
+        "06_Konsep_Surat_Tugas_Manual.docx",
+        "12_Pakta_Integritas.docx"
+      ]
+    },
+    {
+      "key": "NIP_12",
+      "description": "Nip 12",
+      "used_in": [
+        "03_Checklist_Pemenuhan_MPP.docx",
+        "06_Konsep_Surat_Tugas_Manual.docx",
+        "12_Pakta_Integritas.docx"
+      ]
+    },
+    {
+      "key": "NIP_2",
+      "description": "Nip 2",
+      "used_in": [
+        "03_Checklist_Pemenuhan_MPP.docx",
+        "06_Konsep_Surat_Tugas_Manual.docx",
+        "12_Pakta_Integritas.docx"
+      ]
+    },
+    {
+      "key": "NIP_3",
+      "description": "Nip 3",
+      "used_in": [
+        "03_Checklist_Pemenuhan_MPP.docx",
+        "06_Konsep_Surat_Tugas_Manual.docx",
+        "12_Pakta_Integritas.docx"
+      ]
+    },
+    {
+      "key": "NIP_4",
+      "description": "Nip 4",
+      "used_in": [
+        "03_Checklist_Pemenuhan_MPP.docx",
+        "06_Konsep_Surat_Tugas_Manual.docx",
+        "12_Pakta_Integritas.docx"
+      ]
+    },
+    {
+      "key": "NIP_5",
+      "description": "Nip 5",
+      "used_in": [
+        "03_Checklist_Pemenuhan_MPP.docx",
+        "06_Konsep_Surat_Tugas_Manual.docx",
+        "12_Pakta_Integritas.docx"
+      ]
+    },
+    {
+      "key": "NIP_6",
+      "description": "Nip 6",
+      "used_in": [
+        "03_Checklist_Pemenuhan_MPP.docx",
+        "06_Konsep_Surat_Tugas_Manual.docx",
+        "12_Pakta_Integritas.docx"
+      ]
+    },
+    {
+      "key": "NIP_7",
+      "description": "Nip 7",
+      "used_in": [
+        "03_Checklist_Pemenuhan_MPP.docx",
+        "06_Konsep_Surat_Tugas_Manual.docx",
+        "12_Pakta_Integritas.docx"
+      ]
+    },
+    {
+      "key": "NIP_8",
+      "description": "Nip 8",
+      "used_in": [
+        "03_Checklist_Pemenuhan_MPP.docx",
+        "06_Konsep_Surat_Tugas_Manual.docx",
+        "12_Pakta_Integritas.docx"
+      ]
+    },
+    {
+      "key": "NIP_9",
+      "description": "Nip 9",
+      "used_in": [
+        "03_Checklist_Pemenuhan_MPP.docx",
+        "06_Konsep_Surat_Tugas_Manual.docx",
+        "12_Pakta_Integritas.docx"
+      ]
+    },
+    {
+      "key": "NIP_DALNIS",
+      "description": "Nip dalnis",
+      "used_in": [
+        "02_Checklist_SIMA_LAK_PIA_dan_Perencanaan.docx",
+        "03_Checklist_Pemenuhan_MPP.docx"
+      ]
+    },
+    {
+      "key": "NIP_KORWAS",
+      "description": "Nip korwas",
+      "used_in": [
+        "02_Checklist_SIMA_LAK_PIA_dan_Perencanaan.docx",
+        "03_Checklist_Pemenuhan_MPP.docx",
+        "07_KM_4_Alokasi_Waktu_Pengawasan.docx",
+        "08_KM_5_Kartu_Penugasan.docx",
+        "10_Desain_Penugasan_Pengawasan.docx",
+        "11_KM_6_Program_Kerja_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "NIP_KORWAS_PIA",
+      "description": "Nip korwas pia",
+      "used_in": [
+        "09_Nota_Dinas_dan_Laporan_Hasil_PIA.docx"
+      ]
+    },
+    {
+      "key": "NIP_KT",
+      "description": "Nip kt",
+      "used_in": [
+        "07_KM_4_Alokasi_Waktu_Pengawasan.docx",
+        "08_KM_5_Kartu_Penugasan.docx",
+        "10_Desain_Penugasan_Pengawasan.docx",
+        "11_KM_6_Program_Kerja_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "NIP_KT_PIA",
+      "description": "Nip kt pia",
+      "used_in": [
+        "09_Nota_Dinas_dan_Laporan_Hasil_PIA.docx"
+      ]
+    },
+    {
+      "key": "NOMOR_KP",
+      "description": "Nomor kp",
+      "used_in": [
+        "01_Lembar_Rute_Perencanaan.docx",
+        "07_KM_4_Alokasi_Waktu_Pengawasan.docx",
+        "08_KM_5_Kartu_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "NOMOR_ND_PIA",
+      "description": "Nomor nd pia",
+      "used_in": [
+        "09_Nota_Dinas_dan_Laporan_Hasil_PIA.docx"
+      ]
+    },
+    {
+      "key": "NOMOR_RENCANA",
+      "description": "Nomor rencana",
+      "used_in": [
+        "08_KM_5_Kartu_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "NOMOR_ST",
+      "description": "Nomor st",
+      "used_in": [
+        "01_Lembar_Rute_Perencanaan.docx",
+        "06_Konsep_Surat_Tugas_Manual.docx",
+        "08_KM_5_Kartu_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "NOMOR_ST_PIA",
+      "description": "Nomor st pia",
+      "used_in": [
+        "09_Nota_Dinas_dan_Laporan_Hasil_PIA.docx"
+      ]
+    },
+    {
+      "key": "NOMOR_SURAT_PENGANTAR",
+      "description": "Nomor surat pengantar",
+      "used_in": [
+        "05_Surat_Pengantar_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "PEDOMAN_PENGAWASAN",
+      "description": "Pedoman pengawasan",
+      "used_in": [
+        "03_Checklist_Pemenuhan_MPP.docx"
+      ]
+    },
+    {
+      "key": "PEKERJAAN_1",
+      "description": "Pekerjaan 1",
+      "used_in": [
+        "07_KM_4_Alokasi_Waktu_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "PEKERJAAN_2",
+      "description": "Pekerjaan 2",
+      "used_in": [
+        "07_KM_4_Alokasi_Waktu_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "PEKERJAAN_3",
+      "description": "Pekerjaan 3",
+      "used_in": [
+        "07_KM_4_Alokasi_Waktu_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "PELAKSANA_1",
+      "description": "Pelaksana 1",
+      "used_in": [
+        "11_KM_6_Program_Kerja_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "PELAKSANA_2",
+      "description": "Pelaksana 2",
+      "used_in": [
+        "11_KM_6_Program_Kerja_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "PELAKSANA_3",
+      "description": "Pelaksana 3",
+      "used_in": [
+        "11_KM_6_Program_Kerja_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "PELAKSANA_4",
+      "description": "Pelaksana 4",
+      "used_in": [
+        "11_KM_6_Program_Kerja_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "PELAKSANA_5",
+      "description": "Pelaksana 5",
+      "used_in": [
+        "11_KM_6_Program_Kerja_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "PELAKSANA_6",
+      "description": "Pelaksana 6",
+      "used_in": [
+        "11_KM_6_Program_Kerja_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "PENERIMA_LAPORAN",
+      "description": "Penerima laporan",
+      "used_in": [
+        "08_KM_5_Kartu_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "PENGANTAR_RISIKO_KLIEN",
+      "description": "Pengantar risiko klien",
+      "used_in": [
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "PENGANTAR_RISIKO_PENUGASAN",
+      "description": "Pengantar risiko penugasan",
+      "used_in": [
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "PERIODE_OBJEK",
+      "description": "Periode objek",
+      "used_in": [
+        "01_Lembar_Rute_Perencanaan.docx",
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "PERIODE_UJI",
+      "description": "Periode uji",
+      "used_in": [
+        "03_Checklist_Pemenuhan_MPP.docx"
+      ]
+    },
+    {
+      "key": "PERS_MULAI",
+      "description": "Pers mulai",
+      "used_in": [
+        "07_KM_4_Alokasi_Waktu_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "PERS_SELESAI",
+      "description": "Pers selesai",
+      "used_in": [
+        "07_KM_4_Alokasi_Waktu_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "PERTIMBANGAN_SUMBER_DAYA",
+      "description": "Pertimbangan sumber daya",
+      "used_in": [
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "PM1",
+      "description": "Pm1",
+      "used_in": [
+        "07_KM_4_Alokasi_Waktu_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "PM2",
+      "description": "Pm2",
+      "used_in": [
+        "07_KM_4_Alokasi_Waktu_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "PM3",
+      "description": "Pm3",
+      "used_in": [
+        "07_KM_4_Alokasi_Waktu_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "PMT",
+      "description": "Pmt",
+      "used_in": [
+        "07_KM_4_Alokasi_Waktu_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "PM_SUP_1",
+      "description": "Pm sup 1",
+      "used_in": [
+        "08_KM_5_Kartu_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "PM_SUP_2",
+      "description": "Pm sup 2",
+      "used_in": [
+        "08_KM_5_Kartu_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "PM_SUP_3",
+      "description": "Pm sup 3",
+      "used_in": [
+        "08_KM_5_Kartu_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "PR1_AKTIVITAS",
+      "description": "Pr1 aktivitas",
+      "used_in": [
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "PR1_INPUT",
+      "description": "Pr1 input",
+      "used_in": [
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "PR1_OUTPUT",
+      "description": "Pr1 output",
+      "used_in": [
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "PR1_TUJUAN",
+      "description": "Pr1 tujuan",
+      "used_in": [
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "PR2_AKTIVITAS",
+      "description": "Pr2 aktivitas",
+      "used_in": [
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "PR2_INPUT",
+      "description": "Pr2 input",
+      "used_in": [
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "PR2_OUTPUT",
+      "description": "Pr2 output",
+      "used_in": [
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "PR2_TUJUAN",
+      "description": "Pr2 tujuan",
+      "used_in": [
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "PR3_AKTIVITAS",
+      "description": "Pr3 aktivitas",
+      "used_in": [
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "PR3_INPUT",
+      "description": "Pr3 input",
+      "used_in": [
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "PR3_OUTPUT",
+      "description": "Pr3 output",
+      "used_in": [
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "PR3_TUJUAN",
+      "description": "Pr3 tujuan",
+      "used_in": [
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "PR4_AKTIVITAS",
+      "description": "Pr4 aktivitas",
+      "used_in": [
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "PR4_INPUT",
+      "description": "Pr4 input",
+      "used_in": [
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "PR4_OUTPUT",
+      "description": "Pr4 output",
+      "used_in": [
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "PR4_TUJUAN",
+      "description": "Pr4 tujuan",
+      "used_in": [
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "PR5_AKTIVITAS",
+      "description": "Pr5 aktivitas",
+      "used_in": [
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "PR5_INPUT",
+      "description": "Pr5 input",
+      "used_in": [
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "PR5_OUTPUT",
+      "description": "Pr5 output",
+      "used_in": [
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "PR5_TUJUAN",
+      "description": "Pr5 tujuan",
+      "used_in": [
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "PR6_AKTIVITAS",
+      "description": "Pr6 aktivitas",
+      "used_in": [
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "PR6_INPUT",
+      "description": "Pr6 input",
+      "used_in": [
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "PR6_OUTPUT",
+      "description": "Pr6 output",
+      "used_in": [
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "PR6_TUJUAN",
+      "description": "Pr6 tujuan",
+      "used_in": [
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "PROSEDUR_LAIN",
+      "description": "Prosedur lain",
+      "used_in": [
+        "03_Checklist_Pemenuhan_MPP.docx"
+      ]
+    },
+    {
+      "key": "PT1",
+      "description": "Pt1",
+      "used_in": [
+        "07_KM_4_Alokasi_Waktu_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "PT2",
+      "description": "Pt2",
+      "used_in": [
+        "07_KM_4_Alokasi_Waktu_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "PT3",
+      "description": "Pt3",
+      "used_in": [
+        "07_KM_4_Alokasi_Waktu_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "PTT",
+      "description": "Ptt",
+      "used_in": [
+        "07_KM_4_Alokasi_Waktu_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "PT_SUP_1",
+      "description": "Pt sup 1",
+      "used_in": [
+        "08_KM_5_Kartu_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "PT_SUP_2",
+      "description": "Pt sup 2",
+      "used_in": [
+        "08_KM_5_Kartu_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "PT_SUP_3",
+      "description": "Pt sup 3",
+      "used_in": [
+        "08_KM_5_Kartu_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "REAL_1",
+      "description": "Real 1",
+      "used_in": [
+        "08_KM_5_Kartu_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "REAL_10",
+      "description": "Real 10",
+      "used_in": [
+        "08_KM_5_Kartu_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "REAL_11",
+      "description": "Real 11",
+      "used_in": [
+        "08_KM_5_Kartu_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "REAL_12",
+      "description": "Real 12",
+      "used_in": [
+        "08_KM_5_Kartu_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "REAL_2",
+      "description": "Real 2",
+      "used_in": [
+        "08_KM_5_Kartu_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "REAL_3",
+      "description": "Real 3",
+      "used_in": [
+        "08_KM_5_Kartu_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "REAL_4",
+      "description": "Real 4",
+      "used_in": [
+        "08_KM_5_Kartu_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "REAL_5",
+      "description": "Real 5",
+      "used_in": [
+        "08_KM_5_Kartu_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "REAL_6",
+      "description": "Real 6",
+      "used_in": [
+        "08_KM_5_Kartu_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "REAL_7",
+      "description": "Real 7",
+      "used_in": [
+        "08_KM_5_Kartu_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "REAL_8",
+      "description": "Real 8",
+      "used_in": [
+        "08_KM_5_Kartu_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "REAL_9",
+      "description": "Real 9",
+      "used_in": [
+        "08_KM_5_Kartu_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "RK1_DAMPAK",
+      "description": "Rk1 dampak",
+      "used_in": [
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "RK1_NAMA",
+      "description": "Rk1 nama",
+      "used_in": [
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "RK1_URAIAN",
+      "description": "Rk1 uraian",
+      "used_in": [
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "RK2_DAMPAK",
+      "description": "Rk2 dampak",
+      "used_in": [
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "RK2_NAMA",
+      "description": "Rk2 nama",
+      "used_in": [
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "RK2_URAIAN",
+      "description": "Rk2 uraian",
+      "used_in": [
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "RK3_DAMPAK",
+      "description": "Rk3 dampak",
+      "used_in": [
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "RK3_NAMA",
+      "description": "Rk3 nama",
+      "used_in": [
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "RK3_URAIAN",
+      "description": "Rk3 uraian",
+      "used_in": [
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "RK4_DAMPAK",
+      "description": "Rk4 dampak",
+      "used_in": [
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "RK4_NAMA",
+      "description": "Rk4 nama",
+      "used_in": [
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "RK4_URAIAN",
+      "description": "Rk4 uraian",
+      "used_in": [
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "RK5_DAMPAK",
+      "description": "Rk5 dampak",
+      "used_in": [
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "RK5_NAMA",
+      "description": "Rk5 nama",
+      "used_in": [
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "RK5_URAIAN",
+      "description": "Rk5 uraian",
+      "used_in": [
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "RMP",
+      "description": "Rmp",
+      "used_in": [
+        "08_KM_5_Kartu_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "RMP_PKPT",
+      "description": "Rmp pkpt",
+      "used_in": [
+        "01_Lembar_Rute_Perencanaan.docx"
+      ]
+    },
+    {
+      "key": "RP1_DAMPAK",
+      "description": "Rp1 dampak",
+      "used_in": [
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "RP1_NAMA",
+      "description": "Rp1 nama",
+      "used_in": [
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "RP1_PENGENDALIAN",
+      "description": "Rp1 pengendalian",
+      "used_in": [
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "RP2_DAMPAK",
+      "description": "Rp2 dampak",
+      "used_in": [
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "RP2_NAMA",
+      "description": "Rp2 nama",
+      "used_in": [
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "RP2_PENGENDALIAN",
+      "description": "Rp2 pengendalian",
+      "used_in": [
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "RP3_DAMPAK",
+      "description": "Rp3 dampak",
+      "used_in": [
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "RP3_NAMA",
+      "description": "Rp3 nama",
+      "used_in": [
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "RP3_PENGENDALIAN",
+      "description": "Rp3 pengendalian",
+      "used_in": [
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "RP4_DAMPAK",
+      "description": "Rp4 dampak",
+      "used_in": [
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "RP4_NAMA",
+      "description": "Rp4 nama",
+      "used_in": [
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "RP4_PENGENDALIAN",
+      "description": "Rp4 pengendalian",
+      "used_in": [
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "RPL",
+      "description": "Rpl",
+      "used_in": [
+        "08_KM_5_Kartu_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "RPL_NON_PKPT",
+      "description": "Rpl non pkpt",
+      "used_in": [
+        "01_Lembar_Rute_Perencanaan.docx"
+      ]
+    },
+    {
+      "key": "RPL_PKPT",
+      "description": "Rpl pkpt",
+      "used_in": [
+        "01_Lembar_Rute_Perencanaan.docx"
+      ]
+    },
+    {
+      "key": "RUANG_LINGKUP",
+      "description": "Ruang lingkup",
+      "used_in": [
+        "04_Rencana_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "RUANG_TTD_ATAU_TTE",
+      "description": "Ruang ttd atau tte",
+      "used_in": [
+        "05_Surat_Pengantar_Penugasan.docx",
+        "06_Konsep_Surat_Tugas_Manual.docx",
+        "09_Nota_Dinas_dan_Laporan_Hasil_PIA.docx"
+      ]
+    },
+    {
+      "key": "SASARAN_PENGAWASAN",
+      "description": "Sasaran pengawasan",
+      "used_in": [
+        "01_Lembar_Rute_Perencanaan.docx",
+        "07_KM_4_Alokasi_Waktu_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "SEKTOR",
+      "description": "Sektor",
+      "used_in": [
+        "04_Rencana_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "SELESAI_AKHIR",
+      "description": "Selesai akhir",
+      "used_in": [
+        "07_KM_4_Alokasi_Waktu_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "SELESAI_MULAI",
+      "description": "Selesai mulai",
+      "used_in": [
+        "07_KM_4_Alokasi_Waktu_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "SIMPULAN_KELAYAKAN_PENGAWASAN",
+      "description": "Simpulan kelayakan pengawasan",
+      "used_in": [
+        "09_Nota_Dinas_dan_Laporan_Hasil_PIA.docx"
+      ]
+    },
+    {
+      "key": "SIMPULAN_RINGKAS_PIA",
+      "description": "Simpulan ringkas pia",
+      "used_in": [
+        "09_Nota_Dinas_dan_Laporan_Hasil_PIA.docx"
+      ]
+    },
+    {
+      "key": "STRATEGI_PENGAWASAN",
+      "description": "Strategi pengawasan",
+      "used_in": [
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "SUMBER_PEMBIAYAAN",
+      "description": "Sumber pembiayaan",
+      "used_in": [
+        "05_Surat_Pengantar_Penugasan.docx",
+        "06_Konsep_Surat_Tugas_Manual.docx"
+      ]
+    },
+    {
+      "key": "SUMBER_PIA_1",
+      "description": "Sumber pia 1",
+      "used_in": [
+        "09_Nota_Dinas_dan_Laporan_Hasil_PIA.docx"
+      ]
+    },
+    {
+      "key": "SUMBER_PIA_2",
+      "description": "Sumber pia 2",
+      "used_in": [
+        "09_Nota_Dinas_dan_Laporan_Hasil_PIA.docx"
+      ]
+    },
+    {
+      "key": "SUMBER_PIA_3",
+      "description": "Sumber pia 3",
+      "used_in": [
+        "09_Nota_Dinas_dan_Laporan_Hasil_PIA.docx"
+      ]
+    },
+    {
+      "key": "SUMBER_PIA_4",
+      "description": "Sumber pia 4",
+      "used_in": [
+        "09_Nota_Dinas_dan_Laporan_Hasil_PIA.docx"
+      ]
+    },
+    {
+      "key": "SUMBER_TABEL_PIA",
+      "description": "Sumber tabel pia",
+      "used_in": [
+        "09_Nota_Dinas_dan_Laporan_Hasil_PIA.docx"
+      ]
+    },
+    {
+      "key": "TANGGAL_MULAI",
+      "description": "Tanggal mulai",
+      "used_in": [
+        "04_Rencana_Penugasan.docx",
+        "05_Surat_Pengantar_Penugasan.docx",
+        "06_Konsep_Surat_Tugas_Manual.docx",
+        "08_KM_5_Kartu_Penugasan.docx",
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "TANGGAL_MULAI_PIA",
+      "description": "Tanggal mulai pia",
+      "used_in": [
+        "09_Nota_Dinas_dan_Laporan_Hasil_PIA.docx"
+      ]
+    },
+    {
+      "key": "TANGGAL_ND_PIA",
+      "description": "Tanggal nd pia",
+      "used_in": [
+        "09_Nota_Dinas_dan_Laporan_Hasil_PIA.docx"
+      ]
+    },
+    {
+      "key": "TANGGAL_PAKTA",
+      "description": "Tanggal pakta",
+      "used_in": [
+        "12_Pakta_Integritas.docx"
+      ]
+    },
+    {
+      "key": "TANGGAL_PENGESAHAN",
+      "description": "Tanggal pengesahan",
+      "used_in": [
+        "07_KM_4_Alokasi_Waktu_Pengawasan.docx",
+        "08_KM_5_Kartu_Penugasan.docx",
+        "09_Nota_Dinas_dan_Laporan_Hasil_PIA.docx",
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "TANGGAL_SELESAI",
+      "description": "Tanggal selesai",
+      "used_in": [
+        "04_Rencana_Penugasan.docx",
+        "05_Surat_Pengantar_Penugasan.docx",
+        "06_Konsep_Surat_Tugas_Manual.docx",
+        "08_KM_5_Kartu_Penugasan.docx",
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "TANGGAL_SELESAI_PIA",
+      "description": "Tanggal selesai pia",
+      "used_in": [
+        "09_Nota_Dinas_dan_Laporan_Hasil_PIA.docx"
+      ]
+    },
+    {
+      "key": "TANGGAL_ST",
+      "description": "Tanggal st",
+      "used_in": [
+        "01_Lembar_Rute_Perencanaan.docx",
+        "06_Konsep_Surat_Tugas_Manual.docx",
+        "08_KM_5_Kartu_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "TANGGAL_ST_PIA",
+      "description": "Tanggal st pia",
+      "used_in": [
+        "09_Nota_Dinas_dan_Laporan_Hasil_PIA.docx"
+      ]
+    },
+    {
+      "key": "TANGGAL_SURAT_PENGANTAR",
+      "description": "Tanggal surat pengantar",
+      "used_in": [
+        "05_Surat_Pengantar_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "TEMA",
+      "description": "Tema",
+      "used_in": [
+        "04_Rencana_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "TEMBUSAN_1",
+      "description": "Tembusan 1",
+      "used_in": [
+        "05_Surat_Pengantar_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "TEMBUSAN_2",
+      "description": "Tembusan 2",
+      "used_in": [
+        "05_Surat_Pengantar_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "TEMBUSAN_3",
+      "description": "Tembusan 3",
+      "used_in": [
+        "05_Surat_Pengantar_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "TEMBUSAN_4",
+      "description": "Tembusan 4",
+      "used_in": [
+        "05_Surat_Pengantar_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "TEMBUSAN_5",
+      "description": "Tembusan 5",
+      "used_in": [
+        "05_Surat_Pengantar_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "TEMBUSAN_6",
+      "description": "Tembusan 6",
+      "used_in": [
+        "05_Surat_Pengantar_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "TEMBUSAN_7",
+      "description": "Tembusan 7",
+      "used_in": [
+        "05_Surat_Pengantar_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "TEMBUSAN_8",
+      "description": "Tembusan 8",
+      "used_in": [
+        "05_Surat_Pengantar_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "TGL_ANALISIS",
+      "description": "Tgl analisis",
+      "used_in": [
+        "03_Checklist_Pemenuhan_MPP.docx"
+      ]
+    },
+    {
+      "key": "TGL_DOKUMENTASI",
+      "description": "Tgl dokumentasi",
+      "used_in": [
+        "03_Checklist_Pemenuhan_MPP.docx"
+      ]
+    },
+    {
+      "key": "TGL_ENTRY",
+      "description": "Tgl entry",
+      "used_in": [
+        "03_Checklist_Pemenuhan_MPP.docx"
+      ]
+    },
+    {
+      "key": "TGL_EXIT",
+      "description": "Tgl exit",
+      "used_in": [
+        "03_Checklist_Pemenuhan_MPP.docx"
+      ]
+    },
+    {
+      "key": "TGL_FINAL_KK",
+      "description": "Tgl final kk",
+      "used_in": [
+        "03_Checklist_Pemenuhan_MPP.docx"
+      ]
+    },
+    {
+      "key": "TGL_KIRIM_LAPORAN",
+      "description": "Tgl kirim laporan",
+      "used_in": [
+        "03_Checklist_Pemenuhan_MPP.docx"
+      ]
+    },
+    {
+      "key": "TGL_KONSEP_LAPORAN",
+      "description": "Tgl konsep laporan",
+      "used_in": [
+        "03_Checklist_Pemenuhan_MPP.docx",
+        "08_KM_5_Kartu_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "TGL_PROSEDUR_LAIN",
+      "description": "Tgl prosedur lain",
+      "used_in": [
+        "03_Checklist_Pemenuhan_MPP.docx"
+      ]
+    },
+    {
+      "key": "TGL_RAPAT",
+      "description": "Tgl rapat",
+      "used_in": [
+        "03_Checklist_Pemenuhan_MPP.docx"
+      ]
+    },
+    {
+      "key": "TGL_REVIU_DALNIS",
+      "description": "Tgl reviu dalnis",
+      "used_in": [
+        "01_Lembar_Rute_Perencanaan.docx"
+      ]
+    },
+    {
+      "key": "TGL_REVIU_KORWAS",
+      "description": "Tgl reviu korwas",
+      "used_in": [
+        "01_Lembar_Rute_Perencanaan.docx"
+      ]
+    },
+    {
+      "key": "TGL_REVIU_KT",
+      "description": "Tgl reviu kt",
+      "used_in": [
+        "01_Lembar_Rute_Perencanaan.docx"
+      ]
+    },
+    {
+      "key": "TGL_TELAAH",
+      "description": "Tgl telaah",
+      "used_in": [
+        "03_Checklist_Pemenuhan_MPP.docx"
+      ]
+    },
+    {
+      "key": "TINGKAT_RISIKO",
+      "description": "Tingkat risiko",
+      "used_in": [
+        "08_KM_5_Kartu_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "TOPIK",
+      "description": "Topik",
+      "used_in": [
+        "03_Checklist_Pemenuhan_MPP.docx",
+        "04_Rencana_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "TOPIK_PIA",
+      "description": "Topik pia",
+      "used_in": [
+        "09_Nota_Dinas_dan_Laporan_Hasil_PIA.docx"
+      ]
+    },
+    {
+      "key": "TUJUAN_1",
+      "description": "Tujuan 1",
+      "used_in": [
+        "04_Rencana_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "TUJUAN_2",
+      "description": "Tujuan 2",
+      "used_in": [
+        "04_Rencana_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "TUJUAN_3",
+      "description": "Tujuan 3",
+      "used_in": [
+        "04_Rencana_Penugasan.docx"
+      ]
+    },
+    {
+      "key": "TUJUAN_PENGAWASAN",
+      "description": "Tujuan pengawasan",
+      "used_in": [
+        "08_KM_5_Kartu_Penugasan.docx",
+        "10_Desain_Penugasan_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "TUJUAN_PIA",
+      "description": "Tujuan pia",
+      "used_in": [
+        "09_Nota_Dinas_dan_Laporan_Hasil_PIA.docx"
+      ]
+    },
+    {
+      "key": "URAIAN_UJI_1",
+      "description": "Uraian uji 1",
+      "used_in": [
+        "11_KM_6_Program_Kerja_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "URAIAN_UJI_2",
+      "description": "Uraian uji 2",
+      "used_in": [
+        "11_KM_6_Program_Kerja_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "URAIAN_UJI_3",
+      "description": "Uraian uji 3",
+      "used_in": [
+        "11_KM_6_Program_Kerja_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "URAIAN_UJI_4",
+      "description": "Uraian uji 4",
+      "used_in": [
+        "11_KM_6_Program_Kerja_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "URAIAN_UJI_5",
+      "description": "Uraian uji 5",
+      "used_in": [
+        "11_KM_6_Program_Kerja_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "URAIAN_UJI_6",
+      "description": "Uraian uji 6",
+      "used_in": [
+        "11_KM_6_Program_Kerja_Pengawasan.docx"
+      ]
+    },
+    {
+      "key": "USULAN_KEPUTUSAN_PENGAWASAN",
+      "description": "Usulan keputusan pengawasan",
+      "used_in": [
+        "09_Nota_Dinas_dan_Laporan_Hasil_PIA.docx"
+      ]
+    },
+    {
+      "key": "USUL_PIA_1",
+      "description": "Usul pia 1",
+      "used_in": [
+        "09_Nota_Dinas_dan_Laporan_Hasil_PIA.docx"
+      ]
+    },
+    {
+      "key": "USUL_PIA_2",
+      "description": "Usul pia 2",
+      "used_in": [
+        "09_Nota_Dinas_dan_Laporan_Hasil_PIA.docx"
+      ]
+    },
+    {
+      "key": "USUL_PIA_3",
+      "description": "Usul pia 3",
+      "used_in": [
+        "09_Nota_Dinas_dan_Laporan_Hasil_PIA.docx"
+      ]
+    }
+  ]
+}

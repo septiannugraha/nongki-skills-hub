@@ -1,0 +1,229 @@
+{
+  "unit": {
+    "kode_unit": "PW36",
+    "nama_kantor": "PERWAKILAN BPKP PROVINSI PAPUA TENGAH",
+    "nama_kop_baris1": "BADAN PENGAWASAN KEUANGAN DAN PEMBANGUNAN",
+    "nama_kop_baris2": "PERWAKILAN PROVINSI PAPUA TENGAH",
+    "alamat": "Jalan Sam Ratulangi, Kelurahan Oyehe, Distrik Nabire",
+    "wilayah_kodepos": "Kabupaten Nabire, Provinsi Papua Tengah, Kode Pos: 98816",
+    "telepon": "",
+    "faksimile": "",
+    "email": "papua.tengah@bpkp.go.id",
+    "website": "www.bpkp.go.id/papua.tengah",
+    "kota": "Nabire",
+    "jabatan_kepala": "Kepala Perwakilan",
+    "unit_parent": "BPKP"
+  },
+  "source": "Paket MPP Evaluasi Kantong Kemiskinan dalam folder S & ST",
+  "documents": [
+    {
+      "number": 1,
+      "name": "Lembar_Rute_Perencanaan",
+      "filename": "01_Lembar_Rute_Perencanaan.docx",
+      "sourcePages": [
+        1
+      ],
+      "notes": [
+        "Latar lembar rute putih agar siap cetak; susunan dan tabel mengikuti contoh."
+      ]
+    },
+    {
+      "number": 2,
+      "name": "Checklist_SIMA_LAK_PIA_dan_Perencanaan",
+      "filename": "02_Checklist_SIMA_LAK_PIA_dan_Perencanaan.docx",
+      "sourcePages": [
+        2
+      ],
+      "notes": [
+        "Checklist dikosongkan; pemenuhan mengikuti bukti, bukan centang otomatis."
+      ]
+    },
+    {
+      "number": 3,
+      "name": "Checklist_Pemenuhan_MPP",
+      "filename": "03_Checklist_Pemenuhan_MPP.docx",
+      "sourcePages": [
+        3,
+        4
+      ],
+      "notes": [
+        "Subkolom uraian dan penggabungan tanggal mengikuti contoh; jadwal dan bukti diisi sesuai pelaksanaan sebenarnya."
+      ]
+    },
+    {
+      "number": 4,
+      "name": "Rencana_Penugasan",
+      "filename": "04_Rencana_Penugasan.docx",
+      "sourcePages": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "notes": [
+        "Sebelas isian informasi dapat ditambah/dikurangi sesuai KAP/pedoman."
+      ]
+    },
+    {
+      "number": 5,
+      "name": "Surat_Pengantar_Penugasan",
+      "filename": "05_Surat_Pengantar_Penugasan.docx",
+      "sourcePages": [
+        9,
+        10
+      ],
+      "notes": [
+        "Selalu disusun manual DOCX; halaman daftar tembusan dapat dihapus bila tidak diperlukan."
+      ]
+    },
+    {
+      "number": 6,
+      "name": "Konsep_Surat_Tugas_Manual",
+      "filename": "06_Konsep_Surat_Tugas_Manual.docx",
+      "sourcePages": [
+        11,
+        12
+      ],
+      "notes": [
+        "Untuk jalur manual. Jika memakai SIMA-NG, gunakan output konsep ST aplikasi sebagai berkas sumber.",
+        "Nomor, tanggal, serta ruang TTD/TTE adalah isian konsep; tidak menyatakan dokumen sudah ditandatangani."
+      ]
+    },
+    {
+      "number": 7,
+      "name": "KM_4_Alokasi_Waktu_Pengawasan",
+      "filename": "07_KM_4_Alokasi_Waktu_Pengawasan.docx",
+      "sourcePages": [
+        13,
+        14
+      ],
+      "notes": [
+        "Digunakan pada jalur manual; dapat diganti output KM 4 SIMA-NG.",
+        "Jam merupakan isian, bukan formula Word. Jumlah AT harus konsisten dengan daftar personel."
+      ]
+    },
+    {
+      "number": 8,
+      "name": "KM_5_Kartu_Penugasan",
+      "filename": "08_KM_5_Kartu_Penugasan.docx",
+      "sourcePages": [
+        15,
+        16
+      ],
+      "notes": [
+        "Digunakan pada jalur manual; dapat diganti output KM 5 SIMA-NG.",
+        "Realisasi waktu dikosongkan sebelum pelaksanaan."
+      ]
+    },
+    {
+      "number": 9,
+      "name": "Nota_Dinas_dan_Laporan_Hasil_PIA",
+      "filename": "09_Nota_Dinas_dan_Laporan_Hasil_PIA.docx",
+      "sourcePages": [
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34
+      ],
+      "notes": [
+        "Disusun manual sebagai hasil penugasan PIA, untuk dasar penyusunan DPP penugasan berikutnya. Tidak menjadi prasyarat bagi ST penugasan PIA itu sendiri.",
+        "Penyesuaian BAB V-B.1.a TND: nota dinas pengantar dibuat ringkas, laporan terperinci ditempatkan dalam lampiran satu DOCX.",
+        "Nama pejabat pada kaki nota dinas tanpa gelar/NIP; NIP masih tersedia pada pengesahan lampiran teknis."
+      ]
+    },
+    {
+      "number": 10,
+      "name": "Desain_Penugasan_Pengawasan",
+      "filename": "10_Desain_Penugasan_Pengawasan.docx",
+      "sourcePages": [
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "notes": [
+        "Struktur enam komponen dan tabel berkotak mengikuti contoh.",
+        "Isi harus diturunkan dari PIA, target informasi/KAP, dan pedoman; tidak mengunci seluruh penugasan sebagai evaluasi atau konsultansi."
+      ]
+    },
+    {
+      "number": 11,
+      "name": "KM_6_Program_Kerja_Pengawasan",
+      "filename": "11_KM_6_Program_Kerja_Pengawasan.docx",
+      "sourcePages": [
+        45,
+        46,
+        47,
+        48
+      ],
+      "notes": [
+        "Tabel sembilan kolom dengan kelompok rencana/realisasi, border lengkap, dan header berulang.",
+        "Enam baris pengujian dapat ditambah; setiap langkah disusun dari DPP dan pedoman. Definisi HP dan konversi jam mengikuti ketentuan penugasan."
+      ]
+    },
+    {
+      "number": 12,
+      "name": "Pakta_Integritas",
+      "filename": "12_Pakta_Integritas.docx",
+      "sourcePages": [
+        49,
+        50
+      ],
+      "notes": [
+        "Logo tunggal, tujuh komitmen, dua tabel berkotak, dan dua halaman mengikuti format pakta contoh unit kerja.",
+        "Jumlah personel awal 12 orang; baris dapat disesuaikan secara konsisten di dua tabel. Tidak ada gambar tanda tangan yang disalin."
+      ]
+    }
+  ],
+  "applicability": {
+    "jenis_penugasan": [
+      "PIA",
+      "PENGAWASAN_BERIKUTNYA"
+    ],
+    "PIA": {
+      "laporan_pia_prasyarat_st": false,
+      "template_09": "Hasil setelah pelaksanaan PIA; tidak disyaratkan untuk penerbitan ST PIA."
+    },
+    "PENGAWASAN_BERIKUTNYA": {
+      "template_09": "Laporan hasil PIA yang dibuat manual menjadi dasar DPP."
+    },
+    "jalur_surat": {
+      "surat_pengantar": "manual DOCX",
+      "konsep_st": [
+        "SIMA-NG",
+        "manual DOCX"
+      ],
+      "km4_km5": {
+        "SIMA-NG": "boleh output SIMA-NG",
+        "manual DOCX": "boleh autoST"
+      }
+    },
+    "all_12_always_required": false
+  },
+  "additional_sources": [
+    "D:\\autoST\\Desain Pengawasan.docx",
+    "D:\\autoST\\KM 6 - Program Kerja Pengawasan (PKA).docx",
+    "D:\\autoST\\Pakta Integritas.docx",
+    "D:\\autoST\\test_kop_pt.docx"
+  ],
+  "regulations": [
+    {
+      "title": "Peraturan BPKP Nomor 2 Tahun 2023",
+      "role": "MPP"
+    },
+    {
+      "title": "Peraturan BPKP Nomor 4 Tahun 2026",
+      "role": "Tata Naskah Dinas"
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "MPP BPKP"
+  short_description: "Buat paket MPP dan ST dari satu file isian Excel"
+  default_prompt: "Gunakan $mpp-bpkp untuk membuat seluruh dokumen MPP dari file isian XLSX ini dalam folder nama penugasannya."

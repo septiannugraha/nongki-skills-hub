@@ -1,0 +1,715 @@
+{
+  "schema_version": "1.1",
+  "input_sha256": "3e3ac6274fecc4ab6443487f5ec499d2ef673fb952c7714b8184a7174f387e49",
+  "sources_read": [
+    {
+      "path": "D:\\autoST\\_uji_mpp_bpkp\\UJI SINTETIS Evaluasi Nabire.xlsx",
+      "location": "DATA/IHP",
+      "used_for": "Pengujian perangkat lunak; bukan dokumen penugasan nyata."
+    }
+  ],
+  "ihp": [
+    {
+      "id": "IHP-01",
+      "information": "Analisis sintetis ketepatan proses nomor 1",
+      "source": "Sumber uji, bukan KAP resmi"
+    },
+    {
+      "id": "IHP-02",
+      "information": "Analisis sintetis ketepatan proses nomor 2",
+      "source": "Sumber uji, bukan KAP resmi"
+    },
+    {
+      "id": "IHP-03",
+      "information": "Analisis sintetis ketepatan proses nomor 3",
+      "source": "Sumber uji, bukan KAP resmi"
+    },
+    {
+      "id": "IHP-04",
+      "information": "Analisis sintetis ketepatan proses nomor 4",
+      "source": "Sumber uji, bukan KAP resmi"
+    },
+    {
+      "id": "IHP-05",
+      "information": "Analisis sintetis ketepatan proses nomor 5",
+      "source": "Sumber uji, bukan KAP resmi"
+    },
+    {
+      "id": "IHP-06",
+      "information": "Analisis sintetis ketepatan proses nomor 6",
+      "source": "Sumber uji, bukan KAP resmi"
+    },
+    {
+      "id": "IHP-07",
+      "information": "Analisis sintetis ketepatan proses nomor 7",
+      "source": "Sumber uji, bukan KAP resmi"
+    },
+    {
+      "id": "IHP-08",
+      "information": "Analisis sintetis ketepatan proses nomor 8",
+      "source": "Sumber uji, bukan KAP resmi"
+    },
+    {
+      "id": "IHP-09",
+      "information": "Analisis sintetis ketepatan proses nomor 9",
+      "source": "Sumber uji, bukan KAP resmi"
+    },
+    {
+      "id": "IHP-10",
+      "information": "Analisis sintetis ketepatan proses nomor 10",
+      "source": "Sumber uji, bukan KAP resmi"
+    },
+    {
+      "id": "IHP-11",
+      "information": "Analisis sintetis ketepatan proses nomor 11",
+      "source": "Sumber uji, bukan KAP resmi"
+    },
+    {
+      "id": "IHP-12",
+      "information": "Analisis sintetis ketepatan proses nomor 12",
+      "source": "Sumber uji, bukan KAP resmi"
+    },
+    {
+      "id": "IHP-13",
+      "information": "Analisis sintetis ketepatan proses nomor 13",
+      "source": "Sumber uji, bukan KAP resmi"
+    }
+  ],
+  "narratives": {
+    "LATAR_BELAKANG": "Narasi sintetis untuk menguji LATAR_BELAKANG.",
+    "METODOLOGI": "Telaah dokumen uji\nKonfirmasi data uji",
+    "STRATEGI_PENGAWASAN": "Narasi sintetis untuk menguji STRATEGI_PENGAWASAN.",
+    "PENGANTAR_RISIKO_KLIEN": "Narasi sintetis untuk menguji PENGANTAR_RISIKO_KLIEN.",
+    "FOKUS_PENGAWASAN": "Narasi sintetis untuk menguji FOKUS_PENGAWASAN.",
+    "LOKUS_DAN_DASAR_PEMILIHAN": "Narasi sintetis untuk menguji LOKUS_DAN_DASAR_PEMILIHAN.",
+    "PERTIMBANGAN_SUMBER_DAYA": "Narasi sintetis untuk menguji PERTIMBANGAN_SUMBER_DAYA.",
+    "PENGANTAR_RISIKO_PENUGASAN": "Narasi sintetis untuk menguji PENGANTAR_RISIKO_PENUGASAN.",
+    "BATAS_TANGGUNG_JAWAB_PENUGASAN": "Narasi sintetis untuk menguji BATAS_TANGGUNG_JAWAB_PENUGASAN.",
+    "JENIS_DAN_TINGKAT_KEYAKINAN": "Narasi sintetis untuk menguji JENIS_DAN_TINGKAT_KEYAKINAN.",
+    "LANGKAH_PERSIAPAN": "Narasi sintetis untuk menguji LANGKAH_PERSIAPAN.",
+    "LANGKAH_SIMPULAN": "Narasi sintetis untuk menguji LANGKAH_SIMPULAN.",
+    "LANGKAH_FINAL_KK": "Narasi sintetis untuk menguji LANGKAH_FINAL_KK.",
+    "LANGKAH_LAPORAN": "Narasi sintetis untuk menguji LANGKAH_LAPORAN."
+  },
+  "processes": [
+    [
+      "Tahap sintetis 1",
+      "Tujuan uji",
+      "Aktivitas uji",
+      "Input uji",
+      "Output uji"
+    ],
+    [
+      "Tahap sintetis 2",
+      "Tujuan uji",
+      "Aktivitas uji",
+      "Input uji",
+      "Output uji"
+    ],
+    [
+      "Tahap sintetis 3",
+      "Tujuan uji",
+      "Aktivitas uji",
+      "Input uji",
+      "Output uji"
+    ],
+    [
+      "Tahap sintetis 4",
+      "Tujuan uji",
+      "Aktivitas uji",
+      "Input uji",
+      "Output uji"
+    ],
+    [
+      "Tahap sintetis 5",
+      "Tujuan uji",
+      "Aktivitas uji",
+      "Input uji",
+      "Output uji"
+    ],
+    [
+      "Tahap sintetis 6",
+      "Tujuan uji",
+      "Aktivitas uji",
+      "Input uji",
+      "Output uji"
+    ],
+    [
+      "Tahap sintetis 7",
+      "Tujuan uji",
+      "Aktivitas uji",
+      "Input uji",
+      "Output uji"
+    ]
+  ],
+  "client_risks": [
+    {
+      "id": "RK-01",
+      "ihp_ids": [
+        "IHP-01"
+      ],
+      "event": "Sasaran sintetis 1 tidak tercapai",
+      "cause": "Penyebab potensial sintetis",
+      "impact": "Dampak sintetis pada sasaran uji",
+      "basis": "Asumsi pengujian perangkat lunak, bukan fakta klien"
+    },
+    {
+      "id": "RK-02",
+      "ihp_ids": [
+        "IHP-02"
+      ],
+      "event": "Sasaran sintetis 2 tidak tercapai",
+      "cause": "Penyebab potensial sintetis",
+      "impact": "Dampak sintetis pada sasaran uji",
+      "basis": "Asumsi pengujian perangkat lunak, bukan fakta klien"
+    },
+    {
+      "id": "RK-03",
+      "ihp_ids": [
+        "IHP-03"
+      ],
+      "event": "Sasaran sintetis 3 tidak tercapai",
+      "cause": "Penyebab potensial sintetis",
+      "impact": "Dampak sintetis pada sasaran uji",
+      "basis": "Asumsi pengujian perangkat lunak, bukan fakta klien"
+    },
+    {
+      "id": "RK-04",
+      "ihp_ids": [
+        "IHP-04"
+      ],
+      "event": "Sasaran sintetis 4 tidak tercapai",
+      "cause": "Penyebab potensial sintetis",
+      "impact": "Dampak sintetis pada sasaran uji",
+      "basis": "Asumsi pengujian perangkat lunak, bukan fakta klien"
+    },
+    {
+      "id": "RK-05",
+      "ihp_ids": [
+        "IHP-05"
+      ],
+      "event": "Sasaran sintetis 5 tidak tercapai",
+      "cause": "Penyebab potensial sintetis",
+      "impact": "Dampak sintetis pada sasaran uji",
+      "basis": "Asumsi pengujian perangkat lunak, bukan fakta klien"
+    },
+    {
+      "id": "RK-06",
+      "ihp_ids": [
+        "IHP-06"
+      ],
+      "event": "Sasaran sintetis 6 tidak tercapai",
+      "cause": "Penyebab potensial sintetis",
+      "impact": "Dampak sintetis pada sasaran uji",
+      "basis": "Asumsi pengujian perangkat lunak, bukan fakta klien"
+    },
+    {
+      "id": "RK-07",
+      "ihp_ids": [
+        "IHP-07"
+      ],
+      "event": "Sasaran sintetis 7 tidak tercapai",
+      "cause": "Penyebab potensial sintetis",
+      "impact": "Dampak sintetis pada sasaran uji",
+      "basis": "Asumsi pengujian perangkat lunak, bukan fakta klien"
+    },
+    {
+      "id": "RK-08",
+      "ihp_ids": [
+        "IHP-08"
+      ],
+      "event": "Sasaran sintetis 8 tidak tercapai",
+      "cause": "Penyebab potensial sintetis",
+      "impact": "Dampak sintetis pada sasaran uji",
+      "basis": "Asumsi pengujian perangkat lunak, bukan fakta klien"
+    },
+    {
+      "id": "RK-09",
+      "ihp_ids": [
+        "IHP-09"
+      ],
+      "event": "Sasaran sintetis 9 tidak tercapai",
+      "cause": "Penyebab potensial sintetis",
+      "impact": "Dampak sintetis pada sasaran uji",
+      "basis": "Asumsi pengujian perangkat lunak, bukan fakta klien"
+    },
+    {
+      "id": "RK-10",
+      "ihp_ids": [
+        "IHP-10"
+      ],
+      "event": "Sasaran sintetis 10 tidak tercapai",
+      "cause": "Penyebab potensial sintetis",
+      "impact": "Dampak sintetis pada sasaran uji",
+      "basis": "Asumsi pengujian perangkat lunak, bukan fakta klien"
+    },
+    {
+      "id": "RK-11",
+      "ihp_ids": [
+        "IHP-11"
+      ],
+      "event": "Sasaran sintetis 11 tidak tercapai",
+      "cause": "Penyebab potensial sintetis",
+      "impact": "Dampak sintetis pada sasaran uji",
+      "basis": "Asumsi pengujian perangkat lunak, bukan fakta klien"
+    },
+    {
+      "id": "RK-12",
+      "ihp_ids": [
+        "IHP-12"
+      ],
+      "event": "Sasaran sintetis 12 tidak tercapai",
+      "cause": "Penyebab potensial sintetis",
+      "impact": "Dampak sintetis pada sasaran uji",
+      "basis": "Asumsi pengujian perangkat lunak, bukan fakta klien"
+    },
+    {
+      "id": "RK-13",
+      "ihp_ids": [
+        "IHP-13"
+      ],
+      "event": "Sasaran sintetis 13 tidak tercapai",
+      "cause": "Penyebab potensial sintetis",
+      "impact": "Dampak sintetis pada sasaran uji",
+      "basis": "Asumsi pengujian perangkat lunak, bukan fakta klien"
+    }
+  ],
+  "assignment_risks": [
+    {
+      "id": "RP-01",
+      "event": "Keterlambatan data uji",
+      "cause": "Jadwal penyerahan data uji berubah",
+      "impact": "Pengujian sintetis tertunda",
+      "controls": "Menetapkan batas penyerahan dan sumber alternatif dalam rencana uji.",
+      "owner": "Pegawai Uji 03",
+      "when": "Persiapan dan pemantauan harian"
+    }
+  ],
+  "objectives": [
+    {
+      "id": "TEO-01",
+      "type": "TEO",
+      "text": "Tujuan tentatif sintetis 1",
+      "risk_ids": [
+        "RK-01"
+      ],
+      "source": {
+        "kind": "USULAN_TENTATIF",
+        "basis": "Data uji, tidak berasal dari BPKP pusat"
+      }
+    },
+    {
+      "id": "TEO-02",
+      "type": "TEO",
+      "text": "Tujuan tentatif sintetis 2",
+      "risk_ids": [
+        "RK-02"
+      ],
+      "source": {
+        "kind": "USULAN_TENTATIF",
+        "basis": "Data uji, tidak berasal dari BPKP pusat"
+      }
+    },
+    {
+      "id": "TEO-03",
+      "type": "TEO",
+      "text": "Tujuan tentatif sintetis 3",
+      "risk_ids": [
+        "RK-03"
+      ],
+      "source": {
+        "kind": "USULAN_TENTATIF",
+        "basis": "Data uji, tidak berasal dari BPKP pusat"
+      }
+    },
+    {
+      "id": "TEO-04",
+      "type": "TEO",
+      "text": "Tujuan tentatif sintetis 4",
+      "risk_ids": [
+        "RK-04"
+      ],
+      "source": {
+        "kind": "USULAN_TENTATIF",
+        "basis": "Data uji, tidak berasal dari BPKP pusat"
+      }
+    },
+    {
+      "id": "TEO-05",
+      "type": "TEO",
+      "text": "Tujuan tentatif sintetis 5",
+      "risk_ids": [
+        "RK-05"
+      ],
+      "source": {
+        "kind": "USULAN_TENTATIF",
+        "basis": "Data uji, tidak berasal dari BPKP pusat"
+      }
+    },
+    {
+      "id": "TEO-06",
+      "type": "TEO",
+      "text": "Tujuan tentatif sintetis 6",
+      "risk_ids": [
+        "RK-06"
+      ],
+      "source": {
+        "kind": "USULAN_TENTATIF",
+        "basis": "Data uji, tidak berasal dari BPKP pusat"
+      }
+    },
+    {
+      "id": "TEO-07",
+      "type": "TEO",
+      "text": "Tujuan tentatif sintetis 7",
+      "risk_ids": [
+        "RK-07"
+      ],
+      "source": {
+        "kind": "USULAN_TENTATIF",
+        "basis": "Data uji, tidak berasal dari BPKP pusat"
+      }
+    },
+    {
+      "id": "TEO-08",
+      "type": "TEO",
+      "text": "Tujuan tentatif sintetis 8",
+      "risk_ids": [
+        "RK-08"
+      ],
+      "source": {
+        "kind": "USULAN_TENTATIF",
+        "basis": "Data uji, tidak berasal dari BPKP pusat"
+      }
+    },
+    {
+      "id": "TEO-09",
+      "type": "TEO",
+      "text": "Tujuan tentatif sintetis 9",
+      "risk_ids": [
+        "RK-09"
+      ],
+      "source": {
+        "kind": "USULAN_TENTATIF",
+        "basis": "Data uji, tidak berasal dari BPKP pusat"
+      }
+    },
+    {
+      "id": "TEO-10",
+      "type": "TEO",
+      "text": "Tujuan tentatif sintetis 10",
+      "risk_ids": [
+        "RK-10"
+      ],
+      "source": {
+        "kind": "USULAN_TENTATIF",
+        "basis": "Data uji, tidak berasal dari BPKP pusat"
+      }
+    },
+    {
+      "id": "TEO-11",
+      "type": "TEO",
+      "text": "Tujuan tentatif sintetis 11",
+      "risk_ids": [
+        "RK-11"
+      ],
+      "source": {
+        "kind": "USULAN_TENTATIF",
+        "basis": "Data uji, tidak berasal dari BPKP pusat"
+      }
+    },
+    {
+      "id": "TEO-12",
+      "type": "TEO",
+      "text": "Tujuan tentatif sintetis 12",
+      "risk_ids": [
+        "RK-12"
+      ],
+      "source": {
+        "kind": "USULAN_TENTATIF",
+        "basis": "Data uji, tidak berasal dari BPKP pusat"
+      }
+    },
+    {
+      "id": "TEO-13",
+      "type": "TEO",
+      "text": "Tujuan tentatif sintetis 13",
+      "risk_ids": [
+        "RK-13"
+      ],
+      "source": {
+        "kind": "USULAN_TENTATIF",
+        "basis": "Data uji, tidak berasal dari BPKP pusat"
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "id": "UJI-01",
+      "objective_ids": [
+        "TEO-01"
+      ],
+      "objective": "Menguji rancangan sintetis nomor 1",
+      "steps": [
+        {
+          "text": "Peroleh data sintetis 1, bandingkan dengan kriteria uji, dan dokumentasikan hasil uji.",
+          "assignees": [
+            "Pegawai Uji 01",
+            "Pegawai Uji 14"
+          ],
+          "weight": 2,
+          "reference": "KKA-UJI-01"
+        }
+      ]
+    },
+    {
+      "id": "UJI-02",
+      "objective_ids": [
+        "TEO-02"
+      ],
+      "objective": "Menguji rancangan sintetis nomor 2",
+      "steps": [
+        {
+          "text": "Peroleh data sintetis 2, bandingkan dengan kriteria uji, dan dokumentasikan hasil uji.",
+          "assignees": [
+            "Pegawai Uji 02",
+            "Pegawai Uji 15"
+          ],
+          "weight": 3,
+          "reference": "KKA-UJI-02"
+        }
+      ]
+    },
+    {
+      "id": "UJI-03",
+      "objective_ids": [
+        "TEO-03"
+      ],
+      "objective": "Menguji rancangan sintetis nomor 3",
+      "steps": [
+        {
+          "text": "Peroleh data sintetis 3, bandingkan dengan kriteria uji, dan dokumentasikan hasil uji.",
+          "assignees": [
+            "Pegawai Uji 03",
+            "Pegawai Uji 16"
+          ],
+          "weight": 1,
+          "reference": "KKA-UJI-03"
+        }
+      ]
+    },
+    {
+      "id": "UJI-04",
+      "objective_ids": [
+        "TEO-04"
+      ],
+      "objective": "Menguji rancangan sintetis nomor 4",
+      "steps": [
+        {
+          "text": "Peroleh data sintetis 4, bandingkan dengan kriteria uji, dan dokumentasikan hasil uji.",
+          "assignees": [
+            "Pegawai Uji 04",
+            "Pegawai Uji 17"
+          ],
+          "weight": 2,
+          "reference": "KKA-UJI-04"
+        }
+      ]
+    },
+    {
+      "id": "UJI-05",
+      "objective_ids": [
+        "TEO-05"
+      ],
+      "objective": "Menguji rancangan sintetis nomor 5",
+      "steps": [
+        {
+          "text": "Peroleh data sintetis 5, bandingkan dengan kriteria uji, dan dokumentasikan hasil uji.",
+          "assignees": [
+            "Pegawai Uji 05",
+            "Pegawai Uji 01"
+          ],
+          "weight": 3,
+          "reference": "KKA-UJI-05"
+        }
+      ]
+    },
+    {
+      "id": "UJI-06",
+      "objective_ids": [
+        "TEO-06"
+      ],
+      "objective": "Menguji rancangan sintetis nomor 6",
+      "steps": [
+        {
+          "text": "Peroleh data sintetis 6, bandingkan dengan kriteria uji, dan dokumentasikan hasil uji.",
+          "assignees": [
+            "Pegawai Uji 06",
+            "Pegawai Uji 02"
+          ],
+          "weight": 1,
+          "reference": "KKA-UJI-06"
+        }
+      ]
+    },
+    {
+      "id": "UJI-07",
+      "objective_ids": [
+        "TEO-07"
+      ],
+      "objective": "Menguji rancangan sintetis nomor 7",
+      "steps": [
+        {
+          "text": "Peroleh data sintetis 7, bandingkan dengan kriteria uji, dan dokumentasikan hasil uji.",
+          "assignees": [
+            "Pegawai Uji 07",
+            "Pegawai Uji 03"
+          ],
+          "weight": 2,
+          "reference": "KKA-UJI-07"
+        }
+      ]
+    },
+    {
+      "id": "UJI-08",
+      "objective_ids": [
+        "TEO-08"
+      ],
+      "objective": "Menguji rancangan sintetis nomor 8",
+      "steps": [
+        {
+          "text": "Peroleh data sintetis 8, bandingkan dengan kriteria uji, dan dokumentasikan hasil uji.",
+          "assignees": [
+            "Pegawai Uji 08",
+            "Pegawai Uji 04"
+          ],
+          "weight": 3,
+          "reference": "KKA-UJI-08"
+        }
+      ]
+    },
+    {
+      "id": "UJI-09",
+      "objective_ids": [
+        "TEO-09"
+      ],
+      "objective": "Menguji rancangan sintetis nomor 9",
+      "steps": [
+        {
+          "text": "Peroleh data sintetis 9, bandingkan dengan kriteria uji, dan dokumentasikan hasil uji.",
+          "assignees": [
+            "Pegawai Uji 09",
+            "Pegawai Uji 05"
+          ],
+          "weight": 1,
+          "reference": "KKA-UJI-09"
+        }
+      ]
+    },
+    {
+      "id": "UJI-10",
+      "objective_ids": [
+        "TEO-10"
+      ],
+      "objective": "Menguji rancangan sintetis nomor 10",
+      "steps": [
+        {
+          "text": "Peroleh data sintetis 10, bandingkan dengan kriteria uji, dan dokumentasikan hasil uji.",
+          "assignees": [
+            "Pegawai Uji 10",
+            "Pegawai Uji 06"
+          ],
+          "weight": 2,
+          "reference": "KKA-UJI-10"
+        }
+      ]
+    },
+    {
+      "id": "UJI-11",
+      "objective_ids": [
+        "TEO-11"
+      ],
+      "objective": "Menguji rancangan sintetis nomor 11",
+      "steps": [
+        {
+          "text": "Peroleh data sintetis 11, bandingkan dengan kriteria uji, dan dokumentasikan hasil uji.",
+          "assignees": [
+            "Pegawai Uji 11",
+            "Pegawai Uji 07"
+          ],
+          "weight": 3,
+          "reference": "KKA-UJI-11"
+        }
+      ]
+    },
+    {
+      "id": "UJI-12",
+      "objective_ids": [
+        "TEO-12"
+      ],
+      "objective": "Menguji rancangan sintetis nomor 12",
+      "steps": [
+        {
+          "text": "Peroleh data sintetis 12, bandingkan dengan kriteria uji, dan dokumentasikan hasil uji.",
+          "assignees": [
+            "Pegawai Uji 12",
+            "Pegawai Uji 08"
+          ],
+          "weight": 1,
+          "reference": "KKA-UJI-12"
+        }
+      ]
+    },
+    {
+      "id": "UJI-13",
+      "objective_ids": [
+        "TEO-13"
+      ],
+      "objective": "Menguji rancangan sintetis nomor 13",
+      "steps": [
+        {
+          "text": "Peroleh data sintetis 13, bandingkan dengan kriteria uji, dan dokumentasikan hasil uji.",
+          "assignees": [
+            "Pegawai Uji 13",
+            "Pegawai Uji 09"
+          ],
+          "weight": 2,
+          "reference": "KKA-UJI-13"
+        }
+      ]
+    }
+  ],
+  "general_split": {
+    "conclusion_share": 0.1,
+    "final_kk_share": 0.5
+  },
+  "pia": {
+    "TOPIK_PIA": "Hasil sintetis TOPIK_PIA",
+    "NOMOR_ST_PIA": "Hasil sintetis NOMOR_ST_PIA",
+    "TANGGAL_ST_PIA": "2026-10-01",
+    "TANGGAL_MULAI_PIA": "2026-10-01",
+    "TANGGAL_SELESAI_PIA": "2026-10-01",
+    "TUJUAN_PIA": "Hasil sintetis TUJUAN_PIA",
+    "LINGKUP_PIA": "Hasil sintetis LINGKUP_PIA",
+    "GAMBARAN_UMUM_PIA": "Hasil sintetis GAMBARAN_UMUM_PIA",
+    "HASIL_TELAAH_PIA": "Hasil sintetis HASIL_TELAAH_PIA",
+    "HASIL_KONFIRMASI_PIA": "Hasil sintetis HASIL_KONFIRMASI_PIA",
+    "KECUKUPAN_INFORMASI_PIA": "Hasil sintetis KECUKUPAN_INFORMASI_PIA",
+    "SIMPULAN_RINGKAS_PIA": "Hasil sintetis SIMPULAN_RINGKAS_PIA",
+    "SIMPULAN_KELAYAKAN_PENGAWASAN": "Hasil sintetis SIMPULAN_KELAYAKAN_PENGAWASAN",
+    "USULAN_KEPUTUSAN_PENGAWASAN": "Hasil sintetis USULAN_KEPUTUSAN_PENGAWASAN",
+    "BATAS_TANGGUNG_JAWAB_PIA": "Hasil sintetis BATAS_TANGGUNG_JAWAB_PIA",
+    "METODE_PIA_1": "Hasil sintetis METODE_PIA_1",
+    "NAMA_PENANDATANGAN_ND": "Hasil sintetis NAMA_PENANDATANGAN_ND",
+    "JABATAN_PENANDATANGAN_ND": "Hasil sintetis JABATAN_PENANDATANGAN_ND",
+    "JABATAN_PENERIMA_ND": "Hasil sintetis JABATAN_PENERIMA_ND",
+    "TANGGAL_ND_PIA": "2026-10-01",
+    "NAMA_KT_PIA": "Hasil sintetis NAMA_KT_PIA",
+    "NIP_KT_PIA": "199001012020010003",
+    "NAMA_KORWAS_PIA": "Hasil sintetis NAMA_KORWAS_PIA",
+    "NIP_KORWAS_PIA": "199001012020010001",
+    "HARI_PIA_TERBILANG": "satu",
+    "KENDALA_DAN_PENANGANAN_PIA": "Hasil sintetis KENDALA_DAN_PENANGANAN_PIA",
+    "DASAR_PIA_1": "Hasil sintetis DASAR_PIA_1"
+  }
+}
