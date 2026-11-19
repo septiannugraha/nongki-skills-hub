@@ -10,11 +10,9 @@ Modul ini disusun berlandaskan:
 
 ## 1. Pembaruan & Penyederhanaan Terkini
 
-1. **Bebas Data Pribadi Kepegawaian (Aman untuk Publik / Git):**
-   - Berkas master `Isian_DATA_MPP_BPKP.xlsx` di repositori tidak menyertakan sheet database pegawai demi perlindungan privasi.
-   - Pengisian nama dan NIP tim dilakukan secara manual langsung pada sheet `DATA` (kolom kuning).
-   - Kolom NIP diformat sebagai teks (`@`) untuk menjaga ketepatan 18 digit angka.
-   - Pengguna yang memiliki database pegawai internal di komputer lokal dapat menggunakan opsi `--with-pegawai` pada skrip `create_workbook.py` untuk mengaktifkan *searchable dropdown* dan *auto-VLOOKUP* secara privat.
+1. **Pengisian nama dan NIP:**
+   - Pada templat bawaan, ketik nama dan NIP sebagai teks.
+   - Untuk workbook privat dengan dropdown dan VLOOKUP NIP, buat workbook dengan `scripts/create_workbook.py <output.xlsx> --with-pegawai --pegawai-source <workbook-lokal.xlsx>`. Simpan hasil di luar repositori publik.
 
 2. **Pembersihan Total Isian Tanpa Output:**
    - **Path Output SIMA-NG Dihapus:** Kolom path output konsep ST, KM-4, dan KM-5 SIMA-NG telah dibuang dari lembar isian.
@@ -45,7 +43,7 @@ Modul ini disusun berlandaskan:
 
 ## 2. Struktur Workbook Excel (`Isian_DATA_MPP_BPKP.xlsx`)
 
-Saat membuka berkas Excel, pengguna disajikan **4 sheet aktif**:
+Saat membuka berkas Excel, pengguna hanya melihat **4 sheet aktif**:
 
 | No | Nama Sheet | Fungsi Utama |
 |---|---|---|
@@ -53,6 +51,7 @@ Saat membuka berkas Excel, pengguna disajikan **4 sheet aktif**:
 | **2** | **`IHP`** | Daftar butir Informasi Hasil Pengawasan (1 kolom praktis). |
 | **3** | **`TEMBUSAN`**| Daftar instansi/jabatan penerima tembusan surat. |
 | **4** | **`JAM_TIM`** | Alokasi jam kerja orang per fase (terhitung otomatis dari DATA). |
+Sheet `Pegawai` hanya tersedia pada workbook privat yang menyertakannya.
 
 ---
 
@@ -78,10 +77,10 @@ Saat membuka berkas Excel, pengguna disajikan **4 sheet aktif**:
 ## 4. Panduan Pengisian Sheet `DATA`
 
 1. **Susunan Tim (Baris 4–27):**
-   - **Kolom B (Nama Pegawai):** Ketik nama pegawai yang ditugaskan.
-   - **Kolom C (NIP):** Ketik NIP 18 digit angka (disimpan sebagai teks).
-   - **Kolom D:** Memuat petunjuk dan contoh isian.
-   - Cukup isi baris anggota yang ditugaskan (tersedia hingga AT 20); baris AT yang tidak terpakai dibiarkan kosong.
+   - **Kolom B (Nama Pegawai)** dapat diketik atau dipilih dari dropdown jika workbook menyediakan sheet `Pegawai`.
+   - **Kolom C (NIP)** diisi sebagai teks 18 digit pada templat bawaan. Pada workbook privat dengan dropdown, VLOOKUP mengisi NIP untuk nama yang ditemukan.
+   - **Kolom D:** Memuat petunjuk pengisian.
+   - Cukup isi baris yang digunakan; baris AT yang tidak terpakai dibiarkan kosong.
 2. **Detail Penugasan (Baris 29–37):**
    - **Bidang (B29):** Pilih dari dropdown (`Umum`, `IPP`, `APD`, `AN`, `Investigasi`, `P3A`).
    - **Nama Penugasan (B30)**, **Sasaran (B31)**, **Objek (B33)**, **Periode (B34)**, **Alamat (B37)**: Isi sesuai penugasan (contoh tersedia di Kolom D).
@@ -117,13 +116,9 @@ Gunakan $mpp-bpkp untuk membuat seluruh dokumen MPP dari file isian XLSX ini dal
   ```
 - **Generate Dokumen Lengkap (DOCX & PDF)**:
   ```powershell
-  python scripts/generate_mpp.py "path/ke/isian.xlsx" --content "path/ke/rancangan.json" --output-root "<folder-hasil>"
+  python scripts/generate_mpp.py "path/ke/isian.xlsx" --content "path/ke/rancangan.json" --output-root "Hasil_MPP"
   ```
-- **Membuat Master Isian Baru**:
+- **Membuat File Isian Kosong Baru**:
   ```powershell
-  # Versi bersih (manual input, tanpa data kepegawaian):
-  python scripts/create_workbook.py "path/ke/isian.xlsx" --overwrite
-
-  # Versi lokal dengan database pegawai internal:
-  python scripts/create_workbook.py "path/ke/isian.xlsx" --overwrite --with-pegawai
+  python scripts/create_workbook.py "Isian_Baru.xlsx"
   ```

@@ -1,6 +1,6 @@
 # Penomoran dan Format Naskah Dinas BPKP
 
-Referensi format penomoran, kode jenis naskah, kop, kertas, spasi, margin, dan tabel sesuai **BAB II Pembuatan Naskah Dinas** Peraturan BPKP Nomor 4 Tahun 2026 (menggantikan Lampiran BAB III Perban 4/2022).
+Referensi format penomoran, kode jenis naskah, kop, kertas, spasi, dan ruang tepi sesuai **BAB II Pembuatan Naskah Dinas**, serta desain formulir menurut **BAB V-C.20**, Peraturan BPKP Nomor 4 Tahun 2026. Pilihan implementasi Word dibedakan dari ketentuan peraturan.
 
 ---
 
@@ -25,7 +25,6 @@ Untuk naskah dinas selain Peraturan/Instruksi/Surat Edaran:
 ```
 [kode klasifikasi arsip] / [kode keamanan] / [kode jenis] - [nomor urut] / [kode unit penanda tangan] / [kode konseptor] / [tahun]
 ```
-Kode keamanan diletakkan **setelah** kode klasifikasi arsip dan dihilangkan untuk naskah Biasa (Peraturan BPKP 4/2026 Bagian II.B.2.b); beberapa templat juga tanpa kode konseptor (lihat format surat dinas).
 
 Contoh riil naskah pengawasan BPKP di lapangan:
 1. **Surat Tugas (ST):** `PE.09.02/ST-314/PW36/2/2026`
@@ -37,20 +36,19 @@ Contoh riil naskah pengawasan BPKP di lapangan:
 2. **Laporan Hasil Pengawasan / Evaluasi (LHP):** `PE.09.03/LHP-314/PW36/2/2026`
 3. **Nota Dinas Internal Kantor Pusat:** `HO-01.02/ND-001/SU 01 1/2026`
 
-### Format Surat Dinas (mengikuti templat resmi)
-Surat Dinas, Surat Dinas Kepala/Waka, dan Surat Pengantar Penugasan menempatkan kode keamanan **sesudah** kode klasifikasi arsip dan **tanpa** kode konseptor:
-```
-[kode klasifikasi arsip] / [kode keamanan] / S - [nomor urut] / [kode unit penanda tangan] / [tahun]
-```
-Contoh: `PW.01.03/R/S-7/PW16/2026` (Rahasia); untuk surat Biasa segmen keamanan dihilangkan: `PW.01.03/S-7/PW16/2026`.
+### Pola nomor pada templat
 
-Templat lain tanpa kode konseptor: Notisi Hasil Pengawasan dan Surat Dinas Notisi (`S`), Surat Permintaan Data (`S`), Surat Undangan (`UND`), dan Laporan Penunjang Pengawasan (`LPP`), dengan pola `[kode klasifikasi arsip] / [kode jenis] - [nomor urut] / [kode unit] / [tahun]`. `scripts/generate_naskah.py` membaca baris nomor tiap templat dan menyusun nomor dengan urutan segmen yang sama.
+Templat Surat Dinas, Surat Dinas Kepala/Wakil Kepala, dan Surat Pengantar Penugasan memakai pola `[kode klasifikasi arsip]/[kode keamanan]/S-[nomor urut]/[kode unit]/[tahun]` tanpa kode konseptor. Contoh surat Rahasia `PW.01.03/R/S-7/PW16/2026` dan surat Biasa `PW.01.03/S-7/PW16/2026`.
+
+Surat dinas penyampaian Notisi memakai nomor surat dinas. Notisi pertama yang disampaikan langsung oleh tim dan Notisi yang dilampirkan pada surat dinas mengikuti format Notisi pada BAB V-C.1.
+
+`generate_naskah.py` membaca pola nomor pada templat. Untuk nomor yang telah ditetapkan, gunakan `nomor_lengkap`.
 
 ### Kode Keamanan (Khusus Surat Dinas)
 - `SR` : Sangat Rahasia
 - `R`  : Rahasia
 - `T`  : Terbatas
-- Biasa (dicatat sebagai `B` pada pengendalian naskah masuk): **tanpa kode** di nomor naskah
+- Biasa tanpa kode di nomor surat. Kode `B` dipakai dalam pengendalian naskah masuk.
 
 ### Pengecualian Penomoran
 - **Tanpa kode jenis**: Peraturan, Instruksi, Surat Edaran (Format 1).
@@ -145,14 +143,12 @@ Kop surat naskah dinas resmi memuat lambang negara/logo BPKP dan identitas unit 
 
 ### A. Ukuran Kertas & Margin
 - **Kertas:** A4 (21,0 cm x 29,7 cm)
-- **Margin Kiri:** 3,0 cm (1.18", ruang jilid)
-- **Margin Atas, Kanan, Bawah:** 2,0 cm (0.79")
+- **Ruang Tepi (BAB II-E):** Atas 10 mm bila memakai kop, paling kurang 20 mm tanpa kop/pada halaman berikutnya; bawah paling kurang 25 mm; kiri paling kurang 30 mm untuk media kertas atau 20 mm untuk elektronik; kanan paling kurang 20 mm. Pengaturan fleksibel dengan mempertimbangkan isi, keserasian, dan estetika.
 
 ### B. Tipografi & Spasi
-- **Font Utama:** **Arial** (100% konsisten pada semua komponen dokumen)
-- **Line Spacing:** 1.15 line pitch
-- **Space After Paragraph:** 6 pt (Space Before: 0 pt, kecuali Sub-heading: Before 8 pt)
-- **Perataan:** 100% **Justified (Rata Kiri-Kanan)**
+- **Font Umum (BAB II-D.2):** **Arial 11 atau 12 pt**; produk hukum berupa peraturan, instruksi, surat edaran, dan keputusan menggunakan **Bookman Old Style 12 pt**. Ikuti ukuran khusus kop/judul sesuai jenis naskah.
+- **Spasi (BAB II-D.1):** Ikuti jarak antarunsur dan sesuaikan jarak baris dengan keperluan/estetika. Spasi 1,15 dan space after 6 pt adalah pilihan implementasi narasi, bukan kewajiban universal.
+- **Perataan:** Sesuaikan format judul, metadata, narasi, angka, dan tabel; jangan memaksa semua unsur rata kiri-kanan.
 
 ### C. Hierarki Indentasi & Tab Stops (Anti-Bocor / Hanging Indent)
 - **Level 1 (Topik/Bab):** Left `0.00"`, First Line `0.00"`, Bold 12 pt.
@@ -161,11 +157,12 @@ Kop surat naskah dinas resmi memuat lambang negara/logo BPKP dan identitas unit 
 - **Level 3 (Rincian Lokus `1)`, `2)`):** Left `1.25"` (1800 dxa), First Line `-0.25"` (-360 dxa), Tab Stop di `1800 dxa` (`1.25"`), Justified, Nama Lokus Regular.
 - **Level 4 (Detail Item `a)`, `b)`):** Left `1.50"` (2160 dxa), First Line `-0.25"` (-360 dxa), Tab Stop di `2160 dxa` (`1.50"`), Justified.
 
-### D. Format Tabel BPKP (Clean Open-Table Style)
-- Garis border **hanya horizontal** (Top, Bottom, dan pemisah Header sz="4" abu-abu/hitam). **Tanpa border vertikal**.
-- Header shading abu-abu lembut (`#F2F2F2`), teks bold rata tengah/kiri, *vertically centered*.
-- Padding sel: Atas/Bawah 100 dxa (~5 pt), Kiri/Kanan 150 dxa (~7.5 pt).
-- Angka rata kanan, teks uraian rata kiri/justified, nomor rata tengah. Keterangan sumber dicantumkan di bawah tabel (*Arial 9 pt Italic*).
+### D. Format Tabel Sesuai Jenis Naskah/Formulir
+- Tidak ada dasar untuk menerapkan larangan border kiri/kanan/vertikal pada semua tabel. Pertahankan border contoh/templat yang berlaku. BAB V-C.20 membolehkan desain formulir sesuai kebutuhan informasi, kegunaan, isi, penampilan, atau ketentuan khusus.
+- Tabel kendali pada `assets/templates/Routing_Slip.docx` memiliki border kiri/kanan; tabel `assets/templates/SOP.docx` memiliki border luar dan antarkolom. Jangan menghapusnya demi menyeragamkan gaya.
+- Bedakan tabel data/formulir dari tabel tata letak metadata, kop, atau blok tanda tangan yang dapat tanpa garis tercetak.
+- Gaya garis horizontal saja (*open table*), header `#F2F2F2`, dan padding 100/150 dxa dapat dipilih untuk tabel naratif yang tidak memiliki format khusus. Itu pilihan desain, bukan kewajiban umum TND.
+- Periksa border pada tingkat tabel, sel, dan style, lalu pratinjau hasil cetak. Rujukan serta langkah keputusan lengkap: [Format Tabel dan Status Rujukan](format-tabel-dan-rujukan.md).
 
 ### E. Format Khusus Google Workspace / Google Docs (GWS)
 - **Tabel Metadata Surat Pengantar:** Wajib menggunakan format **4 Kolom** (Kolom 1: Label `69 pt`, Kolom 2: `:` `18 pt`, Kolom 3: Konten/Judul `237.75 pt`, Kolom 4: Tanggal Kanan `129.75 pt`) untuk mencegah *hanging indent* pada *line wrapping* judul `Hal`.

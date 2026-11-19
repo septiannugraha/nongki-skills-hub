@@ -1,7 +1,8 @@
 ---
 name: tata-naskah-dinas-bpkp
-description: Menyusun, mengedit, dan memvalidasi naskah dinas resmi di lingkungan BPKP (surat dinas, nota dinas, surat tugas, keputusan, berita acara, MoU, laporan, dll) sesuai Peraturan BPKP Nomor 4 Tahun 2026 tentang Tata Naskah Dinas (menggantikan Perban 4/2022). Gunakan saat diminta membuat draf naskah/surat dinas, menentukan jenis naskah yang tepat, menyusun penomoran arsip, memilih pejabat penanda tangan, atau mengklasifikasikan derajat kerahasiaan naskah.
-tags: [bpkp, tata-naskah-dinas, tnd, naskah-dinas, surat-dinas, nota-dinas, surat-tugas, peraturan-bpkp-4-2026, penomoran, penanda-tangan]
+description: "Standar format, penomoran, jenis naskah, dan hierarki tanda tangan surat dinas, nota dinas, surat tugas, serta naskah dinas resmi BPKP (Peraturan BPKP 4/2026)."
+metadata:
+  tags: [bpkp, tata-naskah-dinas, tnd, naskah-dinas, surat-dinas, nota-dinas, surat-tugas, peraturan-bpkp-4-2026, penomoran, penanda-tangan]
 ---
 
 # Tata Naskah Dinas BPKP
@@ -25,6 +26,13 @@ Baca file referensi sesuai kebutuhan:
 - [Penomoran dan Format](references/penomoran-dan-format.md) -- format nomor, kode jenis naskah, kop, kertas, spasi, margin.
 - [Matriks Penanda Tangan](references/matriks-penanda-tangan.md) -- wewenang penandatanganan per jenis naskah, pelimpahan wewenang (a.n., u.b., Plt., Plh.), TTE.
 - [Pengamanan dan Perubahan](references/pengamanan-dan-perubahan.md) -- klasifikasi keamanan, enkripsi, tata cara perubahan/pencabutan/pembatalan/ralat.
+- [Format Tabel dan Status Rujukan](references/format-tabel-dan-rujukan.md) -- pemilihan border sesuai jenis naskah/formulir, contoh yang memiliki garis kiri/kanan, serta pemisahan aturan TND dari pilihan tata letak.
+
+### Rujukan dan batas penerapan format
+
+- Dahulukan ketentuan jenis naskah dan contoh/formulir yang berlaku. BAB II memuat ketentuan umum; BAB V memuat susunan dan bentuk per jenis naskah.
+- Bedakan ketentuan peraturan, format khusus unit kerja, dan pilihan implementasi generator. Ukuran padding, warna header, spasi 1,15, atau pola tabel tertentu dalam resep teknis bukan otomatis kewajiban TND untuk semua dokumen.
+- Tidak ada dasar untuk menggeneralisasi semua tabel harus tanpa border kiri/kanan/vertikal. Pertahankan border sesuai format yang dipakai; lihat Bagian 6.5. Periksa tampilan PDF atau templat Word karena ekstraksi Markdown menghilangkan garis tabel dan dapat kehilangan contoh berbentuk gambar.
 
 ## 1. Taksonomi Jenis Naskah Dinas
 
@@ -90,17 +98,12 @@ TENTANG
 ```
 [kode klasifikasi arsip] / [kode keamanan] / [kode jenis] - [nomor urut] / [kode unit penanda tangan] / [kode konseptor] / [tahun]
 ```
-Kode keamanan diletakkan **setelah** kode klasifikasi arsip dan dihilangkan untuk naskah Biasa (Peraturan BPKP 4/2026 Bagian II.B.2.b); beberapa templat juga tanpa kode konseptor (lihat format surat dinas).
 
-**Surat dinas** (Surat Dinas, Surat Dinas Kepala/Waka, Surat Pengantar Penugasan) mengikuti templat resmi, dengan kode keamanan sesudah kode klasifikasi arsip dan tanpa kode konseptor:
-```
-[kode klasifikasi arsip] / [kode keamanan] / S - [nomor urut] / [kode unit penanda tangan] / [tahun]
-```
-Notisi, Surat Permintaan Data, Undangan, dan Laporan Penunjang Pengawasan juga tanpa kode konseptor (`[kode klasifikasi arsip] / [kode jenis] - [nomor urut] / [kode unit] / [tahun]`). `generate_naskah.py` menyusun nomor mengikuti urutan segmen pada baris nomor masing-masing templat.
-
-Kode keamanan hanya untuk surat dinas: `SR` (Sangat Rahasia), `R` (Rahasia), `T` (Terbatas); surat Biasa tanpa kode keamanan (segmennya dihilangkan). Kode jenis utama (Peraturan 4/2026): `KEP`, `SPRIN`, `ST`, `ND`, `MO`, `UND`, `S`, `LHP`, `LPP`, `MoU`, `PRJ`, `BA`, `KS`, `KET`, `SP`, `PENG`, `PRT`, `SPT`, `NOTULA`, `SERT`, `PI`.
+Pada surat dinas, kode keamanan dicantumkan setelah kode klasifikasi arsip. Gunakan `SR` (Sangat Rahasia), `R` (Rahasia), atau `T` (Terbatas). Surat Biasa tidak memakai segmen keamanan. Ikuti pola templat surat untuk menentukan penggunaan kode konseptor. Kode jenis utama (Peraturan 4/2026): `KEP`, `SPRIN`, `ST`, `ND`, `MO`, `UND`, `S`, `LHP`, `LPP`, `MoU`, `PRJ`, `BA`, `KS`, `KET`, `SP`, `PENG`, `PRT`, `SPT`, `NOTULA`, `SERT`, `PI`.
 
 **Naskah Dinas tanpa penomoran** (tidak dibubuhi nomor; mengikuti kebijakan unit kerja): disposisi, dokumentasi pengawasan, pedoman, panduan teknis pengawasan, petunjuk pelaksanaan/teknis, telaah staf, kerangka acuan kerja, dan formulir.
+
+Notisi pertama yang disampaikan langsung memuat tanda tangan tim pengawasan dan tidak memakai kop, cap, atau nomor surat dinas. Surat dinas untuk penyampaian Notisi memakai format surat dan ditandatangani pimpinan unit kerja. Lihat BAB V-C.1.
 
 Nomor urut agenda elektronik dimulai dari 1 setiap awal tahun, dikelompokkan per jenis naskah, dan **tidak diperkenankan ditambahkan kode, huruf, angka romawi, maupun penanda lainnya** yang mengubah format penomoran. Detail elemen, daftar kode lengkap, serta ketentuan kop/kertas/spasi/margin ada di [Penomoran dan Format](references/penomoran-dan-format.md).
 
@@ -109,10 +112,10 @@ Nomor urut agenda elektronik dimulai dari 1 setiap awal tahun, dikelompokkan per
 Aturan kunci (Peraturan 4/2026, BAB III):
 - Naskah bersifat **kebijakan/keputusan/arahan** kepada pihak luar BPKP: ditandatangani **Kepala BPKP**, dapat didelegasikan/dilimpahkan ke **JPT Madya**.
 - **Peraturan/Instruksi**: hanya Kepala BPKP.
-- **Surat Edaran/Keputusan**: Kepala BPKP, JPT Madya, atau JPT Pratama.
-- **SOP**: hanya JPT Pratama.
-- **Nota dinas/disposisi/memorandum/undangan internal/surat dinas**: semua jenjang sampai administrator/koordinator/pengawas.
-- **MoU/Perjanjian Kerja Sama luar negeri**: Kepala BPKP atau JPT Madya (tidak lagi hanya Kepala BPKP).
+- **Surat Edaran**: Kepala, Wakil Kepala, atau JPT Madya. **Keputusan**: Kepala, JPT Madya, JPT Pratama, atau KPA/Barang sesuai lingkup yang ditetapkan pada Tabel III.1.
+- **SOP**: JPT Madya.
+- **Korespondensi dan disposisi**: periksa kewenangan per jenis naskah di Tabel III.1. Surat dinas dan undangan internal tidak memberikan kewenangan umum kepada administrator atau pengawas.
+- **Nota Kesepahaman dan Surat Perjanjian luar negeri**: Kepala atau Wakil Kepala.
 - **Laporan hasil pengawasan**: Kepala BPKP, JPT Madya, JPT Pratama.
 - **Dokumentasi Pengawasan**: JPT Pratama, Administrator/Koordinator, atau Staf/Jabatan Fungsional (tanpa kop dan cap unit kerja).
 
@@ -162,14 +165,13 @@ Terapkan prinsip humanisasi dan pemeriksaan EYD V sebagaimana diuraikan pada ski
 
 ## 6. Standar Formatting, Indentasi, & Penomoran Word (docx)
 
-Berdasarkan implementasi standar naskah dinas dan laporan pengawasan BPKP pada Microsoft Word (`docx`):
+Bagian ini memisahkan ketentuan umum TND dari resep implementasi Word. Terapkan pengaturan khusus jenis naskah terlebih dahulu; pola heading, indentasi, dan ukuran tabel di bawah merupakan pilihan implementasi untuk laporan naratif bila sesuai dengan templat.
 
 ### 6.1 Pengaturan Halaman & Tipografi
-- **Ukuran Kertas & Ruang Tepi:** Kertas A4 (21,0 cm x 29,7 cm). Batas minimum ruang tepi (Peraturan BPKP 4/2026 Bagian II.E, bersifat fleksibel): atas 10 mm bila berkop / paling kurang 20 mm tanpa kop atau halaman berikutnya; **bawah paling kurang 25 mm**; kiri paling kurang 30 mm (media kertas) / 20 mm (elektronik); kanan paling kurang 20 mm. Preset engine (`create_document`): kiri 3,0 cm, kanan 2,0 cm, atas 2,0 cm, bawah 2,5 cm.
-- **Nomor Halaman (Peraturan BPKP 4/2026 Bagian II.F):** angka Arab, di tengah atas dengan format `- 2 -`, halaman pertama yang memakai kop (atau cover) tanpa nomor, jenis huruf sama dengan naskah. `create_document()` memasangnya otomatis.
-- **Font:** Naskah dinas memakai **Arial ukuran 11 atau 12**; naskah dinas berbentuk produk hukum (peraturan, instruksi, surat edaran, dan keputusan) memakai **Bookman Old Style ukuran 12** (Peraturan BPKP 4/2026 Bagian II.D.2). Kop naskah dinas tetap Arial. Untuk naskah ber-font Arial, pada OpenXML Word wajib menyertakan:
+- **Ukuran Kertas & Ruang Tepi:** Gunakan A4 untuk dokumen penugasan sesuai templat. BAB II-E menyebut ruang tepi atas 10 mm bila memakai kop, paling kurang 20 mm tanpa kop atau pada halaman berikutnya; bawah paling kurang 25 mm; kiri paling kurang 30 mm untuk media kertas atau 20 mm untuk media elektronik; kanan paling kurang 20 mm. Ketentuan tersebut fleksibel dengan memperhatikan isi, keserasian, dan estetika. Jangan menyebut margin 3/2/2/2 cm sebagai satu-satunya format TND.
+- **Font Umum:** BAB II-D.2 menetapkan **Arial 11 atau 12 pt**, dengan pengecualian produk hukum berupa peraturan, instruksi, surat edaran, dan keputusan menggunakan **Bookman Old Style 12 pt**. Ikuti ukuran khusus kop/judul menurut jenis naskah. Untuk keluaran Arial, tetapkan atribut OpenXML secara eksplisit:
   `<w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial" w:eastAsia="Arial"/>`
-- **Ukuran Font:**
+- **Contoh Ukuran untuk Laporan Naratif Berbasis Arial:** Pengaturan berikut adalah resep implementasi, disesuaikan dengan templat dan ketentuan khusus, bukan ukuran wajib universal:
   - Judul Dokumen/Naskah: Arial 12–14 pt Bold (Cover: Arial 14–16 pt Bold)
   - Nama Lembaga Cover: Arial 13 pt Bold; Nama Perwakilan/Kedeputian: Arial 12 pt Bold
   - Heading 1/Judul Bab: Arial 12 pt Bold, Rata Tengah, Spasi Atas 12 pt, Spasi Bawah 6 pt
@@ -178,17 +180,16 @@ Berdasarkan implementasi standar naskah dinas dan laporan pengawasan BPKP pada M
   - Isi Narasi Paragraf / Rincian: Arial 12 pt Regular
   - Header & Isi Tabel: Arial 10 pt (Header Bold, Isi Regular)
   - Catatan Kaki, Keterangan Sumber Tabel, Alamat Kop: Arial 9 pt Regular / Italic
-- **Spasi & Perataan:** Line spacing **1,15 line pitch** (`w:line="276"`), Space After **6 pt** (`w:after="120"` dxa), Space Before **0 pt** (khusus sub-heading: Space Before **8 pt**). Perataan teks wajib **100% Justified (Rata Kiri-Kanan)**.
+- **Spasi & Perataan:** BAB II-D.1 mengatur jarak antarunsur dan membolehkan jarak baris mengikuti keperluan serta estetika. Spasi **1,15** (`w:line="276"`), space after **6 pt**, dan before **0 pt** dapat dipakai sebagai pilihan implementasi narasi. Sesuaikan judul, metadata, angka, dan tabel menurut formatnya; jangan memaksa semua teks rata kiri-kanan.
 
 ### 6.2 Headings Bertingkat: Style Word, Google Docs, & Markdown
 
 Pemisahan dan penerapan *style Heading* bawaan Word / Google Docs (`Heading 1` s.d. `Heading 4`) sangat penting agar Navigation Panel (Pohon Navigasi) dan Daftar Isi (TOC) terbentuk otomatis dan utuh hingga level sub-temuan/sub-pokok naskah.
 
 > [!important] KEHARUSAN PENERAPAN HEADING BERTINGKAT (MARKDOWN & DOKUMEN OFFICE)
-> AI Asisten dan penyusun naskah **WAJIB** menerapkan struktur heading bertingkat secara hierarkis dan konsisten pada setiap draf narasi, baik luaran teks/markdown maupun dokumen DOCX/Google Docs.
-> **DILARANG** menyajikan judul bab/bagian/topik hanya sebagai teks biasa yang ditebalkan (`**tebal**`) tanpa penanda heading!
+> Untuk laporan/pedoman yang memiliki bab dan subbagian, gunakan heading bertingkat yang konsisten agar navigasi dan daftar isi terbentuk. Pertahankan struktur surat tugas, nota dinas, dan formulir sesuai templat; jangan menambahkan bab/heading yang tidak diperlukan oleh jenis naskahnya.
 
-#### A. Dua Skema Hierarki Heading Resmi BPKP
+#### A. Dua Skema Implementasi Hierarki Heading
 
 1. **Skema 1: Laporan Pengawasan Bab Panjang (LHP / LHE / LHR)**
    - **Level 1 (`#` / `Heading 1` / `HEADING_1`)**: Judul BAB — Arial 12pt Bold, Center.
@@ -234,7 +235,7 @@ Pemisahan dan penerapan *style Heading* bawaan Word / Google Docs (`Heading 1` s
 - **Paragraf narasi/isi:** Regular 12 pt — tidak ada Bold kecuali judul butir pada detail item.
 - **Larangan:** DILARANG mem-Bold kata atau frasa di tengah paragraf narasi untuk penekanan. Penekanan dalam naskah dinas dilakukan melalui diksi tegas, bukan format.
 
-> **Catatan ukuran font:** Seluruh teks (heading, sub-heading, body, narasi) diseragamkan menjadi **12 pt** untuk konsistensi. Hanya tabel (10 pt) dan catatan kaki/sumber (9 pt) yang berbeda.
+> **Catatan ukuran font:** Skema contoh ini memakai Arial 12 pt untuk narasi/heading, tabel 10 pt, dan catatan 9 pt. Sesuaikan bila ketentuan jenis naskah atau templat menentukan lain; ketentuan umum Arial 11 atau 12 pt dan pengecualian produk hukum tetap berlaku.
 
 ### 6.3 Sistem Numbering Multilevel Word (`numbering.xml` / `w:numPr`)
 
@@ -305,13 +306,13 @@ Sumber: [Instansi], [Tahun]
 ```
 Dicetak miring (*Italic*), Arial 9 pt.
 
-### 6.5 Preset Tabel (Clean Open-Table Style)
-> [!note] Peraturan BPKP 4/2026 tidak mengatur garis tabel. Gaya terbuka ini adalah preset tabel yang dibuat engine/skill; tabel pada templat atau contoh resmi (mis. tabel personel Surat Tugas, pakta integritas, formulir) tetap berkotak seperti aslinya.
-
-- Garis border **hanya horizontal** (Top, Bottom, Header separator `sz="4"`, warna `#B0B0B0` atau `#000000`), **tanpa border vertikal** (*Left, Right, InsideV = none*).
-- Header row shading abu-abu lembut (`#F2F2F2`), Font Arial 10 pt Bold, Center/Left aligned, Vertically centered.
-- Padding sel: Atas/Bawah 100 dxa (~5 pt), Kiri/Kanan 150 dxa (~7.5 pt).
-- Angka rata kanan, teks uraian rata kiri/justified, nomor rata tengah. Keterangan sumber dicantumkan di bawah tabel (*Arial 9 pt Italic*).
+### 6.5 Format Tabel Sesuai Jenis Naskah dan Formulir
+- **Border mengikuti format yang berlaku.** Jangan menghapus border kiri, kanan, atau garis antarkolom secara otomatis. BAB V-C.20 menyatakan desain formulir menyesuaikan kebutuhan informasi/kegunaan/penampilan atau ketentuan khusus; bagian itu tidak menetapkan satu gaya border untuk semua tabel.
+- **Formulir/tabel berkotak:** Pertahankan garis luar dan dalam sesuai templat. Contoh pada pustaka skill: `assets/templates/Routing_Slip.docx` memiliki garis kiri/kanan pada tabel kendali; `assets/templates/SOP.docx` memiliki tabel bergaris luar dan antarkolom. SOP juga mengikuti pedoman penyusunan SOP tersendiri (BAB V-A.1.d).
+- **Tabel metadata/tata letak:** Kop, label nomor/hal, dan blok tanda tangan dapat memakai tabel tanpa garis tercetak sesuai contoh. Tabel tata letak tidak menentukan gaya tabel data.
+- **Tabel naratif tanpa format khusus:** Gaya garis horizontal saja (*open table*) boleh dipilih untuk keterbacaan, jika sesuai kebutuhan/permintaan. Nyatakan sebagai pilihan desain. Hanya pada mode ini gunakan `Left/Right/InsideV = none`; header abu-abu `#F2F2F2`, font 10 pt, dan padding 100/150 dxa juga pilihan implementasi.
+- **KM 4/KM 5/KM 6:** Ikuti formulir kendali mutu yang berlaku pada unit/aplikasi, termasuk border dan susunan kolom. Jangan menerapkan gaya tabel laporan ke semua formulir.
+- Periksa border tingkat tabel dan sel serta style bawaan, lalu pratinjau hasil cetak/PDF. Gridlines editor Word/Excel bukan border yang selalu ikut tercetak. Rincian bukti dan rujukan ada pada [Format Tabel dan Status Rujukan](references/format-tabel-dan-rujukan.md).
 
 ### 6.6 Penomoran Word Otomatis vs Penomoran Manual
 - Seluruh elemen penomoran otomatis Word (`w:numPr`, `numbering.xml`), *list level*, dan *indentation* asli dari template harus dipergunakan dan dipertahankan.
@@ -422,29 +423,32 @@ Pada pelaksanaan pengawasan intern BPKP, Surat Tugas (ST) selalu disertai naskah
 
 ### 8.1 Pakta Integritas Penugasan Pengawasan
 
-Pakta Integritas merupakan komitmen etika dan integritas tim sebelum melaksanakan penugasan pengawasan. Dokumen ini wajib dibuat dengan standar presisi:
+Pakta Integritas merupakan komitmen etika dan integritas tim. Gunakan format khusus yang berlaku pada unit kerja; rincian berikut merupakan contoh implementasi dan tidak menetapkan formulir universal melalui TND:
 - **Ketentuan Format & Layout:**
-  - Kertas: A4 (21,0 cm x 29,7 cm), layout **tepat 1 halaman penuh (single page)**.
-  - Margin: Kiri 3,0 cm (ruang jilid/arsip), Kanan 2,0 cm, Atas 2,0 cm, Bawah 2,0 cm.
+  - Kertas: A4 (21,0 cm x 29,7 cm). Satu halaman dapat dipilih bila seluruh personel dan isi terbaca; tambah halaman bila diperlukan, sesuai format unit kerja.
+  - Ruang tepi mengikuti Bagian 6.1 dan templat; contoh media kertas: kiri 3,0 cm, kanan 2,0 cm, atas 2,0 cm tanpa kop, dan bawah 2,5 cm.
   - Kop naskah dinas: BPKP Perwakilan / Unit Kerja eselon II terkait, garis pemisah kop tebal (`sz=18`).
   - Tipografi: Arial konsisten (Judul 13pt bold, Subjudul/Isi 10.5–11pt spasi 1.15, Tabel TTD 10pt spasi 1.0).
   - Poin Komitmen: 7 butir komitmen integritas menggunakan penomoran multilevel native Word (`<w:numPr>`) dengan *hanging indent* rapi.
 - **Tabel Penandatangan Tim (Struktur Berjenjang):**
-  - Mengikuti format tabel pada templat/contoh KM yang dipakai (berkotak bila contohnya berkotak); gaya tanpa garis vertikal hanya preset.
+  - Pada templat pakta dengan **tabel identitas dan tanda tangan berkotak**, pertahankan garis luar, antarkolom, dan antarbaris; jangan menggantinya dengan gaya horizontal saja.
+  - Ketentuan di atas mengikuti **contoh pakta unit kerja**, bukan klaim bahwa Peraturan BPKP 4/2026 secara khusus mewajibkan satu bentuk border pakta. BAB V-C.14 (hlm. 149–150) mengatur surat pernyataan secara umum dan BAB V-C.20 (hlm. 158) mengatur desain formulir sesuai kebutuhan/ketentuan khusus. Untuk unit atau templat berbeda, periksa format sumbernya.
+  - **Garis luar tabel berbeda dari bingkai ilustrasi halaman.** Bingkai besar yang mengelilingi contoh naskah pada lampiran TND tidak otomatis merupakan border halaman yang harus disalin ke dokumen keluaran.
   - Memuat seluruh peran tim: Penanggung Jawab, Pengendali Mutu/Teknis (Dalnis), Ketua Tim, dan Anggota Tim lengkap dengan NIP.
 
 ### 8.2 Formulir Kendali Mutu Pengawasan (Format KM 4, KM 5, KM 6)
 
 Kendali mutu penugasan pengawasan dituangkan ke dalam kertas kerja spreadsheet terintegrasi:
-- **Format KM 4 (Program Kerja Pengawasan / PKP):**
-  - Memuat rincian langkah kerja audit/evaluasi, tujuan pengujian, prosedur pemeriksaan, waktu alokasi rencana, pelaksana tugas, dan kolom paraf persetujuan Pengendali Teknis.
-- **Format KM 5 (Alokasi Rencana Jam Kerja / Mandays):**
-  - Rencana alokasi jam kerja efektif tim (PJ, Dalnis, KT, AT) yang dirinci menurut tahapan: Persiapan, Pelaksanaan Lapangan, dan Penyusunan Laporan Hasil Pengawasan.
-- **Format KM 6 (Realisasi Jam Kerja Pengawasan):**
-  - Pencatatan berkala/kumulatif realisasi jam kerja mandays per penugasan, link formula ke KM 5 untuk menghitung varians/selisih efisiensi jam kerja.
+- **Format KM 4 (Alokasi Waktu Pengawasan):**
+  - Membagi anggaran jam menurut tahap dan peran PM, PT, KT, dan AT.
+- **Format KM 5 (Kartu Penugasan):**
+  - Merangkum objek, risiko, tujuan, ST, tim, anggaran/realisasi waktu, supervisi, dan RMP/RPL.
+- **Format KM 6 (Program Kerja Pengawasan):**
+  - Memuat tujuan/prosedur, langkah kerja, pelaksana, waktu rencana/realisasi, dan referensi kertas kerja.
+- Nama di atas mengikuti cetakan SIMA LAK. Format KM merupakan instrumen pengendalian penugasan; peraturan TND tidak dengan sendirinya menetapkan seluruh rincian formulirnya.
 - **Formula Keterkaitan Antar-Sheet (Inter-Sheet Automation):**
   - **Sinkronisasi Metadata:** Seluruh sheet (KM 4, KM 5, KM 6) mereferensikan sel metadata utama (Nomor ST, Tanggal ST, Nama Penugasan, Objek Pengawasan, Periode Penugasan).
-  - **Kalkulasi Mandays Otomatis:** Perhitungan hari kerja menggunakan formula `=NETWORKDAYS(start_date, end_date, libur)` atau konversi jam kerja per hari orang dengan batas **maksimal 6,5 jam pengawasan per hari orang**.
+  - **Kalkulasi Hari/Jam Otomatis:** Gunakan kalender kerja dan hari libur yang berlaku, misalnya `=NETWORKDAYS(start_date,end_date,libur)`. Jam per hari mengikuti parameter penugasan/ketentuan yang terverifikasi; workbook contoh memakai 6,5 jam. Jangan menetapkan 7,5 atau 6,5 jam sebagai kewajiban TND tanpa dasar khusus.
   - **Lookup Profil Tim:** Nama dan NIP tim diambil otomatis via formula `=VLOOKUP(...)` atau `=XLOOKUP(...)` dari master data pegawai.
 
 ### 8.3 Ekstraksi dan Penanganan Tanda Tangan Transparan
@@ -481,7 +485,7 @@ Skill ini dilengkapi dengan **46 Master Template Microsoft Word (.docx)** resmi 
 
 ### 9.1 Mekanisme Kop Surat Perwakilan Terpusat (`assets/unit_profiles.json`)
 Kop surat untuk unit perwakilan dan pusat dikonfigurasi secara modular. Profil mencakup nama instansi, alamat, nomor telepon/faks, email, website, kota kedudukan, serta kode unit naskah dinas:
-- **`papua_tengah`**: Perwakilan BPKP Provinsi Papua Tengah di Nabire (Kode Unit: `PW36`)
+- **`papua_tengah`**: Perwakilan BPKP Provinsi Papua Tengah di Nabire (Kode Unit: `PW36`, sesuai konfigurasi profil yang tersedia)
 - **`kalsel`**: Perwakilan BPKP Provinsi Kalimantan Selatan di Banjarbaru (Kode Unit: `PW16`)
 - **`papua`**: Perwakilan BPKP Provinsi Papua di Jayapura (Kode Unit: `PW26`)
 - **`papua_barat`**: Perwakilan BPKP Provinsi Papua Barat di Manokwari (Kode Unit: `PW33`)
@@ -510,7 +514,8 @@ Untuk menambah unit kerja baru, cukup tambahkan entri JSON pada `assets/unit_pro
    ```bash
    python scripts/generate_naskah.py --jenis surat_tugas --unit kalsel --data payload.json --output Surat_Tugas_Kalsel.docx
    ```
-   *Secara otomatis kop surat tabel logo BPKP, nomor naskah (PW16 vs PW36), dan kota penandatanganan akan beralih ke Kalimantan Selatan tanpa mengubah kode generator.*
+   *Profil menentukan kop, kode unit (misalnya PW16 vs PW36), dan kota penandatanganan. Cocokkan hasil generator dengan templat dan data unit yang digunakan.*
+
 
 5. **Kunci `payload.json` yang dikenali** (semua opsional; flag CLI `--hal`, `--tujuan`, `--isi`, `--keperluan`, `--penandatangan`, `--jabatan`, `--nomor` mengisi kunci yang sama):
 
@@ -518,15 +523,13 @@ Untuk menambah unit kerja baru, cukup tambahkan entri JSON pada `assets/unit_pro
    |---|---|
    | `nomor_lengkap` | Nomor utuh; menimpa penyusunan nomor otomatis |
    | `kode_klasifikasi`, `nomor_urut`, `kode_unit`, `konseptor`, `tahun` | Segmen nomor; urutannya mengikuti baris nomor templat |
-   | `kode_keamanan` | `SR`/`R`/`T` untuk surat dinas (kosong = Biasa) |
+   | `kode_keamanan` | `SR`/`R`/`T` untuk surat dinas yang memiliki segmen keamanan (kosong = Biasa) |
    | `tanggal_naskah` | Tempat dan tanggal (bawaan: kota profil + tanggal hari ini) |
    | `tujuan` | Pihak yang dituju pada baris `Yth.` |
    | `hal` | Perihal pada baris `Hal` (paragraf maupun tabel kepala) |
    | `nama_penugasan` / `keperluan` | Mengisi `(nama penugasan)` |
    | `isi`, `isi_surat`, `isi_nota_dinas` | Narasi isi surat/nota dinas |
-   | `nama_penandatangan`, `jabatan_penandatangan` | Blok tanda tangan (`(nama lengkap pejabat)`, `(jabatan)`) |
+   | `nama_penandatangan`, `jabatan_penandatangan` | Blok tanda tangan pejabat. Isi nama setiap penanda tangan pada Notisi langsung sesuai susunan tim. |
    | `pimpinan_unit_kerja` | Mengisi `(pimpinan unit kerja)` |
    | `personel` / `tim` | Daftar `{no, nama, nip, peran}` untuk tabel personel Surat Tugas |
    | `replacements` | Pemetaan teks bebas `{"teks templat": "pengganti"}` untuk placeholder lain |
-
-

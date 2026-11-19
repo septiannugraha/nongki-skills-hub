@@ -10,7 +10,7 @@ import tempfile
 from zipfile import ZipFile
 from lxml import etree as E
 import openpyxl
-from schema import ROOT, VERSION, DATA, NARASI, PIA_REQUIRED, TEMPLATE_IDENTITY, PROFILE_FIELDS, JAM_MAKS_PER_HARI
+from schema import ROOT, VERSION, DATA, NARASI, PIA_REQUIRED, TEMPLATE_IDENTITY, PROFILE_FIELDS
 from office_io import recalculate_xlsx
 
 MONTHS=['','Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember']
@@ -91,9 +91,13 @@ def read_model(workbook,recalc=True,content=None,inspect_only=False):
         for def_r,(key,_,_,_) in DATA.items():
             actual_r=key_to_row.get(key,def_r)
             data[key]=wb['DATA'].cell(actual_r,2).value
-        # Kunci opsional di luar skema (mis. UNIT_KERJA, KOP_BARIS2, JALUR_ST) juga dibaca bila ada di kolom E.
-        for key,r in key_to_row.items():
-            if key not in data:data[key]=wb['DATA'].cell(r,2).value
+        # Kenali kolom E opsional tanpa menjadikan baris tambahan sebagai isian wajib.
+        optional_keys = (*PROFILE_FIELDS, 'JALUR_ST', 'FILE_ST_SIMA', 'FILE_KM4_SIMA',
+                         'FILE_KM5_SIMA', 'SUMBER_PIA', 'FILE_LAPORAN_PIA', 'JABATAN_KAPER',
+                         'STATUS_CEK_DPP', 'STATUS_CEK_RENCANA', 'STATUS_CEK_KM6', 'STATUS_CEK_PIA')
+        for key in optional_keys:
+            if key in key_to_row:
+                data[key] = wb['DATA'].cell(key_to_row[key], 2).value
         version_val=None
         for r in range(wb['DATA'].max_row,1,-1):
             if wb['DATA'].cell(r,1).value=='Versi skema':version_val=wb['DATA'].cell(r,2).value;break
@@ -161,12 +165,6 @@ def read_model(workbook,recalc=True,content=None,inspect_only=False):
         if set(allocations)-{p['clean_nip'] for p in team}:issues.append('JAM_TIM memuat personel yang tidak ada dalam tim.')
         r_jam=key_to_row.get('JAM_PER_HARI',53)
         jam_day=number(data['JAM_PER_HARI'],f'DATA!B{r_jam}',issues,True)
-        if jam_day>JAM_MAKS_PER_HARI:issues.append(f'DATA!B{r_jam}: jam pengawasan per hari orang maksimal 6,5.')
-        phase_days=[number(data.get(k),k,[],True) for k in ['HARI_PERSIAPAN','HARI_PELAKSANAAN','HARI_PENYELESAIAN']]
-        # JAM_TIM bawaan = hari fase × B53; bila B53 sendiri melewati batas, satu pesan di atas cukup.
-        for p in (team if jam_day<=JAM_MAKS_PER_HARI else []):
-            for fase,h,n_days in zip(['persiapan','pelaksanaan','penyelesaian'],p['hours'],phase_days):
-                if n_days and h>n_days*JAM_MAKS_PER_HARI+1e-6:issues.append(f'JAM_TIM: jam {fase} {p["name"]} ({fmt(h)} jam untuk {fmt(n_days)} hari) melebihi 6,5 jam per hari orang.')
         dates={}
         for key in ['TANGGAL_ST','TANGGAL_PENGESAHAN','PERS_MULAI','PERS_SELESAI','LAKS_MULAI','LAKS_SELESAI','SELESAI_MULAI','SELESAI_AKHIR','TANGGAL_MULAI','TANGGAL_SELESAI','RPL','TANGGAL_PAKTA','TANGGAL_SURAT_PENGANTAR','TGL_KONSEP_LAPORAN']:
             if nonempty(data.get(key)):dates[key]=as_date(data[key],key,issues)

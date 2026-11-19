@@ -2,6 +2,8 @@
 
 Gunakan daftar ini sebagai alat diagnosis, bukan daftar kata terlarang.
 
+Label "Ciri AI" pada contoh lama di bawah berarti kandidat penyuntingan gaya, bukan indikator kepengarangan yang tervalidasi. Pertahankan konstruksi yang tepat dalam konteks, termasuk keterangan di awal kalimat, bentuk pasif, dan transisi yang diperlukan. Contoh penggantian hanya berlaku jika seluruh rincian dan hubungan maknanya didukung sumber; jangan menyalin tambahan fakta atau kausalitas dari contoh ke naskah pengguna.
+
 ## Artefak chatbot
 
 - Pembuka seperti "Tentu", "Baik", atau "Berikut adalah" ketika teks dapat langsung dimulai.
@@ -31,6 +33,7 @@ Klaim berderajat tanpa ukuran atau fakta pendamping sering muncul dalam laporan 
 - Setiap bagian diakhiri rangkuman yang hanya mengulang isinya.
 - Kalimat berpanjang hampir sama dan selalu memakai pola subjek–predikat–objek.
 - Penggunaan "selain itu", "lebih lanjut", "di sisi lain", dan "oleh karena itu" secara beruntun meski hubungan antarkalimat sudah jelas.
+- Pembuka "Dengan demikian, ...", "Oleh karena itu, ...", "Selain itu, ...", dan sejenisnya yang menjadi kebiasaan pada setiap paragraf. Periksa manfaat penghubungnya; hapus frasa beserta koma jika berlebih, bukan komanya saja. Pertahankan penghubung yang diperlukan untuk menyatakan hubungan logis.
 - Konstruksi "bukan hanya ..., melainkan juga ..." yang dipakai sebagai hiasan.
 - **Tanda Pisah (Em Dash `—`)**: Sering muncul otomatis dari model bahasa asing untuk menyelipkan anak kalimat. Dalam teks dinas/audit formal, tanda pisah ini terasa canggung dan harus diganti dengan koma, kurung, atau kalimat aktif yang ditata ulang.
 - **Pleonasme & Kerancuan Konjungsi ("dan serta")**:
@@ -90,9 +93,9 @@ Pola berikut muncul khas pada laporan formal AI dan paling sering lolos pemeriks
 7. Apakah sebab-akibat menunjukkan mekanisme, bukan sekadar "X berdampak pada rendahnya Y"?
 8. Apakah ada kata yang sama berulang dalam satu kalimat (di luar istilah teknis)?
 
-## Kosakata Penanda AI yang Sering Lolos Pemolesan (Terverifikasi Lapangan)
+## Kandidat pemeriksaan editorial
 
-Daftar berikut dikumpulkan dari temuan nyata yang lolos beberapa putaran pemolesan sub-agent dan baru tertangkap mata manusia. Gunakan sebagai pola regex pada audit deterministik.
+Daftar berikut membantu menemukan ungkapan yang mungkin kabur atau berlebih. Ungkapan ini juga digunakan penulis manusia; tidak ada validasi bahwa daftar ini merupakan indikator DrillBit. Gunakan sebagai kandidat tinjauan dalam konteks, bukan daftar larangan. Pertahankan frasa jika tepat, dan jangan mengubah derajat makna: "turut" menyatakan kontribusi tambahan, "nyaris" menyatakan kedekatan batas, dan "diwaspadai" tidak sama dengan "diuji".
 
 | Penanda | Contoh keluaran | Perbaikan |
 | :--- | :--- | :--- |

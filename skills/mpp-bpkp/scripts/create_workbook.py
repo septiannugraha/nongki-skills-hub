@@ -1,7 +1,6 @@
 """Buat workbook isian mandiri; tidak mengubah workbook autoST asal."""
 import argparse
 from pathlib import Path
-import sys
 import openpyxl
 from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
@@ -54,27 +53,30 @@ def dropdown(ws, cells, choices):
     ws.add_data_validation(dv)
     for addr in cells:dv.add(addr)
 
-PEGAWAI_SOURCES=[ROOT/'assets'/'Isian_DATA_MPP_BPKP.xlsx', Path('D:/autoST/KM4_KM5_KM6.xlsx')]
-
 def create(path, overwrite=False, with_pegawai=False, pegawai_source=None):
+    if pegawai_source is not None and not with_pegawai:
+        raise ValueError('--pegawai-source memerlukan --with-pegawai.')
+    if with_pegawai and pegawai_source is None:
+        raise ValueError('--with-pegawai memerlukan --pegawai-source.')
+    path = Path(path)
     wb=Workbook();wb.remove(wb.active);wb.calculation=CalcProperties(calcId=191029,fullCalcOnLoad=True)
 
     # 1. Versi bersih (default) tanpa data kepegawaian; --with-pegawai menyalin sheet Pegawai lokal (HIDDEN)
-    pegawai_src = None
     if with_pegawai:
-        for candidate in ([Path(pegawai_source)] if pegawai_source else PEGAWAI_SOURCES):
-            if candidate.is_file():
-                try:
-                    src_wb = openpyxl.load_workbook(candidate, data_only=True)
-                    if 'Pegawai' in src_wb.sheetnames:
-                        pegawai_src = src_wb['Pegawai'];break
-                except Exception: pass
-        if pegawai_src is None:print('Peringatan: sheet Pegawai tidak ditemukan; NIP diisi manual.',file=sys.stderr)
-    if pegawai_src is not None:
-        ws_peg = wb.create_sheet('Pegawai')
-        for r in range(1, pegawai_src.max_row + 1):
-            for c in range(1, pegawai_src.max_column + 1):
-                ws_peg.cell(r, c, pegawai_src.cell(r, c).value)
+        source = Path(pegawai_source)
+        if not source.is_file():
+            raise ValueError('Workbook sumber Pegawai tidak ditemukan.')
+        if path.resolve() == source.resolve():
+            raise ValueError('Workbook tujuan harus berbeda dari sumber Pegawai.')
+        src_wb = openpyxl.load_workbook(source, read_only=True, data_only=True)
+        try:
+            if 'Pegawai' not in src_wb:
+                raise ValueError('Workbook sumber tidak memuat sheet Pegawai.')
+            ws_peg = wb.create_sheet('Pegawai')
+            for row in src_wb['Pegawai'].values:
+                ws_peg.append(row)
+        finally:
+            src_wb.close()
         ws_peg.column_dimensions['A'].width = 38
         ws_peg.column_dimensions['B'].width = 25
         ws_peg.column_dimensions['C'].width = 15
@@ -90,7 +92,7 @@ def create(path, overwrite=False, with_pegawai=False, pegawai_source=None):
     ws['A2']='Kuning = isian pengguna; Abu-abu = formula otomatis. Contoh isian nyata tersedia langsung pada Kolom D.';ws.merge_cells('A2:D2');ws.row_dimensions[2].height=32
     
     # Tanpa data Pegawai (templat publik), NIP diketik manual: VLOOKUP ke sheet kosong selalu menghasilkan "".
-    lookup=pegawai_src is not None
+    lookup=with_pegawai
     for addr,value in [('A3','TIM PENGAWASAN'),('B3','Nama Pegawai'),('C3','NIP (Otomatis)' if lookup else 'NIP (Teks 18 Digit)'),('D3','Petunjuk & Contoh Isian')]:ws[addr]=value
 
     def nip_cell(r):
@@ -178,7 +180,7 @@ def create(path, overwrite=False, with_pegawai=False, pegawai_source=None):
 
     for r,label in [(28,'DETAIL PENUGASAN'),(38,'JADWAL PENUGASAN'),(52,'PARAMETER WAKTU'),(55,'KELENGKAPAN SURAT & ADMINISTRASI'),(81,'SUMBER DAN SKEMA')]:ws.cell(r,1,label)
     ws['A82']='Versi skema';ws['B82']=VERSION
-    ws['A83']='Workbook sumber';ws['B83']='D:/autoST/KM4_KM5_KM6.xlsx — DATA (dibaca, tidak diubah)'
+    ws['A83']='Workbook sumber';ws['B83']='Templat publik MPP BPKP'
 
     formulas={
         40:'=IF(B39="","",B39)',
@@ -245,7 +247,7 @@ def create(path, overwrite=False, with_pegawai=False, pegawai_source=None):
         for c in ws[r][:4]:c.fill=PatternFill('solid',fgColor=BLUE);c.font=Font(name='Arial',size=11,bold=True,color=WHITE)
     ws.print_area='A1:D83';ws.sheet_properties.pageSetUpPr.fitToPage=True;ws.page_setup.fitToWidth=1;ws.page_setup.fitToHeight=0
     wb.active = ws
-    path=Path(path);path.parent.mkdir(parents=True,exist_ok=True)
+    path.parent.mkdir(parents=True, exist_ok=True)
     if path.exists() and not overwrite:raise FileExistsError(f'Tidak menimpa workbook yang sudah ada: {path}')
     wb.save(path);print(path)
 
@@ -253,5 +255,10 @@ if __name__=='__main__':
     p=argparse.ArgumentParser(description='Buat workbook isian MPP baru.');p.add_argument('output',type=Path)
     p.add_argument('--overwrite',action='store_true',help='Timpa berkas tujuan bila sudah ada')
     p.add_argument('--with-pegawai',action='store_true',help='Salin sheet Pegawai lokal untuk dropdown nama dan NIP otomatis (data privat)')
-    p.add_argument('--pegawai-source',type=Path,help='Workbook berisi sheet Pegawai (default: cari di assets lalu D:/autoST/KM4_KM5_KM6.xlsx)')
-    args=p.parse_args();create(args.output,overwrite=args.overwrite,with_pegawai=args.with_pegawai,pegawai_source=args.pegawai_source)
+    p.add_argument('--pegawai-source',type=Path,help='Workbook lokal berisi sheet Pegawai')
+    args = p.parse_args()
+    try:
+        create(args.output, overwrite=args.overwrite, with_pegawai=args.with_pegawai,
+               pegawai_source=args.pegawai_source)
+    except ValueError as exc:
+        p.error(str(exc))

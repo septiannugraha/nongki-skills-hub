@@ -1,7 +1,8 @@
 ---
 name: laporan-pengawasan-bpkp
-description: Menyusun, memperbaiki, dan mengisi laporan hasil pengawasan internal BPKP (LHP, LHE, LHR, Notisi Hasil Pengawasan, serta Berita Acara Exit Meeting) berbasis Global Internal Audit Standards (IIA 15.1) dan Peraturan BPKP Nomor 4 Tahun 2026. Skill ini merupakan MASTER SKILL yang secara mandiri mengintegrasikan secara penuh (built-in) kaidah Tata Naskah Dinas BPKP (tata-naskah-dinas-bpkp), eliminasi tanda pisah (em dash), penyuntingan bahasa alami auditor profesional (humanizer-indonesia), serta tata ejaan baku resmi EYD V (eyd-indonesia).
-tags: [bpkp, laporan-pengawasan, lhp, lhe, lhr, notisi, temuan-audit, 5c, iia, audit-internal, eyd-indonesia, humanizer-indonesia, tata-naskah-dinas-bpkp, peraturan-bpkp-4-2026]
+description: "Penyusunan dan penyelarasan laporan pengawasan BPKP (LHP/LHE/LHR/Notisi/BA Exit) berbasis IIA Standards & Peraturan BPKP 4/2026, berstruktur temuan 5C."
+metadata:
+  tags: [bpkp, laporan-pengawasan, lhp, lhe, lhr, notisi, temuan-audit, 5c, iia, audit-internal, eyd-indonesia, humanizer-indonesia, tata-naskah-dinas-bpkp, peraturan-bpkp-4-2026]
 ---
 
 # Laporan Pengawasan BPKP (Master Integrated Skill)
@@ -27,6 +28,8 @@ Skill ini membantu menyusun laporan hasil pengawasan internal (Laporan Hasil Pem
 > Skill ini mengacu pada **Peraturan BPKP Nomor 4 Tahun 2026 tentang Tata Naskah Dinas** (BAB V-C.5 Laporan, BAB IV Pengamanan, BAB III Pejabat Penanda Tangan), yang menggantikan Peraturan BPKP Nomor 4 Tahun 2022. Detail lihat Bagian 11.
 
 Baca [Panduan Standar IIA](references/standar-iia.md) untuk kerangka struktural dan prinsip kualitas komunikasi. Baca [Contoh Struktur Laporan](references/template-format.md) sebagai salah satu contoh format -- bukan format baku (lihat Bagian 2).
+
+Saat menyunting rekomendasi per wilayah atau melengkapi bagian rekomendasi ringkas dari uraian temuan, gunakan [Panduan Rekomendasi Berjenjang](references/rekomendasi-berjenjang.md).
 
 ## 1. Prinsip Kualitas Komunikasi (IIA)
 
@@ -89,9 +92,7 @@ Kondisi tersebut disebabkan oleh [akar masalah sistemik, bukan sekadar gejala pe
 Akibatnya, [dampak negatif riil atau potensi risiko finansial/operasional/kegagalan target].
 
 [Rekomendasi / Corrective Action]
-Atas permasalahan tersebut, direkomendasikan agar:
-1) [Rekomendasi untuk level Provinsi / Pimpinan Daerah];
-2) [Rekomendasi untuk level Kabupaten / OPD Teknis].
+[Penerima rekomendasi, pejabat pelaksana, dan tindakan yang terkait dengan temuan pada lokus ini.]
 ```
 
 ### Pola Naratif Per Topik Utama (Agregat)
@@ -118,7 +119,7 @@ Atas hasil evaluasi yang telah disampaikan, pihak [Pemerintah Daerah / OPD terka
 - **Condition**: Nyatakan fakta berbasis bukti KKE (Kertas Kerja Evaluasi). Sajikan perbandingan target vs realisasi atau tabel pendukung bila tersedia.
 - **Cause**: Identifikasi akar masalah (*root cause*) dengan awalan baku: `"Kondisi tersebut disebabkan oleh..."`.
 - **Consequence**: Nyatakan dampak nyata atau risiko potensial dengan awalan baku: `"Akibatnya, ..."`.
-- **Corrective Action / Rekomendasi**: Berjenjang (strategis untuk Kepala Daerah, operasional untuk Kepala OPD) dengan awalan baku: `"Atas permasalahan tersebut, direkomendasikan agar: ..."`.
+- **Corrective Action / Rekomendasi** menyebut penerima rekomendasi, pejabat yang menerima instruksi, dan tindakan yang perlu dilakukan. Saat menyunting draf, pertahankan posisi rekomendasi pada temuan dan lokus asalnya sesuai susunan laporan. Gunakan pengantar yang mengikuti arahan pengguna dan [panduan rekomendasi berjenjang](references/rekomendasi-berjenjang.md).
 
 ## 4. Distribusi dan Kerahasiaan
 
@@ -501,7 +502,7 @@ Format nomor mengikuti pola umum TND: `[kode keamanan]/[kode klasifikasi arsip]/
 > - Ketentuan ini berlaku konsisten pada seluruh komponen laporan:
 >   1. **Sampul / Cover Laporan**: Bagian nomor dan tanggal laporan cukup diisi placeholder `"   "`.
 >   2. **Metadata Surat Pengantar**: Baris `Nomor    :` diisi `"   "`, dan kolom tanggal surat pengantar diisi `"   "`.
->   3. **Kaki Laporan / Blok Tanda Tangan**: Baris tanggal penandatanganan cukup diisi `"   "` (atau nama kota saja tanpa tanggal definitif, mis. `Nabire,              2026` atau `"   "`).
+>   3. **Kaki Laporan / Blok Tanda Tangan**: Baris tanggal penandatanganan cukup diisi `"   "` (atau nama kota saja tanpa tanggal definitif, mis. `[Kota],              2026` atau `"   "`).
 
 ### 11.5 Distribusi Laporan
 
@@ -549,7 +550,7 @@ Berdasarkan praktik terbaik dan standardisasi penyusunan laporan pengawasan (LHE
 
 ### 12.1 Pengaturan Halaman & Tipografi
 - **Ukuran Kertas & Ruang Tepi:** Kertas A4 (21,0 cm x 29,7 cm). Batas minimum ruang tepi (Peraturan BPKP 4/2026 Bagian II.E, bersifat fleksibel): atas 10 mm bila berkop / paling kurang 20 mm tanpa kop atau halaman berikutnya; **bawah paling kurang 25 mm**; kiri paling kurang 30 mm (media kertas) / 20 mm (elektronik); kanan paling kurang 20 mm. Preset engine (`create_document`): kiri 3,0 cm, kanan 2,0 cm, atas 2,0 cm, bawah 2,5 cm.
-- **Nomor Halaman (Peraturan BPKP 4/2026 Bagian II.F):** angka Arab, di tengah atas dengan format `- 2 -`, halaman pertama yang memakai kop (atau cover) tanpa nomor, jenis huruf sama dengan naskah. `create_document()` memasangnya otomatis.
+- **Nomor halaman:** Pertahankan pengaturan header, footer, dan nomor halaman pada templat. Untuk dokumen baru, sisipkan field `PAGE` di Word setelah susunan bagian final, sesuai Bab II.F Peraturan BPKP 4/2026. Gunakan angka Arab di tengah atas dan jenis huruf yang sama dengan naskah. Halaman pertama yang memakai kop dapat dibiarkan tanpa nomor.
 - **Font:** Naskah dinas memakai **Arial ukuran 11 atau 12** (Peraturan BPKP 4/2026 Bagian II.D.2; laporan pada skill ini memakai 12), konsisten di seluruh elemen (heading, paragraf, tabel, nomor, header, footer). Pada OpenXML Word pastikan seluruh *runs* menyertakan:
   `<w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial" w:eastAsia="Arial"/>`
 - **Ukuran Font:**
@@ -588,7 +589,7 @@ Pemisahan dan penerapan *style Heading* bawaan Word / Google Docs (`Heading 1` s
    - **Level 4 (`####` / `Heading 4` / `HEADING_4`)**: Sub-Temuan / Aspek 5C (Huruf Kecil) — Arial 12pt Bold, Left.
      *Contoh:* `#### a. Penetapan LP2B Belum Memiliki Regulasi Definitif`
    - **Level 5 (`#####` / Normal `ilvl=3` / `HEADING_5`)**: Rincian Lokus / Entitas Uji Petik (`1)`) — Arial 12pt Regular, Indent 1,25".
-     *Contoh:* `##### 1) Pemerintah Provinsi Papua Tengah`
+     *Contoh:* `##### 1) Pemerintah Provinsi [Nama Provinsi]`
    - **Level 6 (`######` / Normal `ilvl=4` / `HEADING_6`)**: Detail Butir Permasalahan (`a)`) — Arial 12pt Regular, Indent 1,50".
      *Contoh:* `###### a) Rincian Realisasi Anggaran Bantuan`
 
@@ -617,7 +618,7 @@ Pemisahan dan penerapan *style Heading* bawaan Word / Google Docs (`Heading 1` s
 
 **Aturan Format dan Font pada Heading:**
 - **Heading 1/2/3/4 (style Word & Docs):** Font Arial 12 pt Bold Hitam (`#000000`) konsisten pada seluruh level.
-- **Line break pada Heading 1:** Judul bab dan nama bab disatukan dalam satu paragraf heading dengan line break (`\n`), misalnya: `BAB I\nSIMPULAN DAN REKOMENDASI`, agar di panel navigasi dan TOC terbaca sebagai satu kesatuan tajuk.
+- **Line break pada Heading 1:** Saat membuat dokumen baru tanpa template, judul bab dan nama bab dapat ditulis dalam satu paragraf heading dengan line break (`\n`), seperti `BAB I\nSIMPULAN DAN REKOMENDASI`. Saat menyunting dokumen, ikuti susunan paragraf heading yang sudah digunakan.
 - **Sub-Heading Temuan (`a.`, `b.`):** Gunakan `Heading 4` / `####`. Seluruh teks judul sub-heading adalah Bold 12pt.
 - **Paragraf narasi 5C (Kondisi, Kriteria, Sebab, Akibat, Rekomendasi):** Regular 12 pt (tidak ada Bold).
 - **Nama Lokus pada rincian multi-lokus:** Regular 12 pt — berdiri sebagai sub-heading bernomor pada paragraf tersendiri, diikuti narasi pada paragraf terpisah di bawahnya.
@@ -663,15 +664,15 @@ Paragraf narasi 5C (Kriteria, Penyebab, Akibat, Rekomendasi) menggunakan **Left 
 #### Rincian Lokus: Dua-Paragraf Terpisah (Mode Numbering Otomatis)
 
 Pada mode numbering otomatis, rincian per lokus (`1)`, `2)`, `3)`) dipecah menjadi **dua paragraf terpisah**:
-1. **Paragraf nama lokus (sub-heading bernomor):** Hanya berisi nama lokus (mis. `Provinsi Papua Tengah`), tanpa titik dua, tanpa narasi. Format: **Regular** (tidak Bold), 12 pt, Spasi After **2 pt** (lebih kecil dari default 6 pt, untuk merapatkan jarak ke narasi).
+1. **Paragraf nama lokus (sub-heading bernomor):** Hanya berisi nama lokus (mis. `Provinsi [Nama Provinsi]`), tanpa titik dua, tanpa narasi. Format: **Regular** (tidak Bold), 12 pt, Spasi After **2 pt** (lebih kecil dari default 6 pt, untuk merapatkan jarak ke narasi).
 2. **Paragraf narasi lokus:** Berisi uraian fakta kondisi riil. Left Indent sejajar dengan teks level 3 (`1,25"` / 1800 dxa). Format: Regular 12 pt, Spasi After 6 pt.
 
 Contoh struktur:
 ```
-1)  Provinsi Papua Tengah          ← paragraf 1: nama lokus, Regular, spasi after 2pt
-    Pemerintah Provinsi Papua Tengah belum menetapkan Perda maupun Pergub mengenai LP2B...  ← paragraf 2: narasi
-2)  Kabupaten Nabire               ← paragraf 1: nama lokus
-    Peraturan Daerah tentang RTRW Kabupaten Nabire belum ditetapkan...  ← paragraf 2: narasi
+1)  Provinsi [Nama Provinsi]          ← paragraf 1: nama lokus, Regular, spasi after 2pt
+    [Uraian kondisi dan kriteria tingkat provinsi]  ← paragraf 2: narasi
+2)  Kabupaten [Nama Kabupaten]               ← paragraf 1: nama lokus
+    [Uraian kondisi dan kriteria tingkat kabupaten]  ← paragraf 2: narasi
 ```
 
 > **Pada mode manual (legacy/fallback):** Nama lokus, titik dua, dan narasi disatukan dalam satu paragraf: `1)\t[Nama Lokus]**:** [Narasi]` dengan nama lokus Bold. Mode otomatis lebih disukai karena menghasilkan struktur yang lebih bersih dan rapi.
@@ -747,18 +748,20 @@ Label rata kiri dengan padding tetap (mis. `Nomor` + spasi = 10 karakter), lalu 
 #### B. Titik Dua pada Pengantar Daftar Bernomor
 Kalimat pengantar yang diikuti daftar bernomor **wajib diakhiri titik dua** (bukan titik atau koma):
 - `Kondisi di tingkat wilayah pengawasan diuraikan sebagai berikut:`
-- `Atas permasalahan tersebut, direkomendasikan agar:`
+- `Atas hal tersebut, kami rekomendasikan kepada [penerima] agar menginstruksikan [pejabat] untuk melaksanakan langkah berikut:`
 - `...menyatakan sependapat dan berkomitmen menyusun rencana aksi penyelesaian tindak lanjut dengan rincian:`
 
 Setelah titik dua, baris berikutnya langsung berisi butir daftar bernomor. Tidak boleh ada teks tambahan setelah titik dua pada baris yang sama.
+
+Untuk satu tindakan di bawah satu penerima instruksi, sambungkan tindakan langsung setelah `untuk` atau `agar` dan akhiri dengan titik. Gunakan paragraf narasi yang sejajar dengan teks temuan.
 
 #### C. Titik Dua pada Label Nama Lokus
 Pada mode numbering otomatis, nama lokus **tidak menggunakan titik dua** — nama lokus berdiri sebagai sub-heading bernomor pada paragraf tersendiri (Regular, tanpa Bold, tanpa titik dua), dan narasi mengikuti pada paragraf terpisah di bawahnya.
 
 Pada mode manual (legacy/fallback), nama lokus diikuti titik dua lalu spasi sebelum narasi dalam satu paragraf yang sama. Nama lokus **Bold**, titik dua dan narasi **Regular**:
 ```
-1) Provinsi Papua Tengah: [narasi kondisi riil...]
-2) Kabupaten Nabire: [narasi kondisi riil...]
+1) Provinsi [Nama Provinsi]: [narasi kondisi riil...]
+2) Kabupaten [Nama Kabupaten]: [narasi kondisi riil...]
 ```
 Format mode manual: `[Nomor Manual]\t[Nama Lokus]**:** [Narasi Regular]`. Titik dua langsung menempel setelah nama lokus tanpa spasi sebelum, lalu satu spasi sebelum narasi.
 
@@ -767,7 +770,7 @@ Format mode manual: `[Nomor Manual]\t[Nama Lokus]**:** [Narasi Regular]`. Titik 
 #### D. Titik Dua pada Sumber Tabel
 Format keterangan sumber data di bawah tabel menggunakan titik dua setelah kata "Sumber":
 ```
-Sumber: Dinas Pertanian Kabupaten Nabire diolah, 2026
+Sumber: Dinas Pertanian Kabupaten [Nama Kabupaten] diolah, 2026
 ```
 Dicetak miring (*Italic*), Arial 9 pt, tanpa indentasi.
 
@@ -785,8 +788,9 @@ Bold hanya digunakan untuk elemen struktural dan penanda, **bukan** untuk menonj
 | Heading 3 (Topik Utama) | Ya | 12 pt | Seluruh teks tajuk |
 | Sub-Heading Temuan (`a.`, `b.`) | Ya | 12 pt | Seluruh teks: nomor + judul |
 | Judul Bagian Non-Temuan (mis. "Tanggapan Mitra Evaluasi...") | Ya | 12 pt | Seluruh teks tajuk |
-| Nama Lokus pada rincian (`Provinsi Papua Tengah`) | **TIDAK** | 12 pt | Regular — nama lokus berdiri sebagai sub-heading bernomor pada paragraf tersendiri (mode otomatis) |
+| Nama Lokus pada rincian (`Provinsi [Nama Provinsi]`) | **TIDAK** | 12 pt | Regular — nama lokus berdiri sebagai sub-heading bernomor pada paragraf tersendiri (mode otomatis) |
 | Judul Butir pada detail item (`Risiko:`) | Ya | 12 pt | Hanya judul butir yang Bold; titik dua dan isi Regular |
+| Penanda daftar pelaksana dan tindakan rekomendasi | Tidak | Ikuti template | Regular pada daftar isi rekomendasi |
 | Label Metadata Kop (`Nomor`, `Lampiran`, `Hal`) | Tidak | 12 pt | Regular; nilai juga Regular |
 | Paragraf Narasi 5C (Kondisi, Kriteria, Sebab, Akibat, Rekomendasi) | **TIDAK** | 12 pt | 100% Regular, tanpa Bold |
 | Awalan baku 5C ("Kondisi tersebut disebabkan oleh...", "Akibatnya,...") | **TIDAK** | 12 pt | Regular — bukan Bold |
@@ -814,7 +818,9 @@ Bold hanya digunakan untuk elemen struktural dan penanda, **bukan** untuk menonj
 ---
 
 ### 12.9 Standar Kompatibilitas Google Workspace / Google Docs (GWS) & Tata Letak Tabel
-Saat dokumen laporan pengawasan dikonversi, disinkronkan, atau diedit pada Google Docs melalui Google Workspace API / MCP:
+Jika diminta menyunting DOCX yang dibuka melalui Google Docs, gunakan panduan penyuntingan di tempat dalam skill `docx` untuk memeriksa tipe berkas, mempertahankan tautan asli, dan memvalidasi hasil simpan. Saat menyunting teks rekomendasi, ikuti tata letak tabel yang sudah dipakai.
+
+Untuk pembuatan atau penyesuaian tata letak laporan di Google Docs melalui Google Workspace API atau MCP:
 1. **Pembersihan Indentasi dalam Sel Tabel (Anti-Loncatan Ruler):**
    - Setiap paragraf di dalam sel tabel wajib dideklarasikan indentasi nol eksplisit: `<w:ind w:left="0" w:right="0" w:firstLine="0"/>` (`indentStart: 0, indentFirstLine: 0`).
    - Paragraf di dalam sel dilarang mewarisi indentasi paragraf global agar penanda biru pada *ruler* Google Docs tidak bergeser ke tengah atau membuat *hanging indent* liar di kolom kedua/ketiga.
@@ -865,7 +871,7 @@ from bpkp_docx_engine import create_document
 
 | Fungsi | Kegunaan |
 |---|---|
-| `create_document()` | Buat dokumen kosong dengan A4, margin kiri/kanan/atas/bawah 3/2/2/2,5 cm, Arial 12pt, spasi 1.15, heading styles, infrastruktur numbering, dan nomor halaman `- n -` tengah atas (halaman pertama tanpa nomor). |
+| `create_document()` | Buat dokumen kosong dengan A4, margin kiri/kanan/atas/bawah 3/2/2/2,5 cm, Arial 12pt, spasi 1.15, heading styles, dan penomoran bertingkat untuk heading/daftar. |
 | `add_catatan_kaki_etika(doc, kanal_pengaduan)` | Catatan kaki wajib halaman terakhir laporan hasil pengawasan: pelaksanaan tanpa melanggar peraturan + layanan pengaduan gratifikasi/suap (BAB V-C.5.c.5)). |
 | `new_bab_context(doc, "BAB I")` | Mulai Bab baru → restart semua level numbering ke 1. Kembalikan `num_id`. |
 | `new_topic_context(doc, "Topik X")` | Mulai topik baru dalam Bab → nomor topik berlanjut sekuensial. Kembalikan `num_id` Bab. |
@@ -937,7 +943,7 @@ build_bab_ii_template(
     doc,
     latar_belakang="Ketahanan pangan merupakan prioritas nasional...",
     tujuan=["Mengevaluasi tata kelola ketahanan pangan."],
-    ruang_lingkup=["Pemerintah Provinsi Papua Tengah."],
+    ruang_lingkup=["Pemerintah Provinsi [Nama Provinsi]."],
     dasar_hukum=["UU Nomor 39 Tahun 2008.", "Perpres Nomor 2 Tahun 2026."],
     kelembagaan="Dinas Tanaman Pangan dan Ketahanan Pangan.",
 )
@@ -956,7 +962,7 @@ build_bab_iii_temuan(doc, temuan_list=[
 
 # Tanda tangan
 add_p(doc, "")
-add_signature_block(doc, date_text="Nabire, 31 Agustus 2026",
+add_signature_block(doc, date_text="[Kota], 31 Agustus 2026",
                     title="Kepala Perwakilan,", name="Kriso Wandi Siahaan")
 
 doc.save("LHP.docx")
@@ -968,7 +974,7 @@ doc.save("LHP.docx")
 
 ## 14. Dokumentasi Pengawasan: Notisi Pembahasan & Berita Acara Exit Meeting
 
-Sesuai **Peraturan BPKP Nomor 4 Tahun 2026 BAB V-C.1**, Dokumentasi Pengawasan (Notisi Hasil Pengawasan, Berita Acara Pembahasan/Exit Meeting, Rencana Tindak Perbaikan, Pernyataan Kesanggupan) merupakan kategori naskah dinas khusus yang **tidak menggunakan penomoran surat dinas biasa** (tanpa kode jenis nomor keluar biasa) Notisi hasil pengawasan disampaikan secara sepihak dan **hanya memuat tanda tangan tim pengawasan**; Berita Acara Pembahasan ditandatangani kedua pihak (Pengendali Teknis/Ketua Tim bersama pimpinan entitas auditan).
+Sesuai **Peraturan BPKP Nomor 4 Tahun 2026 BAB V-C.1**, Dokumentasi Pengawasan (Notisi Hasil Pengawasan, Berita Acara Pembahasan/Exit Meeting, Rencana Tindak Perbaikan, Pernyataan Kesanggupan) merupakan kategori naskah dinas khusus yang **tidak menggunakan penomoran surat dinas biasa** (tanpa kode jenis nomor keluar biasa). Notisi hasil pengawasan disampaikan secara sepihak dan **hanya memuat tanda tangan tim pengawasan**. Surat dinas pengantar Notisi mengikuti format surat dinas. Berita Acara Pembahasan ditandatangani kedua pihak (Pengendali Teknis/Ketua Tim bersama pimpinan entitas auditan).
 
 ### 14.1 Notisi Hasil Pengawasan (Notisi Pembahasan)
 

@@ -4,7 +4,7 @@ BPKP Document Engine
 ====================
 
 Modul inti (engine) untuk pembangkitan dokumen Word (.docx) yang sesuai
-dengan standar BPKP: A4, margin 3/2/2/2 cm, font Arial 12pt, spasi 1.15,
+dengan standar BPKP: A4, margin kiri/kanan/atas/bawah 3/2/2/2,5 cm, font Arial 12pt, spasi 1.15,
 multilevel numbering A. -> 1. -> a. -> 1) -> a) dengan restart per Bab/Topik,
 Word heading styles untuk panel navigasi, serta helper tabel dan blok
 tanda tangan dinas.
@@ -47,7 +47,7 @@ __all__ = [
     "add_signature_block",
     "add_cover_page",
     "add_daftar_isi",
-    "add_page_break", "add_page_numbers", "add_catatan_kaki_etika",
+    "add_page_break", "add_catatan_kaki_etika",
     "add_table_with_subheader",
     "add_runs_with_markdown", "add_runs_with_italic",
     "set_table_flush_alignment", "clone_from_template",
@@ -140,7 +140,7 @@ def _build_abstract_num_xml(abstract_id: int) -> "OxmlElement":
         nf = _numfmt_name(i)
         lt = _numfmt(i)
         _, left, hang, tab = _LEVEL_FMT[i]
-        restart_tag = f'<w:lvlRestart w:val="{i}"/>' if i > 0 else ''
+        restart_tag = ''
         xml += (
             f'<w:lvl w:ilvl="{i}">'
             f'<w:start w:val="1"/>'
@@ -465,39 +465,9 @@ def create_document() -> _Doc:
 
     setup_heading_styles(doc)
     setup_numbering_infrastructure(doc)
-    add_page_numbers(doc)
     _fix_theme_fonts(doc)
     _sync_styles_with_effects(doc)
     return doc
-
-
-def add_page_numbers(doc: _Doc, size=Pt(12)) -> None:
-    """
-    Nomor halaman sesuai Peraturan BPKP 4/2026 Bagian II.F: angka Arab, tengah atas,
-    format "- n -", halaman pertama (berkop/cover) tanpa nomor, font sama dengan naskah.
-    """
-    for section in doc.sections:
-        section.different_first_page_header_footer = True
-        header = section.header
-        header.is_linked_to_previous = False
-        p = header.paragraphs[0] if header.paragraphs else header.add_paragraph()
-        for r in list(p.runs):
-            r._r.getparent().remove(r._r)
-        p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-        add_run(p, "- ", size=size)
-        for kind in ("begin", "instr", "separate", "result", "end"):
-            r = p.add_run("1" if kind == "result" else "")
-            _apply_font(r, size=size)
-            if kind == "instr":
-                instr = OxmlElement('w:instrText')
-                instr.set(qn('xml:space'), 'preserve')
-                instr.text = " PAGE "
-                r._r.append(instr)
-            elif kind != "result":
-                fld = OxmlElement('w:fldChar')
-                fld.set(qn('w:fldCharType'), kind)
-                r._r.append(fld)
-        add_run(p, " -", size=size)
 
 
 # =====================================================================

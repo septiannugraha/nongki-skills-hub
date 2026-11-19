@@ -2,19 +2,17 @@
 
 ## buat-dpp
 
-Lokasi lingkungan awal: `C:/Users/Admin/.agents/skills/buat-dpp/SKILL.md`.
-
 Adopsi hubungan sumber: Insilwas/KAP menentukan informasi yang harus dijawab; pedoman menentukan metode dan prosedur; laporan hasil PIA menyediakan kondisi awal, lokus, dan risiko empiris untuk penugasan berikutnya. Enam komponen A–F: metodologi; informasi hasil; strategi/tujuan/proses bisnis/risiko klien; fokus/lokus/tempus; sumber daya; risiko penugasan dan batas tanggung jawab.
 
 Untuk ST PIA, gunakan informasi awal yang tersedia, KAP/Insilwas, dan pedoman. Laporan hasil PIA adalah keluaran yang akan disusun setelah PIA dilaksanakan. Jangan menerapkan secara melingkar aturan tiga sumber seolah laporan hasil PIA sudah harus tersedia untuk memulai PIA.
 
 Daftar metode, risiko, proses bisnis dan klausul tingkat keyakinan pada skill lama adalah contoh tematik. Jangan memaksakan evaluasi layanan dasar, uji fisik, konsultansi, atau keyakinan terbatas ke seluruh penugasan. Gunakan jenis/pedoman yang sesuai dengan DATA dan sumber pengguna.
 
-Ketentuan format lama yang bertentangan dengan TND/templat terbaru tidak diadopsi: semua tabel terbuka tanpa garis vertikal, judul 13 sebagai kewajiban, margin bawah 20 mm, dan penyisipan otomatis gambar tanda tangan. Generator paket mengisi DOCX yang telah disetujui pengguna dengan border dan kop tetap utuh.
+Ketentuan format merupakan acuan implementasi, bukan kewajiban universal TND: tabel terbuka/berkotak, ukuran judul, dan margin mengikuti templat serta arahan terakhir pengguna. Generator paket mempertahankan border dan kop templat; bila pengguna meminta format buat-dpp, sesuaikan bagian DPP. Jangan menyisipkan gambar tanda tangan secara otomatis.
+
+Untuk DPP tunggal atau revisi, gunakan panduan penyusunan DPP yang berlaku. Bila tersedia, gunakan referensi penyusunan dan reviu pada skill `buat-dpp`. Substansi diolah menjadi desain operasional tanpa cerita asal slide/bab atau lampiran pemetaan yang tidak diminta. Gunakan humanizer-indonesia untuk bahasa dan formula cascade laporan-pengawasan-bpkp bagian 12.3 untuk hanging indent. Bedakan fakta antarwilayah, kuota per Perwakilan dan per kabupaten, serta hari per unit dan durasi tim. Revisi jumlah anggota/nama pejabat hanya untuk dokumen terkait, bukan nilai bawaan skill.
 
 ## buat-st
-
-Lokasi lingkungan awal: `C:/Users/Admin/.agents/skills/buat-st/SKILL.md`.
 
 Adopsi pemetaan atribut ST, susunan tim, periode per fase, alokasi per orang, hari kerja, rencana supervisi, target konsep laporan/RPL, serta pemeriksaan hari KT sesuai hari ST. Jangan menyalin angka contoh hari/OH, kategori, nomor placeholder fiktif, atau pejabat lama sebagai data faktual.
 

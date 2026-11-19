@@ -26,6 +26,7 @@ import os
 import sys
 import json
 import re
+from copy import deepcopy
 import argparse
 from datetime import datetime
 from typing import Dict, Any, List, Optional
@@ -403,6 +404,26 @@ def apply_header_field(doc: docx.Document, label: str, value: str) -> int:
     return count
 
 
+SECURITY_LABELS = {'': 'Biasa', 'SR': 'Sangat Rahasia', 'R': 'Rahasia', 'T': 'Terbatas'}
+
+
+def apply_sifat(doc: docx.Document, value: str) -> None:
+    """Isi Sifat atau sisipkan baris dengan format metadata surat dinas."""
+    if apply_header_field(doc, "Sifat", value):
+        return
+    for table in doc.tables[:3]:
+        for index, row in enumerate(table.rows[:6]):
+            if len(row.cells) >= 2 and row.cells[0].text.strip().startswith("Lampiran"):
+                row._tr.addprevious(deepcopy(row._tr))
+                cells = table.rows[index].cells
+                _set_cell_text(cells[0], "Sifat\t:")
+                _set_cell_text(cells[1], value)
+                for other in cells[2:]:
+                    if other._tc is not cells[1]._tc:
+                        _set_cell_text(other, "")
+                return
+
+
 # Blok tanda tangan templat: "... (nama lengkap pejabat)", "... (nama pejabat)" (satu templat tanpa
 # kurung tutup) dan "..., (jabatan)" / "... (jabatan),". Satu pola per isian, bukan daftar varian.
 _SIGNER_PATTERNS = {
@@ -559,7 +580,7 @@ def generate_document(template_key: str,
 
     # Format nomor naskah
     kd_arsip = payload.get("kode_klasifikasi", "PW.01.03")
-    no_urut = payload.get("nomor_urut", "101")
+    no_urut = payload.get("nomor_urut")
     kd_unit = payload.get("kode_unit", profile.get("kode_unit", "PW36"))
     konseptor = payload.get("konseptor", "2")
     kd_naskah = tpl_info.get("kode_naskah", "ND")
@@ -569,20 +590,39 @@ def generate_document(template_key: str,
     kd_keamanan = str(payload.get("kode_keamanan") or "").strip().upper()
     if kd_keamanan in ("B", "S", "BIASA"):
         kd_keamanan = ""
+    elif kd_keamanan not in SECURITY_LABELS:
+        raise ValueError("Kode keamanan harus SR, R, T, atau kosong untuk surat Biasa.")
     # Urutan segmen mengikuti baris nomor templat resmi; Format 2 umum hanya bila templat
     # tidak memuat pola nomor yang dikenali.
     pattern = find_nomor_pattern(doc)
+    has_security_segment = bool(pattern and "keamanan" in pattern.lower())
+    nomor_lengkap = payload.get("nomor_lengkap")
+    if nomor_lengkap and has_security_segment:
+        # Nomor yang sudah ditetapkan dapat diberikan utuh. Bila polanya dikenali,
+        # pastikan Sifat mengikuti klasifikasi pada nomor tersebut.
+        parts = [seg.strip().upper() for seg in str(nomor_lengkap).split("/")]
+        security = None
+        if len(parts) > 2 and parts[1].startswith("S-"):
+            security = ""
+        elif len(parts) > 3 and parts[2].startswith("S-"):
+            security = parts[1]
+        if security is not None:
+            if security not in SECURITY_LABELS:
+                raise ValueError("Segmen keamanan pada nomor_lengkap harus SR, R, T, atau ditiadakan.")
+            if "kode_keamanan" in payload and kd_keamanan != security:
+                raise ValueError("Kode keamanan berbeda dengan nomor_lengkap.")
+            kd_keamanan = security
     formatted_nomor = format_nomor_from_template(
         pattern, {"arsip": kd_arsip, "keamanan": kd_keamanan, "urut": str(no_urut), "unit": kd_unit,
                   "konseptor": str(konseptor), "tahun": thn}, kd_naskah) if pattern else None
-    if formatted_nomor and kd_keamanan and "keamanan" not in pattern.lower():
-        print(f"Peringatan: templat '{key}' tidak memuat kode keamanan; kode_keamanan diabaikan.", file=sys.stderr)
+    if kd_keamanan and not nomor_lengkap and not has_security_segment:
+        raise ValueError(f"Templat '{key}' tidak memiliki segmen keamanan. Jika nomor resmi sudah ada, isi nomor_lengkap.")
     if not formatted_nomor:
         # Format 2 umum: kode keamanan sesudah kode klasifikasi arsip (Perban 4/2026 II.B.2.b).
         arsip_keamanan = f"{kd_arsip}/{kd_keamanan}" if kd_keamanan else kd_arsip
         formatted_nomor = f"{arsip_keamanan}/{kd_naskah}-{no_urut}/{kd_unit}/{konseptor}/{thn}"
-    if payload.get("nomor_lengkap"):
-        formatted_nomor = payload["nomor_lengkap"]
+    if nomor_lengkap:
+        formatted_nomor = nomor_lengkap
 
     kota = profile.get("kota", "Nabire")
     tanggal_naskah = payload.get("tanggal_naskah", f"{kota}, {tgl_indo}")
@@ -604,7 +644,7 @@ def generate_document(template_key: str,
         "… (tahun pembuatan)": thn,
         "... (kode unit atau jabatan)": kd_unit,
         "... (konseptor naskah dinas)": str(konseptor),
-        "... (nomor urut naskah dinas)": str(no_urut),
+        "... (nomor urut naskah dinas)": str(no_urut) if no_urut else None,
         "... (kode klasifikasi arsip)": kd_arsip,
         "... (pimpinan unit kerja)": payload.get("pimpinan_unit_kerja", profile.get("jabatan_kepala", "Kepala Perwakilan")),
         "(nama penugasan)": payload.get("nama_penugasan", payload.get("keperluan", "")),
@@ -617,7 +657,7 @@ def generate_document(template_key: str,
     # Nama penanda tangan "(nama lengkap)" ikut pola yang sama dengan "(nama lengkap pejabat)":
     # diisi hanya bila diberikan, tidak lagi diganti teks "Pejabat Penanda Tangan".
     for ell in ("...", "…"):
-        if payload.get("nama_penandatangan"):
+        if payload.get("nama_penandatangan") and key != "notisi_pertama_-_tim":
             replacements[f"{ell} (nama lengkap)"] = payload["nama_penandatangan"]
 
     # Tambahkan custom mapping dari payload
@@ -626,7 +666,10 @@ def generate_document(template_key: str,
 
     # Nomor naskah harus diterapkan SEBELUM penggantian placeholder umum; setelahnya
     # pola "(kode klasifikasi arsip)" sudah hilang dan --nomor/nomor_lengkap terabaikan.
-    apply_nomor(doc, formatted_nomor)
+    if no_urut or nomor_lengkap:
+        apply_nomor(doc, formatted_nomor)
+    if has_security_segment:
+        apply_sifat(doc, SECURITY_LABELS[kd_keamanan])
     if payload.get("tujuan"):
         apply_header_field(doc, "Yth.", payload["tujuan"])
     if payload.get("hal"):

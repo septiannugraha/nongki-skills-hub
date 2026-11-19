@@ -26,7 +26,7 @@ Sesuai Peraturan BPKP Nomor 4 Tahun 2026 BAB V-C.5.b.2), laporan bentuk surat di
 - **Paragraf Penutup**: Permintaan arahan/tindak lanjut dan ucapan terima kasih atas kerja sama.
 
 ### C. Kaki Laporan
-- **Penanggalan**: Nama kota dan tanggal pembuatan laporan (misal: `Nabire, [Tanggal] [Bulan] [Tahun]`).
+- **Penanggalan**: Nama kota dan tanggal pembuatan laporan (misal: `[Kota], [Tanggal] [Bulan] [Tahun]`).
 - **Jabatan & Tanda Tangan**: `Kepala Perwakilan,` diikuti tanda tangan digital (TTE) atau basah, nama lengkap pejabat tanpa gelar dan NIP (sesuai TND Peraturan 4/2026).
 - **Tembusan**: Ditujukan kepada pihak yang berhak menerima (misal: Deputi Kepala BPKP terkait).
 - **Catatan Kaki Etika & Layanan Pengaduan (Peraturan 4/2026 BAB V-C.5.c.5))**: Pernyataan bahwa tugas dilaksanakan tanpa melanggar aturan dan bebas dari gratifikasi/suap.
@@ -73,7 +73,7 @@ Disampaikan dengan kop surat resmi BPKP dan klausul distribusi terbatas kepada a
 
 ### D. BAB I: Simpulan dan Rekomendasi
 - **A. Simpulan**: Uraian ringkas simpulan eksekutif atas seluruh fokus pengawasan.
-- **B. Rekomendasi**: Rekomendasi berjenjang (strategis untuk Kepala Daerah, operasional untuk Kepala OPD).
+- **B. Rekomendasi** merangkum tindakan dari uraian hasil evaluasi menurut penerima instruksi dan pejabat pelaksana. Gunakan [panduan rekomendasi berjenjang](rekomendasi-berjenjang.md) saat bagian ini perlu dilengkapi dari rekomendasi rinci.
 
 ### E. BAB II: Uraian Umum / Pendahuluan
 - **A. Dasar Pelaksanaan**: Surat tugas dan peraturan yang mendasari.
@@ -89,7 +89,7 @@ Setiap temuan diuraikan secara runut:
 2. **Kriteria**: Ketentuan perundang-undangan spesifik (UU, PP, Permen, Perda, Perbup). Ditandai warna merah `(.)` bila masih draf.
 3. **Sebab**: Akar masalah (*root cause*), diawali kalimat baku: `"Kondisi tersebut disebabkan oleh..."`.
 4. **Akibat**: Dampak negatif riil atau potensi risiko, diawali: `"Akibatnya, ..."`.
-5. **Rekomendasi**: Solusi perbaikan yang spesifik dan dapat ditindaklanjuti, diawali: `"Atas permasalahan tersebut, direkomendasikan agar: ..."`.
+5. **Rekomendasi** menyebut penerima, pelaksana, dan tindakan perbaikan pada temuan yang bersangkutan.
 
 ---
 

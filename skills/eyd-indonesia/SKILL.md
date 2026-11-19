@@ -1,7 +1,8 @@
 ---
 name: eyd-indonesia
-description: Use when editing, proofreading, or correcting Indonesian text spelling, punctuation, and grammar according to official EYD V (Ejaan Bahasa Indonesia yang Disempurnakan Edisi V). Use for capital letters, italics, bold, affixes, prepositions, particles, abbreviations, numbers, coordinating conjunctions ("dan" vs "serta"), Oxford comma, punctuation, and loanwords.
-tags: [indonesian, eyd, eyd-v, proofreading, grammar, ejaan]
+description: "Pedoman resmi EYD V untuk penyuntingan teks bahasa Indonesia: huruf kapital, miring, tebal, tanda baca (koma Oxford, tanpa em dash), kata serapan, angka, dan konjungsi."
+metadata:
+  tags: [indonesian, eyd, eyd-v, proofreading, grammar, ejaan]
 ---
 
 # EYD Indonesia (Edisi V)

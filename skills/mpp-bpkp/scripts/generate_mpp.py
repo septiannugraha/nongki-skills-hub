@@ -201,6 +201,7 @@ def fill_docx(source,destination,num,model,values):
     d=model['data']
     substitutions={TEMPLATE_IDENTITY[field]:fmt(d[key]) for key,field in PROFILE_FIELDS.items() if field!='kota'}
     substitutions[TEMPLATE_IDENTITY['kota']+',']=fmt(d['KOTA_UNIT'])+','
+    identities = re.compile('|'.join(re.escape(value) for value in sorted(substitutions, key=len, reverse=True)))
     with ZipFile(source) as zi,ZipFile(destination,'w',ZIP_DEFLATED) as zo:
         for item in zi.infolist():
             payload=zi.read(item.filename)
@@ -209,9 +210,7 @@ def fill_docx(source,destination,num,model,values):
                 # Ganti identitas unit pada teks templat saja, sebelum isian pengguna masuk;
                 # alamat objek seperti "Jl. Merdeka, Nabire," tidak boleh ikut berubah.
                 for n in root.xpath('//w:t',namespaces=NS):
-                    s=n.text or ''
-                    for a,b in substitutions.items():s=s.replace(a,b)
-                    n.text=s
+                    n.text = identities.sub(lambda match: substitutions[match.group()], n.text or '')
                 if item.filename=='word/document.xml':adapt_document(root,num,model,values)
                 tokens(root,values)
                 if TOKEN.search(text(root)):raise RuntimeError('Penanda isian tersisa pada '+item.filename)
