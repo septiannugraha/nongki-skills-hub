@@ -22,7 +22,7 @@ Skill ini membantu menyusun naskah dinas resmi di lingkungan BPKP sesuai **Perat
 Baca file referensi sesuai kebutuhan:
 - [Katalog Master Template](references/templates_registry.json) -- katalog 46 template naskah dinas resmi Word (.docx) beserta daftar placeholder.
 - [Profil Unit Kerja & Kop](assets/unit_profiles.json) -- konfigurasi identitas kop surat resmi perwakilan (Papua Tengah, Kalsel, Papua, Jatim, DKI, dll).
-- [Jenis Naskah Dinas](references/jenis-naskah-dinas.md) -- taksonomi lengkap, definisi, dan sistematika tiap jenis.
+- [Jenis Naskah Dinas](references/jenis-naskah-dinas.md) memuat taksonomi, sistematika, serta acuan klausul pembatasan distribusi dan kaki laporan.
 - [Penomoran dan Format](references/penomoran-dan-format.md) -- format nomor, kode jenis naskah, kop, kertas, spasi, margin.
 - [Matriks Penanda Tangan](references/matriks-penanda-tangan.md) -- wewenang penandatanganan per jenis naskah, pelimpahan wewenang (a.n., u.b., Plt., Plh.), TTE.
 - [Pengamanan dan Perubahan](references/pengamanan-dan-perubahan.md) -- klasifikasi keamanan, enkripsi, tata cara perubahan/pencabutan/pembatalan/ralat.
@@ -32,7 +32,8 @@ Baca file referensi sesuai kebutuhan:
 
 - Dahulukan ketentuan jenis naskah dan contoh/formulir yang berlaku. BAB II memuat ketentuan umum; BAB V memuat susunan dan bentuk per jenis naskah.
 - Bedakan ketentuan peraturan, format khusus unit kerja, dan pilihan implementasi generator. Ukuran padding, warna header, spasi 1,15, atau pola tabel tertentu dalam resep teknis bukan otomatis kewajiban TND untuk semua dokumen.
-- Tidak ada dasar untuk menggeneralisasi semua tabel harus tanpa border kiri/kanan/vertikal. Pertahankan border sesuai format yang dipakai; lihat Bagian 6.5. Periksa tampilan PDF atau templat Word karena ekstraksi Markdown menghilangkan garis tabel dan dapat kehilangan contoh berbentuk gambar.
+- Ikuti garis batas tabel dari format yang dipakai (Bagian 6.5). Periksa tampilan PDF atau templat Word jika contoh berbentuk gambar atau hasil ekstraksi teks kehilangan tata letak. Jika pengguna menentukan kop dari dokumen tertentu, salin komponen Word aslinya beserta relasi logo dan cocokkan tampilan pada setiap halaman yang berkepala.
+- Untuk laporan, bedakan nomor surat tugas dari nomor agenda laporan. Isi unsur yang sudah ditetapkan, periksa klasifikasi arsip berdasarkan substansi penugasan, dan biarkan bagian agenda atau tanggal yang belum ditetapkan tetap kosong. Ikuti format unit yang berlaku ketika pengguna memberi contoh nomor dan tanggal.
 
 ## 1. Taksonomi Jenis Naskah Dinas
 
@@ -494,6 +495,8 @@ Kop surat untuk unit perwakilan dan pusat dikonfigurasi secara modular. Profil m
 Untuk menambah unit kerja baru, cukup tambahkan entri JSON pada `assets/unit_profiles.json`.
 
 ### 9.2 Cara Menjalankan Generator Naskah Dinas
+
+Untuk laporan yang agenda atau tanggalnya belum ditetapkan, isi templat yang diberikan secara langsung. Jika memakai generator, berikan `nomor_lengkap` dengan slot agenda kosong dan `tanggal_naskah` sesuai kerangka yang diminta. Tanpa nilai eksplisit, generator dapat memasukkan tanggal hari ini atau segmen agenda yang tidak dikehendaki. Buka hasil dan periksa nomor serta tanggal sebelum diserahkan.
 
 1. **Melihat Daftar 46 Template yang Tersedia:**
    ```bash

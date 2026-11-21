@@ -88,6 +88,14 @@ Sistematika surat perintah/surat tugas: kop, nomor, lampiran, hal, tujuan surat,
 | 19 | **Kerangka Acuan Kerja (KAK)** | tanpa kode | |
 | 20 | **Formulir** | tanpa kode | Tidak dibubuhi nomor. |
 
+### Laporan: pembatasan distribusi dan kaki
+
+Peraturan BPKP Nomor 4 Tahun 2026, Lampiran Bab V C angka 5, memuat contoh pembatasan distribusi dan penggunaan hasil penugasan pada Gambar V.31 halaman 122 (laporan bentuk pendek) dan Gambar V.33 halaman 125 (laporan bentuk panjang). Kedua contoh membatasi penerima, menyebut penggunaan hasil sebagai pertimbangan atau rekomendasi, dan memuat batas tanggung jawab BPKP atas penggunaan hasil oleh pihak di luar penerima. Jika ekstraksi teks melewatkan gambar, buka halaman PDF aslinya. [Naskah peraturan](https://peraturan.bpk.go.id/Download/425265/peraturan-bpkp-no-4-tahun-2026.pdf)
+
+Jika unit kerja atau pengguna menentukan redaksi, ikuti redaksi itu dan sesuaikan penerima, pihak yang berhak menerima tembusan, serta substansi keputusan dengan penugasan. Frasa batas tanggung jawab mengikuti contoh yang dipakai dan ketentuan yang berlaku. Klausul pembatasan distribusi berbeda fungsi dengan catatan kaki etika dan layanan pengaduan pada Bab V C angka 5 huruf c angka 5.
+
+Pada kaki laporan, tempatkan jabatan yang benar, termasuk singkatan `Plt.` atau `Plh.` bila berlaku, diakhiri koma. Untuk format TTE, tempatkan `Ditandatangani secara elektronik oleh` di antara baris jabatan dan nama lengkap. Tempatkan blok di kanan bawah dengan baris jabatan rata kiri sesuai ketentuan kaki laporan. Cocokkan posisi, spasi, ukuran, dan gaya huruf dengan contoh yang diminta sepanjang sesuai ketentuan jenis naskah. Jika konten masih disiapkan untuk ditandatangani, QR dan autentikasi diperoleh melalui proses TTE yang berlaku. Jangan mengambil QR atau gambar tanda tangan dari dokumen contoh.
+
 ## 4. Unsur Umum Naskah Dinas (BAB II)
 
 Unsur pembuatan Naskah Dinas (Pasal 5): kop, penomoran, penggunaan kertas/amplop/tinta, jarak spasi/jenis dan ukuran huruf/kata penyambung, batas/ruang tepi, nomor halaman, tembusan, lampiran, tanda tangan/paraf/cap, kaidah penulisan, estetika dan etika, rujukan, serta perubahan/pencabutan/pembatalan/ralat.

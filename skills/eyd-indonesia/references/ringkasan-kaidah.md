@@ -47,7 +47,7 @@ Daftar ringkas kaidah paling sering digunakan dan rawan kesalahan untuk rujukan 
 
 * **Angka dan Bilangan**:
   * Dalam narasi, tulis dengan huruf bilangan yang dapat dinyatakan dengan satu kata, misalnya *tiga kali* dan *seribu buku*. Gunakan angka untuk deret dalam perincian, misalnya *50 bus, 100 minibus, dan 250 sedan*.
-  * Angka ditulis dengan digit jika digunakan untuk rincian (*10 meja, 5 kursi, dan 2 lemari*) atau menyatakan ukuran/nilai uang/waktu (*5 cm*, *Rp50.000,00*, *pukul 08.00*).
+  * Angka digunakan pada perincian (*10 meja, 5 kursi, dan 2 lemari*) serta untuk ukuran, nilai uang, waktu, dan persentase. Untuk perbandingan data laporan, gunakan angka secara konsisten pada pembilang dan penyebut, misalnya *Sebanyak 10 dari 17 rencana* atau *Dari 12 kampung yang diuji petik, 9 kampung*. Gunakan *Sebanyak*, *Sejumlah*, *Sebesar*, *Dari*, atau susun ulang kalimat agar angka tidak membuka kalimat. [EYD V, Angka dan Bilangan](https://ejaan.kemendikdasmen.go.id/eyd/penulisan-kata/angka-dan-bilangan/)
 
 ---
 
@@ -56,7 +56,7 @@ Daftar ringkas kaidah paling sering digunakan dan rawan kesalahan untuk rujukan 
 * **Tanda Koma (`,`)**:
   * Digunakan sebelum kata hubung pertentangan/konjungsi intrakalimat (*..., tetapi...*, *..., melainkan...*, *..., sedangkan...*).
   * Digunakan dalam rincian 3 unsur atau lebih sebelum kata 'dan', 'serta', atau 'atau' (*Oxford comma* versi EYD: *A, B, dan C*; *X, Y, serta Z*).
-  * Digunakan di belakang kata transisi antarkalimat (*Oleh karena itu, ...*, *Namun, ...*, *Selain itu, ...*).
+  * Digunakan di belakang kata transisi antarkalimat (*Oleh karena itu, ...*, *Namun, ...*, *Selain itu, ...*). Untuk pengenalan contoh di awal kalimat, tulis *Misalnya, kerangka acuan mencantumkan tiga lokasi.* Jika contoh menyatu dengan gagasan, susun kalimat langsung. Koma pengapit berlaku untuk keterangan tambahan atau aposisi sesuai fungsinya. Hindari menyisipkan *misalnya* di antara subjek dan predikat jika contoh dapat disajikan lebih jelas. [EYD V, Tanda Koma](https://ejaan.kemendikdasmen.go.id/eyd/penggunaan-tanda-baca/tanda-koma/)
   * Anak kalimat yang mendahului induk kalimat menggunakan koma (*Jika hujan, saya tidak datang*). Jika induk kalimat mendahului anak kalimat, TIDAK menggunakan koma (*Saya tidak datang jika hujan*).
 
 * **Kaidah Khusus Konjungsi Koordinatif "Dan" vs "Serta"**:
@@ -85,7 +85,7 @@ Daftar ringkas kaidah paling sering digunakan dan rawan kesalahan untuk rujukan 
 
 
 * **Tanda Titik Dua (`:`)**:
-  * Digunakan di akhir pernyataan lengkap yang diikuti rincian/penjelasan.
+  * Digunakan di akhir pernyataan lengkap yang diikuti perincian atau penjelasan. Jika pengantar berakhir dengan *berikut*, tulis *sebagai berikut:* sebelum daftar, tabel, atau uraian yang diperkenalkan. Jika kata *berikut* masih menjadi unsur kalimat, misalnya *Tabel berikut memuat hasil evaluasi*, lanjutkan kalimat sesuai sintaksisnya.
   * TIDAK digunakan jika rincian merupakan pelengkap langsung kalimat (*Kami memerlukan meja, kursi, dan lemari* - tanpa titik dua).
 
 * **Tanda Hubung (`-`)**:

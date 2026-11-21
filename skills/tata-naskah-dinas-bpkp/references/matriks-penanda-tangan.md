@@ -101,5 +101,5 @@ Pelimpahan dilakukan melalui dua mekanisme:
 
 - TTE terdiri atas informasi elektronik yang dilekatkan/terasosiasi/terkait dengan informasi elektronik lain, dipakai sebagai alat verifikasi dan autentikasi.
 - TTE memakai Sertifikat Elektronik dari Penyelenggara Sertifikasi Elektronik yang diakui pemerintah (Peraturan 4/2026 BAB IV-B.1). Masa berlaku dan pembaruan sertifikat mengikuti ketentuan penyelenggara (mis. BSrE) dan SOP terkait; tidak diatur dalam Peraturan 4/2026.
-- Penggunaan TTE menggantikan tanda tangan basah dan cap dinas; pada dokumen TTE dicantumkan kalimat "Ditandatangani secara elektronik oleh" dan kode QR.
+- TTE menggantikan tanda tangan basah dan cap dinas. Untuk laporan, letakkan `Ditandatangani secara elektronik oleh` di antara jabatan dan nama penanda tangan. Kode QR dan autentikasi terkait dengan dokumen yang benar-benar ditandatangani. Saat menyiapkan format blok, gunakan jabatan dan nama yang ditetapkan untuk dokumen itu.
 - **Cap dinas** hanya digunakan untuk surat dinas dengan tanda tangan basah.

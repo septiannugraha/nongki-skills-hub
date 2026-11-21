@@ -39,19 +39,20 @@ Tidak memerlukan DrillBit. Jangan menilai atau mengubah laporan berdasarkan duga
 
 Gunakan bersama `laporan-pengawasan-bpkp` ketika menyusun laporan BPKP dan `tata-naskah-dinas-bpkp` ketika mengatur format naskah dinas. Pertahankan atribut temuan sesuai jenis penugasan; jangan memaksakan temuan audit pada semua jenis laporan.
 
-- Dahulukan kondisi atau pokok hasil ketika itu membantu pembaca; keterangan sumber dan waktu tetap harus jelas. Keterangan di awal kalimat boleh jika diperlukan untuk membatasi pernyataan.
-- Sebutkan pelaku, objek, waktu, ukuran, dan bukti yang tersedia. Jangan menambah angka atau rincian demi membuat kalimat terasa konkret.
+- Susun paragraf deduktif jika diminta. Nyatakan pokok kondisi di awal, lalu dukung dengan ukuran, pembanding, pengecualian, atau contoh yang diperlukan. Gunakan contoh narasi pengguna sebagai acuan. Terapkan kerangka seperti AREL hanya ketika pengguna memintanya untuk naskah yang sedang disunting.
+- Sebutkan pelaku, objek, waktu, ukuran, dan bukti yang menjelaskan temuan. Gunakan nama kegiatan atau perangkat daerah yang benar. Nyatakan hasil telaah, konfirmasi, atau observasi secara langsung. Hilangkan pembuka seperti `menurut kertas kerja`, label KKE, dan keterangan seperti `pada pengujian yang terpisah` bila hanya mengisahkan proses internal. Ikuti batas data yang tersedia.
+- Hubungkan klausa dengan *tetapi*, *hanya*, *sehingga*, atau penghubung lain jika relasinya jelas. Gabungkan proposisi yang saling menjelaskan. Hapus frasa pengisi seperti `yang teridentifikasi` atau `yang diperiksa` ketika penghapusannya tidak mengubah cakupan. Pertahankan istilah yang membedakan ketersediaan, kesulitan akses, kebutuhan, dan intervensi yang telah diberikan.
 - Bedakan kondisi faktual, kriteria, sebab, akibat, dan rekomendasi jika relevan. Jangan mengubah indikasi menjadi pelanggaran terbukti, potensi menjadi kerugian aktual, atau dugaan sebab menjadi sebab pasti.
-- Rekomendasi menyebut pihak dan tindakan sesuai kewenangan jika didukung bahan. Hindari rekomendasi umum seperti "meningkatkan sinergi" tanpa tindakan yang jelas.
+- Rekomendasi menyebut perangkat daerah, tindakan yang menjawab penyebab hakiki, dan mitra yang diperlukan. Gunakan nama mitra jika meminta koordinasi. Hapus kalimat umum yang tidak menentukan tindakan atau ruang lingkup.
 - Dalam rekomendasi berjenjang, nyatakan alur instruksi dengan verba aktif. Letakkan pejabat pemberi instruksi, pejabat yang menerima instruksi, dan pelaksana pada urutan yang mudah diikuti. Untuk satu tindakan, lanjutkan kalimat langsung setelah `untuk` atau `agar`. Untuk beberapa tindakan, gunakan pengantar yang berakhir dengan `berikut:` dan mulai tiap butir dengan verba yang sejajar. Ikuti panduan rekomendasi berjenjang dalam skill `laporan-pengawasan-bpkp` untuk struktur dan penomoran.
 - Saat meringkas rekomendasi rinci, gabungkan pengulangan hanya jika pelaksana, tindakan, dan cakupannya sama. Pertahankan rincian yang menentukan tindak lanjut, seperti nilai, tenggat, rujukan, dan pihak yang harus diajak berkoordinasi.
-- Pertahankan istilah resmi, judul peraturan, nomor dokumen, nilai uang, dan dasar penilaian. Kejernihan lebih penting daripada menghindari pengulangan istilah yang diperlukan.
+- Pertahankan nomenklatur, bunyi ketentuan, nomor dokumen, nilai uang, dan dasar penilaian. Ikuti format penulisan kriteria dari skill laporan. Bila pengguna meminta agar judul peraturan dihilangkan, pertahankan identitas dan letak ketentuannya. Judul pedoman dan petunjuk teknis tetap dicantumkan.
 
 Contoh penyuntingan:
 
 "Berdasarkan hasil pemeriksaan dokumen, diketahui bahwa terdapat tiga laporan yang belum disampaikan oleh unit kerja."
 
-Menjadi: "Pemeriksaan dokumen menunjukkan bahwa unit kerja belum menyampaikan tiga laporan."
+Menjadi “Unit kerja belum menyampaikan tiga laporan.” Jika periode, dasar verifikasi, atau pengecualian diperlukan untuk memahami kondisi, tambahkan keterangan itu pada paragraf yang sama.
 
 Jangan mengubahnya menjadi "Unit kerja terlambat menyampaikan tiga laporan" jika tenggat belum diketahui.
 
