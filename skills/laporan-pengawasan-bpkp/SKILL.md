@@ -1,6 +1,6 @@
 ---
 name: laporan-pengawasan-bpkp
-description: "Penyusunan dan penyelarasan laporan pengawasan BPKP (LHP/LHE/LHR/Notisi/BA Exit) berbasis IIA Standards & Peraturan BPKP 4/2026, berstruktur temuan 5C."
+description: "Susun dan revisi laporan pengawasan BPKP (LHP/LHE/LHR/Notisi/BA Exit), simpulan kertas kerja, dan ikhtisar TEO. Padankan bukti, rumuskan temuan 5C dan rekomendasi, serta ikuti tata naskah dinas."
 metadata:
   tags: [bpkp, laporan-pengawasan, lhp, lhe, lhr, notisi, temuan-audit, 5c, iia, audit-internal, eyd-indonesia, humanizer-indonesia, tata-naskah-dinas-bpkp, peraturan-bpkp-4-2026]
 ---
@@ -22,14 +22,15 @@ Skill ini membantu menyusun laporan hasil pengawasan internal (Laporan Hasil Pem
 > 1. **Template-First Principle**: Jika pengguna menyediakan atau merujuk file template/draf laporan tertentu (misal: Evaluasi Pembiayaan Daerah, Notisi Pembahasan, LHP Kinerja, atau dokumen berformat surat pendek), **FORMAT DAN STRUKTUR TEMPLATE PENGGUNA TERSEBUT MENJADI ACUAN TERTINGGI**.
 > 2. **Dilarang Overfitting Contoh Ketapang**: Dokumen contoh (seperti Laporan Ketapang atau contoh di `references/template-format.md`) adalah **contoh kasus multi-lokus berskala besar**, BUKAN cetak biru wajib untuk semua laporan. **DILARANG** merombak atau memaksakan susunan dokumen pengguna menjadi bab-bab Ketapang jika pengguna sudah memiliki template sendiri!
 > 3. **Pencegahan Duplikasi Metadata (Nomor, Lampiran, Hal)**: Jika template dokumen pengguna sudah memiliki baris/tabel kop dan metadata `Nomor`, `Lampiran`, `Hal`, **LAKUKAN PENGISIAN / PERBAIKAN SECARA IN-PLACE**. Dilarang keras menyisipkan tabel metadata tambahan yang mengakibatkan penulisan Nomor, Lampiran, Hal tertulis dua kali!
-> 4. **Invarian Nomor dan Tanggal Laporan (Draf)**: Saat membuat laporan atau draf laporan hasil pengawasan, **nomor laporan dan tanggal laporan JANGAN DIISI**. Cukup diisi placeholder `"   "` (tripel spasi kosong) saja, baik pada cover, metadata surat pengantar, maupun kaki/tanda tangan, karena penomoran agenda keluar dan penanggalan resmi dilakukan oleh sekretaris/tata usaha.
+> 4. **Nomor dan tanggal laporan**: Pertahankan komponen yang sudah ditetapkan pengguna atau sumber yang berwenang. Sisakan ruang bagi nomor urut dan bagian tanggal yang belum ditetapkan. Lihat Bagian 11.4a.
+> 5. **Revisi naskah berjalan**: Jadikan berkas terkini yang telah diformat pengguna sebagai dasar perubahan. Gunakan acuan kop, gaya bahasa, 5C, atau penanda tangan hanya pada bagian yang ditunjuk. Ikuti instruksi tentang label status naskah, tautan, dan daftar rujukan.
 
 > [!important] Acuan Tata Naskah Dinas: Peraturan BPKP 4/2026
 > Skill ini mengacu pada **Peraturan BPKP Nomor 4 Tahun 2026 tentang Tata Naskah Dinas** (BAB V-C.5 Laporan, BAB IV Pengamanan, BAB III Pejabat Penanda Tangan), yang menggantikan Peraturan BPKP Nomor 4 Tahun 2022. Detail lihat Bagian 11.
 
 Baca [Panduan Standar IIA](references/standar-iia.md) untuk kerangka struktural dan prinsip kualitas komunikasi. Baca [Contoh Struktur Laporan](references/template-format.md) sebagai salah satu contoh format -- bukan format baku (lihat Bagian 2).
 
-Saat menyunting rekomendasi per wilayah atau melengkapi bagian rekomendasi ringkas dari uraian temuan, gunakan [Panduan Rekomendasi Berjenjang](references/rekomendasi-berjenjang.md).
+Untuk menyiapkan atau merevisi simpulan per sheet, ikhtisar TEO, tabel pengujian, dan uraian temuan dari spreadsheet, gunakan [Panduan Kertas Kerja ke Laporan](references/kertas-kerja-ke-laporan.md). Untuk penempatan, pengelompokan, dan penomoran rekomendasi, gunakan [Panduan Rekomendasi Berjenjang](references/rekomendasi-berjenjang.md).
 
 ## 1. Prinsip Kualitas Komunikasi (IIA)
 
@@ -57,17 +58,15 @@ Contoh struktur di [references/template-format.md](references/template-format.md
 ### Pendekatan yang benar:
 1. **Jika pengguna memberikan template**: Ikuti template tersebut. Jangan memaksakan struktur dari contoh.
 2. **Jika pengguna tidak memberikan template**: Tanyakan jenis penugasan dan apakah ada format/template yang harus diikuti. Jika tidak ada, gunakan contoh di references sebagai titik awal dan sesuaikan.
-3. **Yang selalu berlaku di semua jenis laporan**: Kerangka 5C untuk temuan (Bagian 3), prinsip kualitas komunikasi (Bagian 1), distribusi terbatas (Bagian 4), dan conformance statement (Bagian 5).
+3. **Yang selalu berlaku di semua jenis laporan**: Kedalaman atribut temuan sesuai jenis penugasan (Bagian 3), prinsip kualitas komunikasi (Bagian 1), distribusi terbatas (Bagian 4), dan conformance statement (Bagian 5).
 
-### Placeholder dan Kertas Kerja
+### Data dan ruang lingkup revisi
 
-Jika pengguna sudah menyediakan **template laporan** (dalam format DOCX atau format lain), placeholder/variabel yang perlu diisi pada template tersebut **umumnya berasal dari kertas kerja berbentuk xlsx** (spreadsheet). Kertas kerja xlsx biasanya memuat data temuan, angka realisasi, target, bukti audit, dan informasi pendukung lainnya yang perlu dipindahkan ke dalam template laporan.
-
-Skill ini tidak memiliki kemampuan bawaan untuk membaca file xlsx. Jika pengguna perlu mengambil data dari kertas kerja xlsx untuk mengisi placeholder template, gunakan **skill atau alat terpisah** untuk membaca xlsx terlebih dahulu, lalu gunakan data yang diperoleh untuk mengisi template laporan melalui skill ini.
+Baca sumber Excel dengan skill `xlsx` atau Google Sheets melalui MCP Google Workspace jika diminta. Jadikan sumber yang ditetapkan pengguna sebagai dasar rekonsiliasi dan periksa hasil yang tak dapat dipadankan. Gunakan istilah, satuan, dimensi, dan populasi dari pengujian. Lihat [Panduan Kertas Kerja ke Laporan](references/kertas-kerja-ke-laporan.md).
 
 ## 3. Kerangka Penulisan Temuan: Metode 5C & Multi-Lokus
 
-Setiap temuan/permasalahan harus diurai menggunakan kerangka 5C. Dalam pengawasan kewilayahan/multi-entitas (misalnya tingkat Provinsi dan beberapa Kabupaten/Kota), uraian temuan mengikuti pola agregat dan rincian per lokus berikut:
+Gunakan 5C pada temuan laporan atau ikhtisar yang mensyaratkannya. Simpulan kondisi per sheet langsung menjawab tujuan tabelnya. Sesuaikan kedalaman atribut dengan jenis penugasan. Untuk pengawasan multi-entitas, berikut salah satu pola agregat dan rincian per lokus:
 
 ### Pola Naratif Per Sub-Topik (Format Multi-Lokus)
 
@@ -80,19 +79,17 @@ Kondisi di tingkat wilayah pengawasan diuraikan sebagai berikut:
 2) [Nama Entitas/Kabupaten A]: [Uraian fakta kondisi riil, data kuantitatif, target vs realisasi, temuan lapangan].
 3) [Nama Entitas/Kabupaten B]: [Uraian fakta kondisi riil, data kuantitatif, target vs realisasi, temuan lapangan].
 
-[Kriteria / Regulasi]
-(.)  <-- Warna MERAH jika masih berupa draf/placeholder/unverified
--- ATAU --
-"Kondisi tersebut tidak sesuai dengan [Regulasi/Peraturan] Nomor [X] Tahun [XXXX] tentang [Judul], Pasal [X] ayat ([X]) yang menyatakan bahwa '[Kutipan normatif]'." (Warna HITAM jika sudah definitif)
+[Kriteria]
+Hal ini tidak sesuai dengan [jenis peraturan] Nomor [X] Tahun [XXXX] [pasal/ayat/angka/huruf] yang menyatakan bahwa [bunyi yang terverifikasi].
 
-[Penyebab / Root Cause]
-Kondisi tersebut disebabkan oleh [akar masalah sistemik, bukan sekadar gejala permukaan].
+[Penyebab]
+Hal ini disebabkan oleh [penyebab hakiki yang didukung bukti].
 
-[Akibat / Dampak / Risiko]
-Akibatnya, [dampak negatif riil atau potensi risiko finansial/operasional/kegagalan target].
+[Akibat]
+Akibatnya, [dampak nyata atau risiko yang dinyatakan sebagai potensi].
 
-[Rekomendasi / Corrective Action]
-[Penerima rekomendasi, pejabat pelaksana, dan tindakan yang terkait dengan temuan pada lokus ini.]
+[Rekomendasi]
+[Rumuskan tindakan yang mengatasi sebab. Tempatkan pada temuan atau bagian rekomendasi bersama sesuai struktur laporan.]
 ```
 
 ### Pola Naratif Per Topik Utama (Agregat)
@@ -115,21 +112,23 @@ Atas hasil evaluasi yang telah disampaikan, pihak [Pemerintah Daerah / OPD terka
 
 ### Kunci Penulisan 5C dalam Konteks BPKP
 
-- **Criteria**: Selalu kutip regulasi spesifik (UU, PP, Permen, Perda, Perbup, SE, Juknis) beserta pasal dan ayat. Tandai warna **MERAH (`RGB(255, 0, 0)`)** bila masih placeholder `(.)` atau butuh verifikasi regulasi.
-- **Condition**: Nyatakan fakta berbasis bukti KKE (Kertas Kerja Evaluasi). Sajikan perbandingan target vs realisasi atau tabel pendukung bila tersedia.
-- **Cause**: Identifikasi akar masalah (*root cause*) dengan awalan baku: `"Kondisi tersebut disebabkan oleh..."`.
-- **Consequence**: Nyatakan dampak nyata atau risiko potensial dengan awalan baku: `"Akibatnya, ..."`.
-- **Corrective Action / Rekomendasi** menyebut penerima rekomendasi, pejabat yang menerima instruksi, dan tindakan yang perlu dilakukan. Saat menyunting draf, pertahankan posisi rekomendasi pada temuan dan lokus asalnya sesuai susunan laporan. Gunakan pengantar yang mengikuti arahan pengguna dan [panduan rekomendasi berjenjang](references/rekomendasi-berjenjang.md).
+- **Kondisi**. Mulai paragraf dengan temuan pokok. Jelaskan pelaku, kegiatan, kesenjangan, ukuran, dan contoh yang menerangkan maknanya. Nyatakan hasil telaah, konfirmasi, observasi, atau pemadanan langsung dalam bahasa pengawasan. Simpan pemetaan sel dan dokumen sebagai jejak kerja.
+- **Kriteria**. Pilih satu ketentuan paling relevan dengan kondisi. Untuk penyimpangan yang didukung bukti, mulai dengan `Hal ini tidak sesuai dengan`, diikuti jenis, nomor dan tahun peraturan, letak ketentuan, dan bunyinya. Hilangkan judul jika identitas peraturan sudah jelas. Cantumkan judul pedoman atau petunjuk teknis. Jika temuan campuran memang memerlukan beberapa ketentuan, sajikan sebagai daftar di bawah `Hal ini tidak sesuai dengan:`. Verifikasi naskah resmi dan jangan menisbahkan indikator evaluasi kepada peraturan yang tidak mengaturnya.
+- **Penyebab**. Telusuri dengan 5 Why. Uji tiap jawaban terhadap dokumen atau konfirmasi, lalu berhenti pada sebab terdalam yang dapat ditopang bukti. Awali dengan `Hal ini disebabkan oleh`. Simpan pertanyaan terbuka dalam catatan verifikasi jika perlu.
+- **Akibat**. Hubungkan kesenjangan dengan dampak yang teramati atau risiko yang dapat dijelaskan. Pertahankan tingkat kepastian bukti.
+- **Rekomendasi**. Utamakan satu tindakan substantif per penyebab hakiki. Sebutkan penerima, perangkat daerah yang berwenang, hasil kerja yang perlu diwujudkan, dan mitra koordinasi yang diperlukan. Tempatkan tindakan sesuai template atau arahan terakhir. Jika rekomendasi dipusatkan di bagian akhir, jaga tautan setiap tindakan dengan penyebab dan hapus salinan di bawah temuan. Lihat [Panduan Rekomendasi Berjenjang](references/rekomendasi-berjenjang.md).
 
 ## 4. Distribusi dan Kerahasiaan
 
-Setiap laporan wajib memuat klausul distribusi terbatas:
+Letakkan klausul pembatasan distribusi sesuai struktur laporan. Peraturan BPKP Nomor 4 Tahun 2026, Lampiran Bab V C angka 5, memberikan contoh pada Gambar V.31 halaman 122 untuk bentuk pendek dan Gambar V.33 halaman 125 untuk bentuk panjang.
 
-> "Laporan ini terbatas ditujukan kepada [Jabatan Penerima] untuk dapat digunakan sebagai salah satu bahan pertimbangan atau rekomendasi dalam pengambilan keputusan atas permasalahan yang terjadi."
+Jika unit kerja atau pengguna menentukan contoh redaksi, ikuti contoh tersebut dan sesuaikan jenis laporan, jabatan penerima, pihak yang berhak mendapat tembusan, serta substansi pengambilan keputusan. Contoh regulasi menjadi acuan saat contoh khusus tidak diberikan. Tambahkan frasa batas tanggung jawab jika terdapat dalam format yang dipakai atau disyaratkan oleh ketentuan yang berlaku. Contoh pola laporan evaluasi:
 
-Tembusan hanya kepada pejabat yang berwenang sesuai hierarki:
-- Deputi Kepala BPKP yang relevan
-- Pejabat lain sesuai kebutuhan
+> Laporan hasil evaluasi ini terbatas ditujukan kepada [jabatan penerima] serta pihak-pihak yang mendapat tembusannya untuk dapat digunakan sebagai salah satu bahan pertimbangan dalam pengambilan keputusan terkait [substansi evaluasi].
+>
+> Atas perhatian dan kerja sama yang baik, kami mengucapkan terima kasih.
+
+Gunakan frasa tentang tembusan apabila sesuai dengan daftar tembusan dan redaksi yang dipakai. Klausul ini berdiri tersendiri dari catatan kaki etika dan layanan pengaduan pada Bagian 11.5a.
 
 ## 5. Pernyataan Pemenuhan Norma (Conformance Statement)
 
@@ -181,11 +180,11 @@ Untuk dokumen yang dibangun dari nol atau tanpa template numbering bawaan, gunak
 - Formal, impersonal: "telah dilakukan evaluasi..." bukan "kami mengevaluasi..."
 - Konstruktif: "direkomendasikan agar..." bukan "harus segera dilakukan..."
 - Hindari kata-kata emosional atau menghakimi.
-- Gunakan kalimat pasif untuk temuan, kalimat aktif untuk rekomendasi.
+- Pilih aktif atau pasif menurut fokus informasi. Nyatakan kondisi dalam paragraf deduktif dan gunakan verba aktif pada tindakan rekomendasi. Pakai penghubung seperti *tetapi*, *hanya*, dan *sehingga* sesuai hubungan fakta yang didukung.
 
 ### Tabel dan Data
-- Setiap tabel harus memiliki judul dan sumber data.
-- Format: "Sumber: [Nama Instansi/Dokumen], [Tahun]"
+- Isikan angka yang tersedia dari sumber tervalidasi. Beri tabel judul dan jelaskan ukuran, kategori, serta penyebutnya. Frasa pengantar dapat berbunyi `Hasil penilaian akses setiap layanan disajikan pada Tabel 3.`
+- Ikuti template dan arahan untuk baris sumber. Jika dicantumkan, gunakan nama instansi atau dokumen dan tahun. Simpan rincian jejak bukti di catatan kerja bila pengguna meminta naskah tanpa tautan atau daftar rujukan.
 
 ---
 
@@ -207,6 +206,11 @@ Hasilkan tulisan yang terasa ditulis seseorang untuk audiens tertentu. Pertahank
 - "merupakan bukti nyata", "memainkan peran penting", "menjadi tonggak", "di tengah lanskap yang terus berkembang" tanpa informasi konkret.
 - Kata evaluatif seperti "sangat penting", "komprehensif", "inovatif", atau "strategis" tanpa ukuran atau bukti.
 - Atribusi kabur: "para ahli mengatakan", "banyak pihak menilai", atau "berbagai penelitian" tanpa sumber.
+
+**Bahasa hasil pengawasan:**
+- Nyatakan kondisi langsung dengan pelaku, fakta, ukuran, dan cakupan yang relevan. Singkirkan rujukan ke kertas kerja atau KKE sebagai pengantar atau penegas narasi, termasuk `sesuai dengan kertas kerja`, `menurut kertas kerja`, dan variasinya. Simpan padanan bukti di catatan kerja. Pertahankan label kolom yang diminta dan rujukan resmi yang menjadi dasar kriteria.
+- Singkirkan ungkapan ketidakpastian yang tidak menjelaskan kondisi, seperti `belum dapat dipastikan`, `tidak dapat diketahui`, dan `belum terkonfirmasi`. Verifikasi dulu klaim yang material. Jika bukti tetap terbatas, gunakan fakta yang dapat dinyatakan secara spesifik atau keluarkan klaim yang tak didukung. Jika batas bukti memengaruhi kesimpulan, nyatakan cakupan pengujian atau data yang tersedia secara konkret. Catat hal yang perlu konfirmasi dalam bahan reviu dan sampaikan kepada pengguna bila berpengaruh pada hasil.
+- Pertahankan kondisi negatif yang terbukti. Contoh kalimat `Daftar kegiatan mencantumkan distrik tanpa menyebut kampung lokasi kegiatan.` hanya dipakai jika itulah isi daftar. Ketiadaan nama kampung pada daftar tidak membuktikan bahwa kampung sasaran tidak ditetapkan.
 
 **Struktur mekanis:**
 - Paragraf dengan pola pembuka-tiga butir-kesimpulan yang berulang.
@@ -254,13 +258,9 @@ Output sub-agent LLM sering memakai penanda markdown `*kata*` atau `_kata_`. Jik
 3. Gunakan helper `add_runs_with_markdown()` atau `add_runs_with_italic()` saat mengisi teks secara manual per sel/paragraf.
 4. **Invarian Audit**: Jumlah karakter literal `*` pada seluruh teks dokumen hasil kompilasi **WAJIB 0**.
 
-### 7.3 Audit Deterministik Wajib Pra-Selesai (Invarian Mutlak)
+### 7.3 Pemeriksaan Deterministik Sebelum Penyerahan
 
-Sebelum menyatakan dokumen laporan (LHP, LHE, LHR, Notisi) selesai, jalankan fungsi audit deterministik `audit_docx_deterministic(doc)` atau `audit_text_deterministic(teks)`. Dokumen hanya dapat diserahkan jika memenuhi:
-- [ ] **Jumlah em dash / en dash (`—`, `–`, `--`) = 0**.
-- [ ] **Jumlah literal asterisk (`*`) = 0**.
-- [ ] **Temuan penanda AI lapangan = 0** (`turut + verba`, `nyaris`, `tercermin dari`, `telah terpetakan`, `menyimpan risiko`, `perlu diwaspadai`, `perlu dilakukan`).
-- [ ] **Panjang kalimat**: Kalimat dengan $>60$ kata dievaluasi untuk dipecah (kecuali kalimat tabel deret angka).
+Gunakan `audit_docx_deterministic(doc)` atau `audit_text_deterministic(teks)` untuk menemukan artefak dalam narasi. Periksa narasi, simpulan, isi tabel, dan rekomendasi untuk rujukan internal dan ungkapan ketidakpastian yang kabur, termasuk variasi yang luput dari pemeriksaan otomatis. Tinjau setiap penandaan sebelum memperbaiki. Hapus tanda pisah yang tidak diperlukan, penanda miring Markdown yang bocor, dan kata pengisi. Pertahankan karakter sah pada kutipan, kode, rumus, nama resmi, dan bagian di luar lingkup revisi. Untuk kalimat panjang, periksa apakah hubungan klausa jelas dan pecah hanya bila itu memudahkan pembaca.
 
 ---
 
@@ -308,8 +308,8 @@ Setelah humanisasi, periksa ejaan sesuai kaidah EYD V (Ejaan Bahasa Indonesia ya
 - Akronim nama diri menggunakan kapital tanpa titik (*BPKP*, *SAIPI*, *AAIPI*).
 
 **Angka dan Bilangan:**
-- Ditulis huruf jika satu atau dua kata (*tiga kali*, *dua puluh orang*).
-- Ditulis digit untuk rincian, ukuran, nilai uang, waktu (*5 cm*, *Rp50.000,00*, *pukul 08.00*).
+- Tulis bilangan satu kata yang berdiri sendiri dengan huruf, misalnya *tiga kali*. Gunakan angka pada perincian, ukuran, nilai uang, waktu, dan persentase.
+- Untuk perbandingan data gunakan bentuk yang konsisten, misalnya *Sebanyak 10 dari 17 rencana* atau *Dari 12 kampung yang diuji petik, 9 kampung*. Pilih pembuka seperti *Sebanyak* atau *Dari* agar angka tidak membuka kalimat.
 
 #### C. Penggunaan Tanda Baca
 
@@ -323,7 +323,7 @@ Setelah humanisasi, periksa ejaan sesuai kaidah EYD V (Ejaan Bahasa Indonesia ya
   - Gunakan **"serta"** untuk relasi penyertaan/pendampingan (bermakna *beserta*, *ikut*, *turut*, atau berkas/pihak pelengkap pendamping: *"Gubernur serta jajarannya"*, *"dokumen kontrak serta lampiran Berita Acara"*).
   - **Perincian Bertingkat (Hierarkis)**: Gunakan **"dan"** untuk kelompok utama yang setara dan **"serta"** untuk kelompok pendamping/tambahan (*"Dinas Pertanian dan Dinas Ketahanan Pangan, serta perwakilan kelompok tani"*).
 - **Larangan Pleonasme**: **DILARANG KERAS** menggunakan gabungan *"dan serta"* secara berdampingan tanpa jeda struktur (*"peralatan dan serta bahan"* -> **SALAH**, perbaiki menjadi *"peralatan dan bahan"* atau perinci dengan koma).
-- Di belakang kata transisi antarkalimat (*Oleh karena itu, ...*, *Namun, ...*).
+- Di belakang kata transisi antarkalimat (*Oleh karena itu, ...*, *Namun, ...*). Letakkan *misalnya* pada posisi yang jelas sesuai fungsinya. Untuk memberi contoh setelah pernyataan lengkap, gunakan *Misalnya, kerangka acuan mencantumkan lokasi kegiatan.* atau sebutkan contoh langsung dalam kalimat.
 - Anak kalimat mendahului induk kalimat: pakai koma (*Jika hujan, saya tidak datang*). Sebaliknya, tanpa koma.
 
 **Tanda Titik Dua (`:`):**
@@ -379,17 +379,16 @@ Tanyakan kepada pengguna jika belum jelas:
 - Objek pengawasan
 - Periode pengawasan
 - Perwakilan BPKP pelaksana
-- **Apakah sudah ada template laporan yang harus diikuti?** Jika ya, minta template-nya. Jika template memiliki placeholder, tanyakan apakah data pengisinya berasal dari kertas kerja xlsx.
+- Terapkan template atau naskah terkini yang sudah diberikan. Minta hanya bahan yang dibutuhkan dan belum tersedia.
 
 ### Langkah 2: Kumpulkan Data
-- Minta data temuan, bukti audit, dan regulasi terkait.
-- Jika pengguna memberikan data mentah (dari kertas kerja xlsx atau sumber lain), bantu menyusunnya ke dalam kerangka 5C.
-- Jika data berasal dari file xlsx, minta pengguna membaca xlsx menggunakan skill/alat terpisah terlebih dahulu, atau berikan data dalam format yang bisa dibaca.
+- Baca sumber yang tersedia: surat tugas yang berlaku, template, spreadsheet tervalidasi, ikhtisar, dan dokumen pendukung. Padankan judul laporan, objek, lokus, periode, nomor, dan tanggal dasar penugasan dengan surat tugas yang benar.
+- Lacak setiap kesimpulan utama ke hasil pengujian atau konfirmasi. Untuk kriteria, gunakan alat pencarian regulasi yang ditentukan pengguna dan buka ketentuan pada naskah resminya.
 
 ### Langkah 3: Susun Draf
 - Jika ada template: ikuti template. Isi placeholder dengan data yang diperoleh.
 - Jika tidak ada template: gunakan contoh di references sebagai titik awal, sesuaikan dengan jenis penugasan.
-- Untuk setiap temuan, terapkan kerangka 5C (Bagian 3).
+- Susun 5C sesuai jenis temuan dan tempatkan rekomendasi mengikuti bagian yang ditentukan pengguna (Bagian 3).
 - Terapkan ketentuan tata naskah dinas laporan (Bagian 11): bentuk surat/bab, penomoran LHP/LPP, cover, dan penanda tangan sesuai wewenang.
 - Pastikan simpulan konsisten dengan uraian temuan.
 - Pastikan rekomendasi konsisten dengan uraian temuan.
@@ -398,14 +397,14 @@ Tanyakan kepada pengguna jika belum jelas:
 Periksa bahwa laporan memuat (sesuaikan dengan jenis laporan):
 - [ ] Klausul distribusi terbatas
 - [ ] Conformance statement (pernyataan pemenuhan norma)
-- [ ] Kerangka 5C untuk setiap temuan (Condition, Criteria, Cause, Consequence)
-- [ ] Identifikasi risiko dan rekomendasi per topik
-- [ ] Kutipan regulasi lengkap (nama, nomor, tahun, pasal, ayat)
-- [ ] Tabel dengan judul dan sumber
+- [ ] Kelima atribut temuan yang diperlukan: kondisi, kriteria, penyebab, akibat, dan rekomendasi pada bagian yang ditentukan
+- [ ] Penyebab dan akibat didukung bukti; rekomendasi mengatasi penyebab dan berada dalam kewenangan penerimanya
+- [ ] Kriteria terverifikasi, berurutan dari identitas regulasi ke letak dan bunyi ketentuan
+- [ ] Tabel terisi dari sumber yang sah, dengan judul dan ukuran yang tepat
 - [ ] Singkatan dieja lengkap pada kemunculan pertama
 - [ ] Konsistensi antara simpulan dan uraian temuan
 - [ ] Konsistensi antara rekomendasi ringkas dan rekomendasi detail
-- [ ] Penomoran memakai kode `LHP`/`LPP` sesuai format TND (Bagian 11.4)
+- [ ] Kode klasifikasi, jenis naskah, unit, dan format nomor sesuai rujukan TND serta templat yang berlaku (Bagian 11.4)
 - [ ] Penanda tangan sesuai wewenang: kepala unit kerja/Pejabat Berwenang untuk laporan hasil pengawasan; kepala unit kerja/Plh. untuk laporan berkala penunjang (Bagian 11.2)
 - [ ] Cover memenuhi spesifikasi logo BPKP 3,4 x 1,7 cm, Arial 13-bold lembaga, nama unit kerja kapital Arial 12-bold (Bagian 11.6), bila laporan dicetak bercover
 
@@ -424,18 +423,14 @@ Setelah substansi final, lakukan dua tahap secara berurutan:
 
 ### Langkah 6: Pengecekan Akhir
 - Pastikan konsistensi penomoran di seluruh dokumen.
-- Pastikan konsistensi simpulan - uraian - rekomendasi.
-- Laporkan kepada pengguna jika ditemukan inkonsistensi.
+- Pastikan simpulan, uraian, dan rekomendasi konsisten. Tuntaskan penandaan rujukan internal dan ungkapan ketidakpastian dalam narasi sesuai Bagian 7 sebelum naskah diserahkan.
+- Periksa seluruh badan laporan untuk kekeliruan sejenis dengan contoh koreksi pengguna. Cocokkan hasil, tabel, dan rekomendasi dengan sumber serta periksa tampilan Word. Sampaikan item yang masih tidak dapat dipadankan kepada pengguna.
 
 ## 10. Interaksi dengan Pengguna
 
-- Jika pengguna memberikan data temuan mentah tanpa kerangka 5C, susun ke dalam format 5C dan konfirmasi sebelum finalisasi.
-- Jika regulasi yang dikutip pengguna tidak lengkap (tanpa pasal/ayat), tanyakan detailnya.
-- Jika diminta menulis satu bagian saja (misal: hanya temuan, hanya rekomendasi), tetap ikuti format yang relevan dari bagian tersebut.
-- Jika diminta mengedit laporan yang sudah ada, fokus pada perbaikan substansi (kelengkapan 5C) dan bahasa, tanpa mengubah fakta/data yang sudah ada.
-- Jika pengguna memberikan template dengan placeholder, tanyakan sumber data pengisi (umumnya dari kertas kerja xlsx).
-
----
+- Jika diminta menulis satu bagian, ikuti format dan kedalaman bukti bagian tersebut. Jika pengguna memberi contoh koreksi untuk masalah berulang, terapkan pada seluruh bagian yang relevan.
+- Gunakan sumber, template, dan bahan yang telah diberikan. Minta penjelasan jika sumber yang tersedia belum menyelesaikan ambiguitas yang mengubah kesimpulan atau tindakan.
+- Saat merevisi naskah, pertahankan fakta, format manual, dan bagian yang berada di luar lingkup perubahan. Laporkan temuan yang masih tidak dapat dipadankan pada hasil akhir apabila diminta.
 
 ## 11. Ketentuan Tata Naskah Dinas untuk Laporan (Peraturan BPKP 4/2026)
 
@@ -481,7 +476,7 @@ Bagian ini built-in dari **Peraturan BPKP Nomor 4 Tahun 2026 tentang Tata Naskah
 **Struktur Laporan Bentuk Surat (Pendek)** — terdiri atas kepala, batang tubuh, dan kaki:
 - **Kepala**: kop Naskah Dinas jabatan Kepala/wakil kepala, atau kop Naskah Dinas instansi (dengan alamat) untuk yang ditandatangani selain Kepala/wakil kepala; nomor, lampiran, dan hal di kiri bawah kop; tanggal penciptaan di kanan atas sejajar nomor; kata "Yth." di bawah "Hal" diikuti nama jabatan tujuan; alamat surat (nama kota tujuan) di bawah "Yth.".
 - **Batang tubuh**: pendahuluan (penjelasan umum, maksud-tujuan, ruang lingkup, sistematika); materi laporan (kegiatan, faktor, hasil, hambatan, hal lain); simpulan dan saran; penutup (harapan/permintaan arahan/ucapan terima kasih).
-- **Kaki**: tanggal pembuatan laporan; nama jabatan (kapital awal kata, diakhiri koma, rata kiri); tanda tangan pejabat (atau "Ditandatangani secara elektronik oleh" + kode QR bila TTE); nama lengkap pejabat (kapital awal kata, tanpa gelar dan NIP); cap dinas hanya untuk tanda tangan basah; tembusan (jika ada).
+- **Kaki**: tanggal sesuai templat, jabatan termasuk `Plt.` atau `Plh.` bila berlaku, tanda tangan, nama lengkap tanpa gelar dan NIP, dan tembusan jika ada. Jabatan diakhiri koma dan rata kiri dalam blok kanan bawah. Untuk tata letak TTE, tempatkan `Ditandatangani secara elektronik oleh` di antara jabatan dan nama. Kode QR autentik berasal dari proses penandatanganan dokumen itu sendiri.
 
 **Struktur Laporan Bentuk Bab (Panjang)** — mengikuti sistematika BAB yang diatur dalam pedoman/petunjuk teknis unit kerja.
 
@@ -491,18 +486,14 @@ Laporan menggunakan kode jenis naskah dinas pada nomor:
 - `LHP` -- Laporan Hasil Pengawasan
 - `LPP` -- Laporan Penunjang Pengawasan
 
-Format nomor mengikuti pola umum TND: `[kode keamanan]/[kode klasifikasi arsip]/[LHP|LPP]/[nomor urut]/[kode konseptor]/[tahun]`. Nomor urut agenda dimulai dari 1 setiap awal tahun. Khusus naskah peraturan tidak memakai pola ini, tetapi laporan tetap memakai pola lengkap.
+Ikuti pola nomor pada templat dan acuan [penomoran tata naskah dinas](../tata-naskah-dinas-bpkp/references/penomoran-dan-format.md). Pola umum memuat kode klasifikasi arsip, kode keamanan bila berlaku, jenis dan nomor urut yang dipisahkan tanda hubung, kode unit penanda tangan, kode konseptor sesuai ketentuan, dan tahun. Nomor urut agenda dimulai dari 1 setiap awal tahun.
 
-### 11.4a Ketentuan Pengisian Nomor dan Tanggal pada Draf Laporan
+### 11.4a Nomor dan Tanggal Laporan yang Disiapkan
 
-> [!important] Invarian Wajib: Jangan Isi Nomor & Tanggal Laporan (Cukup Placeholder `"   "`)
-> - Ketika membuat laporan atau draf laporan hasil pengawasan (LHP, LHE, LHR, maupun laporan bentuk surat pendek), **nomor laporan dan tanggal laporan JANGAN DIISI** (dilarang mengarang nomor, menebak nomor agenda, atau mencantumkan tanggal saat ini/asumsi).
-> - Cukup diisi dengan placeholder `"   "` (tripel spasi kosong) saja.
-> - **Alasan Operasional**: Penomoran buku agenda naskah dinas keluar dan penetapan tanggal resmi penandatanganan sepenuhnya merupakan wewenang dan dilakukan oleh **sekretaris / unit tata usaha persuratan** saat naskah siap ditandatangani dan didistribusikan.
-> - Ketentuan ini berlaku konsisten pada seluruh komponen laporan:
->   1. **Sampul / Cover Laporan**: Bagian nomor dan tanggal laporan cukup diisi placeholder `"   "`.
->   2. **Metadata Surat Pengantar**: Baris `Nomor    :` diisi `"   "`, dan kolom tanggal surat pengantar diisi `"   "`.
->   3. **Kaki Laporan / Blok Tanda Tangan**: Baris tanggal penandatanganan cukup diisi `"   "` (atau nama kota saja tanpa tanggal definitif, mis. `[Kota],              2026` atau `"   "`).
+- Pisahkan nomor surat tugas dari nomor agenda laporan. Isi nomor dan tanggal surat tugas dari dokumen penugasan yang benar.
+- Ikuti model nomor laporan dalam templat yang disetujui, termasuk klasifikasi `PE...` hanya setelah jenis kegiatan cocok dengan instrumen klasifikasi arsip yang berlaku. Pertahankan kode jenis yang diminta dalam templat unit yang dipakai, misalnya `LHE-...`; bedakan dari pola umum `LHP`/`LPP` di TND.
+- Biarkan nomor urut agenda dan bagian tanggal yang belum ditetapkan tetap kosong. Jika pengguna meminta kerangka tanggal dari contoh, pertahankan bentuk dan isi hanya unsur yang telah ditentukan. Jangan menyalin tanggal, nomor agenda, atau kode klasifikasi dari dokumen untuk objek lain tanpa verifikasi.
+- Selaraskan komponen tersebut pada sampul, surat pengantar, dan kaki laporan sesuai letaknya dalam templat. Status naskah dalam alur kerja tidak otomatis menjadi tulisan pada dokumen.
 
 ### 11.5 Distribusi Laporan
 
@@ -527,7 +518,7 @@ Peraturan tidak membakukan redaksinya. Pada engine, panggil `add_catatan_kaki_et
    b. Tulisan **"BADAN PENGAWASAN KEUANGAN DAN PEMBANGUNAN"** (jenis huruf **Arial ukuran 13 dicetak tebal**) dan diletakkan secara simetris di bawah logo BPKP;
    c. **Nama unit kerja** ditulis seluruhnya dengan huruf kapital (jenis huruf **Arial ukuran 12 dicetak tebal**) dan diletakkan secara simetris di bawah tulisan "BADAN PENGAWASAN KEUANGAN DAN PEMBANGUNAN";
    d. **Judul laporan** dapat ditulis dengan penggunaan huruf kapital, kursif, font, ukuran, dan warna yang beragam untuk mendukung estetika;
-   e. **Nomor dan tanggal laporan**: Pada pembuatan draf laporan, nomor dan tanggal laporan **jangan diisi**, cukup diisi placeholder `"   "` (tripel spasi kosong) karena penomoran dilakukan oleh sekretaris. Dapat diformat dengan penggunaan huruf kapital, kursif, font, ukuran, dan warna yang beragam untuk mendukung estetika saat nomor definitif diisi nantinya.
+   e. **Nomor dan tanggal laporan**: Ikuti Bagian 11.4a. Gunakan format dari sampul acuan dan biarkan unsur yang belum ditetapkan tetap kosong.
 
 > [!note] Perubahan Satuan Logo
 > Peraturan 4/2026 menyatakan ukuran logo dalam satuan **mm** (34 mm × 17 mm) bukan cm (3,4 cm × 1,7 cm). Nilai numeriknya setara; satuan resmi kini mm.
@@ -728,7 +719,7 @@ Tabel dalam laporan BPKP disajikan secara bersih, rapi, dan profesional dengan k
 ---
 
 ### 12.5 Aturan Pewarnaan Font Teks & Placeholder
-- **Warna MERAH (`RGB(255, 0, 0)`):** Digunakan secara khusus untuk kalimat, kata, atau paragraf yang memuat placeholder **`(.)`**, kriteria yang belum diverifikasi, atau data yang masih membutuhkan konfirmasi/draf.
+- **Warna MERAH (`RGB(255, 0, 0)`):** Digunakan secara khusus untuk kalimat, kata, atau paragraf yang memuat placeholder **`(.)`**, kriteria yang belum diverifikasi, atau data yang masih membutuhkan konfirmasi saat penyusunan internal. Selesaikan penandaan ini sebelum menyerahkan laporan final.
 - **Warna HITAM (`RGB(0, 0, 0)`):** Digunakan untuk seluruh teks/paragraf yang sudah definitif, *fixed*, dan terverifikasi dari bukti/kertas kerja pengawasan.
 
 ### 12.6 Aturan Titik Dua (`:`)
@@ -742,7 +733,7 @@ Nomor    :
 Lampiran : Satu Berkas
 Hal      : Laporan Hasil Evaluasi atas Tata Kelola...
 ```
-*(Catatan wajib: Nilai Nomor dan Tanggal pada draf laporan **jangan diisi**, cukup diisi placeholder `"   "` (tripel spasi kosong) karena penomoran dan penetapan tanggal dilakukan oleh sekretaris).*
+*Isi komponen nomor dan tanggal menurut Bagian 11.4a.*
 Label rata kiri dengan padding tetap (mis. `Nomor` + spasi = 10 karakter), lalu `:`, lalu spasi, lalu nilai. Titik dua pada baris tanggal tidak digunakan (tanggal ditulis langsung).
 
 #### B. Titik Dua pada Pengantar Daftar Bernomor
@@ -751,7 +742,7 @@ Kalimat pengantar yang diikuti daftar bernomor **wajib diakhiri titik dua** (buk
 - `Atas hal tersebut, kami rekomendasikan kepada [penerima] agar menginstruksikan [pejabat] untuk melaksanakan langkah berikut:`
 - `...menyatakan sependapat dan berkomitmen menyusun rencana aksi penyelesaian tindak lanjut dengan rincian:`
 
-Setelah titik dua, baris berikutnya langsung berisi butir daftar bernomor. Tidak boleh ada teks tambahan setelah titik dua pada baris yang sama.
+Gunakan `berikut:` jika kata itu menutup pengantar daftar, tabel, atau uraian yang langsung disajikan. Setelah pengantar daftar, mulai butir pada baris berikutnya. Bentuk seperti `tabel berikut memuat` tetap merupakan bagian dari kalimat.
 
 Untuk satu tindakan di bawah satu penerima instruksi, sambungkan tindakan langsung setelah `untuk` atau `agar` dan akhiri dengan titik. Gunakan paragraf narasi yang sejajar dengan teks temuan.
 
@@ -768,7 +759,7 @@ Format mode manual: `[Nomor Manual]\t[Nama Lokus]**:** [Narasi Regular]`. Titik 
 > **Mode otomatis lebih disukai** karena menghasilkan struktur yang lebih bersih: nama lokus sebagai paragraf bernomor tersendiri, narasi sebagai paragraf terpisah di bawahnya, tanpa titik dua.
 
 #### D. Titik Dua pada Sumber Tabel
-Format keterangan sumber data di bawah tabel menggunakan titik dua setelah kata "Sumber":
+Jika keterangan sumber disajikan di bawah tabel, gunakan titik dua setelah kata "Sumber":
 ```
 Sumber: Dinas Pertanian Kabupaten [Nama Kabupaten] diolah, 2026
 ```
@@ -793,7 +784,7 @@ Bold hanya digunakan untuk elemen struktural dan penanda, **bukan** untuk menonj
 | Penanda daftar pelaksana dan tindakan rekomendasi | Tidak | Ikuti template | Regular pada daftar isi rekomendasi |
 | Label Metadata Kop (`Nomor`, `Lampiran`, `Hal`) | Tidak | 12 pt | Regular; nilai juga Regular |
 | Paragraf Narasi 5C (Kondisi, Kriteria, Sebab, Akibat, Rekomendasi) | **TIDAK** | 12 pt | 100% Regular, tanpa Bold |
-| Awalan baku 5C ("Kondisi tersebut disebabkan oleh...", "Akibatnya,...") | **TIDAK** | 12 pt | Regular — bukan Bold |
+| Pembuka atribut 5C ("Hal ini tidak sesuai dengan...", "Hal ini disebabkan oleh...", "Akibatnya, ...") | **TIDAK** | 12 pt | Regular — bukan Bold |
 | Isi Tabel Header | Ya | 10 pt | Header baris bold |
 | Isi Tabel Body | Tidak | 10 pt | Regular |
 | Nomor Halaman, Footer | Tidak | 9 pt | Regular |
@@ -896,7 +887,7 @@ from bpkp_docx_engine import create_document
 | `add_runs_with_italic(p, text, ...)` | Helper kompatibilitas untuk memecah teks dengan penanda miring ke run italic. |
 | `clone_from_template(template_path)` | Copy-reference technique: kloning template valid dan bersihkan paragraf/tabel. |
 | `get_unit_profile(unit_key)` | Ambil data identitas unit kerja seluruh Indonesia dari `unit_profiles.json`. |
-| `audit_docx_deterministic(doc)` | Audit otomatis: pastikan em dash = 0, asterisk = 0, dan AI markers = 0. |
+| `audit_docx_deterministic(doc)` | Temukan tanda pisah, asterisk, dan pola diksi yang perlu ditinjau sesuai Bagian 7.3. |
 | `audit_text_deterministic(text)` | Audit string teks atas em dash, asterisk, dan leksikon penanda AI. |
 | `add_p(doc, text, ...)` | Paragraf biasa dengan opsi numbering, indent, align, dan markdown parsing built-in. |
 | `add_run(p, text, bold, italic, color, size)` | Tambah run ke paragraf dengan font Arial. |

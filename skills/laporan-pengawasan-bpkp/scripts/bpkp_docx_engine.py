@@ -1711,7 +1711,7 @@ def get_unit_profile(unit_key: str = "pusat_utama") -> dict:
 
 def audit_text_deterministic(text: str) -> dict:
     """
-    Audit deterministik penanda AI, tanda pisah (em dash), dan kebocoran asterisk (*).
+    Tandai pola diksi, tanda pisah, dan asterisk untuk ditinjau pada narasi pengawasan.
     Invarian mutlak naskah dinas/laporan pengawasan BPKP:
     - em_dash_count == 0
     - asterisk_count == 0
@@ -1729,6 +1729,21 @@ def audit_text_deterministic(text: str) -> dict:
         'menyimpan_risiko': re.compile(r'\bmenyimpan\s+risiko\b', re.IGNORECASE),
         'perlu_diwaspadai': re.compile(r'\bperlu\s+diwaspadai\b', re.IGNORECASE),
         'perlu_dilakukan': re.compile(r'\bperlu\s+dilakukan\b', re.IGNORECASE),
+        'rujukan_kertas_kerja': re.compile(
+            r'\b(?:(?:berdasarkan|menurut|dari|sesuai(?:\s+dengan)?|mengacu\s+pada|merujuk\s+pada|'
+            r'sebagaimana\s+(?:tercantum|dicatat|diuraikan)\s+(?:dalam|pada))\s+'
+            r'(?:(?:data|hasil|simpulan)\s+(?:dari|dalam|di(?:\s+dalam)?|pada)\s+)?'
+            r'(?:kertas\s+kerja|kke)|(?:kertas\s+kerja|kke)\s+'
+            r'(?:menunjukkan|mencatat|menyebutkan|memuat))\b',
+            re.IGNORECASE,
+        ),
+        'ketidakpastian_kabur': re.compile(
+            r'\b(?:(?:belum|tidak)\s+(?:(?:dapat|bisa)\s+'
+            r'di(?:pastikan|ketahui|simpulkan|konfirmasi|verifikasi)|'
+            r'(?:diketahui|terkonfirmasi|terverifikasi))|'
+            r'belum\s+(?:jelas|ada\s+kepastian))\b',
+            re.IGNORECASE,
+        ),
     }
 
     ai_findings = {}

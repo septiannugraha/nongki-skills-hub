@@ -11,10 +11,10 @@
 
 ## 1. Bentuk 1: Laporan Bentuk Surat (Format Pendek / Ringkas)
 
-Sesuai Peraturan BPKP Nomor 4 Tahun 2026 BAB V-C.5.b.2), laporan bentuk surat digunakan untuk penyampaian laporan ringkas kepada pimpinan mitra/klien dan terdiri atas tiga bagian:
+Sesuai Peraturan BPKP Nomor 4 Tahun 2026 Lampiran Bab V C angka 5 dan Gambar V.31, laporan bentuk surat digunakan untuk penyampaian laporan ringkas kepada pimpinan mitra/klien dan terdiri atas tiga bagian:
 
 ### A. Kepala Laporan
-- **Kop Naskah Dinas**: Menggunakan kop surat instansi resmi BPKP (logo BPKP di kiri, teks instansi di kanan, garis bawah tebal 2.25 pt / sz=18).
+- **Kop Naskah Dinas**: Gunakan kop resmi dari contoh yang ditetapkan. Pertahankan logo, teks, garis, dan jarak kop. Detail tebal garis mengikuti contoh yang berlaku.
 - **Metadata**: Terdiri dari baris `Nomor`, `Lampiran`, `Hal`, dan `Tanggal`.
   - *Catatan Penting Pencegahan Duplikasi*: Jika kop surat template pengguna sudah memuat baris Nomor/Lampiran/Hal, perbarui nilainya secara *in-place*. Jangan menambahkan tabel metadata kedua!
 - **Tujuan Surat**: `Yth. [Nama Jabatan Mitra]` diikuti `di [Nama Kota]`.
@@ -23,11 +23,11 @@ Sesuai Peraturan BPKP Nomor 4 Tahun 2026 BAB V-C.5.b.2), laporan bentuk surat di
 - **Paragraf Pembuka**: Menguraikan dasar pelaksanaan pengawasan, surat tugas, objek pengawasan, dan maksud penyampaian laporan.
 - **Simpulan**: Poin-poin simpulan substansi pokok hasil pengawasan (kondisi makro dan permasalahan signifikan).
 - **Rekomendasi**: Butir-butir rekomendasi konkret yang ditujukan kepada pimpinan instansi auditan/mitra untuk perbaikan.
-- **Paragraf Penutup**: Permintaan arahan/tindak lanjut dan ucapan terima kasih atas kerja sama.
+- **Paragraf Penutup**: Klausul pembatasan distribusi sesuai format laporan dan ucapan terima kasih atas kerja sama. Contoh regulasi bentuk pendek terdapat pada Lampiran Peraturan BPKP Nomor 4 Tahun 2026, Gambar V.31 halaman 122.
 
 ### C. Kaki Laporan
 - **Penanggalan**: Nama kota dan tanggal pembuatan laporan (misal: `[Kota], [Tanggal] [Bulan] [Tahun]`).
-- **Jabatan & Tanda Tangan**: `Kepala Perwakilan,` diikuti tanda tangan digital (TTE) atau basah, nama lengkap pejabat tanpa gelar dan NIP (sesuai TND Peraturan 4/2026).
+- **Jabatan & Tanda Tangan**: Jabatan sesuai penunjukan, misalnya `Plt. Kepala Perwakilan,`, diikuti tanda tangan atau baris `Ditandatangani secara elektronik oleh` untuk format TTE, lalu nama lengkap tanpa gelar dan NIP. QR autentik berasal dari penandatanganan laporan yang bersangkutan.
 - **Tembusan**: Ditujukan kepada pihak yang berhak menerima (misal: Deputi Kepala BPKP terkait).
 - **Catatan Kaki Etika & Layanan Pengaduan (Peraturan 4/2026 BAB V-C.5.c.5))**: Pernyataan bahwa tugas dilaksanakan tanpa melanggar aturan dan bebas dari gratifikasi/suap.
 
@@ -85,15 +85,15 @@ Disampaikan dengan kop surat resmi BPKP dan klausul distribusi terbatas kepada a
 
 ### F. BAB III: Hasil Pengawasan (Kerangka Temuan 5C)
 Setiap temuan diuraikan secara runut:
-1. **Kondisi**: Fakta riil yang ditemukan di lapangan berbasis bukti KKE.
-2. **Kriteria**: Ketentuan perundang-undangan spesifik (UU, PP, Permen, Perda, Perbup). Ditandai warna merah `(.)` bila masih draf.
-3. **Sebab**: Akar masalah (*root cause*), diawali kalimat baku: `"Kondisi tersebut disebabkan oleh..."`.
-4. **Akibat**: Dampak negatif riil atau potensi risiko, diawali: `"Akibatnya, ..."`.
-5. **Rekomendasi** menyebut penerima, pelaksana, dan tindakan perbaikan pada temuan yang bersangkutan.
+1. **Kondisi**. Nyatakan hasil pengujian secara langsung dan cantumkan bukti yang diperlukan.
+2. **Kriteria**. Untuk penyimpangan yang terbukti, awali dengan `Hal ini tidak sesuai dengan`, diikuti identitas, letak, dan bunyi ketentuan.
+3. **Penyebab**. Rumuskan sebab yang terbukti dengan pembuka `Hal ini disebabkan oleh`.
+4. **Akibat**. Awali dengan `Akibatnya,` lalu jelaskan dampak nyata atau risiko yang didukung.
+5. **Rekomendasi**. Sebutkan penerima, pelaksana, dan tindakan yang mengatasi penyebab. Ikuti posisi yang diatur dalam template atau arahan pengguna.
 
 ---
 
 ## 3. Preset Penyajian Tabel (Open Table)
 - Preset engine: garis horizontal saja (Top, Header separator, Bottom), tanpa garis vertikal. Peraturan 4/2026 tidak mengatur garis tabel; templat pengguna/contoh resmi yang berkotak tetap diikuti.
 - Shading header abu-abu lembut (`#EAEAEA` atau `#F2F2F2`), teks bold 10 pt.
-- Keterangan sumber dicantumkan di bawah tabel dengan huruf miring (*Italic 9 pt*): `Sumber: Dinas Pertanian Kabupaten [Nama], 2026`.
+- Jika templat memuat keterangan sumber, letakkan di bawah tabel dengan huruf miring (*Italic 9 pt*): `Sumber: Dinas Pertanian Kabupaten [Nama], 2026`.
